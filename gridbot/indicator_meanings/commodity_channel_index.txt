@@ -1,0 +1,56 @@
+What is the Commodity Channel Index (CCI)?
+
+Commodity Channel Index (CCI) is a momentum-based oscillator that measures an asset’s price deviation from its average price to identify overbought or oversold conditions and potential trend reversals. Developed by Donald Lambert in 1980, it was originally designed for commodities but is widely used in other markets, including crypto. CCI compares the current price to a moving average, normalized by the mean absolute deviation, and typically uses a 20-period lookback.
+
+Calculation:
+
+    Compute the Typical Price = (High + Low + Close) / 3.
+    Calculate the 20-period Simple Moving Average (SMA) of the Typical Price.
+    Compute the Mean Absolute Deviation (MAD):
+        MAD = Average of |Typical Price - SMA| over 20 periods.
+    CCI = (Typical Price - 20-period SMA) / (0.015 × MAD).
+        The 0.015 constant scales CCI so most values fall between -100 and +100.
+
+    CCI > +100: Potentially overbought.
+    CCI < -100: Potentially oversold.
+    CCI near 0: Price is near its average.
+
+What is CCI Used for in Crypto Trading?
+
+CCI is effective in crypto trading for capturing momentum shifts and reversals in volatile markets. Its primary uses include:
+
+    Identifying Overbought/Oversold Conditions:
+        CCI above +100 suggests an asset (e.g., BTC) is overbought, indicating a potential pullback or correction.
+        CCI below -100 signals oversold conditions, hinting at a possible bounce or reversal.
+        In crypto, these levels are monitored during rapid pumps (e.g., altcoin surges) or dumps, though strong trends can push CCI to extremes for longer.
+    Spotting Trend Reversals:
+        A CCI moving from above +100 back toward zero warns of a bearish reversal, while a move from below -100 toward zero signals a bullish reversal.
+        Crypto traders use this to time exits during overextended moves, like a memecoin rally peaking.
+    Confirming Trend Strength:
+        CCI values consistently above +100 during an uptrend confirm strong bullish momentum, while values below -100 confirm bearish momentum.
+        In crypto, this helps validate sustained moves, such as Bitcoin’s rally in a bull market.
+    Divergence Detection:
+        Bullish Divergence: When price makes lower lows but CCI makes higher lows, it suggests weakening bearish momentum, often preceding a crypto bounce (e.g., ETH at a support level).
+        Bearish Divergence: When price makes higher highs but CCI makes lower highs, it warns of a potential drop, useful during crypto market tops.
+        Divergences are powerful in crypto’s momentum-driven markets.
+    Trading Breakouts or Pullbacks:
+        CCI crossing above +100 can confirm a breakout in a trending market, encouraging buy entries for pairs like BTC/USDT.
+        In range-bound markets, traders buy near -100 (oversold) and sell near +100 (overbought), expecting mean reversion, effective during crypto consolidation phases.
+    Setting Stop-Loss/Take-Profit:
+        Traders use CCI extremes to place stops or take profits, exiting longs when CCI exceeds +100 or shorts when it drops below -100.
+        In crypto, this helps manage volatility, especially in scalping or leveraged trading.
+
+Crypto-Specific Considerations
+
+    High Volatility: Crypto’s sharp price swings (e.g., 10% BTC moves in hours) make CCI useful for spotting short-term reversals, but prolonged trends can keep it overbought or oversold, requiring adjusted thresholds (e.g., +150/-150).
+    24/7 Market: CCI can be applied to intraday timeframes (e.g., 1-hour, 5-minute), fitting crypto’s nonstop trading, ideal for day trading or scalping on Binance.US.
+    False Signals: In trending crypto markets, CCI may signal overbought/oversold prematurely, especially for low-liquidity altcoins. Pairing with ADX or volume filters noise.
+    Leverage Trading: In crypto futures, CCI guides high-leverage entries and exits by highlighting momentum shifts, helping avoid trades in choppy conditions.
+    Altcoin Variability: CCI works best for liquid pairs (e.g., BTC/USD, ETH/USDT) but can be erratic for low-volume tokens with spiky prices, where deviations are less meaningful.
+    Parameter Tuning: Crypto traders may use shorter periods (e.g., 10 or 14) to match fast markets or tweak thresholds to suit volatile assets.
+
+Summary
+
+    Definition: CCI measures price deviation from its average, scaled by mean deviation, with +100/-100 indicating overbought/oversold conditions.
+    Uses in Crypto: Detects overbought/oversold levels, spots reversals, confirms trend strength, identifies divergences, supports breakout/pullback trades, and guides stop-loss/take-profit.
+    Crypto Relevance: Well-suited for crypto’s volatile, 24/7 markets, capturing momentum and reversals, but needs tuning and confirmation to avoid false signals in trending or noisy conditions.

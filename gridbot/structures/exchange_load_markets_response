@@ -1,0 +1,34 @@
+exchange.load_markets = {
+    'SYMBOL': {
+        'id': 'MARKET_ID',         # (string)  exchange-specific market id
+        'symbol': 'SYMBOL',       # (string)  unified market symbol (e.g., 'BTC/USDT', 'ETH/BTC')
+        'base': 'BASE_CURRENCY',     # (string)  unified base currency code (e.g., 'BTC', 'ETH')
+        'quote': 'QUOTE_CURRENCY',    # (string)  unified quote currency code (e.g., 'USDT', 'BTC')
+        'taker':  TAKER_FEE,       # (float)   taker fee
+        'maker':  MAKER_FEE,       # (float)   maker fee
+        'precision': {          # (dict)    price and amount precision
+            'price':   PRICE_PRECISION, # (int)     number of digits after the decimal point
+            'amount':  AMOUNT_PRECISION,  # (int)     number of digits after the decimal point
+            'base':    BASE_PRECISION,    # (int)     (optional)
+            'quote':   QUOTE_PRECISION,   # (int)     (optional)
+        },
+        'limits': {             # (dict)    order limits
+            'amount': {          # (dict)
+                'min': MIN_AMOUNT,    # (float)   min amount of base currency allowed in order
+                'max': MAX_AMOUNT,    # (float)   max amount of base currency allowed in order
+            },
+            'price': {           # (dict)
+                'min': MIN_PRICE,     # (float)   min price allowed in order
+                'max': MAX_PRICE,     # (float)   max price allowed in order
+            },
+            'cost': {            # (dict)    (where available)
+                'min': MIN_COST,      # (float)   min cost (quote currency) allowed in order
+                'max': MAX_COST,      # (float)   max cost (quote currency) allowed in order
+            },
+        },
+        'active': True or False,  # (bool)    market status
+        'info':    EXCHANGE_SPECIFIC_MARKET_INFO, # (dict)    exchange-specific market information
+        ...
+    },
+    ...
+}

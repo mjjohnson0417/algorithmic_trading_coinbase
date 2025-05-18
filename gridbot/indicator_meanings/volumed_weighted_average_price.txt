@@ -1,0 +1,55 @@
+What is the Volume Weighted Average Price (VWAP)?
+
+Volume Weighted Average Price (VWAP) is a trading indicator that calculates the average price of an asset, weighted by trading volume, over a specified period, typically a single trading session (e.g., a day). It reflects the average price at which an asset has traded, factoring in the volume of each transaction to give more weight to prices with higher trading activity. VWAP is widely used in financial markets to assess fair value and guide trading decisions.
+
+Calculation:
+
+    For each period (e.g., minute, hour):
+        Compute the Typical Price = (High + Low + Close) / 3.
+        Multiply Typical Price by the period’s Volume.
+    Sum the (Typical Price × Volume) for all periods in the session.
+    Sum the total Volume for the same periods.
+    VWAP = Total (Typical Price × Volume) / Total Volume.
+
+    The calculation resets at the start of each session (e.g., daily VWAP resets at midnight UTC).
+
+For example, if BTC/USD trades at higher prices with heavy volume, VWAP will be closer to those prices, reflecting where most trading occurred.
+What is VWAP Used for in Crypto Trading?
+
+VWAP is highly effective in crypto trading for evaluating price levels, timing trades, and managing execution in volatile, volume-driven markets. Its primary uses include:
+
+    Benchmarking Fair Value:
+        VWAP represents the average price paid by traders, acting as a reference for whether the current price is above or below “fair value.”
+        In crypto, traders compare BTC/USD’s price to VWAP to decide if it’s overvalued (above VWAP) or undervalued (below VWAP) during a session.
+    Identifying Support and Resistance:
+        VWAP acts as a dynamic support or resistance level. Prices often revert to VWAP during choppy markets or bounce off it in trends.
+        Crypto traders watch for ETH/USDT to hold above VWAP as a bullish sign or drop below it as a bearish signal, especially intraday.
+    Timing Entries and Exits:
+        Mean Reversion: Traders buy when the price dips below VWAP and sell when it rises above, expecting reversion to the average, common in crypto’s range-bound periods.
+        Trend Trading: In a bullish trend, prices staying above VWAP signal strength, encouraging buy entries, while prices below VWAP in a bearish trend favor shorts.
+        This is useful for scalping or swing trading volatile pairs like BTC/USDT.
+    Confirming Breakouts:
+        A price breakout above VWAP with high volume suggests strong buying pressure, increasing the likelihood of a sustained move.
+        In crypto, traders use VWAP to validate breakouts during altcoin rallies or Bitcoin surges, avoiding false moves with low volume.
+    Execution for Large Orders:
+        Institutional or high-volume crypto traders aim to execute orders near VWAP to minimize market impact and achieve fair pricing.
+        For example, a trader buying large amounts of ETH uses VWAP as a target to avoid pushing the price too high.
+    Stop-Loss/Take-Profit Placement:
+        Traders place stop-losses below VWAP for longs or above VWAP for shorts, using it as a trend filter.
+        Take-profits may target VWAP in mean-reversion strategies, locking in gains when prices revert, especially in crypto’s intraday swings.
+
+Crypto-Specific Considerations
+
+    High Volatility: Crypto’s rapid price swings (e.g., 5% BTC moves in minutes) make VWAP a reliable anchor for intraday trading, but sudden volume spikes (e.g., liquidations) can skew it temporarily.
+    24/7 Market: Unlike stocks, crypto lacks a fixed session close, so VWAP is often calculated daily (resetting at midnight UTC) or over custom periods (e.g., 4-hour, 1-hour). Intraday VWAP suits crypto’s nonstop trading on Binance.US.
+    Volume Reliability: VWAP depends on accurate volume data, which is robust for liquid pairs (e.g., BTC/USD, ETH/USDT) but questionable for low-volume altcoins, where manipulation can distort readings.
+    False Signals: In low-volume crypto markets, VWAP may lag during pumps or dumps, misleading mean-reversion trades. Pairing with RSI or OBV improves accuracy.
+    Leverage Trading: In crypto futures, VWAP helps time high-leverage entries and exits by identifying fair price levels, reducing risk in volatile conditions.
+    Altcoin Variability: VWAP is most effective for high-volume pairs but less reliable for illiquid tokens, where thin volume creates erratic VWAP levels.
+    Session Choice: Crypto traders must define VWAP’s reset period (e.g., daily, hourly) to match their strategy, as there’s no standard “market close.”
+
+Summary
+
+    Definition: VWAP is the volume-weighted average price over a session, reflecting where most trading occurred.
+    Uses in Crypto: Benchmarks fair value, identifies support/resistance, times entries/exits, confirms breakouts, optimizes large-order execution, and guides stop-loss/take-profit.
+    Crypto Relevance: Ideal for crypto’s volatile, 24/7 markets to anchor trades and assess value, but requires reliable volume data and a defined session to avoid misinterpretation, often paired with other indicators for confirmation.

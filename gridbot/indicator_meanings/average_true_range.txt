@@ -1,0 +1,55 @@
+What is Average True Range (ATR)?
+
+Average True Range (ATR) is a technical indicator that measures market volatility by calculating the average range of price movements over a specified period. It was developed by J. Welles Wilder Jr. and introduced in his 1978 book, New Concepts in Technical Trading Systems. ATR is typically calculated using daily price data, but it can be adapted to any timeframe (e.g., 1-hour, 5-minute) relevant to crypto trading.
+
+Calculation:
+ATR is based on the True Range (TR), which is the greatest of the following for each period (e.g., a day or hour):
+
+    Current high minus current low.
+    Absolute value of the current high minus the previous close.
+    Absolute value of the current low minus the previous close.
+
+The ATR is then the average of the True Ranges over a specified number of periods (commonly 14):
+
+    ATR = (Previous ATR × (n-1) + Current TR) / n (for a smoothed moving average) or
+    ATR = Simple Moving Average of TR over n periods.
+
+In crypto trading, ATR is often calculated using OHLCV data (Open, High, Low, Close, Volume) from exchanges via libraries like CCXT.
+
+Example:
+For a 1-hour BTC/USD candle:
+
+    High = $50,000, Low = $49,500, Previous Close = $49,800.
+    TR = max(($50,000 - $49,500), |$50,000 - $49,800|, |$49,500 - $49,800|) = max($500, $200, $300) = $500.
+    If using a 14-period ATR, average the TRs over 14 hours.
+
+What is ATR Used for in Crypto Trading?
+
+ATR is widely used in crypto trading due to the market's high volatility. Its primary applications include:
+
+    Measuring Volatility:
+        ATR quantifies how much a cryptocurrency’s price typically moves in a given timeframe. A high ATR indicates high volatility (e.g., during a Bitcoin pump or dump), while a low ATR suggests consolidation.
+        Example: If BTC/USD has a 14-hour ATR of $1,000, it means the price typically fluctuates by about $1,000 per hour.
+    Setting Stop-Loss and Take-Profit Levels:
+        Traders use ATR to place stop-losses or take-profits at multiples of the ATR to account for volatility.
+        Example: A trader might set a stop-loss at 2×ATR below the entry price (e.g., for ATR = $500, stop-loss = $1,000 below entry) to avoid being stopped out by normal price swings.
+        This is especially useful in crypto, where sudden spikes (e.g., due to news or liquidations) are common.
+    Position Sizing:
+        ATR helps traders adjust position sizes based on risk. For a fixed risk (e.g., 1% of account), a higher ATR implies a smaller position to limit potential losses.
+        Example: If risking $100 per trade and ATR = $500, a trader might trade fewer contracts than if ATR = $200.
+    Identifying Breakouts:
+        Low ATR periods often precede breakouts, as reduced volatility can signal a buildup to a big move. Traders watch for price breaking key levels with a rising ATR.
+        Example: If ETH/USD’s ATR drops to $50 after weeks of $200, a breakout above resistance might signal a trend with increasing ATR.
+    Strategy Optimization:
+        ATR is used in strategies like trend-following or mean-reversion to adapt to market conditions. For instance, a moving average crossover might use ATR-based filters to avoid trades in low-volatility periods.
+        In crypto, strategies might use ATR to confirm signals during high-volatility events like altcoin season or Bitcoin halving cycles.
+    Trailing Stops:
+        ATR-based trailing stops adjust dynamically with volatility, locking in profits during trends while giving room for normal fluctuations.
+        Example: A trader might trail their stop at 3×ATR below the highest price reached, tightening as volatility drops.
+
+Crypto-Specific Considerations
+
+    High Volatility: Crypto markets (e.g., BTC, ETH) often have higher ATRs than stocks or forex, requiring adjustments (e.g., shorter ATR periods like 7 or 10 for faster signals).
+    24/7 Market: Unlike stocks, crypto trades continuously, so ATR can be calculated on intraday timeframes (e.g., 1-hour, 5-minute) using tools like CCXT’s OHLCV data.
+    Exchange Differences: ATR may vary slightly across exchanges (e.g., Binance.US vs. Coinbase) due to liquidity or price differences. Use consistent data (e.g., Binance.US via CCXT) for backtesting.
+    Leverage Risks: In crypto futures trading, ATR helps gauge risk for leveraged positions, preventing overexposure during volatile periods (e.g., a 10% BTC drop in an hour).

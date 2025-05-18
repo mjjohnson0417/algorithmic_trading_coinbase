@@ -1,0 +1,480 @@
+2025-05-18 17:37:29,649 - INFO - Started ticker WebSocket task
+2025-05-18 17:37:29,804 - INFO - Subscribed to ticker WebSocket for ['HBAR-USDT']
+2025-05-18 17:37:29,876 - INFO - Ticker buffer updated for HBAR-USDT, shape: (1, 7), last_price: 0.19218
+2025-05-18 17:37:29,878 - DEBUG - Ticker contents for HBAR-USDT:
+                         timestamp     symbol  last_price  volume_24h  best_bid  best_ask     side
+0 2025-05-18 21:37:29.871184+00:00  HBAR-USDT     0.19218   9971279.9    0.1921   0.19219  unknown
+2025-05-18 17:37:29,878 - INFO - Subscription confirmation: {'channel': 'subscriptions', 'client_id': '', 'timestamp': '2025-05-18T21:37:29.870697045Z', 'sequence_num': 1, 'events': [{'subscriptions': {'ticker': ['HBAR-USDT']}}]}
+2025-05-18 17:37:31,518 - DEBUG - Fetched 40 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:37:31,518 - DEBUG - Total fetched 40 1h klines for HBAR-USDT
+2025-05-18 17:37:31,520 - INFO - Initialized 1h klines for HBAR-USDT, shape: (40, 6), latest timestamp: 2025-05-18 21:00:00+00:00
+2025-05-18 17:37:31,525 - INFO - 1h kline contents for HBAR-USDT:
+                   timestamp     open     high      low    close     volume
+0  2025-05-17 06:00:00+00:00  0.19365  0.19425  0.19289  0.19404   102253.0
+1  2025-05-17 07:00:00+00:00  0.19405  0.19540  0.19316  0.19408   206291.1
+2  2025-05-17 08:00:00+00:00  0.19405  0.19468  0.19300  0.19300   411628.7
+3  2025-05-17 09:00:00+00:00  0.19291  0.19323  0.19099  0.19176   454135.7
+4  2025-05-17 10:00:00+00:00  0.19166  0.19236  0.19096  0.19158   270640.7
+5  2025-05-17 11:00:00+00:00  0.19183  0.19243  0.18999  0.19178   281832.2
+6  2025-05-17 12:00:00+00:00  0.19170  0.19205  0.19054  0.19065   393755.3
+7  2025-05-17 13:00:00+00:00  0.19056  0.19139  0.18796  0.18900   469829.6
+8  2025-05-17 14:00:00+00:00  0.18925  0.19178  0.18901  0.19147   269473.4
+9  2025-05-17 15:00:00+00:00  0.19157  0.19160  0.18990  0.18994   182216.4
+10 2025-05-17 16:00:00+00:00  0.18991  0.19047  0.18704  0.18906   335562.6
+11 2025-05-17 17:00:00+00:00  0.18910  0.19043  0.18883  0.18893   248052.9
+12 2025-05-17 18:00:00+00:00  0.18892  0.19069  0.18834  0.18841   811602.8
+13 2025-05-17 19:00:00+00:00  0.18836  0.19005  0.18814  0.18890   396091.2
+14 2025-05-17 20:00:00+00:00  0.18914  0.19185  0.18849  0.19126   834775.3
+15 2025-05-17 21:00:00+00:00  0.19130  0.19150  0.19023  0.19091   167940.6
+16 2025-05-17 22:00:00+00:00  0.19073  0.19102  0.18858  0.18979   324786.9
+17 2025-05-17 23:00:00+00:00  0.18992  0.19134  0.18932  0.19102   308383.0
+18 2025-05-18 00:00:00+00:00  0.19114  0.19218  0.19069  0.19195   489473.8
+19 2025-05-18 01:00:00+00:00  0.19188  0.19286  0.19125  0.19261   228487.9
+20 2025-05-18 02:00:00+00:00  0.19257  0.19266  0.19104  0.19134   351118.8
+21 2025-05-18 03:00:00+00:00  0.19139  0.19204  0.19051  0.19120   478260.0
+22 2025-05-18 04:00:00+00:00  0.19120  0.19241  0.19120  0.19236    80984.6
+23 2025-05-18 05:00:00+00:00  0.19255  0.19423  0.19255  0.19393   400397.2
+24 2025-05-18 06:00:00+00:00  0.19385  0.19385  0.19263  0.19295   144210.4
+25 2025-05-18 07:00:00+00:00  0.19287  0.19487  0.19283  0.19485   448947.1
+26 2025-05-18 08:00:00+00:00  0.19482  0.19559  0.19436  0.19515   337714.2
+27 2025-05-18 09:00:00+00:00  0.19524  0.19563  0.19392  0.19451   270615.1
+28 2025-05-18 10:00:00+00:00  0.19444  0.19484  0.19381  0.19428    75296.8
+29 2025-05-18 11:00:00+00:00  0.19430  0.19506  0.19351  0.19352    91694.3
+30 2025-05-18 12:00:00+00:00  0.19338  0.19399  0.19250  0.19399   399074.4
+31 2025-05-18 13:00:00+00:00  0.19398  0.19586  0.19314  0.19570   401330.4
+32 2025-05-18 14:00:00+00:00  0.19571  0.19864  0.19516  0.19793   649924.1
+33 2025-05-18 15:00:00+00:00  0.19785  0.20005  0.19708  0.19991   431539.9
+34 2025-05-18 16:00:00+00:00  0.20004  0.20072  0.19860  0.19941   589554.7
+35 2025-05-18 17:00:00+00:00  0.19914  0.19928  0.19452  0.19461   784955.5
+36 2025-05-18 18:00:00+00:00  0.19450  0.19474  0.19123  0.19263  1087164.4
+37 2025-05-18 19:00:00+00:00  0.19251  0.19346  0.18953  0.18953   520668.7
+38 2025-05-18 20:00:00+00:00  0.18941  0.19140  0.18680  0.19126   800318.5
+39 2025-05-18 21:00:00+00:00  0.19122  0.19330  0.19120  0.19210   196062.5
+2025-05-18 17:37:31,710 - DEBUG - Fetched 40 1d klines for HBAR-USDT, 0 remaining
+2025-05-18 17:37:31,710 - DEBUG - Total fetched 40 1d klines for HBAR-USDT
+2025-05-18 17:37:31,712 - INFO - Initialized 1d klines for HBAR-USDT, shape: (40, 6), latest timestamp: 2025-05-18 00:00:00+00:00
+2025-05-18 17:37:31,716 - INFO - 1d kline contents for HBAR-USDT:
+                   timestamp     open     high      low    close      volume
+0  2025-04-09 00:00:00+00:00  0.14590  0.17945  0.14247  0.16875  74847862.1
+1  2025-04-10 00:00:00+00:00  0.16883  0.17838  0.16353  0.16831  46941101.4
+2  2025-04-11 00:00:00+00:00  0.16815  0.17661  0.16480  0.16749  34032581.0
+3  2025-04-12 00:00:00+00:00  0.16751  0.17815  0.16552  0.17711  15750084.0
+4  2025-04-13 00:00:00+00:00  0.17695  0.17695  0.16350  0.16538  17632540.4
+5  2025-04-14 00:00:00+00:00  0.16524  0.17280  0.16250  0.16518  18998697.8
+6  2025-04-15 00:00:00+00:00  0.16525  0.16827  0.15664  0.15700   9425224.3
+7  2025-04-16 00:00:00+00:00  0.15690  0.16072  0.15268  0.15741  13496801.2
+8  2025-04-17 00:00:00+00:00  0.15738  0.16589  0.15636  0.16311   7593132.7
+9  2025-04-18 00:00:00+00:00  0.16304  0.16663  0.16200  0.16535   5472728.2
+10 2025-04-19 00:00:00+00:00  0.16531  0.16782  0.16433  0.16708   2715632.3
+11 2025-04-20 00:00:00+00:00  0.16725  0.16884  0.16091  0.16626   4202436.3
+12 2025-04-21 00:00:00+00:00  0.16665  0.17397  0.16613  0.16919  11694288.9
+13 2025-04-22 00:00:00+00:00  0.16920  0.18228  0.16760  0.18181   9650058.0
+14 2025-04-23 00:00:00+00:00  0.18202  0.18993  0.17752  0.18107  18839460.8
+15 2025-04-24 00:00:00+00:00  0.18093  0.18900  0.17549  0.18837  19466527.7
+16 2025-04-25 00:00:00+00:00  0.18850  0.20235  0.18404  0.19257  28098920.3
+17 2025-04-26 00:00:00+00:00  0.19258  0.19807  0.18994  0.19177  10297810.1
+18 2025-04-27 00:00:00+00:00  0.19157  0.19403  0.18494  0.19044  11831192.3
+19 2025-04-28 00:00:00+00:00  0.19050  0.19911  0.18556  0.19091  23196350.7
+20 2025-04-29 00:00:00+00:00  0.19045  0.19190  0.18364  0.18623  10782054.4
+21 2025-04-30 00:00:00+00:00  0.18607  0.18857  0.17596  0.18169  11594427.5
+22 2025-05-01 00:00:00+00:00  0.18161  0.19186  0.18134  0.18595   7910866.0
+23 2025-05-02 00:00:00+00:00  0.18609  0.19058  0.18377  0.18704   7883088.2
+24 2025-05-03 00:00:00+00:00  0.18700  0.18743  0.17921  0.18024   6135015.6
+25 2025-05-04 00:00:00+00:00  0.18012  0.18485  0.17546  0.17612   9645351.0
+26 2025-05-05 00:00:00+00:00  0.17605  0.17844  0.17174  0.17350   9191514.4
+27 2025-05-06 00:00:00+00:00  0.17351  0.17752  0.16940  0.17718  14025998.4
+28 2025-05-07 00:00:00+00:00  0.17729  0.17820  0.17263  0.17570  10532228.6
+29 2025-05-08 00:00:00+00:00  0.17587  0.19704  0.17494  0.19533  15167578.0
+30 2025-05-09 00:00:00+00:00  0.19520  0.20647  0.19275  0.20241  17227508.7
+31 2025-05-10 00:00:00+00:00  0.20288  0.21980  0.20032  0.21872  21926611.6
+32 2025-05-11 00:00:00+00:00  0.21849  0.22075  0.20027  0.20686  18097540.8
+33 2025-05-12 00:00:00+00:00  0.20683  0.22862  0.20472  0.21498  49869944.0
+34 2025-05-13 00:00:00+00:00  0.21508  0.21854  0.20070  0.21603  20929084.8
+35 2025-05-14 00:00:00+00:00  0.21600  0.21680  0.20380  0.20641  18399136.3
+36 2025-05-15 00:00:00+00:00  0.20645  0.20779  0.19337  0.19807  17824071.2
+37 2025-05-16 00:00:00+00:00  0.19806  0.20190  0.19379  0.19555  11574957.9
+38 2025-05-17 00:00:00+00:00  0.19542  0.19595  0.18704  0.19102   9845901.3
+39 2025-05-18 00:00:00+00:00  0.19114  0.20072  0.18680  0.19210   9257793.3
+2025-05-18 17:37:31,717 - INFO - Started kline update tasks for HBAR-USDT (1h, 1d)
+2025-05-18 17:37:31,717 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:37:31,717 - DEBUG - Checking for new 1d kline for HBAR-USDT
+2025-05-18 17:37:31,900 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:37:31,901 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:37:31,903 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:37:31,995 - DEBUG - Fetched 1 1d klines for HBAR-USDT, 0 remaining
+2025-05-18 17:37:31,995 - DEBUG - Total fetched 1 1d klines for HBAR-USDT
+2025-05-18 17:37:31,997 - DEBUG - No new 1d klines for HBAR-USDT
+2025-05-18 17:38:31,905 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:38:32,302 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:38:32,303 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:38:32,306 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:39:32,308 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:39:32,848 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:39:32,848 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:39:32,851 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:40:32,855 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:40:33,238 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:40:33,239 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:40:33,241 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:41:33,243 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:41:33,550 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:41:33,551 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:41:33,553 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:42:33,554 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:42:33,865 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:42:33,865 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:42:33,868 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:43:33,871 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:43:34,185 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:43:34,186 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:43:34,188 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:44:34,190 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:44:34,488 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:44:34,488 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:44:34,491 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:45:34,494 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:45:34,820 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:45:34,821 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:45:34,824 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:46:34,827 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:46:35,141 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:46:35,141 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:46:35,145 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:47:31,999 - DEBUG - Checking for new 1d kline for HBAR-USDT
+2025-05-18 17:47:32,281 - DEBUG - Fetched 1 1d klines for HBAR-USDT, 0 remaining
+2025-05-18 17:47:32,281 - DEBUG - Total fetched 1 1d klines for HBAR-USDT
+2025-05-18 17:47:32,284 - DEBUG - No new 1d klines for HBAR-USDT
+2025-05-18 17:47:35,149 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:47:35,354 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:47:35,354 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:47:35,356 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:48:35,358 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:48:35,672 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:48:35,672 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:48:35,675 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:49:35,678 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:49:36,095 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:49:36,096 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:49:36,098 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:50:36,099 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:50:36,405 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:50:36,406 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:50:36,408 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:51:36,412 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:51:36,824 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:51:36,824 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:51:36,827 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:52:36,829 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:52:37,244 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:52:37,244 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:52:37,248 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:53:37,248 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:53:37,557 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:53:37,558 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:53:37,561 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:54:37,563 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:54:37,874 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:54:37,874 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:54:37,877 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:55:37,878 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:55:38,193 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:55:38,193 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:55:38,195 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:56:38,196 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:56:38,506 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:56:38,507 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:56:38,510 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:57:32,287 - DEBUG - Checking for new 1d kline for HBAR-USDT
+2025-05-18 17:57:32,571 - DEBUG - Fetched 1 1d klines for HBAR-USDT, 0 remaining
+2025-05-18 17:57:32,572 - DEBUG - Total fetched 1 1d klines for HBAR-USDT
+2025-05-18 17:57:32,574 - DEBUG - No new 1d klines for HBAR-USDT
+2025-05-18 17:57:38,512 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:57:38,716 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:57:38,716 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:57:38,719 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:58:38,722 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:58:39,031 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:58:39,031 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:58:39,034 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 17:59:39,035 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 17:59:39,347 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 17:59:39,347 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 17:59:39,349 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:00:39,350 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:00:39,659 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:00:39,659 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:00:39,663 - INFO - Updated 1h klines for HBAR-USDT with 1 new rows, shape: (40, 6), latest timestamp: 2025-05-18 22:00:00+00:00
+2025-05-18 18:00:39,665 - DEBUG - New 1h kline data for HBAR-USDT:
+                  timestamp     open     high      low    close   volume
+0 2025-05-18 22:00:00+00:00  0.19135  0.19138  0.19081  0.19108  23784.9
+2025-05-18 18:01:39,667 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:01:40,077 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:01:40,078 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:01:40,080 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:02:40,086 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:02:40,499 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:02:40,499 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:02:40,501 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:03:40,504 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:03:40,809 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:03:40,810 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:03:40,813 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:04:40,815 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:04:41,125 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:04:41,125 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:04:41,128 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:05:41,130 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:05:41,435 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:05:41,435 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:05:41,438 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:06:41,440 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:06:41,752 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:06:41,752 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:06:41,754 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:07:32,575 - DEBUG - Checking for new 1d kline for HBAR-USDT
+2025-05-18 18:07:32,848 - DEBUG - Fetched 1 1d klines for HBAR-USDT, 0 remaining
+2025-05-18 18:07:32,848 - DEBUG - Total fetched 1 1d klines for HBAR-USDT
+2025-05-18 18:07:32,853 - DEBUG - No new 1d klines for HBAR-USDT
+2025-05-18 18:07:41,754 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:07:41,971 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:07:41,971 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:07:41,972 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:08:41,974 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:08:42,278 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:08:42,278 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:08:42,281 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:09:42,282 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:09:42,589 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:09:42,589 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:09:42,592 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:10:42,594 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:10:43,006 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:10:43,007 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:10:43,010 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:11:43,011 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:11:43,321 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:11:43,321 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:11:43,324 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:12:43,327 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:12:43,635 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:12:43,635 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:12:43,638 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:13:43,644 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:13:44,050 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:13:44,050 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:13:44,054 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:14:44,054 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:14:44,467 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:14:44,467 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:14:44,470 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:15:44,472 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:15:44,782 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:15:44,782 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:15:44,784 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:16:44,787 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:16:45,093 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:16:45,093 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:16:45,094 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:17:32,855 - DEBUG - Checking for new 1d kline for HBAR-USDT
+2025-05-18 18:17:33,220 - DEBUG - Fetched 1 1d klines for HBAR-USDT, 0 remaining
+2025-05-18 18:17:33,220 - DEBUG - Total fetched 1 1d klines for HBAR-USDT
+2025-05-18 18:17:33,222 - DEBUG - No new 1d klines for HBAR-USDT
+2025-05-18 18:17:45,096 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:17:45,297 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:17:45,297 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:17:45,300 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:18:45,301 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:18:45,604 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:18:45,604 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:18:45,607 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:19:45,609 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:19:45,910 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:19:45,910 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:19:45,913 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:20:45,915 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:20:46,323 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:20:46,323 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:20:46,326 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:21:46,327 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:21:46,732 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:21:46,732 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:21:46,735 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:22:46,735 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:22:47,132 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:22:47,132 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:22:47,133 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:23:47,135 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:23:47,507 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:23:47,507 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:23:47,508 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:24:47,510 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:24:47,765 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:24:47,766 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:24:47,769 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:25:47,773 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:25:48,074 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:25:48,074 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:25:48,078 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:26:48,084 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:26:48,389 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:26:48,389 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:26:48,392 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:27:33,224 - DEBUG - Checking for new 1d kline for HBAR-USDT
+2025-05-18 18:27:33,745 - DEBUG - Fetched 1 1d klines for HBAR-USDT, 0 remaining
+2025-05-18 18:27:33,746 - DEBUG - Total fetched 1 1d klines for HBAR-USDT
+2025-05-18 18:27:33,749 - DEBUG - No new 1d klines for HBAR-USDT
+2025-05-18 18:27:48,395 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:27:48,598 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:27:48,598 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:27:48,601 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:28:48,603 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:28:49,008 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:28:49,008 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:28:49,011 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:29:49,015 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:29:49,419 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:29:49,420 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:29:49,422 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:30:49,424 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:30:49,732 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:30:49,732 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:30:49,735 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:31:49,740 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:31:50,043 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:31:50,043 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:31:50,046 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:32:50,049 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:32:50,364 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:32:50,364 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:32:50,365 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:33:50,367 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:33:50,667 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:33:50,668 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:33:50,670 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:34:50,672 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:34:50,979 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:34:50,979 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:34:50,982 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:35:50,985 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:35:51,294 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:35:51,295 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:35:51,297 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:36:51,299 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:36:51,604 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:36:51,604 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:36:51,607 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:37:33,751 - DEBUG - Checking for new 1d kline for HBAR-USDT
+2025-05-18 18:37:33,995 - DEBUG - Fetched 1 1d klines for HBAR-USDT, 0 remaining
+2025-05-18 18:37:33,995 - DEBUG - Total fetched 1 1d klines for HBAR-USDT
+2025-05-18 18:37:33,998 - DEBUG - No new 1d klines for HBAR-USDT
+2025-05-18 18:37:51,612 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:37:51,915 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:37:51,916 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:37:51,918 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:38:51,921 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:38:52,228 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:38:52,228 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:38:52,231 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:39:52,233 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:39:52,486 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:39:52,486 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:39:52,489 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:40:52,491 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:40:52,750 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:40:52,751 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:40:52,754 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:41:52,756 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:41:53,063 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:41:53,064 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:41:53,066 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:42:53,067 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:42:53,375 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:42:53,376 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:42:53,378 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:43:53,380 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:43:53,685 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:43:53,686 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:43:53,689 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:44:53,690 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:44:54,002 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:44:54,002 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:44:54,004 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:45:54,006 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:45:54,312 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:45:54,312 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:45:54,315 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:46:54,318 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:46:54,728 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:46:54,728 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:46:54,731 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:47:33,999 - DEBUG - Checking for new 1d kline for HBAR-USDT
+2025-05-18 18:47:34,252 - DEBUG - Fetched 1 1d klines for HBAR-USDT, 0 remaining
+2025-05-18 18:47:34,252 - DEBUG - Total fetched 1 1d klines for HBAR-USDT
+2025-05-18 18:47:34,255 - DEBUG - No new 1d klines for HBAR-USDT
+2025-05-18 18:47:54,732 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:47:55,040 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:47:55,040 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:47:55,043 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:48:55,050 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:48:55,356 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:48:55,357 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:48:55,359 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:49:55,361 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:49:55,664 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:49:55,664 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:49:55,667 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:50:55,668 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:50:55,981 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:50:55,981 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:50:55,984 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:51:55,986 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:51:56,303 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:51:56,304 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:51:56,306 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:52:56,308 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:52:56,625 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:52:56,626 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:52:56,628 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:53:56,630 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:53:56,944 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:53:56,944 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:53:56,947 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:54:56,948 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:54:57,368 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:54:57,368 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:54:57,371 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:55:57,373 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:55:57,688 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:55:57,688 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:55:57,690 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:56:57,693 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:56:58,114 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:56:58,114 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:56:58,116 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:57:34,256 - DEBUG - Checking for new 1d kline for HBAR-USDT
+2025-05-18 18:57:34,667 - DEBUG - Fetched 1 1d klines for HBAR-USDT, 0 remaining
+2025-05-18 18:57:34,667 - DEBUG - Total fetched 1 1d klines for HBAR-USDT
+2025-05-18 18:57:34,670 - DEBUG - No new 1d klines for HBAR-USDT
+2025-05-18 18:57:58,118 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:57:58,426 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:57:58,427 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:57:58,431 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:58:58,433 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:58:58,745 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:58:58,746 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:58:58,748 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 18:59:58,751 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 18:59:59,062 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 18:59:59,063 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 18:59:59,065 - DEBUG - No new 1h klines for HBAR-USDT
+2025-05-18 19:00:59,066 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 19:00:59,285 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 19:00:59,285 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 19:00:59,288 - INFO - Updated 1h klines for HBAR-USDT with 1 new rows, shape: (40, 6), latest timestamp: 2025-05-18 23:00:00+00:00
+2025-05-18 19:00:59,291 - DEBUG - New 1h kline data for HBAR-USDT:
+                  timestamp     open     high      low   close   volume
+0 2025-05-18 23:00:00+00:00  0.19467  0.19467  0.19417  0.1942  17448.4
+2025-05-18 19:01:59,292 - DEBUG - Checking for new 1h kline for HBAR-USDT
+2025-05-18 19:01:59,591 - DEBUG - Fetched 1 1h klines for HBAR-USDT, 0 remaining
+2025-05-18 19:01:59,591 - DEBUG - Total fetched 1 1h klines for HBAR-USDT
+2025-05-18 19:01:59,592 - DEBUG - No new 1h klines for HBAR-USDT
