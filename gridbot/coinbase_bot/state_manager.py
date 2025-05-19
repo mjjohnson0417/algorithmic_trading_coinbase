@@ -102,11 +102,12 @@ class StateManager:
 
             if adx14 < 20:
                 return "sideways"
-            if ema12 > ema26 and rsi14 < 70 and adx14 >= 20:
+            elif ema12 > ema26 and adx14 >= 20 and rsi14 < 80:
                 return "uptrend"
-            if ema12 < ema26 and rsi14 < 30 and adx14 >= 25:  # Stricter for short-term downtrend
+            elif ema12 < ema26 and adx14 >= 20 and rsi14 > 20:
                 return "downtrend"
-            return "sideways"
+            else:
+                return "sideways"
 
         except Exception as e:
             self.logger.error(f"Error determining market state for {symbol} on {timeframe}: {e}")

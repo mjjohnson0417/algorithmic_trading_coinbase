@@ -1,0 +1,239 @@
+
+---
+
+### 3. Logical Flow of Grid Manager Modules
+
+Below is a detailed logical flow of the `GridManager` module and its interactions with other modules, tracking the order of operations, modules called, and their return values. The flow is based on the bot's execution starting from `coinbaseGridBot.py` and focuses on the `GridManager`'s role in managing grid trading.
+
+```markdown
+# Logical Flow of Grid Manager Modules
+
+This document outlines the logical flow of the Coinbase Grid Bot, focusing on the `GridManager` module's operations, the sequence of module interactions, and the data returned by each step. The flow begins with the bot's entry point (`coinbaseGridBot.py`) and traces the `GridManager`'s execution loop.
+
+## Overview
+The bot is a grid trading system for the Coinbase Advanced Trade API, managing trading pairs (e.g., HBAR-USDT). The `GridManager` orchestrates grid level setup, order placement, and market state responses, interacting with other modules to fetch data, calculate indicators, and execute trades.
+
+## Logical Flow
+
+### 1. Entry Point: `coinbaseGridBot.py` - `main()`
+- **Purpose**: Initializes the bot and starts the `GridManager` run loop.
+- **Steps**:
+  1. **Set Up Logger**:
+     - Configures logging to `logs/grid_manager.log` with a rotating file handler.
+     - **Returns**: None (logger is configured globally).
+  2. **Load API Keys**:
+     - Calls `KeyLoader.load_keys()` from `key_loader.py`.
+     - **Module Called**: `key_loader.KeyLoader`
+     - **Inputs**: `key_file_path=/home/jason/api/coinbase/coinbase_keys.json`, `enable_logging=True`
+     - **Returns**: `bool` (True if keys loaded, False otherwise).
+     - **Action**: Sets `api_key` and `secret_key` if successful; exits if failed.
+  3. **Initialize Exchange**:
+     - Creates `ExchangeConnection` instance from `exchange_connection.py`.
+     - **Module Called**: `exchange_connection.ExchangeConnection`
+     - **Inputs**: `api_key`, `secret`
+     - **Returns**: `ExchangeConnection` instance with REST and WebSocket connections.
+     - **Action**: Verifies REST connection via `check_rest_connection()`.
+     - **Returns**: `bool` (True if connected, False otherwise).
+     - **Action**: Exits if connection fails.
+  4. **Initialize DataManager**:
+     - Creates `DataManager` instance from `data_manager.py`.
+     - **Module Called**: `data_manager.DataManager`
+     - **Inputs**: `symbols=["HBAR-USDT"]`, `exchange_connection`, `enable_logging=True`
+     - **Returns**: `DataManager` instance with initialized buffers.
+     - **Action**: Starts WebSocket for ticker data and fetches historical klines.
+  5. **Initialize IndicatorCalculator**:
+     - Creates `IndicatorCalculator` instance from `indicator_calculator.py`.
+     - **Module Called**: `indicator_calculator.IndicatorCalculator`
+     - **Inputs**: `symbols=["HBAR-USDT"]`, `data_manager`, `enable_logging=True`
+     - **Returns**: `IndicatorCalculator` instance.
+     - **Action**: Pre-calculates indicators via `calculate_all_indicators()`.
+     - **Returns**: `Dict[str, Dict]` (indicators for each symbol and timeframe).
+  6. **Initialize StateManager**:
+     - Creates `StateManager` instance from `state_manager.py`.
+     - **Module Called**: `state_manager.StateManager`
+     - **Inputs**: `data_manager`, `indicator_calculator`, `symbols=["HBAR-USDT"]`, `enable_logging=True`
+     - **Returns**: `StateManager` instance with initial state dictionary.
+  7. **Initialize OrderOperations**:
+     - Creates `OrderOperations` instances for each symbol from `order_operations.py`.
+     - **Module Called**: `order_operations.OrderOperations`
+     - **Inputs**: `exchange=exchange.rest_exchange`, `symbol`, `dry_run=False`, `enable_logging=True`
+     - **Returns**: `Dict[str, OrderOperations]` (keyed by symbol).
+  8. **Initialize GridManager**:
+     - Creates `GridManager` instance from `grid_manager.py`.
+     - **Module Called**: `grid_manager.GridManager`
+     - **Inputs**: `data_manager`, `indicator_calculator`, `state_manager`, `order_operations_dict`, `symbols=["HBAR-USDT"]`, `debug=True`, `enable_logging=True`
+     - **Returns**: `GridManager` instance.
+     - **Action**: Calls `initialize_bot()` to set up grids and orders.
+     - **Returns**: None (initializes internal state).
+  9. **Set Up Graceful Shutdown**:
+     - Creates `GracefulShutdown` instance from `graceful_shutdown.py`.
+     - **Module Called**: `graceful_shutdown.GracefulShutdown`
+     - **Inputs**: `order_operations_dict`, `data_manager`, `exchange`, `dry_run=False`, `loop`
+     - **Returns**: `GracefulShutdown` instance.
+     - **Action**: Attaches signal handlers for SIGINT/SIGTERM.
+  10. **Start GridManager Run Loop**:
+      - Starts `GridManager.run(interval=60)` as an asyncio task.
+      - **Module Called**: `grid_manager.GridManager.run`
+      - **Returns**: None (runs indefinitely until shutdown).
+  11. **Wait for Shutdown**:
+      - Awaits `shutdown_event` to complete graceful shutdown.
+      - **Action**: Closes WebSocket and exchange connections via `DataManager.close_websockets()` and `ExchangeConnection.close()`.
+
+### 2. GridManager Initialization: `GridManager.initialize_bot()`
+- **Purpose**: Sets up grid levels and orders for each symbol.
+- **Module Called**: `grid_manager.GridManager`
+- **Steps**:
+  1. **Check Ticker Buffer**:
+     - Calls `get_ticker_buffer(symbol)` for each symbol.
+     - **Module Called**: `grid_manager.GridManager.get_ticker_buffer`
+     - **Inputs**: `symbol`
+     - **Calls**: `data_manager.DataManager.get_buffer(symbol, "ticker")`
+     - **Returns**: `pd.DataFrame` (ticker data).
+     - **Action**: Retries up to 6 times if buffer is empty or invalid.
+  2. **Cancel Open Buy Orders**:
+     - Calls `cancel_all_open_buy_orders(symbol)` to clean up stale orders.
+     - **Module Called**: `grid_manager.GridManager.cancel_all_open_buy_orders`
+     - **Calls**: `order_operations.OrderOperations.cancel_all_buy_orders`
+     - **Returns**: `List[str]` (canceled order IDs).
+     - **Returns**: None.
+  3. **Initialize Grid Levels**:
+     - Calls `initialize_grid(symbol)` for each symbol.
+     - **Module Called**: `grid_manager.GridManager.initialize_grid`
+     - **Inputs**: `symbol`
+     - **Calls**:
+       - `get_ticker_buffer(symbol)` for current price.
+       - Uses `self.all_indicators` for ATR (populated later, may use default).
+     - **Returns**: `List[float]` (sorted grid levels).
+     - **Action**: Stores levels in `self.grid_levels[symbol]`.
+  4. **Initialize Orders**:
+     - Calls `initialize_orders(symbol)` for each symbol.
+     - **Module Called**: `grid_manager.GridManager.initialize_orders`
+     - **Inputs**: `symbol`
+     - **Calls**:
+       - `get_ticker_buffer(symbol)` for current price.
+       - `calculate_orders_value(symbol)` to determine order sizes.
+         - **Calls**: `order_operations.OrderOperations.get_usdt_balance`, `get_base_asset_balance`, `data_manager.DataManager.get_buffer`
+         - **Returns**: `float` (order value in USDT).
+     - **Returns**: None (populates `self.orders[symbol]` with order pairs).
+  5. **Sync Order Statuses**:
+     - Calls `update_order_status(symbol)` for each symbol.
+     - **Module Called**: `grid_manager.GridManager.update_order_status`
+     - **Inputs**: `symbol`
+     - **Calls**:
+       - `get_exchange_orders(symbol)` to fetch orders.
+         - **Calls**: `order_operations.OrderOperations.fetch_all_orders`
+         - **Returns**: `List[Dict]` (exchange orders).
+       - `order_operations.OrderOperations.cancel_order` for stray buy orders.
+     - **Returns**: None (updates `self.orders[symbol]` states and handles strays).
+
+### 3. GridManager Run Loop: `GridManager.run(interval=60)`
+- **Purpose**: Periodically updates market states and manages trading for each symbol.
+- **Module Called**: `grid_manager.GridManager`
+- **Steps**:
+  1. **Update Market States**:
+     - Calls `get_market_states()`.
+     - **Module Called**: `grid_manager.GridManager.get_market_states`
+     - **Calls**: `state_manager.StateManager.calculate_all_market_states`
+     - **Sub-Calls**:
+       - `indicator_calculator.IndicatorCalculator.calculate_all_indicators`
+         - **Calls**: `data_manager.DataManager.get_buffer` for klines, ticker, order book.
+         - **Returns**: `Dict[str, Dict]` (indicators for each symbol/timeframe).
+       - `state_manager.StateManager.get_market_state` for each symbol/timeframe.
+     - **Returns**: `Dict[str, Dict[str, Optional[str]]]` (market states).
+     - **Action**: Updates `self.state_manager.state_dict`.
+  2. **Process Each Symbol**:
+     - Calls `run_for_symbol(symbol)` for each symbol.
+     - **Module Called**: `grid_manager.GridManager.run_for_symbol`
+     - **Inputs**: `symbol`
+     - **Steps**:
+       a. **Fetch Ticker Buffer**:
+          - Calls `get_ticker_buffer(symbol)`.
+          - **Returns**: `pd.DataFrame` (ticker data).
+       b. **Check Market States**:
+          - Retrieves `long_term` and `short_term` states from `self.state_manager.state_dict`.
+       c. **Handle Long-Term Downtrend**:
+          - If `lttrade=True` and `long_term_state="downtrend"`, calls `handle_longterm_downtrend(symbol)`.
+          - **Module Called**: `grid_manager.GridManager.handle_longterm_downtrend`
+          - **Calls**:
+            - `order_operations.OrderOperations.cancel_all_buy_orders`
+            - `order_operations.OrderOperations.cancel_all_sell_orders`
+            - `order_operations.OrderOperations.sell_all_assets`
+          - **Returns**: None (cancels orders, sells assets, sets `lttrade=False`).
+          - **Action**: Clears `self.orders[symbol]`.
+       d. **Handle Short-Term Downtrend**:
+          - If `sttrade=True` and `short_term_state="downtrend"`, calls `handle_shortterm_downtrend(symbol)`.
+          - **Module Called**: `grid_manager.GridManager.handle_shortterm_downtrend`
+          - **Calls**: `order_operations.OrderOperations.cancel_all_buy_orders`
+          - **Returns**: None (cancels buy orders, sets `sttrade=False`).
+       e. **Reset Trading Flags**:
+          - If `lttrade=False` and `long_term_state` is `uptrend` or `sideways`, sets `lttrade=True`.
+          - If `sttrade=False` and `short_term_state` is `uptrend` or `sideways`, sets `sttrade=True`.
+       f. **Maintain Grid Trading**:
+          - If `lttrade=True` and `sttrade=True`, performs:
+            - **Sync Orders**: Calls `update_order_status(symbol)`.
+            - **Verify Orders**: Calls `verify_orders(symbol)`.
+              - **Calls**: `calculate_orders_value(symbol)`, `get_ticker_buffer(symbol)`.
+              - **Returns**: None (resets canceled/completed orders).
+            - **Place Orders** (commented out in code): Would call `place_orders(symbol)`.
+              - **Calls**: `order_operations.OrderOperations.create_limit_buy`, `create_limit_sell`.
+              - **Returns**: None (places orders for unfilled levels).
+       g. **Check Grid Reset**:
+          - Calls `check_grid_reset_condition(symbol)`.
+          - **Module Called**: `grid_manager.GridManager.check_grid_reset_condition`
+          - **Calls**: `get_ticker_buffer(symbol)`.
+          - **Returns**: `bool` (True if 30 ticks above max grid level).
+          - **Action**: If True, calls `reset_grid(symbol)`.
+            - **Module Called**: `grid_manager.GridManager.reset_grid`
+            - **Calls**:
+              - `order_operations.OrderOperations.cancel_all_buy_orders`
+              - `initialize_grid(symbol)`
+            - **Returns**: None (cancels buy orders, reinitializes grid).
+  3. **Sleep**:
+     - Awaits `asyncio.sleep(60)` before the next iteration.
+
+### 4. Graceful Shutdown: Triggered by SIGINT/SIGTERM
+- **Purpose**: Cleans up resources on shutdown.
+- **Module Called**: `graceful_shutdown.GracefulShutdown.shutdown`
+- **Steps**:
+  1. **Cancel Orders**:
+     - Calls `order_operations.OrderOperations.cancel_all_buy_orders` and `cancel_all_sell_orders` for each symbol.
+     - **Returns**: `List[str]` (canceled order IDs).
+  2. **Close WebSockets**:
+     - Calls `data_manager.DataManager.close_websockets`.
+     - **Returns**: None.
+  3. **Close DataManager REST Exchange**:
+     - Calls `data_manager.DataManager.rest_exchange.close`.
+     - **Returns**: None.
+  4. **Close OrderOperations Exchanges**:
+     - Calls `order_operations.OrderOperations.exchange.close` for each symbol.
+     - **Returns**: None.
+  5. **Close ExchangeConnection**:
+     - Calls `exchange_connection.ExchangeConnection.close`.
+     - **Returns**: None.
+  6. **Signal Completion**:
+     - Sets `shutdown_event`.
+     - **Returns**: None.
+
+## Module Interaction Summary
+- **coinbaseGridBot.py**: Orchestrates initialization and starts `GridManager`.
+- **key_loader.py**: Provides API credentials.
+- **exchange_connection.py**: Manages API connections and JWTs.
+- **data_manager.py**: Supplies market data (klines, ticker, order book).
+- **indicator_calculator.py**: Computes technical indicators.
+- **state_manager.py**: Determines market states.
+- **order_operations.py**: Executes trading operations.
+- **grid_manager.py**: Manages grid trading logic and coordinates other modules.
+- **graceful_shutdown.py**: Ensures clean shutdown.
+
+## Data Flow
+- **Inputs**: API keys, market data via WebSocket/REST, user-defined symbols.
+- **Outputs**: Grid levels, placed orders, market state logs, and trading actions.
+- **State**: Maintained in `GridManager` (`grid_levels`, `orders`, `lttrade`, `sttrade`), `StateManager` (`state_dict`), and `DataManager` (buffers).
+
+## Notes
+- The `place_orders` method is commented out in `run_for_symbol`, so orders are not placed in the current code.
+- The bot uses a single symbol (`HBAR-USDT`) but is designed for multiple symbols.
+- Logging is critical for debugging, with detailed logs in `logs/*.log`.
+
+## Author
+Jason

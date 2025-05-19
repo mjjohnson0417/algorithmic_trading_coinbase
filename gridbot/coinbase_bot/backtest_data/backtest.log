@@ -1,0 +1,17 @@
+2025-05-18 22:21:10,457 - INFO - Initialized exchange: <class 'ccxt.async_support.coinbase.coinbase'>
+2025-05-18 22:21:10,458 - INFO - Starting backtest...
+2025-05-18 22:21:10,458 - INFO - Loading existing klines...
+2025-05-18 22:21:10,458 - WARNING - No existing 1d klines for HBAR/USDT
+2025-05-18 22:21:10,458 - WARNING - No existing 1h klines for HBAR/USDT
+2025-05-18 22:21:10,458 - WARNING - No existing 1m klines for HBAR/USDT
+2025-05-18 22:21:10,459 - WARNING - No existing 1d klines for XRP/USDT
+2025-05-18 22:21:10,459 - WARNING - No existing 1h klines for XRP/USDT
+2025-05-18 22:21:10,459 - WARNING - No existing 1m klines for XRP/USDT
+2025-05-18 22:21:10,459 - INFO - Updating klines for all symbols...
+2025-05-18 22:21:10,459 - WARNING - No 1d klines for HBAR/USDT, all dates missing
+2025-05-18 22:21:10,459 - INFO - Fetching 1d klines for HBAR/USDT...
+2025-05-18 22:21:10,459 - INFO - Fetching 1d klines for HBAR/USDT from 2025-04-09 00:00:00
+2025-05-18 22:21:12,547 - INFO - Fetched 39 1d klines for HBAR/USDT
+2025-05-18 22:21:13,051 - INFO - Fetched 39 1d klines for HBAR/USDT
+2025-05-18 22:21:13,056 - INFO - Closing exchange connection...
+2025-05-18 22:21:13,307 - INFO - Exchange connection closed successfully

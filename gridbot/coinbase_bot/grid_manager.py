@@ -328,7 +328,8 @@ class GridManager:
                 self.logger.debug(f"ATR14 for {symbol}: {atr:.4f}")
 
             # Calculate grid spacing
-            multiplier = 2.0
+            #multiplier = 2.0
+            multiplier = 1.0
             grid_spacing = max(atr * multiplier, current_price * 0.02)
             levels = set()
             for i in range(self.MAX_GRID_LEVELS_PER_SYMBOL // 2):
@@ -992,11 +993,11 @@ class GridManager:
                         self.logger.error(f"Error verifying orders for {symbol}: {e}", exc_info=True)
                 
                 # Place new orders for unfilled grid levels (commented out for testing)
-                try:
-                    await self.place_orders(symbol)
-                except Exception as e:
-                    if self.enable_logging:
-                        self.logger.error(f"Error placing orders for {symbol}: {e}", exc_info=True)
+                # try:
+                #     await self.place_orders(symbol)
+                # except Exception as e:
+                #     if self.enable_logging:
+                #         self.logger.error(f"Error placing orders for {symbol}: {e}", exc_info=True)
 
             # Check reset condition
             if await self.check_grid_reset_condition(symbol):

@@ -1,0 +1,110 @@
+# Installation Guide for Coinbase Grid Bot
+
+This guide details the steps to set up and run the Coinbase Grid Bot on Ubuntu 24.04 LTS using a Python virtual environment. The bot requires specific software and libraries to interact with the Coinbase Advanced Trade API and perform grid trading.
+
+## Prerequisites
+- Operating System: Ubuntu 24.04 LTS
+- Hardware: Minimum 2GB RAM, 10GB free disk space
+- Internet: Stable connection for API and WebSocket communication
+- Coinbase API Keys: Obtain from Coinbase Advanced Trade API (store in a JSON file)
+
+## Software Requirements
+- Python 3.10+: The bot uses Python 3.10 features (included in Ubuntu 24.04).
+- pip: Python package manager.
+- venv: Python virtual environment module.
+- Git: For cloning the repository (optional).
+- External Libraries: Listed below.
+
+## Step-by-Step Installation
+
+### 1. Update System Packages
+sudo apt update && sudo apt upgrade -y
+
+### 2. Install Python and Dependencies
+sudo apt install python3 python3-pip python3-venv git -y
+python3 --version
+pip3 --version
+
+### 3. Clone the Repository (Optional)
+git clone <repository_url>
+cd <repository_directory>
+
+### 4. Set Up a Virtual Environment
+mkdir ~/coinbase_grid_bot
+cd ~/coinbase_grid_bot
+python3 -m venv venv
+source venv/bin/activate
+
+### 5. Install Python Dependencies
+# Create requirements.txt with the following content:
+cat << EOF > requirements.txt
+ccxt>=4.0.0
+pandas>=2.0.0
+numpy>=1.24.0
+websockets>=10.0
+pyjwt>=2.6.0
+ecdsa>=0.18.0
+EOF
+pip install -r requirements.txt
+
+### 6. Configure Coinbase API Keys
+# Create JSON file with Coinbase API credentials
+mkdir -p ~/api/coinbase
+cat << EOF > ~/api/coinbase/coinbase_keys.json
+{
+  "name": "organizations/{org_id}/apiKeys/{key_id}",
+  "privateKey": "-----BEGIN EC PRIVATE KEY-----\n...\n-----END EC PRIVATE KEY-----"
+}
+EOF
+chmod 600 ~/api/coinbase/coinbase_keys.json
+
+### 7. Organize Project Files
+# Ensure the following files are in ~/coinbase_grid_bot:
+# - coinbaseGridBot.py
+# - key_loader.py
+# - exchange_connection.py
+# - data_manager.py
+# - indicator_calculator.py
+# - state_manager.py
+# - order_operations.py
+# - grid_manager.py
+# - graceful_shutdown.py
+
+### 8. Verify Directory Structure
+# The project should have the following structure:
+# ~/coinbase_grid_bot/
+# ├── venv/
+# ├── coinbaseGridBot.py
+# ├── key_loader.py
+# ├── exchange_connection.py
+# ├── data_manager.py
+# ├── indicator_calculator.py
+# ├── state_manager.py
+# ├── order_operations.py
+# ├── grid_manager.py
+# ├── graceful_shutdown.py
+# ├── logs/ (created automatically)
+# └── requirements.txt
+
+### 9. Run the Bot
+source venv/bin/activate
+python coinbaseGridBot.py
+
+### 10. Monitor and Stop
+# Monitor logs in logs/grid_manager.log and other module-specific logs.
+# Stop the bot with Ctrl+C to trigger a graceful shutdown.
+deactivate
+
+## Troubleshooting
+- ModuleNotFoundError: Ensure all dependencies are installed in the virtual environment.
+- API Key Errors: Verify the JSON file path and contents match Coinbase's format.
+- WebSocket Issues: Check internet connectivity and Coinbase API status.
+- Logging Issues: Ensure write permissions for the logs directory (chmod -R 755 logs).
+
+## Notes
+- The bot creates a logs directory automatically with rotating log files (5MB, 5 backups).
+- Ensure sufficient disk space for logs and data buffers.
+- Adjust the trading pair (symbols) in coinbaseGridBot.py if needed.
+
+## Author
+Jason

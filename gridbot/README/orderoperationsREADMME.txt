@@ -1,0 +1,29 @@
+
+#### README for `order_operations.py`
+```markdown
+# Order Operations
+
+## Overview
+The `order_operations.py` module manages trading operations on the Coinbase exchange, including placing, canceling, and fetching orders.
+
+## Functionality
+- **Order Management**: Supports limit buy/sell, market sell, and order cancellation.
+- **Balance Queries**: Fetches USDT and base asset balances.
+- **Dry Run Mode**: Simulates orders without execution.
+- **Order Fetching**: Retrieves open and all orders from the exchange.
+
+## Dependencies
+- Python 3.8+
+- Modules: `logging`, `pathlib`, `ccxt.async_support`, `typing`, `datetime`
+- Custom Modules: None
+- External Libraries: `ccxt.async_support`
+
+## Usage
+```python
+from order_operations import OrderOperations
+import ccxt.async_support as ccxt
+
+exchange = ccxt.coinbase({"apiKey": "key", "secret": "secret"})
+order_ops = OrderOperations(exchange=exchange, symbol="HBAR-USDT")
+balance = await order_ops.get_usdt_balance()
+order = await order_ops.create_limit_buy(price=0.05, quantity=100)
