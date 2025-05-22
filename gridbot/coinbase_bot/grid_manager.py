@@ -33,8 +33,8 @@ class GridManager:
         self.symbols = symbols
         self.debug = debug
         self.enable_logging = enable_logging
-        # self.allocation_ratio = 0.75  # Allocate 75% of total balance
-        self.allocation_ratio = 0.10  # Allocate 75% of total balance
+        self.allocation_ratio = 0.75  # Allocate 75% of total balance
+        #self.allocation_ratio = 0.10  # Allocate 75% of total balance
         self.order_value = 0.0
         self.all_indicators = {}  # Store indicators dictionary
         self.grid_levels = {symbol: [] for symbol in symbols}  # Store grid levels
@@ -150,33 +150,92 @@ class GridManager:
                 self.logger.error(f"Error during bot initialization: {e}", exc_info=True)
 
 
+    # async def calculate_orders_value(self, symbol: str) -> float:
+    #     """
+    #     Calculates order value for a specific symbol by summing USDT and token balances, 
+    #     taking 75%, and dividing by the number of grid levels for the symbol.
+
+    #     Args:
+    #         symbol: Trading pair symbol (e.g., 'HBAR-USDT').
+
+    #     Returns:
+    #         float: Order value in USDT.
+    #     """
+    #     if self.enable_logging:
+    #         self.logger.debug(f"Calculating order value for {symbol}")
+        
+    #     # Get USDT balance for the specific symbol's operations
+    #     total_usdt = await self.order_operations_dict[symbol].get_usdt_balance()
+        
+    #     # Get base asset (e.g., HBAR for HBAR-USDT)
+    #     base_asset = symbol.split('-')[0]
+        
+    #     # Fetch ticker data for the symbol
+    #     ticker_df = self.data_manager.get_buffer(symbol, 'ticker')
+    #     if self.enable_logging:
+    #         self.logger.debug(f"Ticker buffer for {symbol}: empty={ticker_df.empty}, rows={len(ticker_df)}, columns={ticker_df.columns}, last_row={ticker_df.tail(1).to_dict()}")
+        
+    #     # Add token value in USDT if ticker price is available
+    #     if not ticker_df.empty and 'last_price' in ticker_df.columns and not ticker_df['last_price'].isna().iloc[-1]:
+    #         token_balance = await self.order_operations_dict[symbol].get_base_asset_balance(base_asset)
+    #         token_value_usdt = token_balance * ticker_df['last_price'].iloc[-1]
+    #         total_value = total_usdt + token_value_usdt
+    #     else:
+    #         if self.enable_logging:
+    #             self.logger.warning(f"No valid ticker price for {symbol}, using only USDT balance")
+    #         total_value = total_usdt
+        
+    #     # Use grid levels for this symbol only
+    #     total_levels = self.MAX_GRID_LEVELS_PER_SYMBOL
+    #     order_value = (self.allocation_ratio * total_value) / total_levels if total_levels > 0 else 0.0
+        
+    #     if self.enable_logging:
+    #         self.logger.debug(f"Order value for {symbol}: {order_value:.2f}")
+        
+    #     return order_value
+
     async def calculate_orders_value(self, symbol: str) -> float:
         """
-        Calculates order value by summing USDT and token balances, taking 75%, and dividing by total levels.
+        Calculates order value for a specific symbol by summing USD and token balances, 
+        taking 75%, and dividing by the number of grid levels for the symbol.
 
         Args:
-            symbol: Trading pair symbol.
+            symbol: Trading pair symbol (e.g., 'HBAR-USD').
 
         Returns:
-            float: Order value in USDT.
+            float: Order value in USD.
         """
         if self.enable_logging:
             self.logger.debug(f"Calculating order value for {symbol}")
-        total_usdt = await self.order_operations_dict[self.symbols[0]].get_usdt_balance()
-        for sym in self.symbols:
-            base_asset = sym.split('-')[0]
-            ticker_df = self.data_manager.get_buffer(sym, 'ticker')
+        
+        # Get USD balance for the specific symbol's operations
+        total_usd = await self.order_operations_dict[symbol].get_usd_balance()
+        
+        # Get base asset (e.g., HBAR for HBAR-USD)
+        base_asset = symbol.split('-')[0]
+        
+        # Fetch ticker data for the symbol
+        ticker_df = self.data_manager.get_buffer(symbol, 'ticker')
+        if self.enable_logging:
+            self.logger.debug(f"Ticker buffer for {symbol}: empty={ticker_df.empty}, rows={len(ticker_df)}, columns={ticker_df.columns}, last_row={ticker_df.tail(1).to_dict()}")
+        
+        # Add token value in USD if ticker price is available
+        if not ticker_df.empty and 'last_price' in ticker_df.columns and not ticker_df['last_price'].isna().iloc[-1]:
+            token_balance = await self.order_operations_dict[symbol].get_base_asset_balance(base_asset)
+            token_value_usd = token_balance * ticker_df['last_price'].iloc[-1]
+            total_value = total_usd + token_value_usd
+        else:
             if self.enable_logging:
-                self.logger.debug(f"Ticker buffer for {sym}: empty={ticker_df.empty}, rows={len(ticker_df)}, columns={ticker_df.columns}, last_row={ticker_df.tail(1).to_dict()}")
-            if not ticker_df.empty and 'last_price' in ticker_df.columns and not ticker_df['last_price'].isna().iloc[-1]:
-                total_usdt += (await self.order_operations_dict[sym].get_base_asset_balance(base_asset)) * ticker_df['last_price'].iloc[-1]
-            else:
-                if self.enable_logging:
-                    self.logger.warning(f"No valid ticker price for {sym}, skipping token value")
-        total_levels = len(self.symbols) * self.MAX_GRID_LEVELS_PER_SYMBOL
-        order_value = (self.allocation_ratio * total_usdt) / total_levels if total_levels > 0 else 0.0
+                self.logger.warning(f"No valid ticker price for {symbol}, using only USD balance")
+            total_value = total_usd
+        
+        # Use grid levels for this symbol only
+        total_levels = self.MAX_GRID_LEVELS_PER_SYMBOL
+        order_value = (self.allocation_ratio * total_value) / total_levels if total_levels > 0 else 0.0
+        
         if self.enable_logging:
             self.logger.debug(f"Order value for {symbol}: {order_value:.2f}")
+        
         return order_value
 
     async def get_exchange_orders(self, symbol: str) -> List[Dict]:
@@ -993,11 +1052,11 @@ class GridManager:
                         self.logger.error(f"Error verifying orders for {symbol}: {e}", exc_info=True)
                 
                 # Place new orders for unfilled grid levels (commented out for testing)
-                # try:
-                #     await self.place_orders(symbol)
-                # except Exception as e:
-                #     if self.enable_logging:
-                #         self.logger.error(f"Error placing orders for {symbol}: {e}", exc_info=True)
+                try:
+                    await self.place_orders(symbol)
+                except Exception as e:
+                    if self.enable_logging:
+                        self.logger.error(f"Error placing orders for {symbol}: {e}", exc_info=True)
 
             # Check reset condition
             if await self.check_grid_reset_condition(symbol):

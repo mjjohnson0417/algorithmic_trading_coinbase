@@ -56,7 +56,8 @@ async def main():
             return
 
         # DataManager setup
-        symbols = ['HBAR-USDT']
+        # symbols = ['HBAR-USDT']
+        symbols = ['HBAR-USD']
         data_manager = DataManager(symbols, exchange, enable_logging=True)
 
         # IndicatorCalculator setup

@@ -1,0 +1,18 @@
+[Unit]
+Description=Coinbase Grid Trading Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=jason
+Group=jason
+WorkingDirectory=/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot
+ExecStart=/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/coinbase_bot/bin/python /home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/coinbaseGridBot.py
+Restart=always
+RestartSec=10
+Environment="PYTHONUNBUFFERED=1"
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
