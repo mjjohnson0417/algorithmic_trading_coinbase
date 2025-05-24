@@ -150,3 +150,68 @@ Traceback (most recent call last):
           ^^^^^^^^^^^^^^^^^^^
 AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
 2025-05-24 10:46:46,216 - DEBUG - Heartbeat: run loop active
+2025-05-24 10:47:46,217 - DEBUG - Starting run loop iteration
+2025-05-24 10:47:46,217 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
+2025-05-24 10:47:46,217 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
+2025-05-24 10:47:46,245 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
+2025-05-24 10:47:46,245 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
+2025-05-24 10:47:46,245 - DEBUG - Completed get_market_states
+2025-05-24 10:47:46,246 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
+Traceback (most recent call last):
+  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
+    await self.run_for_symbol(symbol)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
+2025-05-24 10:47:46,249 - DEBUG - Heartbeat: run loop active
+2025-05-24 10:48:46,249 - DEBUG - Starting run loop iteration
+2025-05-24 10:48:46,250 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
+2025-05-24 10:48:46,250 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
+2025-05-24 10:48:46,268 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
+2025-05-24 10:48:46,268 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
+2025-05-24 10:48:46,268 - DEBUG - Completed get_market_states
+2025-05-24 10:48:46,268 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
+Traceback (most recent call last):
+  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
+    await self.run_for_symbol(symbol)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
+2025-05-24 10:48:46,269 - DEBUG - Heartbeat: run loop active
+2025-05-24 10:49:46,270 - DEBUG - Starting run loop iteration
+2025-05-24 10:49:46,270 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
+2025-05-24 10:49:46,270 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
+2025-05-24 10:49:46,284 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
+2025-05-24 10:49:46,285 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
+2025-05-24 10:49:46,285 - DEBUG - Completed get_market_states
+2025-05-24 10:49:46,285 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
+Traceback (most recent call last):
+  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
+    await self.run_for_symbol(symbol)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
+2025-05-24 10:49:46,286 - DEBUG - Heartbeat: run loop active
+2025-05-24 10:50:46,289 - DEBUG - Starting run loop iteration
+2025-05-24 10:50:46,289 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
+2025-05-24 10:50:46,289 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
+2025-05-24 10:50:46,316 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
+2025-05-24 10:50:46,317 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
+2025-05-24 10:50:46,317 - DEBUG - Completed get_market_states
+2025-05-24 10:50:46,317 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
+Traceback (most recent call last):
+  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
+    await self.run_for_symbol(symbol)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
+2025-05-24 10:50:46,320 - DEBUG - Heartbeat: run loop active
+2025-05-24 10:51:46,321 - DEBUG - Starting run loop iteration
+2025-05-24 10:51:46,321 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
+2025-05-24 10:51:46,322 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
+2025-05-24 10:51:46,348 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
+2025-05-24 10:51:46,348 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
+2025-05-24 10:51:46,348 - DEBUG - Completed get_market_states
+2025-05-24 10:51:46,348 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
+Traceback (most recent call last):
+  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
+    await self.run_for_symbol(symbol)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
+2025-05-24 10:51:46,351 - DEBUG - Heartbeat: run loop active

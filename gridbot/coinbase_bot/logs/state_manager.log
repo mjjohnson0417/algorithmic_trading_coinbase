@@ -19,3 +19,23 @@
 2025-05-24 10:46:46,213 - DEBUG - Long-term state for HBAR-USD: uptrend
 2025-05-24 10:46:46,213 - DEBUG - Short-term state for HBAR-USD: downtrend
 2025-05-24 10:46:46,213 - DEBUG - All market states: {'HBAR-USD': {'long_term': 'uptrend', 'short_term': 'downtrend'}}
+2025-05-24 10:47:46,245 - DEBUG - Calculating market states for HBAR-USD
+2025-05-24 10:47:46,245 - DEBUG - Long-term state for HBAR-USD: uptrend
+2025-05-24 10:47:46,245 - DEBUG - Short-term state for HBAR-USD: downtrend
+2025-05-24 10:47:46,245 - DEBUG - All market states: {'HBAR-USD': {'long_term': 'uptrend', 'short_term': 'downtrend'}}
+2025-05-24 10:48:46,267 - DEBUG - Calculating market states for HBAR-USD
+2025-05-24 10:48:46,268 - DEBUG - Long-term state for HBAR-USD: uptrend
+2025-05-24 10:48:46,268 - DEBUG - Short-term state for HBAR-USD: downtrend
+2025-05-24 10:48:46,268 - DEBUG - All market states: {'HBAR-USD': {'long_term': 'uptrend', 'short_term': 'downtrend'}}
+2025-05-24 10:49:46,284 - DEBUG - Calculating market states for HBAR-USD
+2025-05-24 10:49:46,284 - DEBUG - Long-term state for HBAR-USD: uptrend
+2025-05-24 10:49:46,284 - DEBUG - Short-term state for HBAR-USD: downtrend
+2025-05-24 10:49:46,284 - DEBUG - All market states: {'HBAR-USD': {'long_term': 'uptrend', 'short_term': 'downtrend'}}
+2025-05-24 10:50:46,316 - DEBUG - Calculating market states for HBAR-USD
+2025-05-24 10:50:46,316 - DEBUG - Long-term state for HBAR-USD: uptrend
+2025-05-24 10:50:46,316 - DEBUG - Short-term state for HBAR-USD: downtrend
+2025-05-24 10:50:46,316 - DEBUG - All market states: {'HBAR-USD': {'long_term': 'uptrend', 'short_term': 'downtrend'}}
+2025-05-24 10:51:46,347 - DEBUG - Calculating market states for HBAR-USD
+2025-05-24 10:51:46,347 - DEBUG - Long-term state for HBAR-USD: uptrend
+2025-05-24 10:51:46,348 - DEBUG - Short-term state for HBAR-USD: downtrend
+2025-05-24 10:51:46,348 - DEBUG - All market states: {'HBAR-USD': {'long_term': 'uptrend', 'short_term': 'downtrend'}}

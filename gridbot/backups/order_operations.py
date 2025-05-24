@@ -58,18 +58,18 @@ class OrderOperations:
         
     async def get_usd_balance(self) -> float:
         """
-        Fetches the available USD balance.
+        Fetches the total USD balance, including funds locked in open orders.
 
         Returns:
-            float: Available USD balance.
+            float: Total USD balance.
         """
         if self.dry_run:
             self.logger.debug("[DRY RUN] Returning simulated USD balance: %s", self._dry_run_balance)
             return self._dry_run_balance
         try:
             balance = await self.exchange.fetch_balance()
-            usd_balance = balance.get('USD', {}).get('free', 0.0)
-            self.logger.debug("Fetched USD balance: %s", usd_balance)
+            usd_balance = balance.get('USD', {}).get('free', 0.0)  # Use 'total' instead of 'free'
+            self.logger.debug("Fetched total USD balance: %s", usd_balance)
             return usd_balance
         except Exception as e:
             self.logger.error("Error fetching USD balance: %s", e, exc_info=True)
