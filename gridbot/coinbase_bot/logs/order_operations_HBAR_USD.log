@@ -1,9 +1,10 @@
-2025-05-24 10:42:43,514 - DEBUG - Fetched 61 orders for HBAR-USD
-2025-05-24 10:42:43,748 - INFO - Canceled order 2aeb4d92-1c5a-474c-8b9c-de8bdf1ffa68 for HBAR-USD
-2025-05-24 10:42:43,749 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
-2025-05-24 10:42:43,973 - INFO - No open buy orders found for HBAR-USD to cancel.
-2025-05-24 10:42:44,322 - DEBUG - Fetched total USD balance: 1488.05
-2025-05-24 10:42:44,874 - DEBUG - Fetched 6 open orders for HBAR-USD
-2025-05-24 10:42:45,123 - DEBUG - Fetched HBAR balance: 1.40625268
-2025-05-24 10:42:45,692 - DEBUG - Fetched 61 orders for HBAR-USD
-2025-05-24 10:42:46,070 - DEBUG - Fetched 61 orders for HBAR-USD
+2025-05-24 13:42:17,351 - DEBUG - Fetched 61 orders for HBAR-USD
+2025-05-24 13:42:17,352 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
+2025-05-24 13:42:17,572 - INFO - No open buy orders found for HBAR-USD to cancel.
+2025-05-24 13:42:17,947 - DEBUG - Fetched total USD balance: 1488.05
+2025-05-24 13:42:18,495 - DEBUG - Fetched 0 open orders for HBAR-USD
+2025-05-24 13:42:18,740 - DEBUG - Fetched HBAR balance: 6723.40625268
+2025-05-24 13:42:19,311 - DEBUG - Fetched 61 orders for HBAR-USD
+2025-05-24 13:42:19,552 - DEBUG - Fetched 61 orders for HBAR-USD
+2025-05-24 13:42:19,591 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
+2025-05-24 13:42:19,794 - INFO - No open buy orders found for HBAR-USD to cancel.

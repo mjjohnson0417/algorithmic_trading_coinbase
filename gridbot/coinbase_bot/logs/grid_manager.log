@@ -1,217 +1,120 @@
-2025-05-24 10:42:36,140 - INFO - Pre-calculated indicators: {'HBAR-USD': {'1h': {}, '1d': {}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}}
-2025-05-24 10:42:36,140 - INFO - Running GridManager initialization.
-2025-05-24 10:42:36,140 - INFO - Starting bot initialization for symbols: ['HBAR-USD']
-2025-05-24 10:42:36,140 - DEBUG - Fetching ticker buffer for HBAR-USD
-2025-05-24 10:42:36,142 - INFO - Ticker buffer for HBAR-USD: empty=True, rows=0, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
+2025-05-24 13:42:10,181 - INFO - Pre-calculated indicators: {'HBAR-USD': {'1h': {}, '1d': {}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}}
+2025-05-24 13:42:10,181 - INFO - Running GridManager initialization.
+2025-05-24 13:42:10,181 - INFO - Starting bot initialization for symbols: ['HBAR-USD']
+2025-05-24 13:42:10,181 - DEBUG - Fetching ticker buffer for HBAR-USD
+2025-05-24 13:42:10,182 - INFO - Ticker buffer for HBAR-USD: empty=True, rows=0, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
        'best_ask', 'side'],
       dtype='object'), last_row={'timestamp': {}, 'symbol': {}, 'last_price': {}, 'volume_24h': {}, 'best_bid': {}, 'best_ask': {}, 'side': {}}
-2025-05-24 10:42:36,142 - WARNING - Ticker buffer empty for HBAR-USD, possible WebSocket subscription issue
-2025-05-24 10:42:36,142 - WARNING - Ticker buffer for HBAR-USD not ready on attempt 1: empty=True, has_last_price=True, last_price_not_na=False (no rows)
-2025-05-24 10:42:36,142 - DEBUG - Retrying ticker buffer check for HBAR-USD in 5 seconds
-2025-05-24 10:42:41,144 - DEBUG - Fetching ticker buffer for HBAR-USD
-2025-05-24 10:42:41,145 - INFO - Ticker buffer for HBAR-USD: empty=False, rows=7, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
+2025-05-24 13:42:10,182 - WARNING - Ticker buffer empty for HBAR-USD, possible WebSocket subscription issue
+2025-05-24 13:42:10,182 - WARNING - Ticker buffer for HBAR-USD not ready on attempt 1: empty=True, has_last_price=True, last_price_not_na=False (no rows)
+2025-05-24 13:42:10,182 - DEBUG - Retrying ticker buffer check for HBAR-USD in 5 seconds
+2025-05-24 13:42:15,184 - DEBUG - Fetching ticker buffer for HBAR-USD
+2025-05-24 13:42:15,186 - INFO - Ticker buffer for HBAR-USD: empty=False, rows=4, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
        'best_ask', 'side'],
-      dtype='object'), last_row={'timestamp': {6: Timestamp('2025-05-24 14:42:40.984255+0000', tz='UTC')}, 'symbol': {6: 'HBAR-USD'}, 'last_price': {6: 0.19035}, 'volume_24h': {6: 80836629.6}, 'best_bid': {6: 0.19034}, 'best_ask': {6: 0.19035}, 'side': {6: 'unknown'}}
-2025-05-24 10:42:41,146 - DEBUG - Ticker buffer for HBAR-USD is ready on attempt 2: rows=7, last_price=0.19035
-2025-05-24 10:42:41,146 - DEBUG - Updating order status for HBAR-USD
-2025-05-24 10:42:41,146 - WARNING - No orders initialized for HBAR-USD, checking for open stray orders
-2025-05-24 10:42:43,514 - DEBUG - Fetched 61 orders for HBAR-USD
-2025-05-24 10:42:43,514 - INFO - Added open stray sell order for HBAR-USD: order_id=21ccf066-c155-4279-a2c3-feafddcbafe9, price=0.2128, quantity=1023.30000000, state=open
-2025-05-24 10:42:43,514 - INFO - Added open stray sell order for HBAR-USD: order_id=0f8c0308-c6f6-4f51-8554-02945431ea8f, price=0.2124, quantity=2204.00000000, state=open
-2025-05-24 10:42:43,514 - INFO - Added open stray sell order for HBAR-USD: order_id=c9754e0f-538c-4210-b062-89937ca637bb, price=0.2087, quantity=1043.80000000, state=open
-2025-05-24 10:42:43,514 - INFO - Added open stray sell order for HBAR-USD: order_id=116ea458-24d2-4993-8f50-993ff3e7e4e7, price=0.2046, quantity=1065.70000000, state=open
-2025-05-24 10:42:43,514 - INFO - Added open stray sell order for HBAR-USD: order_id=2a2232b0-2d3c-462d-8817-05a0f74e0556, price=0.1963, quantity=692.60000000, state=open
-2025-05-24 10:42:43,514 - INFO - Added open stray sell order for HBAR-USD: order_id=c5ea36a1-572d-44a5-bbe1-aa4258a9855b, price=0.2004, quantity=692.60000000, state=open
-2025-05-24 10:42:43,514 - WARNING - Detected open stray buy order for HBAR-USD: order_id=2aeb4d92-1c5a-474c-8b9c-de8bdf1ffa68, price=0.1880, quantity=584.20000000, state=open
-2025-05-24 10:42:43,749 - INFO - Canceled open stray buy order for HBAR-USD: order_id=2aeb4d92-1c5a-474c-8b9c-de8bdf1ffa68
-2025-05-24 10:42:43,749 - INFO - Order status updated for HBAR-USD: {"stray_21ccf066-c155-4279-a2c3-feafddcbafe9": {"buy_level": 0.2128, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2128, "sell_order_id": "21ccf066-c155-4279-a2c3-feafddcbafe9", "sell_quantity": 1023.3, "sell_state": "stray_sell"}, "stray_0f8c0308-c6f6-4f51-8554-02945431ea8f": {"buy_level": 0.2124, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2124, "sell_order_id": "0f8c0308-c6f6-4f51-8554-02945431ea8f", "sell_quantity": 2204.0, "sell_state": "stray_sell"}, "stray_c9754e0f-538c-4210-b062-89937ca637bb": {"buy_level": 0.2087, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2087, "sell_order_id": "c9754e0f-538c-4210-b062-89937ca637bb", "sell_quantity": 1043.8, "sell_state": "stray_sell"}, "stray_116ea458-24d2-4993-8f50-993ff3e7e4e7": {"buy_level": 0.2046, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2046, "sell_order_id": "116ea458-24d2-4993-8f50-993ff3e7e4e7", "sell_quantity": 1065.7, "sell_state": "stray_sell"}, "stray_2a2232b0-2d3c-462d-8817-05a0f74e0556": {"buy_level": 0.1963, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.1963, "sell_order_id": "2a2232b0-2d3c-462d-8817-05a0f74e0556", "sell_quantity": 692.6, "sell_state": "stray_sell"}, "stray_c5ea36a1-572d-44a5-bbe1-aa4258a9855b": {"buy_level": 0.2004, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2004, "sell_order_id": "c5ea36a1-572d-44a5-bbe1-aa4258a9855b", "sell_quantity": 692.6, "sell_state": "stray_sell"}}
-2025-05-24 10:42:43,749 - INFO - Pre-initialization order sync for HBAR-USD: {"stray_21ccf066-c155-4279-a2c3-feafddcbafe9": {"buy_level": 0.2128, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2128, "sell_order_id": "21ccf066-c155-4279-a2c3-feafddcbafe9", "sell_quantity": 1023.3, "sell_state": "stray_sell"}, "stray_0f8c0308-c6f6-4f51-8554-02945431ea8f": {"buy_level": 0.2124, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2124, "sell_order_id": "0f8c0308-c6f6-4f51-8554-02945431ea8f", "sell_quantity": 2204.0, "sell_state": "stray_sell"}, "stray_c9754e0f-538c-4210-b062-89937ca637bb": {"buy_level": 0.2087, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2087, "sell_order_id": "c9754e0f-538c-4210-b062-89937ca637bb", "sell_quantity": 1043.8, "sell_state": "stray_sell"}, "stray_116ea458-24d2-4993-8f50-993ff3e7e4e7": {"buy_level": 0.2046, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2046, "sell_order_id": "116ea458-24d2-4993-8f50-993ff3e7e4e7", "sell_quantity": 1065.7, "sell_state": "stray_sell"}, "stray_2a2232b0-2d3c-462d-8817-05a0f74e0556": {"buy_level": 0.1963, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.1963, "sell_order_id": "2a2232b0-2d3c-462d-8817-05a0f74e0556", "sell_quantity": 692.6, "sell_state": "stray_sell"}, "stray_c5ea36a1-572d-44a5-bbe1-aa4258a9855b": {"buy_level": 0.2004, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2004, "sell_order_id": "c5ea36a1-572d-44a5-bbe1-aa4258a9855b", "sell_quantity": 692.6, "sell_state": "stray_sell"}}
-2025-05-24 10:42:43,749 - DEBUG - Starting cancellation of all open buy orders for HBAR-USD
-2025-05-24 10:42:43,973 - INFO - No open buy orders to cancel for HBAR-USD
-2025-05-24 10:42:43,973 - INFO - Completed cancellation of open buy orders for HBAR-USD
-2025-05-24 10:42:43,973 - DEBUG - Calculating grid levels for HBAR-USD
-2025-05-24 10:42:43,973 - DEBUG - Fetching ticker buffer for HBAR-USD
-2025-05-24 10:42:43,974 - INFO - Ticker buffer for HBAR-USD: empty=False, rows=10, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
+      dtype='object'), last_row={'timestamp': {3: Timestamp('2025-05-24 17:42:12.322362+0000', tz='UTC')}, 'symbol': {3: 'HBAR-USD'}, 'last_price': {3: 0.19074}, 'volume_24h': {3: 71229680.3}, 'best_bid': {3: 0.19069}, 'best_ask': {3: 0.19072}, 'side': {3: 'unknown'}}
+2025-05-24 13:42:15,186 - DEBUG - Ticker buffer for HBAR-USD is ready on attempt 2: rows=4, last_price=0.19074
+2025-05-24 13:42:15,186 - DEBUG - Updating order status for HBAR-USD
+2025-05-24 13:42:15,186 - WARNING - No orders initialized for HBAR-USD, checking for open stray orders
+2025-05-24 13:42:17,352 - DEBUG - Fetched 61 orders for HBAR-USD
+2025-05-24 13:42:17,352 - INFO - Order status updated for HBAR-USD: {}
+2025-05-24 13:42:17,352 - INFO - Pre-initialization order sync for HBAR-USD: {}
+2025-05-24 13:42:17,352 - DEBUG - Starting cancellation of all open buy orders for HBAR-USD
+2025-05-24 13:42:17,573 - INFO - No open buy orders to cancel for HBAR-USD
+2025-05-24 13:42:17,573 - INFO - Completed cancellation of open buy orders for HBAR-USD
+2025-05-24 13:42:17,573 - DEBUG - Calculating grid levels for HBAR-USD
+2025-05-24 13:42:17,573 - DEBUG - Fetching ticker buffer for HBAR-USD
+2025-05-24 13:42:17,574 - INFO - Ticker buffer for HBAR-USD: empty=False, rows=6, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
        'best_ask', 'side'],
-      dtype='object'), last_row={'timestamp': {9: Timestamp('2025-05-24 14:42:43.504419+0000', tz='UTC')}, 'symbol': {9: 'HBAR-USD'}, 'last_price': {9: 0.1903}, 'volume_24h': {9: 80836629.6}, 'best_bid': {9: 0.19028}, 'best_ask': {9: 0.19029}, 'side': {9: 'unknown'}}
-2025-05-24 10:42:43,974 - DEBUG - ATR14 for HBAR-USD: 0.0038
-2025-05-24 10:42:43,975 - INFO - Grid levels for HBAR-USD: [np.float64(0.1732), np.float64(0.177), np.float64(0.1808), np.float64(0.1846), np.float64(0.1884), np.float64(0.1922), np.float64(0.196), np.float64(0.1998), np.float64(0.2036), np.float64(0.2074)]
-2025-05-24 10:42:43,975 - INFO - Initialized grid levels for HBAR-USD: [np.float64(0.1732), np.float64(0.177), np.float64(0.1808), np.float64(0.1846), np.float64(0.1884), np.float64(0.1922), np.float64(0.196), np.float64(0.1998), np.float64(0.2036), np.float64(0.2074)]
-2025-05-24 10:42:43,975 - DEBUG - Initializing orders for HBAR-USD
-2025-05-24 10:42:43,975 - DEBUG - Fetching ticker buffer for HBAR-USD
-2025-05-24 10:42:43,975 - INFO - Ticker buffer for HBAR-USD: empty=False, rows=10, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
+      dtype='object'), last_row={'timestamp': {5: Timestamp('2025-05-24 17:42:16.078105+0000', tz='UTC')}, 'symbol': {5: 'HBAR-USD'}, 'last_price': {5: 0.19074}, 'volume_24h': {5: 71229680.3}, 'best_bid': {5: 0.19071}, 'best_ask': {5: 0.19075}, 'side': {5: 'unknown'}}
+2025-05-24 13:42:17,574 - DEBUG - ATR14 for HBAR-USD: 0.0038
+2025-05-24 13:42:17,574 - INFO - Grid levels for HBAR-USD: [np.float64(0.1736), np.float64(0.1774), np.float64(0.1812), np.float64(0.185), np.float64(0.1888), np.float64(0.1926), np.float64(0.1965), np.float64(0.2003), np.float64(0.2041), np.float64(0.2079)]
+2025-05-24 13:42:17,575 - INFO - Initialized grid levels for HBAR-USD: [np.float64(0.1736), np.float64(0.1774), np.float64(0.1812), np.float64(0.185), np.float64(0.1888), np.float64(0.1926), np.float64(0.1965), np.float64(0.2003), np.float64(0.2041), np.float64(0.2079)]
+2025-05-24 13:42:17,575 - DEBUG - Initializing orders for HBAR-USD
+2025-05-24 13:42:17,575 - DEBUG - Fetching ticker buffer for HBAR-USD
+2025-05-24 13:42:17,575 - INFO - Ticker buffer for HBAR-USD: empty=False, rows=6, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
        'best_ask', 'side'],
-      dtype='object'), last_row={'timestamp': {9: Timestamp('2025-05-24 14:42:43.504419+0000', tz='UTC')}, 'symbol': {9: 'HBAR-USD'}, 'last_price': {9: 0.1903}, 'volume_24h': {9: 80836629.6}, 'best_bid': {9: 0.19028}, 'best_ask': {9: 0.19029}, 'side': {9: 'unknown'}}
-2025-05-24 10:42:43,975 - DEBUG - Calculating order value for HBAR-USD
-2025-05-24 10:42:44,875 - DEBUG - Open sell order: id=21ccf066-c155-4279-a2c3-feafddcbafe9, amount=1023.3, price=0.2128
-2025-05-24 10:42:44,875 - DEBUG - Open sell order: id=0f8c0308-c6f6-4f51-8554-02945431ea8f, amount=2204.0, price=0.2124
-2025-05-24 10:42:44,875 - DEBUG - Open sell order: id=c9754e0f-538c-4210-b062-89937ca637bb, amount=1043.8, price=0.2087
-2025-05-24 10:42:44,875 - DEBUG - Open sell order: id=116ea458-24d2-4993-8f50-993ff3e7e4e7, amount=1065.7, price=0.2046
-2025-05-24 10:42:44,875 - DEBUG - Open sell order: id=2a2232b0-2d3c-462d-8817-05a0f74e0556, amount=692.6, price=0.1963
-2025-05-24 10:42:44,875 - DEBUG - Open sell order: id=c5ea36a1-572d-44a5-bbe1-aa4258a9855b, amount=692.6, price=0.2004
-2025-05-24 10:42:44,875 - DEBUG - USD balance: free=1488.05, locked=0.00, total=1488.05
-2025-05-24 10:42:44,876 - DEBUG - Ticker buffer for HBAR-USD: empty=False, rows=12, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
+      dtype='object'), last_row={'timestamp': {5: Timestamp('2025-05-24 17:42:16.078105+0000', tz='UTC')}, 'symbol': {5: 'HBAR-USD'}, 'last_price': {5: 0.19074}, 'volume_24h': {5: 71229680.3}, 'best_bid': {5: 0.19071}, 'best_ask': {5: 0.19075}, 'side': {5: 'unknown'}}
+2025-05-24 13:42:17,575 - DEBUG - Calculating order value for HBAR-USD
+2025-05-24 13:42:18,495 - DEBUG - USD balance: free=1488.05, locked=0.00, total=1488.05
+2025-05-24 13:42:18,497 - DEBUG - Ticker buffer for HBAR-USD: empty=False, rows=9, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
        'best_ask', 'side'],
-      dtype='object'), last_row={'timestamp': {11: Timestamp('2025-05-24 14:42:44.319327+0000', tz='UTC')}, 'symbol': {11: 'HBAR-USD'}, 'last_price': {11: 0.1903}, 'volume_24h': {11: 80836629.6}, 'best_bid': {11: 0.19028}, 'best_ask': {11: 0.1903}, 'side': {11: 'unknown'}}
-2025-05-24 10:42:45,124 - DEBUG - HBAR balance: free=1.40625268, locked=6722.00000000, total=6723.40625268, value_usd=1279.46
-2025-05-24 10:42:45,124 - DEBUG - Order value for HBAR-USD: 207.56, total_usd=1488.05, total_value=2767.51
-2025-05-24 10:42:45,124 - DEBUG - Updating order status for HBAR-USD
-2025-05-24 10:42:45,124 - WARNING - No orders initialized for HBAR-USD, checking for open stray orders
-2025-05-24 10:42:45,692 - DEBUG - Fetched 61 orders for HBAR-USD
-2025-05-24 10:42:45,692 - INFO - Added open stray sell order for HBAR-USD: order_id=21ccf066-c155-4279-a2c3-feafddcbafe9, price=0.2128, quantity=1023.30000000, state=open
-2025-05-24 10:42:45,692 - INFO - Added open stray sell order for HBAR-USD: order_id=0f8c0308-c6f6-4f51-8554-02945431ea8f, price=0.2124, quantity=2204.00000000, state=open
-2025-05-24 10:42:45,692 - INFO - Added open stray sell order for HBAR-USD: order_id=c9754e0f-538c-4210-b062-89937ca637bb, price=0.2087, quantity=1043.80000000, state=open
-2025-05-24 10:42:45,692 - INFO - Added open stray sell order for HBAR-USD: order_id=116ea458-24d2-4993-8f50-993ff3e7e4e7, price=0.2046, quantity=1065.70000000, state=open
-2025-05-24 10:42:45,692 - INFO - Added open stray sell order for HBAR-USD: order_id=2a2232b0-2d3c-462d-8817-05a0f74e0556, price=0.1963, quantity=692.60000000, state=open
-2025-05-24 10:42:45,692 - INFO - Added open stray sell order for HBAR-USD: order_id=c5ea36a1-572d-44a5-bbe1-aa4258a9855b, price=0.2004, quantity=692.60000000, state=open
-2025-05-24 10:42:45,692 - INFO - Order status updated for HBAR-USD: {"stray_21ccf066-c155-4279-a2c3-feafddcbafe9": {"buy_level": 0.2128, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2128, "sell_order_id": "21ccf066-c155-4279-a2c3-feafddcbafe9", "sell_quantity": 1023.3, "sell_state": "stray_sell"}, "stray_0f8c0308-c6f6-4f51-8554-02945431ea8f": {"buy_level": 0.2124, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2124, "sell_order_id": "0f8c0308-c6f6-4f51-8554-02945431ea8f", "sell_quantity": 2204.0, "sell_state": "stray_sell"}, "stray_c9754e0f-538c-4210-b062-89937ca637bb": {"buy_level": 0.2087, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2087, "sell_order_id": "c9754e0f-538c-4210-b062-89937ca637bb", "sell_quantity": 1043.8, "sell_state": "stray_sell"}, "stray_116ea458-24d2-4993-8f50-993ff3e7e4e7": {"buy_level": 0.2046, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2046, "sell_order_id": "116ea458-24d2-4993-8f50-993ff3e7e4e7", "sell_quantity": 1065.7, "sell_state": "stray_sell"}, "stray_2a2232b0-2d3c-462d-8817-05a0f74e0556": {"buy_level": 0.1963, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.1963, "sell_order_id": "2a2232b0-2d3c-462d-8817-05a0f74e0556", "sell_quantity": 692.6, "sell_state": "stray_sell"}, "stray_c5ea36a1-572d-44a5-bbe1-aa4258a9855b": {"buy_level": 0.2004, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2004, "sell_order_id": "c5ea36a1-572d-44a5-bbe1-aa4258a9855b", "sell_quantity": 692.6, "sell_state": "stray_sell"}}
-2025-05-24 10:42:45,692 - INFO - Post-clear order sync for HBAR-USD: {"stray_21ccf066-c155-4279-a2c3-feafddcbafe9": {"buy_level": 0.2128, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2128, "sell_order_id": "21ccf066-c155-4279-a2c3-feafddcbafe9", "sell_quantity": 1023.3, "sell_state": "stray_sell"}, "stray_0f8c0308-c6f6-4f51-8554-02945431ea8f": {"buy_level": 0.2124, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2124, "sell_order_id": "0f8c0308-c6f6-4f51-8554-02945431ea8f", "sell_quantity": 2204.0, "sell_state": "stray_sell"}, "stray_c9754e0f-538c-4210-b062-89937ca637bb": {"buy_level": 0.2087, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2087, "sell_order_id": "c9754e0f-538c-4210-b062-89937ca637bb", "sell_quantity": 1043.8, "sell_state": "stray_sell"}, "stray_116ea458-24d2-4993-8f50-993ff3e7e4e7": {"buy_level": 0.2046, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2046, "sell_order_id": "116ea458-24d2-4993-8f50-993ff3e7e4e7", "sell_quantity": 1065.7, "sell_state": "stray_sell"}, "stray_2a2232b0-2d3c-462d-8817-05a0f74e0556": {"buy_level": 0.1963, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.1963, "sell_order_id": "2a2232b0-2d3c-462d-8817-05a0f74e0556", "sell_quantity": 692.6, "sell_state": "stray_sell"}, "stray_c5ea36a1-572d-44a5-bbe1-aa4258a9855b": {"buy_level": 0.2004, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2004, "sell_order_id": "c5ea36a1-572d-44a5-bbe1-aa4258a9855b", "sell_quantity": 692.6, "sell_state": "stray_sell"}}
-2025-05-24 10:42:45,692 - DEBUG - Stray sell orders for HBAR-USD: 6
-2025-05-24 10:42:45,692 - INFO - Reducing grid pairs for HBAR-USD to 4 due to 6 stray sell orders
-2025-05-24 10:42:45,692 - WARNING - No buy level above current price for HBAR-USD
-2025-05-24 10:42:45,692 - INFO - Initialized orders for HBAR-USD: {"stray_21ccf066-c155-4279-a2c3-feafddcbafe9": {"buy_level": 0.2128, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2128, "sell_order_id": "21ccf066-c155-4279-a2c3-feafddcbafe9", "sell_quantity": 1023.3, "sell_state": "stray_sell"}, "stray_0f8c0308-c6f6-4f51-8554-02945431ea8f": {"buy_level": 0.2124, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2124, "sell_order_id": "0f8c0308-c6f6-4f51-8554-02945431ea8f", "sell_quantity": 2204.0, "sell_state": "stray_sell"}, "stray_c9754e0f-538c-4210-b062-89937ca637bb": {"buy_level": 0.2087, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2087, "sell_order_id": "c9754e0f-538c-4210-b062-89937ca637bb", "sell_quantity": 1043.8, "sell_state": "stray_sell"}, "stray_116ea458-24d2-4993-8f50-993ff3e7e4e7": {"buy_level": 0.2046, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2046, "sell_order_id": "116ea458-24d2-4993-8f50-993ff3e7e4e7", "sell_quantity": 1065.7, "sell_state": "stray_sell"}, "stray_2a2232b0-2d3c-462d-8817-05a0f74e0556": {"buy_level": 0.1963, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.1963, "sell_order_id": "2a2232b0-2d3c-462d-8817-05a0f74e0556", "sell_quantity": 692.6, "sell_state": "stray_sell"}, "stray_c5ea36a1-572d-44a5-bbe1-aa4258a9855b": {"buy_level": 0.2004, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2004, "sell_order_id": "c5ea36a1-572d-44a5-bbe1-aa4258a9855b", "sell_quantity": 692.6, "sell_state": "stray_sell"}}
-2025-05-24 10:42:45,692 - DEBUG - Updating order status for HBAR-USD
-2025-05-24 10:42:46,070 - DEBUG - Fetched 61 orders for HBAR-USD
-2025-05-24 10:42:46,070 - DEBUG - Updated sell order status for HBAR-USD: sell_level=0.2128, order_id=21ccf066-c155-4279-a2c3-feafddcbafe9, state=open
-2025-05-24 10:42:46,070 - DEBUG - Updated sell order status for HBAR-USD: sell_level=0.2124, order_id=0f8c0308-c6f6-4f51-8554-02945431ea8f, state=open
-2025-05-24 10:42:46,070 - DEBUG - Updated sell order status for HBAR-USD: sell_level=0.2087, order_id=c9754e0f-538c-4210-b062-89937ca637bb, state=open
-2025-05-24 10:42:46,070 - DEBUG - Updated sell order status for HBAR-USD: sell_level=0.2046, order_id=116ea458-24d2-4993-8f50-993ff3e7e4e7, state=open
-2025-05-24 10:42:46,070 - DEBUG - Updated sell order status for HBAR-USD: sell_level=0.1963, order_id=2a2232b0-2d3c-462d-8817-05a0f74e0556, state=open
-2025-05-24 10:42:46,070 - DEBUG - Updated sell order status for HBAR-USD: sell_level=0.2004, order_id=c5ea36a1-572d-44a5-bbe1-aa4258a9855b, state=open
-2025-05-24 10:42:46,070 - INFO - Order status updated for HBAR-USD: {"stray_21ccf066-c155-4279-a2c3-feafddcbafe9": {"buy_level": 0.2128, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2128, "sell_order_id": "21ccf066-c155-4279-a2c3-feafddcbafe9", "sell_quantity": 1023.3, "sell_state": "open"}, "stray_0f8c0308-c6f6-4f51-8554-02945431ea8f": {"buy_level": 0.2124, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2124, "sell_order_id": "0f8c0308-c6f6-4f51-8554-02945431ea8f", "sell_quantity": 2204.0, "sell_state": "open"}, "stray_c9754e0f-538c-4210-b062-89937ca637bb": {"buy_level": 0.2087, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2087, "sell_order_id": "c9754e0f-538c-4210-b062-89937ca637bb", "sell_quantity": 1043.8, "sell_state": "open"}, "stray_116ea458-24d2-4993-8f50-993ff3e7e4e7": {"buy_level": 0.2046, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2046, "sell_order_id": "116ea458-24d2-4993-8f50-993ff3e7e4e7", "sell_quantity": 1065.7, "sell_state": "open"}, "stray_2a2232b0-2d3c-462d-8817-05a0f74e0556": {"buy_level": 0.1963, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.1963, "sell_order_id": "2a2232b0-2d3c-462d-8817-05a0f74e0556", "sell_quantity": 692.6, "sell_state": "open"}, "stray_c5ea36a1-572d-44a5-bbe1-aa4258a9855b": {"buy_level": 0.2004, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2004, "sell_order_id": "c5ea36a1-572d-44a5-bbe1-aa4258a9855b", "sell_quantity": 692.6, "sell_state": "open"}}
-2025-05-24 10:42:46,071 - INFO - Post-initialization order sync for HBAR-USD: {"stray_21ccf066-c155-4279-a2c3-feafddcbafe9": {"buy_level": 0.2128, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2128, "sell_order_id": "21ccf066-c155-4279-a2c3-feafddcbafe9", "sell_quantity": 1023.3, "sell_state": "open"}, "stray_0f8c0308-c6f6-4f51-8554-02945431ea8f": {"buy_level": 0.2124, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2124, "sell_order_id": "0f8c0308-c6f6-4f51-8554-02945431ea8f", "sell_quantity": 2204.0, "sell_state": "open"}, "stray_c9754e0f-538c-4210-b062-89937ca637bb": {"buy_level": 0.2087, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2087, "sell_order_id": "c9754e0f-538c-4210-b062-89937ca637bb", "sell_quantity": 1043.8, "sell_state": "open"}, "stray_116ea458-24d2-4993-8f50-993ff3e7e4e7": {"buy_level": 0.2046, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2046, "sell_order_id": "116ea458-24d2-4993-8f50-993ff3e7e4e7", "sell_quantity": 1065.7, "sell_state": "open"}, "stray_2a2232b0-2d3c-462d-8817-05a0f74e0556": {"buy_level": 0.1963, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.1963, "sell_order_id": "2a2232b0-2d3c-462d-8817-05a0f74e0556", "sell_quantity": 692.6, "sell_state": "open"}, "stray_c5ea36a1-572d-44a5-bbe1-aa4258a9855b": {"buy_level": 0.2004, "buy_order_id": null, "buy_quantity": 0.0, "buy_state": null, "sell_level": 0.2004, "sell_order_id": "c5ea36a1-572d-44a5-bbe1-aa4258a9855b", "sell_quantity": 692.6, "sell_state": "open"}}
-2025-05-24 10:42:46,071 - INFO - Completed bot initialization for all symbols
-2025-05-24 10:42:46,071 - INFO - GridManager initialization completed successfully.
-2025-05-24 10:42:46,071 - INFO - Starting GridManager run loop.
-2025-05-24 10:42:46,071 - INFO - Monitoring GridManager. Press Ctrl+C to exit.
-2025-05-24 10:42:46,071 - INFO - GridManager run loop started.
-2025-05-24 10:42:46,071 - DEBUG - Starting run loop iteration
-2025-05-24 10:42:46,071 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
-2025-05-24 10:42:46,071 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": null, "short_term": null}}
-2025-05-24 10:42:46,098 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:42:46,098 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
-2025-05-24 10:42:46,098 - DEBUG - Completed get_market_states
-2025-05-24 10:42:46,098 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
-Traceback (most recent call last):
-  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
-    await self.run_for_symbol(symbol)
-          ^^^^^^^^^^^^^^^^^^^
-AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
-2025-05-24 10:42:46,101 - DEBUG - Heartbeat: run loop active
-2025-05-24 10:43:46,102 - DEBUG - Starting run loop iteration
-2025-05-24 10:43:46,102 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
-2025-05-24 10:43:46,102 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:43:46,120 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:43:46,120 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
-2025-05-24 10:43:46,120 - DEBUG - Completed get_market_states
-2025-05-24 10:43:46,120 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
-Traceback (most recent call last):
-  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
-    await self.run_for_symbol(symbol)
-          ^^^^^^^^^^^^^^^^^^^
-AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
-2025-05-24 10:43:46,121 - DEBUG - Heartbeat: run loop active
-2025-05-24 10:44:46,123 - DEBUG - Starting run loop iteration
-2025-05-24 10:44:46,123 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
-2025-05-24 10:44:46,123 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:44:46,151 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:44:46,151 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
-2025-05-24 10:44:46,151 - DEBUG - Completed get_market_states
-2025-05-24 10:44:46,151 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
-Traceback (most recent call last):
-  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
-    await self.run_for_symbol(symbol)
-          ^^^^^^^^^^^^^^^^^^^
-AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
-2025-05-24 10:44:46,154 - DEBUG - Heartbeat: run loop active
-2025-05-24 10:45:46,155 - DEBUG - Starting run loop iteration
-2025-05-24 10:45:46,156 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
-2025-05-24 10:45:46,156 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:45:46,182 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:45:46,182 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
-2025-05-24 10:45:46,182 - DEBUG - Completed get_market_states
-2025-05-24 10:45:46,182 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
-Traceback (most recent call last):
-  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
-    await self.run_for_symbol(symbol)
-          ^^^^^^^^^^^^^^^^^^^
-AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
-2025-05-24 10:45:46,185 - DEBUG - Heartbeat: run loop active
-2025-05-24 10:46:46,187 - DEBUG - Starting run loop iteration
-2025-05-24 10:46:46,187 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
-2025-05-24 10:46:46,187 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:46:46,213 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:46:46,213 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
-2025-05-24 10:46:46,213 - DEBUG - Completed get_market_states
-2025-05-24 10:46:46,213 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
-Traceback (most recent call last):
-  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
-    await self.run_for_symbol(symbol)
-          ^^^^^^^^^^^^^^^^^^^
-AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
-2025-05-24 10:46:46,216 - DEBUG - Heartbeat: run loop active
-2025-05-24 10:47:46,217 - DEBUG - Starting run loop iteration
-2025-05-24 10:47:46,217 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
-2025-05-24 10:47:46,217 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:47:46,245 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:47:46,245 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
-2025-05-24 10:47:46,245 - DEBUG - Completed get_market_states
-2025-05-24 10:47:46,246 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
-Traceback (most recent call last):
-  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
-    await self.run_for_symbol(symbol)
-          ^^^^^^^^^^^^^^^^^^^
-AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
-2025-05-24 10:47:46,249 - DEBUG - Heartbeat: run loop active
-2025-05-24 10:48:46,249 - DEBUG - Starting run loop iteration
-2025-05-24 10:48:46,250 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
-2025-05-24 10:48:46,250 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:48:46,268 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:48:46,268 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
-2025-05-24 10:48:46,268 - DEBUG - Completed get_market_states
-2025-05-24 10:48:46,268 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
-Traceback (most recent call last):
-  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
-    await self.run_for_symbol(symbol)
-          ^^^^^^^^^^^^^^^^^^^
-AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
-2025-05-24 10:48:46,269 - DEBUG - Heartbeat: run loop active
-2025-05-24 10:49:46,270 - DEBUG - Starting run loop iteration
-2025-05-24 10:49:46,270 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
-2025-05-24 10:49:46,270 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:49:46,284 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:49:46,285 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
-2025-05-24 10:49:46,285 - DEBUG - Completed get_market_states
-2025-05-24 10:49:46,285 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
-Traceback (most recent call last):
-  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
-    await self.run_for_symbol(symbol)
-          ^^^^^^^^^^^^^^^^^^^
-AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
-2025-05-24 10:49:46,286 - DEBUG - Heartbeat: run loop active
-2025-05-24 10:50:46,289 - DEBUG - Starting run loop iteration
-2025-05-24 10:50:46,289 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
-2025-05-24 10:50:46,289 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:50:46,316 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:50:46,317 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
-2025-05-24 10:50:46,317 - DEBUG - Completed get_market_states
-2025-05-24 10:50:46,317 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
-Traceback (most recent call last):
-  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
-    await self.run_for_symbol(symbol)
-          ^^^^^^^^^^^^^^^^^^^
-AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
-2025-05-24 10:50:46,320 - DEBUG - Heartbeat: run loop active
-2025-05-24 10:51:46,321 - DEBUG - Starting run loop iteration
-2025-05-24 10:51:46,321 - DEBUG - Starting get_market_states, state_manager_id: 125434628177456
-2025-05-24 10:51:46,322 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:51:46,348 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
-2025-05-24 10:51:46,348 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
-2025-05-24 10:51:46,348 - DEBUG - Completed get_market_states
-2025-05-24 10:51:46,348 - ERROR - Error in run loop: 'GridManager' object has no attribute 'run_for_symbol'
-Traceback (most recent call last):
-  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/grid_manager.py", line 1007, in run
-    await self.run_for_symbol(symbol)
-          ^^^^^^^^^^^^^^^^^^^
-AttributeError: 'GridManager' object has no attribute 'run_for_symbol'
-2025-05-24 10:51:46,351 - DEBUG - Heartbeat: run loop active
+      dtype='object'), last_row={'timestamp': {8: Timestamp('2025-05-24 17:42:18.150838+0000', tz='UTC')}, 'symbol': {8: 'HBAR-USD'}, 'last_price': {8: 0.19074}, 'volume_24h': {8: 71229680.3}, 'best_bid': {8: 0.19073}, 'best_ask': {8: 0.19076}, 'side': {8: 'unknown'}}
+2025-05-24 13:42:18,740 - DEBUG - HBAR balance: free=6723.40625268, locked=0.00000000, total=6723.40625268, value_usd=1282.42
+2025-05-24 13:42:18,740 - DEBUG - Order value for HBAR-USD: 207.79, total_usd=1488.05, total_value=2770.47
+2025-05-24 13:42:18,740 - DEBUG - Updating order status for HBAR-USD
+2025-05-24 13:42:18,740 - WARNING - No orders initialized for HBAR-USD, checking for open stray orders
+2025-05-24 13:42:19,311 - DEBUG - Fetched 61 orders for HBAR-USD
+2025-05-24 13:42:19,311 - INFO - Order status updated for HBAR-USD: {}
+2025-05-24 13:42:19,311 - INFO - Post-clear order sync for HBAR-USD: {}
+2025-05-24 13:42:19,311 - DEBUG - Stray sell orders for HBAR-USD: 0
+2025-05-24 13:42:19,312 - DEBUG - Added order pair for HBAR-USD: buy_level=0.1736, sell_level=0.1774, details={'buy_level': np.float64(0.1736), 'buy_order_id': None, 'buy_quantity': np.float64(1196.92072666), 'buy_state': None, 'sell_level': np.float64(0.1774), 'sell_order_id': None, 'sell_quantity': 0.0, 'sell_state': None}
+2025-05-24 13:42:19,312 - DEBUG - Added order pair for HBAR-USD: buy_level=0.1774, sell_level=0.1812, details={'buy_level': np.float64(0.1774), 'buy_order_id': None, 'buy_quantity': np.float64(1171.28206397), 'buy_state': None, 'sell_level': np.float64(0.1812), 'sell_order_id': None, 'sell_quantity': 0.0, 'sell_state': None}
+2025-05-24 13:42:19,312 - DEBUG - Added order pair for HBAR-USD: buy_level=0.1812, sell_level=0.1850, details={'buy_level': np.float64(0.1812), 'buy_order_id': None, 'buy_quantity': np.float64(1146.71875357), 'buy_state': None, 'sell_level': np.float64(0.185), 'sell_order_id': None, 'sell_quantity': 0.0, 'sell_state': None}
+2025-05-24 13:42:19,312 - DEBUG - Added order pair for HBAR-USD: buy_level=0.1850, sell_level=0.1888, details={'buy_level': np.float64(0.185), 'buy_order_id': None, 'buy_quantity': np.float64(1123.16453053), 'buy_state': None, 'sell_level': np.float64(0.1888), 'sell_order_id': None, 'sell_quantity': 0.0, 'sell_state': None}
+2025-05-24 13:42:19,312 - DEBUG - Added order pair for HBAR-USD: buy_level=0.1888, sell_level=0.1926, details={'buy_level': np.float64(0.1888), 'buy_order_id': None, 'buy_quantity': np.float64(1100.55846477), 'buy_state': None, 'sell_level': np.float64(0.1926), 'sell_order_id': None, 'sell_quantity': 0.0, 'sell_state': None}
+2025-05-24 13:42:19,312 - DEBUG - Added order pair for HBAR-USD: buy_level=0.1926, sell_level=0.1965, details={'buy_level': np.float64(0.1926), 'buy_order_id': None, 'buy_quantity': np.float64(1078.84443483), 'buy_state': None, 'sell_level': np.float64(0.1965), 'sell_order_id': None, 'sell_quantity': 0.0, 'sell_state': None}
+2025-05-24 13:42:19,312 - INFO - Orders initialized for HBAR-USD: 6 total (grid pairs: 6, stray sell: 0)
+2025-05-24 13:42:19,312 - INFO - Initialized orders for HBAR-USD: {"0.1736": {"buy_level": 0.1736, "buy_order_id": null, "buy_quantity": 1196.92072666, "buy_state": null, "sell_level": 0.1774, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.1774": {"buy_level": 0.1774, "buy_order_id": null, "buy_quantity": 1171.28206397, "buy_state": null, "sell_level": 0.1812, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.1812": {"buy_level": 0.1812, "buy_order_id": null, "buy_quantity": 1146.71875357, "buy_state": null, "sell_level": 0.185, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.185": {"buy_level": 0.185, "buy_order_id": null, "buy_quantity": 1123.16453053, "buy_state": null, "sell_level": 0.1888, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.1888": {"buy_level": 0.1888, "buy_order_id": null, "buy_quantity": 1100.55846477, "buy_state": null, "sell_level": 0.1926, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.1926": {"buy_level": 0.1926, "buy_order_id": null, "buy_quantity": 1078.84443483, "buy_state": null, "sell_level": 0.1965, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}}
+2025-05-24 13:42:19,312 - DEBUG - Updating order status for HBAR-USD
+2025-05-24 13:42:19,552 - DEBUG - Fetched 61 orders for HBAR-USD
+2025-05-24 13:42:19,552 - INFO - Order status updated for HBAR-USD: {"0.1736": {"buy_level": 0.1736, "buy_order_id": null, "buy_quantity": 1196.92072666, "buy_state": null, "sell_level": 0.1774, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.1774": {"buy_level": 0.1774, "buy_order_id": null, "buy_quantity": 1171.28206397, "buy_state": null, "sell_level": 0.1812, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.1812": {"buy_level": 0.1812, "buy_order_id": null, "buy_quantity": 1146.71875357, "buy_state": null, "sell_level": 0.185, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.185": {"buy_level": 0.185, "buy_order_id": null, "buy_quantity": 1123.16453053, "buy_state": null, "sell_level": 0.1888, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.1888": {"buy_level": 0.1888, "buy_order_id": null, "buy_quantity": 1100.55846477, "buy_state": null, "sell_level": 0.1926, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.1926": {"buy_level": 0.1926, "buy_order_id": null, "buy_quantity": 1078.84443483, "buy_state": null, "sell_level": 0.1965, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}}
+2025-05-24 13:42:19,553 - INFO - Post-initialization order sync for HBAR-USD: {"0.1736": {"buy_level": 0.1736, "buy_order_id": null, "buy_quantity": 1196.92072666, "buy_state": null, "sell_level": 0.1774, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.1774": {"buy_level": 0.1774, "buy_order_id": null, "buy_quantity": 1171.28206397, "buy_state": null, "sell_level": 0.1812, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.1812": {"buy_level": 0.1812, "buy_order_id": null, "buy_quantity": 1146.71875357, "buy_state": null, "sell_level": 0.185, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.185": {"buy_level": 0.185, "buy_order_id": null, "buy_quantity": 1123.16453053, "buy_state": null, "sell_level": 0.1888, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.1888": {"buy_level": 0.1888, "buy_order_id": null, "buy_quantity": 1100.55846477, "buy_state": null, "sell_level": 0.1926, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}, "0.1926": {"buy_level": 0.1926, "buy_order_id": null, "buy_quantity": 1078.84443483, "buy_state": null, "sell_level": 0.1965, "sell_order_id": null, "sell_quantity": 0.0, "sell_state": null}}
+2025-05-24 13:42:19,553 - INFO - Completed bot initialization for all symbols
+2025-05-24 13:42:19,553 - INFO - GridManager initialization completed successfully.
+2025-05-24 13:42:19,553 - INFO - Starting GridManager run loop.
+2025-05-24 13:42:19,553 - INFO - Monitoring GridManager. Press Ctrl+C to exit.
+2025-05-24 13:42:19,553 - INFO - GridManager run loop started.
+2025-05-24 13:42:19,553 - DEBUG - Starting run loop iteration
+2025-05-24 13:42:19,553 - DEBUG - Checking network connectivity by pinging 8.8.8.8
+2025-05-24 13:42:19,574 - DEBUG - Network check successful: ping to 8.8.8.8 succeeded
+2025-05-24 13:42:19,574 - DEBUG - Starting get_market_states, state_manager_id: 126691355462400
+2025-05-24 13:42:19,574 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": null, "short_term": null}}
+2025-05-24 13:42:19,590 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
+2025-05-24 13:42:19,590 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
+2025-05-24 13:42:19,590 - DEBUG - Completed get_market_states
+2025-05-24 13:42:19,590 - DEBUG - Running iteration for HBAR-USD
+2025-05-24 13:42:19,590 - DEBUG - Fetching ticker buffer for HBAR-USD
+2025-05-24 13:42:19,591 - INFO - Ticker buffer for HBAR-USD: empty=False, rows=11, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
+       'best_ask', 'side'],
+      dtype='object'), last_row={'timestamp': {10: Timestamp('2025-05-24 17:42:19.205385+0000', tz='UTC')}, 'symbol': {10: 'HBAR-USD'}, 'last_price': {10: 0.19074}, 'volume_24h': {10: 71229680.3}, 'best_bid': {10: 0.19076}, 'best_ask': {10: 0.19078}, 'side': {10: 'unknown'}}
+2025-05-24 13:42:19,591 - INFO - Short-term downtrend detected for HBAR-USD, calling handle_shortterm_downtrend
+2025-05-24 13:42:19,591 - DEBUG - Checking for short-term downtrend for HBAR-USD
+2025-05-24 13:42:19,591 - DEBUG - Short-term market state for HBAR-USD: downtrend
+2025-05-24 13:42:19,591 - INFO - Handling short-term downtrend for HBAR-USD
+2025-05-24 13:42:19,795 - INFO - Canceled all open buy orders for HBAR-USD
+2025-05-24 13:42:19,795 - INFO - Completed handling short-term downtrend for HBAR-USD: open buy orders canceled, sell orders unchanged, sttrade set to False
+2025-05-24 13:42:19,795 - DEBUG - Checking grid reset condition for HBAR-USD
+2025-05-24 13:42:19,795 - DEBUG - Fetching ticker buffer for HBAR-USD
+2025-05-24 13:42:19,795 - INFO - Ticker buffer for HBAR-USD: empty=False, rows=11, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
+       'best_ask', 'side'],
+      dtype='object'), last_row={'timestamp': {10: Timestamp('2025-05-24 17:42:19.205385+0000', tz='UTC')}, 'symbol': {10: 'HBAR-USD'}, 'last_price': {10: 0.19074}, 'volume_24h': {10: 71229680.3}, 'best_bid': {10: 0.19076}, 'best_ask': {10: 0.19078}, 'side': {10: 'unknown'}}
+2025-05-24 13:42:19,796 - DEBUG - Insufficient ticker data for HBAR-USD: 11 ticks, need 30
+2025-05-24 13:42:19,796 - INFO - Completed iteration for HBAR-USD
+2025-05-24 13:42:19,796 - INFO - Run loop iteration completed
+2025-05-24 13:42:19,796 - DEBUG - Heartbeat: run loop active
+2025-05-24 13:43:19,798 - DEBUG - Starting run loop iteration
+2025-05-24 13:43:19,798 - DEBUG - Checking network connectivity by pinging 8.8.8.8
+2025-05-24 13:43:19,818 - DEBUG - Network check successful: ping to 8.8.8.8 succeeded
+2025-05-24 13:43:19,819 - DEBUG - Starting get_market_states, state_manager_id: 126691355462400
+2025-05-24 13:43:19,819 - DEBUG - State dict before calculation: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
+2025-05-24 13:43:19,846 - INFO - Market states: {"HBAR-USD": {"long_term": "uptrend", "short_term": "downtrend"}}
+2025-05-24 13:43:19,846 - DEBUG - Market state for HBAR-USD: long_term=uptrend, short_term=downtrend
+2025-05-24 13:43:19,847 - DEBUG - Completed get_market_states
+2025-05-24 13:43:19,847 - DEBUG - Running iteration for HBAR-USD
+2025-05-24 13:43:19,847 - DEBUG - Fetching ticker buffer for HBAR-USD
+2025-05-24 13:43:19,848 - INFO - Ticker buffer for HBAR-USD: empty=False, rows=119, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
+       'best_ask', 'side'],
+      dtype='object'), last_row={'timestamp': {118: Timestamp('2025-05-24 17:43:16.929303+0000', tz='UTC')}, 'symbol': {118: 'HBAR-USD'}, 'last_price': {118: 0.19074}, 'volume_24h': {118: 71196123.7}, 'best_bid': {118: 0.19068}, 'best_ask': {118: 0.19074}, 'side': {118: 'unknown'}}
+2025-05-24 13:43:19,848 - DEBUG - Last 30 tick prices for HBAR-USD: [0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19069, 0.19069, 0.19069, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19074, 0.19074, 0.19074]
+2025-05-24 13:43:19,848 - DEBUG - Checking grid reset condition for HBAR-USD
+2025-05-24 13:43:19,848 - DEBUG - Fetching ticker buffer for HBAR-USD
+2025-05-24 13:43:19,850 - INFO - Ticker buffer for HBAR-USD: empty=False, rows=119, columns=Index(['timestamp', 'symbol', 'last_price', 'volume_24h', 'best_bid',
+       'best_ask', 'side'],
+      dtype='object'), last_row={'timestamp': {118: Timestamp('2025-05-24 17:43:16.929303+0000', tz='UTC')}, 'symbol': {118: 'HBAR-USD'}, 'last_price': {118: 0.19074}, 'volume_24h': {118: 71196123.7}, 'best_bid': {118: 0.19068}, 'best_ask': {118: 0.19074}, 'side': {118: 'unknown'}}
+2025-05-24 13:43:19,850 - DEBUG - Last 30 tick prices for HBAR-USD: [0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19069, 0.19069, 0.19069, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19074, 0.19074, 0.19074]
+2025-05-24 13:43:19,850 - INFO - Grid reset check for HBAR-USD: 30 ticks, max_grid_price=0.2079, grid_reset=False
+2025-05-24 13:43:19,851 - DEBUG - Recent tick prices for HBAR-USD: [0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19079, 0.19069, 0.19069, 0.19069, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19073, 0.19074, 0.19074, 0.19074]
+2025-05-24 13:43:19,851 - DEBUG - Grid reset condition not met for HBAR-USD: Not all 30 ticks above max_grid_price [0.2079]
+2025-05-24 13:43:19,851 - INFO - Completed iteration for HBAR-USD
+2025-05-24 13:43:19,851 - INFO - Run loop iteration completed
+2025-05-24 13:43:19,851 - DEBUG - Heartbeat: run loop active

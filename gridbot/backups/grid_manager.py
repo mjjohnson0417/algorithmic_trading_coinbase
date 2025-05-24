@@ -6,6 +6,7 @@ import asyncio
 from typing import List, Dict
 import json
 import pandas as pd
+import platform  # Added for platform-specific ping commands
 from order_operations import OrderOperations
 from indicator_calculator import IndicatorCalculator
 from state_manager import StateManager
@@ -60,6 +61,40 @@ class GridManager:
         elif not self.enable_logging:
             self.logger.addHandler(logging.NullHandler())
             self.logger.setLevel(logging.CRITICAL + 1)
+
+    async def check_network(self) -> bool:
+        """
+        Checks network connectivity by pinging 8.8.8.8 (Google DNS) using subprocess.
+        
+        Returns:
+            bool: True if ping succeeds, False otherwise.
+        """
+        if self.enable_logging:
+            self.logger.debug("Checking network connectivity by pinging 8.8.8.8")
+        try:
+            ping_cmd = ["ping", "-c", "1", "-W", "2", "8.8.8.8"]  # Linux: 1 ping, 2s timeout
+            # if platform.system() == "Windows":
+            #     ping_cmd = ["ping", "-n", "1", "-w", "2000", "8.8.8.8"]  # Windows: 1 ping, 2s timeout
+            
+            process = await asyncio.create_subprocess_exec(
+                *ping_cmd,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE
+            )
+            stdout, stderr = await process.communicate()
+            
+            if process.returncode == 0:
+                if self.enable_logging:
+                    self.logger.debug("Network check successful: ping to 8.8.8.8 succeeded")
+                return True
+            else:
+                if self.enable_logging:
+                    self.logger.warning(f"Network check failed: ping to 8.8.8.8 returned code {process.returncode}, stderr: {stderr.decode().strip()}")
+                return False
+        except Exception as e:
+            if self.enable_logging:
+                self.logger.error(f"Error during network check: {e}", exc_info=True)
+            return False
 
     async def initialize_bot(self) -> None:
         """
@@ -989,10 +1024,8 @@ class GridManager:
     async def run(self, interval: int = 60):
         """
         Main run loop for the grid bot, updating market states and processing each symbol
-        for market state decisions and grid reset conditions.
-
-        Args:
-            interval: Seconds between iterations (default: 60).
+        for market state decisions and grid reset conditions. Skips iteration if network
+        connectivity check fails.
         """
         if self.enable_logging:
             self.logger.info("GridManager run loop started.")
@@ -1000,6 +1033,14 @@ class GridManager:
             try:
                 if self.enable_logging:
                     self.logger.debug("Starting run loop iteration")
+                
+                # Check network connectivity
+                if not await self.check_network():
+                    if self.enable_logging:
+                        self.logger.warning("Skipping run loop iteration due to network connectivity failure")
+                    await asyncio.sleep(interval)
+                    continue
+                
                 # Update market states (includes indicator updates via state_manager)
                 await self.get_market_states()
                 # Process each symbol
@@ -1017,85 +1058,85 @@ class GridManager:
                         handler.flush()
             await asyncio.sleep(interval)
 
-    async def initialize_bot(self) -> None:
+    async def run_for_symbol(self, symbol: str):
         """
-            Processes a single symbol, checking market states and reset conditions. Calls downtrend methods
-            only once per downtrend when lttrade/sttrade are True, and resets lttrade/sttrade to True when
-            market states recover to uptrend or sideways. In sideways/uptrend states with both lttrade and
-            sttrade True, maintains grid trading by syncing, verifying, and preparing to place orders. Skips
-            actions during persistent downtrends when orders are already canceled.
+        Processes a single symbol, checking market states and reset conditions. Calls downtrend methods
+        only once per downtrend when lttrade/sttrade are True, and resets lttrade/sttrade to True when
+        market states recover to uptrend or sideways. In sideways/uptrend states with both lttrade and
+        sttrade True, maintains grid trading by syncing, verifying, and preparing to place orders. Skips
+        actions during persistent downtrends when orders are already canceled.
 
-            Args:
-                symbol: Trading pair symbol (e.g., 'BTC-USDT').
+        Args:
+            symbol: Trading pair symbol (e.g., 'BTC-USDT').
         """
         if self.enable_logging:
-            self.logger.info(f"Starting bot initialization for symbols: {self.symbols}")
+            self.logger.debug(f"Running iteration for {symbol}")
         try:
-            for symbol in self.symbols:
-                # Check ticker buffer readiness with retries
-                max_retries = 6
-                retry_delay = 5  # seconds
-                ticker_ready = False
-                for attempt in range(max_retries):
-                    try:
-                        ticker_df = await self.get_ticker_buffer(symbol)
-                        if not ticker_df.empty and 'last_price' in ticker_df.columns and not ticker_df['last_price'].isna().iloc[-1]:
-                            self.logger.debug(f"Ticker buffer for {symbol} is ready on attempt {attempt + 1}: rows={len(ticker_df)}, last_price={ticker_df['last_price'].iloc[-1]}")
-                            ticker_ready = True
-                            break
-                        else:
-                            self.logger.warning(f"Ticker buffer for {symbol} not ready on attempt {attempt + 1}: empty={ticker_df.empty}, has_last_price={'last_price' in ticker_df.columns}, last_price_not_na={'False (no rows)' if ticker_df.empty else not ticker_df['last_price'].isna().iloc[-1] if 'last_price' in ticker_df.columns else False}")
-                            if attempt < max_retries - 1:
-                                self.logger.debug(f"Retrying ticker buffer check for {symbol} in {retry_delay} seconds")
-                                await asyncio.sleep(retry_delay)
-                    except Exception as e:
-                        self.logger.error(f"Error checking ticker buffer for {symbol} on attempt {attempt + 1}: {e}", exc_info=True)
-                        if attempt < max_retries - 1:
-                            await asyncio.sleep(retry_delay)
-                if not ticker_ready:
-                    self.logger.warning(f"Failed to get valid ticker buffer for {symbol} after {max_retries} attempts, proceeding with initialization")
+            # Fetch ticker buffer for reset condition
+            await self.get_ticker_buffer(symbol)
+            
+            # Check market states
+            market_states = self.state_manager.state_dict.get(symbol, {})
+            long_term_state = market_states.get('long_term')
+            short_term_state = market_states.get('short_term')
 
-                # Sync all open orders into orders dictionary
+            # Handle long-term market state
+            if not self.lttrade:
+                if long_term_state in ["uptrend", "sideways"]:
+                    if self.enable_logging:
+                        self.logger.info(f"Long-term state recovered to {long_term_state} for {symbol}, resetting lttrade to True")
+                    self.lttrade = True
+                # Skip if long_term_state is "downtrend" (no action needed)
+            elif long_term_state == "downtrend":
+                if self.enable_logging:
+                    self.logger.info(f"Long-term downtrend detected for {symbol}, calling handle_longterm_downtrend")
+                await self.handle_longterm_downtrend(symbol)
+
+            # Handle short-term market state
+            if not self.sttrade:
+                if short_term_state in ["uptrend", "sideways"]:
+                    if self.enable_logging:
+                        self.logger.info(f"Short-term state recovered to {short_term_state} for {symbol}, resetting sttrade to True")
+                    self.sttrade = True
+                # Skip if short_term_state is "downtrend" (no action needed)
+            elif short_term_state == "downtrend":
+                if self.enable_logging:
+                    self.logger.info(f"Short-term downtrend detected for {symbol}, calling handle_shortterm_downtrend")
+                await self.handle_shortterm_downtrend(symbol)
+
+            # Maintain grid trading in sideways/uptrend states when both lttrade and sttrade are True
+            if self.lttrade and self.sttrade:
+                if self.enable_logging:
+                    self.logger.debug(f"Maintaining grid trading for {symbol} in market state: long_term={long_term_state}, short_term={short_term_state}")
+                # Sync order statuses with exchange
                 try:
                     await self.update_order_status(symbol)
-                    self.logger.info(f"Pre-initialization order sync for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
                 except Exception as e:
-                    self.logger.error(f"Error syncing open orders for {symbol} during initialization: {e}", exc_info=True)
-
-                # Cancel all open buy orders to clean up stale orders
+                    if self.enable_logging:
+                        self.logger.error(f"Error updating order status for {symbol}: {e}", exc_info=True)
+                
+                # Verify and clean up orders
                 try:
-                    await self.cancel_all_open_buy_orders(symbol)
+                    await self.verify_orders(symbol)
                 except Exception as e:
-                    self.logger.error(f"Error canceling open buy orders for {symbol} during initialization: {e}", exc_info=True)
-
-                # Initialize grid levels
+                    if self.enable_logging:
+                        self.logger.error(f"Error verifying orders for {symbol}: {e}", exc_info=True)
+                
+                # Place new orders for unfilled grid levels (commented out for testing)
                 try:
-                    grid_levels = await self.initialize_grid(symbol)
-                    if grid_levels:
-                        self.grid_levels[symbol] = grid_levels
-                        self.logger.info(f"Initialized grid levels for {symbol}: {grid_levels}")
-                    else:
-                        self.logger.warning(f"Failed to initialize grid levels for {symbol}, grid_levels empty")
+                    await self.place_orders(symbol)
                 except Exception as e:
-                    self.logger.error(f"Error initializing grid for {symbol}: {e}", exc_info=True)
+                    if self.enable_logging:
+                        self.logger.error(f"Error placing orders for {symbol}: {e}", exc_info=True)
 
-                # Initialize orders dictionary with any remaining open orders
-                try:
-                    await self.initialize_orders(symbol)
-                    self.logger.info(f"Initialized orders for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
-                except Exception as e:
-                    self.logger.error(f"Error initializing orders for {symbol}: {e}", exc_info=True)
+            # Check reset condition
+            if await self.check_grid_reset_condition(symbol):
+                if self.enable_logging:
+                    self.logger.info(f"Grid reset condition met for {symbol}, calling reset_grid")
+                await self.reset_grid(symbol)
 
-                # Final sync to ensure all orders are tracked
-                try:
-                    await self.update_order_status(symbol)
-                    self.logger.info(f"Post-initialization order sync for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
-                except Exception as e:
-                    self.logger.error(f"Error syncing order statuses for {symbol} during initialization: {e}", exc_info=True)
-
-            self.logger.info(f"Completed bot initialization for all symbols")
-            for handler in self.logger.handlers:
-                if isinstance(handler, RotatingFileHandler):
-                    handler.flush()
+            if self.enable_logging:
+                self.logger.info(f"Completed iteration for {symbol}")
         except Exception as e:
-            self.logger.error(f"Error during bot initialization: {e}", exc_info=True)
+            if self.enable_logging:
+                self.logger.error(f"Error in run_for_symbol for {symbol}: {e}", exc_info=True)
