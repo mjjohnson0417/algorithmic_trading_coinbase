@@ -63,12 +63,12 @@ class GridManager:
 
     async def initialize_bot(self) -> None:
         """
-        Performs one-time initialization tasks for the bot at startup, including canceling stale buy orders,
-        initializing grid levels, setting up the orders dictionary, and syncing order statuses for all symbols.
-        Checks ticker buffer readiness with retries (6 attempts, 5-second delays, ~30 seconds total) to ensure
-        data availability, handling empty or invalid buffers safely.
+            Performs one-time initialization tasks for the bot at startup, including canceling stale buy orders,
+            initializing grid levels, setting up the orders dictionary, and syncing order statuses for all symbols.
+            Checks ticker buffer readiness with retries (6 attempts, 5-second delays, ~30 seconds total) to ensure
+            data availability, handling empty or invalid buffers safely.
 
-        Retries up to 6 times with 5-second delays (total ~30 seconds) if the ticker buffer is empty or invalid.
+            Retries up to 6 times with 5-second delays (total ~30 seconds) if the ticker buffer is empty or invalid.
         """
         if self.enable_logging:
             self.logger.info(f"Starting bot initialization for symbols: {self.symbols}")
@@ -82,159 +82,145 @@ class GridManager:
                     try:
                         ticker_df = await self.get_ticker_buffer(symbol)
                         if not ticker_df.empty and 'last_price' in ticker_df.columns and not ticker_df['last_price'].isna().iloc[-1]:
-                            if self.enable_logging:
-                                self.logger.debug(f"Ticker buffer for {symbol} is ready on attempt {attempt + 1}: rows={len(ticker_df)}, last_price={ticker_df['last_price'].iloc[-1]}")
+                            self.logger.debug(f"Ticker buffer for {symbol} is ready on attempt {attempt + 1}: rows={len(ticker_df)}, last_price={ticker_df['last_price'].iloc[-1]}")
                             ticker_ready = True
                             break
                         else:
-                            if self.enable_logging:
-                                self.logger.warning(f"Ticker buffer for {symbol} not ready on attempt {attempt + 1}: empty={ticker_df.empty}, has_last_price={'last_price' in ticker_df.columns}, last_price_not_na={'False (no rows)' if ticker_df.empty else not ticker_df['last_price'].isna().iloc[-1] if 'last_price' in ticker_df.columns else False}")
+                            self.logger.warning(f"Ticker buffer for {symbol} not ready on attempt {attempt + 1}: empty={ticker_df.empty}, has_last_price={'last_price' in ticker_df.columns}, last_price_not_na={'False (no rows)' if ticker_df.empty else not ticker_df['last_price'].isna().iloc[-1] if 'last_price' in ticker_df.columns else False}")
                             if attempt < max_retries - 1:
-                                if self.enable_logging:
-                                    self.logger.debug(f"Retrying ticker buffer check for {symbol} in {retry_delay} seconds")
+                                self.logger.debug(f"Retrying ticker buffer check for {symbol} in {retry_delay} seconds")
                                 await asyncio.sleep(retry_delay)
                     except Exception as e:
-                        if self.enable_logging:
-                            self.logger.error(f"Error checking ticker buffer for {symbol} on attempt {attempt + 1}: {e}", exc_info=True)
+                        self.logger.error(f"Error checking ticker buffer for {symbol} on attempt {attempt + 1}: {e}", exc_info=True)
                         if attempt < max_retries - 1:
                             await asyncio.sleep(retry_delay)
-                if not ticker_ready and self.enable_logging:
-                    self.logger.warning(f"Failed to get valid ticker buffer for {symbol} after {max_retries} attempts, proceeding with initialization; final buffer state: empty={ticker_df.empty}, rows={len(ticker_df)}, has_last_price={'last_price' in ticker_df.columns}")
+                if not ticker_ready:
+                    self.logger.warning(f"Failed to get valid ticker buffer for {symbol} after {max_retries} attempts, proceeding with initialization")
+
+                # Sync all open orders into orders dictionary
+                try:
+                    await self.update_order_status(symbol)
+                    self.logger.info(f"Pre-initialization order sync for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
+                except Exception as e:
+                    self.logger.error(f"Error syncing open orders for {symbol} during initialization: {e}", exc_info=True)
 
                 # Cancel all open buy orders to clean up stale orders
                 try:
                     await self.cancel_all_open_buy_orders(symbol)
                 except Exception as e:
-                    if self.enable_logging:
-                        self.logger.error(f"Error canceling open buy orders for {symbol} during initialization: {e}", exc_info=True)
+                    self.logger.error(f"Error canceling open buy orders for {symbol} during initialization: {e}", exc_info=True)
 
                 # Initialize grid levels
                 try:
                     grid_levels = await self.initialize_grid(symbol)
                     if grid_levels:
                         self.grid_levels[symbol] = grid_levels
-                        if self.enable_logging:
-                            self.logger.info(f"Initialized grid levels for {symbol}: {grid_levels}")
+                        self.logger.info(f"Initialized grid levels for {symbol}: {grid_levels}")
                     else:
-                        if self.enable_logging:
-                            self.logger.warning(f"Failed to initialize grid levels for {symbol}, grid_levels empty")
+                        self.logger.warning(f"Failed to initialize grid levels for {symbol}, grid_levels empty")
                 except Exception as e:
-                    if self.enable_logging:
-                        self.logger.error(f"Error initializing grid for {symbol}: {e}", exc_info=True)
+                    self.logger.error(f"Error initializing grid for {symbol}: {e}", exc_info=True)
 
-                # Initialize orders dictionary
+                # Initialize orders dictionary with any remaining open orders
                 try:
                     await self.initialize_orders(symbol)
-                    if self.enable_logging:
-                        self.logger.info(f"Initialized orders for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
+                    self.logger.info(f"Initialized orders for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
                 except Exception as e:
-                    if self.enable_logging:
-                        self.logger.error(f"Error initializing orders for {symbol}: {e}", exc_info=True)
+                    self.logger.error(f"Error initializing orders for {symbol}: {e}", exc_info=True)
 
-                # Sync order statuses with exchange
+                # Final sync to ensure all orders are tracked
                 try:
                     await self.update_order_status(symbol)
-                    if self.enable_logging:
-                        self.logger.info(f"Synced order statuses for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
+                    self.logger.info(f"Post-initialization order sync for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
                 except Exception as e:
-                    if self.enable_logging:
-                        self.logger.error(f"Error syncing order statuses for {symbol}: {e}", exc_info=True)
+                    self.logger.error(f"Error syncing order statuses for {symbol} during initialization: {e}", exc_info=True)
 
-            if self.enable_logging:
-                self.logger.info(f"Completed bot initialization for all symbols")
-                for handler in self.logger.handlers:
-                    if isinstance(handler, RotatingFileHandler):
-                        handler.flush()
+            self.logger.info(f"Completed bot initialization for all symbols")
+            for handler in self.logger.handlers:
+                if isinstance(handler, RotatingFileHandler):
+                    handler.flush()
         except Exception as e:
-            if self.enable_logging:
-                self.logger.error(f"Error during bot initialization: {e}", exc_info=True)
+            self.logger.error(f"Error during bot initialization: {e}", exc_info=True)
 
-
-    # async def calculate_orders_value(self, symbol: str) -> float:
-    #     """
-    #     Calculates order value for a specific symbol by summing USDT and token balances, 
-    #     taking 75%, and dividing by the number of grid levels for the symbol.
-
-    #     Args:
-    #         symbol: Trading pair symbol (e.g., 'HBAR-USDT').
-
-    #     Returns:
-    #         float: Order value in USDT.
-    #     """
-    #     if self.enable_logging:
-    #         self.logger.debug(f"Calculating order value for {symbol}")
-        
-    #     # Get USDT balance for the specific symbol's operations
-    #     total_usdt = await self.order_operations_dict[symbol].get_usdt_balance()
-        
-    #     # Get base asset (e.g., HBAR for HBAR-USDT)
-    #     base_asset = symbol.split('-')[0]
-        
-    #     # Fetch ticker data for the symbol
-    #     ticker_df = self.data_manager.get_buffer(symbol, 'ticker')
-    #     if self.enable_logging:
-    #         self.logger.debug(f"Ticker buffer for {symbol}: empty={ticker_df.empty}, rows={len(ticker_df)}, columns={ticker_df.columns}, last_row={ticker_df.tail(1).to_dict()}")
-        
-    #     # Add token value in USDT if ticker price is available
-    #     if not ticker_df.empty and 'last_price' in ticker_df.columns and not ticker_df['last_price'].isna().iloc[-1]:
-    #         token_balance = await self.order_operations_dict[symbol].get_base_asset_balance(base_asset)
-    #         token_value_usdt = token_balance * ticker_df['last_price'].iloc[-1]
-    #         total_value = total_usdt + token_value_usdt
-    #     else:
-    #         if self.enable_logging:
-    #             self.logger.warning(f"No valid ticker price for {symbol}, using only USDT balance")
-    #         total_value = total_usdt
-        
-    #     # Use grid levels for this symbol only
-    #     total_levels = self.MAX_GRID_LEVELS_PER_SYMBOL
-    #     order_value = (self.allocation_ratio * total_value) / total_levels if total_levels > 0 else 0.0
-        
-    #     if self.enable_logging:
-    #         self.logger.debug(f"Order value for {symbol}: {order_value:.2f}")
-        
-    #     return order_value
-
+   
     async def calculate_orders_value(self, symbol: str) -> float:
         """
-        Calculates order value for a specific symbol by summing USD and token balances, 
-        taking 75%, and dividing by the number of grid levels for the symbol.
+                Calculates order value for a specific symbol by summing USD and token balances, 
+                taking 75%, and dividing by the number of grid levels for the symbol.
 
-        Args:
-            symbol: Trading pair symbol (e.g., 'HBAR-USD').
+                Args:
+                    symbol: Trading pair symbol (e.g., 'HBAR-USD').
 
-        Returns:
-            float: Order value in USD.
+                Returns:
+                    float: Order value in USD.
         """
         if self.enable_logging:
             self.logger.debug(f"Calculating order value for {symbol}")
         
-        # Get USD balance for the specific symbol's operations
-        total_usd = await self.order_operations_dict[symbol].get_usd_balance()
+        # Fetch free USD balance
+        free_usd = await self.order_operations_dict[symbol].get_usd_balance()
         
-        # Get base asset (e.g., HBAR for HBAR-USD)
+        # Sum USD locked in open buy orders and base asset locked in open sell orders
+        open_orders = await self.order_operations_dict[symbol].get_open_orders()
+        locked_usd = 0.0
+        locked_base_asset = 0.0
+        for order in open_orders:
+            try:
+                if order['side'].lower() == 'buy' and order['status'].lower() == 'open':
+                    if order.get('amount') is not None and order.get('price') is not None:
+                        order_value = float(order['amount']) * float(order['price'])
+                        locked_usd += order_value
+                        self.logger.debug(f"Open buy order: id={order['id']}, amount={order['amount']}, price={order['price']}, value={order_value}")
+                    else:
+                        self.logger.warning(f"Buy order {order['id']} missing amount or price, fetching details")
+                        order_details = await self.order_operations_dict[symbol].fetch_order_status(order['id'])
+                        if order_details and order_details.get('amount') is not None and order_details.get('price') is not None:
+                            order_value = float(order_details['amount']) * float(order_details['price'])
+                            locked_usd += order_value
+                            self.logger.debug(f"Fetched buy order: id={order['id']}, amount={order_details['amount']}, price={order_details['price']}, value={order_value}")
+                        else:
+                            self.logger.warning(f"Could not fetch valid details for buy order {order['id']}")
+                elif order['side'].lower() == 'sell' and order['status'].lower() == 'open':
+                    if order.get('amount') is not None:
+                        locked_base_asset += float(order['amount'])
+                        self.logger.debug(f"Open sell order: id={order['id']}, amount={order['amount']}, price={order.get('price', 'N/A')}")
+                    else:
+                        self.logger.warning(f"Sell order {order['id']} missing amount, fetching details")
+                        order_details = await self.order_operations_dict[symbol].fetch_order_status(order['id'])
+                        if order_details and order_details.get('amount') is not None:
+                            locked_base_asset += float(order_details['amount'])
+                            self.logger.debug(f"Fetched sell order: id={order['id']}, amount={order_details['amount']}, price={order_details.get('price', 'N/A')}")
+                        else:
+                            self.logger.warning(f"Could not fetch valid details for sell order {order['id']}")
+            except Exception as e:
+                self.logger.error(f"Error processing order {order.get('id', 'unknown')}: {e}", exc_info=True)
+        
+        # Combine free and locked USD
+        total_usd = free_usd + locked_usd
+        self.logger.debug(f"USD balance: free={free_usd:.2f}, locked={locked_usd:.2f}, total={total_usd:.2f}")
+        
         base_asset = symbol.split('-')[0]
-        
-        # Fetch ticker data for the symbol
         ticker_df = self.data_manager.get_buffer(symbol, 'ticker')
         if self.enable_logging:
             self.logger.debug(f"Ticker buffer for {symbol}: empty={ticker_df.empty}, rows={len(ticker_df)}, columns={ticker_df.columns}, last_row={ticker_df.tail(1).to_dict()}")
         
-        # Add token value in USD if ticker price is available
         if not ticker_df.empty and 'last_price' in ticker_df.columns and not ticker_df['last_price'].isna().iloc[-1]:
+            current_price = ticker_df['last_price'].iloc[-1]
             token_balance = await self.order_operations_dict[symbol].get_base_asset_balance(base_asset)
-            token_value_usd = token_balance * ticker_df['last_price'].iloc[-1]
+            # Include locked base asset in total value
+            total_base_asset = token_balance + locked_base_asset
+            token_value_usd = total_base_asset * current_price
             total_value = total_usd + token_value_usd
+            self.logger.debug(f"{base_asset} balance: free={token_balance:.8f}, locked={locked_base_asset:.8f}, total={total_base_asset:.8f}, value_usd={token_value_usd:.2f}")
         else:
-            if self.enable_logging:
-                self.logger.warning(f"No valid ticker price for {symbol}, using only USD balance")
+            self.logger.warning(f"No valid ticker price for {symbol}, using only USD balance")
             total_value = total_usd
         
-        # Use grid levels for this symbol only
         total_levels = self.MAX_GRID_LEVELS_PER_SYMBOL
         order_value = (self.allocation_ratio * total_value) / total_levels if total_levels > 0 else 0.0
         
         if self.enable_logging:
-            self.logger.debug(f"Order value for {symbol}: {order_value:.2f}")
+            self.logger.debug(f"Order value for {symbol}: {order_value:.2f}, total_usd={total_usd:.2f}, total_value={total_value:.2f}")
         
         return order_value
 
@@ -466,47 +452,72 @@ class GridManager:
         Initializes the orders dictionary for a given symbol, with six buy orders (five below and one above current price)
         and six corresponding sell orders (each one grid level above the buy order), keyed by buy_level.
         Sell quantities are initialized to 0.0, to be set when buy orders are filled.
+        Skips buy order above current price if an open sell order exists between current price and two grid levels above.
         """
         if self.enable_logging:
             self.logger.debug(f"Initializing orders for {symbol}")
         try:
             if not self.grid_levels[symbol]:
-                if self.enable_logging:
-                    self.logger.warning(f"No grid levels for {symbol}, cannot initialize orders")
+                self.logger.warning(f"No grid levels for {symbol}, cannot initialize orders")
                 return
             ticker_df = await self.get_ticker_buffer(symbol)
             if ticker_df.empty or 'last_price' not in ticker_df.columns or ticker_df['last_price'].isna().iloc[-1]:
-                if self.enable_logging:
-                    self.logger.warning(f"No valid ticker price for {symbol}, cannot initialize orders")
+                self.logger.warning(f"No valid ticker price for {symbol}, cannot initialize orders")
                 return
             current_price = ticker_df['last_price'].iloc[-1]
             order_value = await self.calculate_orders_value(symbol)
             if order_value <= 0:
-                if self.enable_logging:
-                    self.logger.warning(f"Invalid order value {order_value} for {symbol}, cannot initialize orders")
+                self.logger.warning(f"Invalid order value {order_value} for {symbol}, cannot initialize orders")
                 return
+            
+            # Clear orders and sync with exchange
             self.orders[symbol] = {}
-            below_levels = sorted([level for level in self.grid_levels[symbol] if level < current_price])[:5]
-            above_levels = sorted([level for level in self.grid_levels[symbol] if level >= current_price])[:1]
-            if len(below_levels) < 5:
-                if self.enable_logging:
-                    self.logger.warning(f"Insufficient buy levels below current price for {symbol}: found {len(below_levels)}, need 5")
-                return
-            if not above_levels:
-                if self.enable_logging:
-                    self.logger.warning(f"No buy level above current price for {symbol}")
-                return
-            buy_levels = below_levels + above_levels
+            await self.update_order_status(symbol)
+            self.logger.info(f"Post-clear order sync for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
+            
+            # Count existing stray sell orders
+            stray_sell_count = sum(
+                1 for order in self.orders[symbol].values()
+                if order['sell_state'] == 'stray_sell'
+            )
+            self.logger.debug(f"Stray sell orders for {symbol}: {stray_sell_count}")
+            
+            # Check for sell orders between current price and two grid levels above
+            has_sell_in_range = False
             grid_levels = sorted(self.grid_levels[symbol])
+            # Find the second grid level above current price
+            above_levels = [level for level in grid_levels if level > current_price]
+            second_above_level = above_levels[1] if len(above_levels) >= 2 else float('inf')
+            for order in self.orders[symbol].values():
+                sell_price = order['sell_level']
+                if (order['sell_state'] in ['open', 'pending', 'stray_sell'] and
+                    current_price < sell_price <= second_above_level):
+                    has_sell_in_range = True
+                    self.logger.debug(f"Found sell order at {sell_price:.4f} within range ({current_price:.4f}, {second_above_level:.4f}] for {symbol}")
+                    break
+            
+            # Limit grid pairs to fit within MAX_GRID_LEVELS_PER_SYMBOL
+            max_grid_pairs = max(0, self.MAX_GRID_LEVELS_PER_SYMBOL - stray_sell_count)
+            if max_grid_pairs < 6:
+                self.logger.info(f"Reducing grid pairs for {symbol} to {max_grid_pairs} due to {stray_sell_count} stray sell orders")
+            
+            below_levels = sorted([level for level in self.grid_levels[symbol] if level < current_price])[:min(5, max_grid_pairs)]
+            above_levels = []
+            if not has_sell_in_range:  # Only add above level if no sell order in range
+                above_levels = sorted([level for level in self.grid_levels[symbol] if level >= current_price])[:min(1, max_grid_pairs - len(below_levels))]
+            buy_levels = below_levels + above_levels
+            
+            if len(below_levels) < min(5, max_grid_pairs) and below_levels:
+                self.logger.warning(f"Insufficient buy levels below current price for {symbol}: found {len(below_levels)}, needed {min(5, max_grid_pairs)}")
+                return
+            if not above_levels and max_grid_pairs >= 1 and not has_sell_in_range:
+                self.logger.warning(f"No buy level above current price for {symbol}")
+                return
+            
             for buy_level in buy_levels:
-                sell_level = None
-                for level in grid_levels:
-                    if level > buy_level:
-                        sell_level = level
-                        break
+                sell_level = next((level for level in grid_levels if level > buy_level), None)
                 if not sell_level:
-                    if self.enable_logging:
-                        self.logger.warning(f"No sell level above buy level {buy_level:.4f} for {symbol}")
+                    self.logger.warning(f"No sell level above buy level {buy_level:.4f} for {symbol}")
                     continue
                 buy_quantity = order_value / buy_level
                 order_pair = {
@@ -516,20 +527,19 @@ class GridManager:
                     'buy_state': None,
                     'sell_level': sell_level,
                     'sell_order_id': None,
-                    'sell_quantity': 0.0,  # Initialize to 0.0, set when buy order fills
+                    'sell_quantity': 0.0,
                     'sell_state': None
                 }
                 self.orders[symbol][buy_level] = order_pair
-                if self.enable_logging:
-                    self.logger.debug(f"Added order pair for {symbol}: buy_level={buy_level:.4f}, sell_level={sell_level:.4f}, details={order_pair}")
-            if self.enable_logging:
-                self.logger.info(f"Orders initialized for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
-                for handler in self.logger.handlers:
-                    if isinstance(handler, RotatingFileHandler):
-                        handler.flush()
+                self.logger.debug(f"Added order pair for {symbol}: buy_level={buy_level:.4f}, sell_level={sell_level:.4f}, details={order_pair}")
+            
+            total_orders = len(buy_levels) + stray_sell_count
+            self.logger.info(f"Orders initialized for {symbol}: {total_orders} total (grid pairs: {len(buy_levels)}, stray sell: {stray_sell_count})")
+            for handler in self.logger.handlers:
+                if isinstance(handler, RotatingFileHandler):
+                    handler.flush()
         except Exception as e:
-            if self.enable_logging:
-                self.logger.error(f"Error initializing orders for {symbol}: {e}", exc_info=True)
+            self.logger.error(f"Error initializing orders for {symbol}: {e}", exc_info=True)
 
     async def update_order_status(self, symbol: str) -> None:
         """
@@ -651,76 +661,96 @@ class GridManager:
             if self.enable_logging:
                 self.logger.error(f"Error updating order status for {symbol}: {e}", exc_info=True)
 
+    
     async def verify_orders(self, symbol: str) -> None:
         """
-        Maintains the orders dictionary by resetting canceled/rejected/expired orders and completed pairs
-        (both buy and sell orders closed) to allow reuse of grid levels. Calculates order value at the start
-        to set appropriate buy_quantity for reset orders. Logs reset actions for debugging.
+            Maintains the orders dictionary by resetting canceled/rejected/expired orders and completed pairs
+            (both buy and sell orders closed) to allow reuse of grid levels. Checks for an open sell order
+            above the current price; if none exists (e.g., price has risen past all grid levels in orders or
+            highest sell order was filled), adds a new order pair at the next grid level above the current price
+            to place a buy order in the current iteration, with the sell order placed in a subsequent iteration
+            after the buy order is filled. Calculates order value to set appropriate buy_quantity. Logs actions
+            for debugging.
 
-        Args:
-            symbol: Trading pair symbol (e.g., 'BTC-USDT').
+            Args:
+                symbol: Trading pair symbol (e.g., 'BTC-USDT').
         """
         if self.enable_logging:
             self.logger.debug(f"Verifying orders for {symbol}")
         try:
-            # Calculate order value to determine buy order sizes
             order_value = await self.calculate_orders_value(symbol)
-            if self.enable_logging:
-                self.logger.debug(f"Calculated order value for {symbol}: {order_value}")
-
-            for buy_level, order in self.orders[symbol].items():
-                # Handle canceled/rejected/expired buy orders
+            ticker_df = await self.get_ticker_buffer(symbol)
+            if ticker_df.empty or 'last_price' not in ticker_df.columns or ticker_df['last_price'].isna().iloc[-1]:
+                self.logger.warning(f"No valid ticker price for {symbol}, cannot verify orders")
+                return
+            current_price = ticker_df['last_price'].iloc[-1]
+            
+            outstanding_orders = sum(
+                1 for order in self.orders[symbol].values()
+                if order['buy_state'] in ['open', 'pending'] or order['sell_state'] in ['open', 'pending', 'stray_sell']
+            )
+            self.logger.debug(f"Outstanding orders for {symbol}: {outstanding_orders}")
+            
+            for buy_level, order in list(self.orders[symbol].items()):
                 if order['buy_state'] in ['canceled', 'rejected', 'expired']:
-                    if self.enable_logging:
-                        self.logger.info(f"Resetting canceled buy order for {symbol}: buy_level={buy_level:.4f}, order_id={order['buy_order_id']}")
+                    self.logger.info(f"Resetting canceled buy order for {symbol}: buy_level={buy_level:.4f}, order_id={order['buy_order_id']}")
                     order['buy_order_id'] = None
                     order['buy_state'] = None
-                    # Set buy_quantity based on calculated order value (converted to base asset units)
-                    ticker_df = await self.get_ticker_buffer(symbol)
-                    if not ticker_df.empty and 'last_price' in ticker_df.columns and not ticker_df['last_price'].isna().iloc[-1]:
-                        last_price = ticker_df['last_price'].iloc[-1]
-                        order['buy_quantity'] = round(order_value / last_price, 8)  # Convert value to base asset units
-                        if self.enable_logging:
-                            self.logger.debug(f"Set buy_quantity for {symbol} at level {buy_level:.4f} to {order['buy_quantity']:.8f} based on order_value={order_value}")
-                    else:
-                        order['buy_quantity'] = 0.0
-                        if self.enable_logging:
-                            self.logger.warning(f"Cannot set buy_quantity for {symbol} at level {buy_level:.4f}: no valid ticker price")
-
-                # Handle canceled/rejected/expired sell orders
+                    order['buy_quantity'] = round(order_value / current_price, 8) if order_value > 0 else 0.0
                 if order['sell_state'] in ['canceled', 'rejected', 'expired']:
-                    if self.enable_logging:
-                        self.logger.info(f"Resetting canceled sell order for {symbol}: sell_level={order['sell_level']:.4f}, order_id={order['sell_order_id']}")
+                    self.logger.info(f"Resetting canceled sell order for {symbol}: sell_level={order['sell_level']:.4f}, order_id={order['sell_order_id']}")
                     order['sell_order_id'] = None
                     order['sell_state'] = None
                     order['sell_quantity'] = 0.0
-
-                # Reset completed pairs (both buy and sell orders closed) to allow reuse
                 if order['buy_state'] == 'closed' and order['sell_state'] == 'closed':
-                    if self.enable_logging:
-                        self.logger.info(f"Resetting completed order pair for {symbol}: buy_level={buy_level:.4f}")
+                    self.logger.info(f"Resetting completed order pair for {symbol}: buy_level={buy_level:.4f}")
                     order['buy_order_id'] = None
                     order['buy_state'] = None
-                    ticker_df = await self.get_ticker_buffer(symbol)
-                    if not ticker_df.empty and 'last_price' in ticker_df.columns and not ticker_df['last_price'].isna().iloc[-1]:
-                        last_price = ticker_df['last_price'].iloc[-1]
-                        order['buy_quantity'] = round(order_value / last_price, 8)
-                        if self.enable_logging:
-                            self.logger.debug(f"Set buy_quantity for {symbol} at level {buy_level:.4f} to {order['buy_quantity']:.8f} based on order_value={order_value}")
-                    else:
-                        order['buy_quantity'] = 0.0
-                        if self.enable_logging:
-                            self.logger.warning(f"Cannot set buy_quantity for {symbol} at level {buy_level:.4f}: no valid ticker price")
+                    order['buy_quantity'] = round(order_value / current_price, 8) if order_value > 0 else 0.0
                     order['sell_order_id'] = None
                     order['sell_state'] = None
                     order['sell_quantity'] = 0.0
-
-            # Ensure an open order exists above the current price (placeholder logic)
-            if self.enable_logging:
-                self.logger.info(f"Verified orders for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
+            
+            if outstanding_orders < self.MAX_GRID_LEVELS_PER_SYMBOL:
+                has_sell_above = False
+                for key, order in self.orders[symbol].items():
+                    if order['sell_level'] > current_price and order['sell_state'] in ['open', 'pending', 'stray_sell']:
+                        has_sell_above = True
+                        self.logger.debug(f"Found sell order above current price for {symbol}: key={key}, sell_level={order['sell_level']:.4f}, state={order['sell_state']}")
+                        break
+                if not has_sell_above:
+                    grid_levels = sorted(self.grid_levels[symbol])
+                    next_buy_level = next((level for level in grid_levels if level > current_price), None)
+                    if next_buy_level is None:
+                        self.logger.warning(f"No grid level found above current price {current_price:.4f} for {symbol}, cannot set up buy order")
+                        return
+                    if next_buy_level not in self.orders[symbol] or (
+                        self.orders[symbol][next_buy_level]['buy_state'] == 'closed' and 
+                        self.orders[symbol][next_buy_level]['sell_state'] == 'closed'
+                    ):
+                        sell_level = next((level for level in grid_levels if level > next_buy_level), None)
+                        if not sell_level:
+                            self.logger.warning(f"No sell level above buy level {next_buy_level:.4f} for {symbol}, cannot set up order pair")
+                            return
+                        buy_quantity = round(order_value / current_price, 8) if order_value > 0 else 0.0
+                        self.orders[symbol][next_buy_level] = {
+                            'buy_level': next_buy_level,
+                            'buy_order_id': None,
+                            'buy_quantity': buy_quantity,
+                            'buy_state': None,
+                            'sell_level': sell_level,
+                            'sell_order_id': None,
+                            'sell_quantity': 0.0,
+                            'sell_state': None
+                        }
+                        self.logger.info(f"Added new order pair for {symbol}: buy_level={next_buy_level:.4f}, sell_level={sell_level:.4f}, buy_quantity={buy_quantity:.8f}")
+            
+            self.logger.info(f"Verified orders for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
+            for handler in self.logger.handlers:
+                if isinstance(handler, RotatingFileHandler):
+                    handler.flush()
         except Exception as e:
-            if self.enable_logging:
-                self.logger.error(f"Error verifying orders for {symbol}: {e}", exc_info=True)
+            self.logger.error(f"Error verifying orders for {symbol}: {e}", exc_info=True)           
 
     async def place_orders(self, symbol: str) -> None:
         """
@@ -987,85 +1017,85 @@ class GridManager:
                         handler.flush()
             await asyncio.sleep(interval)
 
-    async def run_for_symbol(self, symbol: str):
+    async def initialize_bot(self) -> None:
         """
-        Processes a single symbol, checking market states and reset conditions. Calls downtrend methods
-        only once per downtrend when lttrade/sttrade are True, and resets lttrade/sttrade to True when
-        market states recover to uptrend or sideways. In sideways/uptrend states with both lttrade and
-        sttrade True, maintains grid trading by syncing, verifying, and preparing to place orders. Skips
-        actions during persistent downtrends when orders are already canceled.
+            Processes a single symbol, checking market states and reset conditions. Calls downtrend methods
+            only once per downtrend when lttrade/sttrade are True, and resets lttrade/sttrade to True when
+            market states recover to uptrend or sideways. In sideways/uptrend states with both lttrade and
+            sttrade True, maintains grid trading by syncing, verifying, and preparing to place orders. Skips
+            actions during persistent downtrends when orders are already canceled.
 
-        Args:
-            symbol: Trading pair symbol (e.g., 'BTC-USDT').
+            Args:
+                symbol: Trading pair symbol (e.g., 'BTC-USDT').
         """
         if self.enable_logging:
-            self.logger.debug(f"Running iteration for {symbol}")
+            self.logger.info(f"Starting bot initialization for symbols: {self.symbols}")
         try:
-            # Fetch ticker buffer for reset condition
-            await self.get_ticker_buffer(symbol)
-            
-            # Check market states
-            market_states = self.state_manager.state_dict.get(symbol, {})
-            long_term_state = market_states.get('long_term')
-            short_term_state = market_states.get('short_term')
+            for symbol in self.symbols:
+                # Check ticker buffer readiness with retries
+                max_retries = 6
+                retry_delay = 5  # seconds
+                ticker_ready = False
+                for attempt in range(max_retries):
+                    try:
+                        ticker_df = await self.get_ticker_buffer(symbol)
+                        if not ticker_df.empty and 'last_price' in ticker_df.columns and not ticker_df['last_price'].isna().iloc[-1]:
+                            self.logger.debug(f"Ticker buffer for {symbol} is ready on attempt {attempt + 1}: rows={len(ticker_df)}, last_price={ticker_df['last_price'].iloc[-1]}")
+                            ticker_ready = True
+                            break
+                        else:
+                            self.logger.warning(f"Ticker buffer for {symbol} not ready on attempt {attempt + 1}: empty={ticker_df.empty}, has_last_price={'last_price' in ticker_df.columns}, last_price_not_na={'False (no rows)' if ticker_df.empty else not ticker_df['last_price'].isna().iloc[-1] if 'last_price' in ticker_df.columns else False}")
+                            if attempt < max_retries - 1:
+                                self.logger.debug(f"Retrying ticker buffer check for {symbol} in {retry_delay} seconds")
+                                await asyncio.sleep(retry_delay)
+                    except Exception as e:
+                        self.logger.error(f"Error checking ticker buffer for {symbol} on attempt {attempt + 1}: {e}", exc_info=True)
+                        if attempt < max_retries - 1:
+                            await asyncio.sleep(retry_delay)
+                if not ticker_ready:
+                    self.logger.warning(f"Failed to get valid ticker buffer for {symbol} after {max_retries} attempts, proceeding with initialization")
 
-            # Handle long-term market state
-            if not self.lttrade:
-                if long_term_state in ["uptrend", "sideways"]:
-                    if self.enable_logging:
-                        self.logger.info(f"Long-term state recovered to {long_term_state} for {symbol}, resetting lttrade to True")
-                    self.lttrade = True
-                # Skip if long_term_state is "downtrend" (no action needed)
-            elif long_term_state == "downtrend":
-                if self.enable_logging:
-                    self.logger.info(f"Long-term downtrend detected for {symbol}, calling handle_longterm_downtrend")
-                await self.handle_longterm_downtrend(symbol)
-
-            # Handle short-term market state
-            if not self.sttrade:
-                if short_term_state in ["uptrend", "sideways"]:
-                    if self.enable_logging:
-                        self.logger.info(f"Short-term state recovered to {short_term_state} for {symbol}, resetting sttrade to True")
-                    self.sttrade = True
-                # Skip if short_term_state is "downtrend" (no action needed)
-            elif short_term_state == "downtrend":
-                if self.enable_logging:
-                    self.logger.info(f"Short-term downtrend detected for {symbol}, calling handle_shortterm_downtrend")
-                await self.handle_shortterm_downtrend(symbol)
-
-            # Maintain grid trading in sideways/uptrend states when both lttrade and sttrade are True
-            if self.lttrade and self.sttrade:
-                if self.enable_logging:
-                    self.logger.debug(f"Maintaining grid trading for {symbol} in market state: long_term={long_term_state}, short_term={short_term_state}")
-                # Sync order statuses with exchange
+                # Sync all open orders into orders dictionary
                 try:
                     await self.update_order_status(symbol)
+                    self.logger.info(f"Pre-initialization order sync for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
                 except Exception as e:
-                    if self.enable_logging:
-                        self.logger.error(f"Error updating order status for {symbol}: {e}", exc_info=True)
-                
-                # Verify and clean up orders
-                try:
-                    await self.verify_orders(symbol)
-                except Exception as e:
-                    if self.enable_logging:
-                        self.logger.error(f"Error verifying orders for {symbol}: {e}", exc_info=True)
-                
-                # Place new orders for unfilled grid levels (commented out for testing)
-                try:
-                    await self.place_orders(symbol)
-                except Exception as e:
-                    if self.enable_logging:
-                        self.logger.error(f"Error placing orders for {symbol}: {e}", exc_info=True)
+                    self.logger.error(f"Error syncing open orders for {symbol} during initialization: {e}", exc_info=True)
 
-            # Check reset condition
-            if await self.check_grid_reset_condition(symbol):
-                if self.enable_logging:
-                    self.logger.info(f"Grid reset condition met for {symbol}, calling reset_grid")
-                await self.reset_grid(symbol)
+                # Cancel all open buy orders to clean up stale orders
+                try:
+                    await self.cancel_all_open_buy_orders(symbol)
+                except Exception as e:
+                    self.logger.error(f"Error canceling open buy orders for {symbol} during initialization: {e}", exc_info=True)
 
-            if self.enable_logging:
-                self.logger.info(f"Completed iteration for {symbol}")
+                # Initialize grid levels
+                try:
+                    grid_levels = await self.initialize_grid(symbol)
+                    if grid_levels:
+                        self.grid_levels[symbol] = grid_levels
+                        self.logger.info(f"Initialized grid levels for {symbol}: {grid_levels}")
+                    else:
+                        self.logger.warning(f"Failed to initialize grid levels for {symbol}, grid_levels empty")
+                except Exception as e:
+                    self.logger.error(f"Error initializing grid for {symbol}: {e}", exc_info=True)
+
+                # Initialize orders dictionary with any remaining open orders
+                try:
+                    await self.initialize_orders(symbol)
+                    self.logger.info(f"Initialized orders for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
+                except Exception as e:
+                    self.logger.error(f"Error initializing orders for {symbol}: {e}", exc_info=True)
+
+                # Final sync to ensure all orders are tracked
+                try:
+                    await self.update_order_status(symbol)
+                    self.logger.info(f"Post-initialization order sync for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
+                except Exception as e:
+                    self.logger.error(f"Error syncing order statuses for {symbol} during initialization: {e}", exc_info=True)
+
+            self.logger.info(f"Completed bot initialization for all symbols")
+            for handler in self.logger.handlers:
+                if isinstance(handler, RotatingFileHandler):
+                    handler.flush()
         except Exception as e:
-            if self.enable_logging:
-                self.logger.error(f"Error in run_for_symbol for {symbol}: {e}", exc_info=True)
+            self.logger.error(f"Error during bot initialization: {e}", exc_info=True)

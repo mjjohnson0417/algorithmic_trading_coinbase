@@ -20,3 +20,8 @@ The `coinbaseGridBot.py` module serves as the entry point for a grid trading bot
    ```bash
    python coinbaseGridBot.py
 3. The bot will initialize components, start the grid trading loop, and log activities to logs/grid_manager.log
+
+- service is called coinbase-gridbot.service
+- script to check the bot status and send an email if it fails is /usr/local/bin/check-coinbase-gridbot.sh
+- crontab has an entry to run the script every five minutes
+- script log location: /var/log/coinbase-gridbot-check.log

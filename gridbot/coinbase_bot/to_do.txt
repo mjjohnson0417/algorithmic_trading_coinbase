@@ -1,19 +1,4 @@
-- current coinbaseGridBot or data_manager are trying to update klines once a minute, not a big deal but probably not needed either. 
-- fix graceful shutdown
-- once you have data_manager, state_manager,and indicator calculator running, run the bot and log them for several days to verify they work correctly. 
-- make sure the logging on/off feature is in every module
-- make sure kline buffers are updated every thirty minutes or so when the bot is running
-- make sure indicator calculations are run every loop
-- make sure long and short term state is calculated every loop. 
-- fix graceful shutdown to fetch orders from the exchange and then cancel, orders, don't use the dictionary
-- reasonably sure bot is not tracking state correctly anymore since the update to multicoin
-- accidentally hit the sleep button on the workstation. Bot didn't stop but did start getting 
-- redo READMEs and logical flow. 
-- port code to linux machine, need to rebuild old workstation
-- make bot a service
-- add cronjob to restart it
-- Port the code to coinbase
-- move the bot to aws 
+- do I need log rotation? 
 - down the road add futures trading. This could be used to offset a market downtrend. Buy/sell a futures contract that allows me to sell at a higher price than market price when the bot has stopped trading in a downtrend market. 
-
+- bot doesn't add ex
 
