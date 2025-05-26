@@ -25,3 +25,612 @@
 2025-05-26 08:40:15,805 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
 2025-05-26 08:40:15,805 - WARNING - Empty order book data for HBAR-USD
 2025-05-26 08:40:15,805 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:41:18,546 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:41:18,548 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:41:18,549 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:41:18,549 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:41:18,549 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:41:18,551 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:41:18,557 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:41:18,559 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:41:18,560 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:41:18,560 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:41:18,561 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:41:18,562 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:41:18,562 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:41:18,562 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:41:18,564 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:41:18,570 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:41:18,572 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:41:18,572 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:41:18,573 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:41:18,573 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:41:18,573 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:42:19,913 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:42:19,914 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:42:19,915 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:42:19,916 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:42:19,916 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:42:19,918 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:42:19,924 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:42:19,925 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:42:19,926 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:42:19,926 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:42:19,928 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:42:19,928 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:42:19,929 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:42:19,929 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:42:19,931 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:42:19,936 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:42:19,938 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:42:19,939 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:42:19,939 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:42:19,939 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:42:19,939 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:43:21,635 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:43:21,636 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:43:21,637 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:43:21,637 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:43:21,637 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:43:21,638 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:43:21,644 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:43:21,645 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:43:21,646 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:43:21,646 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:43:21,648 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:43:21,648 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:43:21,649 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:43:21,649 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:43:21,651 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:43:21,657 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:43:21,659 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:43:21,659 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:43:21,660 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:43:21,660 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:43:21,660 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:44:23,368 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:44:23,369 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:44:23,370 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:44:23,371 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:44:23,371 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:44:23,373 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:44:23,379 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:44:23,381 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:44:23,381 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:44:23,382 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:44:23,383 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:44:23,384 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:44:23,384 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:44:23,385 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:44:23,386 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:44:23,392 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:44:23,394 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:44:23,395 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:44:23,395 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:44:23,395 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:44:23,395 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:45:25,083 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:45:25,085 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:45:25,086 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:45:25,086 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:45:25,087 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:45:25,089 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:45:25,095 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:45:25,097 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:45:25,098 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:45:25,098 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:45:25,099 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:45:25,100 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:45:25,100 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:45:25,101 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:45:25,103 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:45:25,109 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:45:25,112 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:45:25,113 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:45:25,113 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:45:25,113 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:45:25,113 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:46:26,887 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:46:26,888 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:46:26,889 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:46:26,890 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:46:26,890 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:46:26,892 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:46:26,897 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:46:26,899 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:46:26,900 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:46:26,900 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:46:26,901 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:46:26,902 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:46:26,902 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:46:26,903 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:46:26,905 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:46:26,910 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:46:26,912 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:46:26,913 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:46:26,913 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:46:26,913 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:46:26,913 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:47:28,588 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:47:28,590 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:47:28,591 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:47:28,591 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:47:28,591 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:47:28,593 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:47:28,599 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:47:28,601 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:47:28,602 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:47:28,603 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:47:28,604 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:47:28,605 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:47:28,605 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:47:28,606 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:47:28,607 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:47:28,613 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:47:28,615 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:47:28,616 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:47:28,616 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:47:28,616 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:47:28,616 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:48:30,309 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:48:30,310 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:48:30,311 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:48:30,311 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:48:30,312 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:48:30,314 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:48:30,319 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:48:30,321 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:48:30,322 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:48:30,322 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:48:30,323 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:48:30,324 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:48:30,324 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:48:30,325 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:48:30,326 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:48:30,331 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:48:30,333 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:48:30,333 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:48:30,333 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:48:30,333 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:48:30,333 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:49:32,023 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:49:32,024 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:49:32,025 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:49:32,025 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:49:32,026 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:49:32,028 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:49:32,033 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:49:32,035 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:49:32,036 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:49:32,036 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:49:32,037 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:49:32,038 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:49:32,038 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:49:32,039 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:49:32,041 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:49:32,046 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:49:32,048 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:49:32,049 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:49:32,049 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:49:32,049 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:49:32,049 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:50:33,761 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:50:33,762 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:50:33,763 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:50:33,763 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:50:33,764 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:50:33,765 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:50:33,771 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:50:33,773 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:50:33,774 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:50:33,774 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:50:33,775 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:50:33,776 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:50:33,776 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:50:33,776 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:50:33,778 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:50:33,784 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:50:33,785 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:50:33,786 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:50:33,786 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:50:33,786 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:50:33,787 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:51:35,603 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:51:35,604 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:51:35,605 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:51:35,606 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:51:35,606 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:51:35,608 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:51:35,614 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:51:35,616 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:51:35,617 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:51:35,617 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:51:35,618 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:51:35,619 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:51:35,619 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:51:35,620 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:51:35,621 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:51:35,627 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:51:35,629 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:51:35,630 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:51:35,630 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:51:35,630 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:51:35,630 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:52:37,648 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:52:37,649 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:52:37,650 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:52:37,650 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:52:37,651 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:52:37,652 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:52:37,658 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:52:37,660 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:52:37,660 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:52:37,661 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:52:37,662 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:52:37,662 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:52:37,663 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:52:37,663 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:52:37,665 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:52:37,671 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:52:37,673 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:52:37,674 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:52:37,674 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:52:37,674 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:52:37,675 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:53:39,426 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:53:39,427 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:53:39,429 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:53:39,429 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:53:39,429 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:53:39,431 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:53:39,437 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:53:39,438 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:53:39,439 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:53:39,439 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:53:39,440 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:53:39,441 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:53:39,442 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:53:39,442 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:53:39,444 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:53:39,449 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:53:39,451 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:53:39,452 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:53:39,452 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:53:39,452 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:53:39,452 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:54:41,185 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:54:41,187 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:54:41,188 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:54:41,188 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:54:41,189 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:54:41,191 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:54:41,196 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:54:41,198 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:54:41,199 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:54:41,199 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:54:41,200 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:54:41,201 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:54:41,202 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:54:41,202 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:54:41,204 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:54:41,209 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:54:41,211 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:54:41,212 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:54:41,212 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:54:41,212 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:54:41,212 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:55:42,907 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:55:42,908 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:55:42,908 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:55:42,908 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:55:42,909 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:55:42,910 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:55:42,913 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:55:42,914 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:55:42,914 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:55:42,914 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:55:42,915 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:55:42,915 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:55:42,915 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:55:42,916 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:55:42,916 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:55:42,919 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:55:42,920 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:55:42,921 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:55:42,921 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:55:42,921 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:55:42,921 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:56:44,949 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:56:44,951 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:56:44,952 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:56:44,952 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:56:44,953 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:56:44,954 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:56:44,960 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:56:44,962 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:56:44,963 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:56:44,963 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:56:44,964 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:56:44,965 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:56:44,965 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:56:44,966 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:56:44,968 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:56:44,973 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:56:44,975 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:56:44,976 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:56:44,976 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:56:44,976 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:56:44,976 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:57:46,738 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:57:46,740 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:57:46,741 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:57:46,741 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:57:46,741 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:57:46,743 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:57:46,749 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:57:46,750 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:57:46,751 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:57:46,751 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:57:46,752 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:57:46,753 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:57:46,754 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:57:46,754 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:57:46,756 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:57:46,762 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:57:46,764 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:57:46,764 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:57:46,765 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:57:46,765 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:57:46,765 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:58:48,460 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:58:48,461 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:58:48,462 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:58:48,462 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:58:48,463 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:58:48,465 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:58:48,470 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:58:48,472 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:58:48,473 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:58:48,473 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:58:48,474 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:58:48,475 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:58:48,475 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:58:48,476 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:58:48,477 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:58:48,483 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:58:48,484 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:58:48,485 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:58:48,485 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:58:48,485 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:58:48,486 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 08:59:50,276 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 08:59:50,277 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:59:50,278 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 08:59:50,278 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 08:59:50,279 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 08:59:50,281 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 08:59:50,286 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 08:59:50,288 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 08:59:50,289 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 08:59:50,289 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 08:59:50,290 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 08:59:50,291 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 08:59:50,292 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 08:59:50,292 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 08:59:50,294 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 08:59:50,300 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 08:59:50,302 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 08:59:50,303 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 08:59:50,303 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 08:59:50,303 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 08:59:50,303 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 09:00:52,135 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 09:00:52,137 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:00:52,137 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 12:00:00+0000', tz='UTC')}, 'open': {39: 0.19065}, 'high': {39: 0.19098}, 'low': {39: 0.19009}, 'close': {39: 0.19041}, 'volume': {39: 1007042.1}}
+2025-05-26 09:00:52,138 - DEBUG - Klines time range: 2025-05-24 21:00:00+00:00 to 2025-05-26 12:00:00+00:00
+2025-05-26 09:00:52,138 - DEBUG - EMA for HBAR-USD: ema12=0.19009661717717702, ema26=0.18892723741768036
+2025-05-26 09:00:52,139 - DEBUG - RSI14 for HBAR-USD: rsi14=56.26782695707366
+2025-05-26 09:00:52,143 - DEBUG - ADX14 for HBAR-USD: adx14=63.833825674982165
+2025-05-26 09:00:52,144 - DEBUG - ATR14 for HBAR-USD: atr14=0.0014171428571428588
+2025-05-26 09:00:52,144 - DEBUG - MACD for HBAR-USD: macd=0.0011693797594966582, macd_signal=0.0009489855020942731, macd_hist=0.00022039425740238506
+2025-05-26 09:00:52,144 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}
+2025-05-26 09:00:52,145 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:00:52,146 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 09:00:52,146 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 09:00:52,146 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 09:00:52,147 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 09:00:52,150 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 09:00:52,151 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 09:00:52,152 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 09:00:52,152 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 09:00:52,152 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 09:00:52,152 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19009661717717702), 'ema26': np.float64(0.18892723741768036), 'rsi14': np.float64(56.26782695707366), 'adx14': np.float64(63.833825674982165), 'atr14': np.float64(0.0014171428571428588), 'macd': np.float64(0.0011693797594966582), 'macd_signal': np.float64(0.0009489855020942731), 'macd_hist': np.float64(0.00022039425740238506)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 09:01:53,873 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 09:01:53,874 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:01:53,875 - DEBUG - Sample klines data (last row): {'timestamp': {40: Timestamp('2025-05-26 13:00:00+0000', tz='UTC')}, 'open': {40: 0.19148}, 'high': {40: 0.19167}, 'low': {40: 0.19148}, 'close': {40: 0.19163}, 'volume': {40: 23423.9}}
+2025-05-26 09:01:53,875 - DEBUG - Klines time range: 2025-05-24 22:00:00+00:00 to 2025-05-26 13:00:00+00:00
+2025-05-26 09:01:53,876 - DEBUG - EMA for HBAR-USD: ema12=0.19033022911940006, ema26=0.18904320544546827
+2025-05-26 09:01:53,878 - DEBUG - RSI14 for HBAR-USD: rsi14=65.86129448078538
+2025-05-26 09:01:53,884 - DEBUG - ADX14 for HBAR-USD: adx14=65.8579937689398
+2025-05-26 09:01:53,885 - DEBUG - ATR14 for HBAR-USD: atr14=0.0013835714285714324
+2025-05-26 09:01:53,886 - DEBUG - MACD for HBAR-USD: macd=0.0012870236739317975, macd_signal=0.0011237765477443676, macd_hist=0.0001632471261874299
+2025-05-26 09:01:53,886 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}
+2025-05-26 09:01:53,887 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:01:53,888 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 09:01:53,889 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 09:01:53,889 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 09:01:53,891 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 09:01:53,897 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 09:01:53,899 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 09:01:53,899 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 09:01:53,899 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 09:01:53,900 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 09:01:53,900 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 09:02:55,611 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 09:02:55,613 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:02:55,614 - DEBUG - Sample klines data (last row): {'timestamp': {40: Timestamp('2025-05-26 13:00:00+0000', tz='UTC')}, 'open': {40: 0.19148}, 'high': {40: 0.19167}, 'low': {40: 0.19148}, 'close': {40: 0.19163}, 'volume': {40: 23423.9}}
+2025-05-26 09:02:55,614 - DEBUG - Klines time range: 2025-05-24 22:00:00+00:00 to 2025-05-26 13:00:00+00:00
+2025-05-26 09:02:55,615 - DEBUG - EMA for HBAR-USD: ema12=0.19033022911940006, ema26=0.18904320544546827
+2025-05-26 09:02:55,616 - DEBUG - RSI14 for HBAR-USD: rsi14=65.86129448078538
+2025-05-26 09:02:55,622 - DEBUG - ADX14 for HBAR-USD: adx14=65.8579937689398
+2025-05-26 09:02:55,624 - DEBUG - ATR14 for HBAR-USD: atr14=0.0013835714285714324
+2025-05-26 09:02:55,625 - DEBUG - MACD for HBAR-USD: macd=0.0012870236739317975, macd_signal=0.0011237765477443676, macd_hist=0.0001632471261874299
+2025-05-26 09:02:55,625 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}
+2025-05-26 09:02:55,626 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:02:55,627 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 09:02:55,628 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 09:02:55,628 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 09:02:55,630 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 09:02:55,636 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 09:02:55,638 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 09:02:55,639 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 09:02:55,639 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 09:02:55,639 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 09:02:55,639 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 09:03:57,375 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 09:03:57,376 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:03:57,377 - DEBUG - Sample klines data (last row): {'timestamp': {40: Timestamp('2025-05-26 13:00:00+0000', tz='UTC')}, 'open': {40: 0.19148}, 'high': {40: 0.19167}, 'low': {40: 0.19148}, 'close': {40: 0.19163}, 'volume': {40: 23423.9}}
+2025-05-26 09:03:57,378 - DEBUG - Klines time range: 2025-05-24 22:00:00+00:00 to 2025-05-26 13:00:00+00:00
+2025-05-26 09:03:57,378 - DEBUG - EMA for HBAR-USD: ema12=0.19033022911940006, ema26=0.18904320544546827
+2025-05-26 09:03:57,380 - DEBUG - RSI14 for HBAR-USD: rsi14=65.86129448078538
+2025-05-26 09:03:57,385 - DEBUG - ADX14 for HBAR-USD: adx14=65.8579937689398
+2025-05-26 09:03:57,387 - DEBUG - ATR14 for HBAR-USD: atr14=0.0013835714285714324
+2025-05-26 09:03:57,388 - DEBUG - MACD for HBAR-USD: macd=0.0012870236739317975, macd_signal=0.0011237765477443676, macd_hist=0.0001632471261874299
+2025-05-26 09:03:57,388 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}
+2025-05-26 09:03:57,389 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:03:57,390 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 09:03:57,390 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 09:03:57,391 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 09:03:57,393 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 09:03:57,398 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 09:03:57,400 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 09:03:57,400 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 09:03:57,401 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 09:03:57,401 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 09:03:57,401 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 09:04:59,097 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 09:04:59,099 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:04:59,100 - DEBUG - Sample klines data (last row): {'timestamp': {40: Timestamp('2025-05-26 13:00:00+0000', tz='UTC')}, 'open': {40: 0.19148}, 'high': {40: 0.19167}, 'low': {40: 0.19148}, 'close': {40: 0.19163}, 'volume': {40: 23423.9}}
+2025-05-26 09:04:59,100 - DEBUG - Klines time range: 2025-05-24 22:00:00+00:00 to 2025-05-26 13:00:00+00:00
+2025-05-26 09:04:59,101 - DEBUG - EMA for HBAR-USD: ema12=0.19033022911940006, ema26=0.18904320544546827
+2025-05-26 09:04:59,103 - DEBUG - RSI14 for HBAR-USD: rsi14=65.86129448078538
+2025-05-26 09:04:59,108 - DEBUG - ADX14 for HBAR-USD: adx14=65.8579937689398
+2025-05-26 09:04:59,110 - DEBUG - ATR14 for HBAR-USD: atr14=0.0013835714285714324
+2025-05-26 09:04:59,111 - DEBUG - MACD for HBAR-USD: macd=0.0012870236739317975, macd_signal=0.0011237765477443676, macd_hist=0.0001632471261874299
+2025-05-26 09:04:59,111 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}
+2025-05-26 09:04:59,112 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:04:59,113 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 09:04:59,113 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 09:04:59,114 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 09:04:59,115 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 09:04:59,121 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 09:04:59,122 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 09:04:59,123 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 09:04:59,123 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 09:04:59,124 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 09:04:59,124 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 09:06:00,808 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 09:06:00,809 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:06:00,810 - DEBUG - Sample klines data (last row): {'timestamp': {40: Timestamp('2025-05-26 13:00:00+0000', tz='UTC')}, 'open': {40: 0.19148}, 'high': {40: 0.19167}, 'low': {40: 0.19148}, 'close': {40: 0.19163}, 'volume': {40: 23423.9}}
+2025-05-26 09:06:00,811 - DEBUG - Klines time range: 2025-05-24 22:00:00+00:00 to 2025-05-26 13:00:00+00:00
+2025-05-26 09:06:00,811 - DEBUG - EMA for HBAR-USD: ema12=0.19033022911940006, ema26=0.18904320544546827
+2025-05-26 09:06:00,813 - DEBUG - RSI14 for HBAR-USD: rsi14=65.86129448078538
+2025-05-26 09:06:00,818 - DEBUG - ADX14 for HBAR-USD: adx14=65.8579937689398
+2025-05-26 09:06:00,820 - DEBUG - ATR14 for HBAR-USD: atr14=0.0013835714285714324
+2025-05-26 09:06:00,821 - DEBUG - MACD for HBAR-USD: macd=0.0012870236739317975, macd_signal=0.0011237765477443676, macd_hist=0.0001632471261874299
+2025-05-26 09:06:00,821 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}
+2025-05-26 09:06:00,822 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:06:00,823 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 09:06:00,823 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 09:06:00,824 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 09:06:00,826 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 09:06:00,831 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 09:06:00,833 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 09:06:00,834 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 09:06:00,834 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 09:06:00,834 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 09:06:00,834 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 09:07:02,669 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 09:07:02,670 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:07:02,671 - DEBUG - Sample klines data (last row): {'timestamp': {40: Timestamp('2025-05-26 13:00:00+0000', tz='UTC')}, 'open': {40: 0.19148}, 'high': {40: 0.19167}, 'low': {40: 0.19148}, 'close': {40: 0.19163}, 'volume': {40: 23423.9}}
+2025-05-26 09:07:02,671 - DEBUG - Klines time range: 2025-05-24 22:00:00+00:00 to 2025-05-26 13:00:00+00:00
+2025-05-26 09:07:02,672 - DEBUG - EMA for HBAR-USD: ema12=0.19033022911940006, ema26=0.18904320544546827
+2025-05-26 09:07:02,674 - DEBUG - RSI14 for HBAR-USD: rsi14=65.86129448078538
+2025-05-26 09:07:02,679 - DEBUG - ADX14 for HBAR-USD: adx14=65.8579937689398
+2025-05-26 09:07:02,681 - DEBUG - ATR14 for HBAR-USD: atr14=0.0013835714285714324
+2025-05-26 09:07:02,682 - DEBUG - MACD for HBAR-USD: macd=0.0012870236739317975, macd_signal=0.0011237765477443676, macd_hist=0.0001632471261874299
+2025-05-26 09:07:02,682 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}
+2025-05-26 09:07:02,683 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:07:02,684 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 09:07:02,684 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 09:07:02,685 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 09:07:02,687 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 09:07:02,691 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 09:07:02,693 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 09:07:02,693 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 09:07:02,693 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 09:07:02,693 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 09:07:02,693 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 09:08:04,377 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 09:08:04,379 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:08:04,380 - DEBUG - Sample klines data (last row): {'timestamp': {40: Timestamp('2025-05-26 13:00:00+0000', tz='UTC')}, 'open': {40: 0.19148}, 'high': {40: 0.19167}, 'low': {40: 0.19148}, 'close': {40: 0.19163}, 'volume': {40: 23423.9}}
+2025-05-26 09:08:04,380 - DEBUG - Klines time range: 2025-05-24 22:00:00+00:00 to 2025-05-26 13:00:00+00:00
+2025-05-26 09:08:04,381 - DEBUG - EMA for HBAR-USD: ema12=0.19033022911940006, ema26=0.18904320544546827
+2025-05-26 09:08:04,383 - DEBUG - RSI14 for HBAR-USD: rsi14=65.86129448078538
+2025-05-26 09:08:04,389 - DEBUG - ADX14 for HBAR-USD: adx14=65.8579937689398
+2025-05-26 09:08:04,391 - DEBUG - ATR14 for HBAR-USD: atr14=0.0013835714285714324
+2025-05-26 09:08:04,392 - DEBUG - MACD for HBAR-USD: macd=0.0012870236739317975, macd_signal=0.0011237765477443676, macd_hist=0.0001632471261874299
+2025-05-26 09:08:04,392 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}
+2025-05-26 09:08:04,393 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:08:04,394 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 09:08:04,395 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 09:08:04,395 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 09:08:04,397 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 09:08:04,403 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 09:08:04,405 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 09:08:04,406 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 09:08:04,406 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 09:08:04,406 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 09:08:04,406 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 09:09:06,110 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 09:09:06,111 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:09:06,112 - DEBUG - Sample klines data (last row): {'timestamp': {40: Timestamp('2025-05-26 13:00:00+0000', tz='UTC')}, 'open': {40: 0.19148}, 'high': {40: 0.19167}, 'low': {40: 0.19148}, 'close': {40: 0.19163}, 'volume': {40: 23423.9}}
+2025-05-26 09:09:06,112 - DEBUG - Klines time range: 2025-05-24 22:00:00+00:00 to 2025-05-26 13:00:00+00:00
+2025-05-26 09:09:06,112 - DEBUG - EMA for HBAR-USD: ema12=0.19033022911940006, ema26=0.18904320544546827
+2025-05-26 09:09:06,113 - DEBUG - RSI14 for HBAR-USD: rsi14=65.86129448078538
+2025-05-26 09:09:06,118 - DEBUG - ADX14 for HBAR-USD: adx14=65.8579937689398
+2025-05-26 09:09:06,119 - DEBUG - ATR14 for HBAR-USD: atr14=0.0013835714285714324
+2025-05-26 09:09:06,120 - DEBUG - MACD for HBAR-USD: macd=0.0012870236739317975, macd_signal=0.0011237765477443676, macd_hist=0.0001632471261874299
+2025-05-26 09:09:06,120 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}
+2025-05-26 09:09:06,121 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:09:06,122 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 09:09:06,122 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 09:09:06,123 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 09:09:06,124 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 09:09:06,130 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 09:09:06,131 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 09:09:06,132 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 09:09:06,132 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 09:09:06,132 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 09:09:06,132 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
+2025-05-26 09:10:07,912 - DEBUG - Calculating indicators for HBAR-USD
+2025-05-26 09:10:07,913 - DEBUG - 1-hour klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:10:07,914 - DEBUG - Sample klines data (last row): {'timestamp': {40: Timestamp('2025-05-26 13:00:00+0000', tz='UTC')}, 'open': {40: 0.19148}, 'high': {40: 0.19167}, 'low': {40: 0.19148}, 'close': {40: 0.19163}, 'volume': {40: 23423.9}}
+2025-05-26 09:10:07,914 - DEBUG - Klines time range: 2025-05-24 22:00:00+00:00 to 2025-05-26 13:00:00+00:00
+2025-05-26 09:10:07,914 - DEBUG - EMA for HBAR-USD: ema12=0.19033022911940006, ema26=0.18904320544546827
+2025-05-26 09:10:07,916 - DEBUG - RSI14 for HBAR-USD: rsi14=65.86129448078538
+2025-05-26 09:10:07,919 - DEBUG - ADX14 for HBAR-USD: adx14=65.8579937689398
+2025-05-26 09:10:07,920 - DEBUG - ATR14 for HBAR-USD: atr14=0.0013835714285714324
+2025-05-26 09:10:07,920 - DEBUG - MACD for HBAR-USD: macd=0.0012870236739317975, macd_signal=0.0011237765477443676, macd_hist=0.0001632471261874299
+2025-05-26 09:10:07,920 - DEBUG - 1-hour indicators for HBAR-USD: {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}
+2025-05-26 09:10:07,921 - DEBUG - 1-day klines for HBAR-USD: rows=40, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume']
+2025-05-26 09:10:07,921 - DEBUG - Sample klines data (last row): {'timestamp': {39: Timestamp('2025-05-26 00:00:00+0000', tz='UTC')}, 'open': {39: 0.18821}, 'high': {39: 0.19333}, 'low': {39: 0.18723}, 'close': {39: 0.19041}, 'volume': {39: 23058493.0}}
+2025-05-26 09:10:07,922 - DEBUG - Klines time range: 2025-04-17 00:00:00+00:00 to 2025-05-26 00:00:00+00:00
+2025-05-26 09:10:07,922 - DEBUG - EMA for HBAR-USD: ema12=0.1939592924057147, ema26=0.19239721840980126
+2025-05-26 09:10:07,923 - DEBUG - RSI14 for HBAR-USD: rsi14=43.93292327231758
+2025-05-26 09:10:07,925 - DEBUG - ADX14 for HBAR-USD: adx14=25.11425019196243
+2025-05-26 09:10:07,926 - DEBUG - ATR14 for HBAR-USD: atr14=0.011479999999999999
+2025-05-26 09:10:07,927 - DEBUG - MACD for HBAR-USD: macd=0.0015620739959134322, macd_signal=0.0039418234706287475, macd_hist=-0.0023797494747153152
+2025-05-26 09:10:07,927 - DEBUG - 1-day indicators for HBAR-USD: {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}
+2025-05-26 09:10:07,927 - WARNING - Empty order book data for HBAR-USD
+2025-05-26 09:10:07,927 - DEBUG - Indicators for HBAR-USD: {'1h': {'ema12': np.float64(0.19033022911940006), 'ema26': np.float64(0.18904320544546827), 'rsi14': np.float64(65.86129448078538), 'adx14': np.float64(65.8579937689398), 'atr14': np.float64(0.0013835714285714324), 'macd': np.float64(0.0012870236739317975), 'macd_signal': np.float64(0.0011237765477443676), 'macd_hist': np.float64(0.0001632471261874299)}, '1d': {'ema12': np.float64(0.1939592924057147), 'ema26': np.float64(0.19239721840980126), 'rsi14': np.float64(43.93292327231758), 'adx14': np.float64(25.11425019196243), 'atr14': np.float64(0.011479999999999999), 'macd': np.float64(0.0015620739959134322), 'macd_signal': np.float64(0.0039418234706287475), 'macd_hist': np.float64(-0.0023797494747153152)}, 'timing': {'bid_ask_spread': 0.0, 'order_book_imbalance': 0.5, 'ema5': 0.0, 'atr14': 0.0001, 'volume_surge_ratio': 1.0}}
