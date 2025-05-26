@@ -1,0 +1,24 @@
+2025-05-26 18:31:14,451 - INFO - Initialized 1m klines for HBAR-USD, shape: (60, 6), latest timestamp: 2025-05-26 22:31:00+00:00
+2025-05-26 18:31:14,639 - INFO - Initialized 5m klines for HBAR-USD, shape: (60, 6), latest timestamp: 2025-05-26 22:30:00+00:00
+2025-05-26 18:31:14,829 - INFO - Initialized 15m klines for HBAR-USD, shape: (60, 6), latest timestamp: 2025-05-26 22:30:00+00:00
+2025-05-26 18:31:15,009 - INFO - Initialized 1h klines for HBAR-USD, shape: (60, 6), latest timestamp: 2025-05-26 22:00:00+00:00
+2025-05-26 18:31:15,195 - INFO - Initialized 6h klines for HBAR-USD, shape: (60, 6), latest timestamp: 2025-05-26 18:00:00+00:00
+2025-05-26 18:31:15,382 - INFO - Initialized 1d klines for HBAR-USD, shape: (60, 6), latest timestamp: 2025-05-26 00:00:00+00:00
+2025-05-26 18:31:15,385 - INFO - Completed initial historical kline fetch for all timeframes
+2025-05-26 18:31:15,385 - INFO - Started WebSocket task for ticker and subscriptions
+2025-05-26 18:31:15,385 - INFO - Started REST kline update tasks
+2025-05-26 18:31:15,564 - INFO - Subscribed to ticker and level2 WebSocket for ['HBAR-USD']
+2025-05-26 18:31:15,580 - INFO - Updated 1m klines for HBAR-USD, shape: (60, 6), latest timestamp: 2025-05-26 22:31:00+00:00
+2025-05-26 18:31:15,770 - INFO - Ticker buffer updated for HBAR-USD, shape: (1, 7), last_price: 0.1858
+2025-05-26 18:31:15,773 - INFO - Subscription confirmation: {'channel': 'subscriptions', 'client_id': '', 'timestamp': '2025-05-26T22:31:15.580795958Z', 'sequence_num': 1, 'events': [{'subscriptions': {'ticker': ['HBAR-USD']}}]}
+2025-05-26 18:31:28,779 - INFO - Subscription confirmation: {'channel': 'subscriptions', 'client_id': '', 'timestamp': '2025-05-26T22:31:15.678550393Z', 'sequence_num': 4, 'events': [{'subscriptions': {'level2': ['HBAR-USD'], 'ticker': ['HBAR-USD']}}]}
+2025-05-26 18:31:28,779 - INFO - Level2 subscription confirmed for: ['HBAR-USD']
+2025-05-26 18:31:30,803 - INFO - Updated 5m klines for HBAR-USD, shape: (60, 6), latest timestamp: 2025-05-26 22:30:00+00:00
+2025-05-26 18:31:32,034 - INFO - Updated 15m klines for HBAR-USD, shape: (60, 6), latest timestamp: 2025-05-26 22:30:00+00:00
+2025-05-26 18:31:33,290 - INFO - Updated 1h klines for HBAR-USD, shape: (60, 6), latest timestamp: 2025-05-26 22:00:00+00:00
+2025-05-26 18:31:34,476 - INFO - Updated 6h klines for HBAR-USD, shape: (60, 6), latest timestamp: 2025-05-26 18:00:00+00:00
+2025-05-26 18:31:35,663 - INFO - Updated 1d klines for HBAR-USD, shape: (60, 6), latest timestamp: 2025-05-26 00:00:00+00:00
+2025-05-26 18:32:25,862 - WARNING - WebSocket closed: 1000, . Reconnecting...
+2025-05-26 18:32:25,863 - INFO - All WebSocket connections closed.
+2025-05-26 18:32:25,983 - INFO - Subscribed to ticker and level2 WebSocket for ['HBAR-USD']
+2025-05-26 18:32:26,116 - INFO - Subscription confirmation: {'channel': 'subscriptions', 'client_id': '', 'timestamp': '2025-05-26T22:32:26.001100603Z', 'sequence_num': 1, 'events': [{'subscriptions': {'ticker': ['HBAR-USD']}}]}

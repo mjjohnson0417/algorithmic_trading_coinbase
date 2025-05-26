@@ -39,7 +39,7 @@ class CandlestickPatterns:
 
         self.logger.debug("CandlestickPatterns initialized with symbols: %s", symbols)
 
-    def _validate_klines(self, klines: pd.DataFrame, symbol: str, timeframe: str) -> bool:
+    def _validate_klines(self, klines: pd.DataFrame, symbol: str, timeframe: str, min_rows: int = 1) -> bool:
         """
         Validates kline data for required columns and sufficient rows.
 
@@ -47,6 +47,7 @@ class CandlestickPatterns:
             klines (pd.DataFrame): Kline data with columns ['timestamp', 'open', 'high', 'low', 'close', 'volume'].
             symbol (str): Trading pair symbol.
             timeframe (str): Timeframe (e.g., '1m', '5m').
+            min_rows (int): Minimum number of rows required (default: 1).
 
         Returns:
             bool: True if valid, False otherwise.
@@ -55,8 +56,8 @@ class CandlestickPatterns:
         if klines.empty:
             self.logger.warning(f"Empty {timeframe} klines buffer for {symbol}")
             return False
-        if len(klines) < 1:
-            self.logger.warning(f"Insufficient {timeframe} klines data for {symbol}: {len(klines)} rows, need at least 1")
+        if len(klines) < min_rows:
+            self.logger.warning(f"Insufficient {timeframe} klines data for {symbol}: {len(klines)} rows, need at least {min_rows}")
             return False
         if not all(col in klines.columns for col in required_columns):
             missing_cols = [col for col in required_columns if col not in klines.columns]
@@ -97,7 +98,18 @@ class CandlestickPatterns:
                         'doji_long_legged': self.doji_long_legged(symbol, timeframe),
                         'doji_gravestone': self.doji_gravestone(symbol, timeframe),
                         'doji_dragonfly': self.doji_dragonfly(symbol, timeframe),
-                        'doji_four_price': self.doji_four_price(symbol, timeframe)
+                        'doji_four_price': self.doji_four_price(symbol, timeframe),
+                        'engulfing_bullish': self.engulfing_bullish(symbol, timeframe),
+                        'engulfing_bearish': self.engulfing_bearish(symbol, timeframe),
+                        'harami_bullish': self.harami_bullish(symbol, timeframe),
+                        'harami_bearish': self.harami_bearish(symbol, timeframe),
+                        'harami_cross_bullish': self.harami_cross_bullish(symbol, timeframe),
+                        'harami_cross_bearish': self.harami_cross_bearish(symbol, timeframe),
+                        'tweezer_tops': self.tweezer_tops(symbol, timeframe),
+                        'tweezer_bottoms': self.tweezer_bottoms(symbol, timeframe),
+                        'dark_cloud_cover': self.dark_cloud_cover(symbol, timeframe),
+                        'piercing_line': self.piercing_line(symbol, timeframe),
+                        'on_neck': self.on_neck(symbol, timeframe)
                     }
                     symbol_patterns[timeframe] = patterns
                     self.logger.debug(f"Candlestick patterns for {symbol} ({timeframe}): %s", patterns)
@@ -114,7 +126,18 @@ class CandlestickPatterns:
                         'doji_long_legged': False,
                         'doji_gravestone': False,
                         'doji_dragonfly': False,
-                        'doji_four_price': False
+                        'doji_four_price': False,
+                        'engulfing_bullish': False,
+                        'engulfing_bearish': False,
+                        'harami_bullish': False,
+                        'harami_bearish': False,
+                        'harami_cross_bullish': False,
+                        'harami_cross_bearish': False,
+                        'tweezer_tops': False,
+                        'tweezer_bottoms': False,
+                        'dark_cloud_cover': False,
+                        'piercing_line': False,
+                        'on_neck': False
                     }
 
             all_patterns[symbol] = symbol_patterns
@@ -741,6 +764,556 @@ class CandlestickPatterns:
 
         except Exception as e:
             self.logger.error(f"Error checking Four Price Doji for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def engulfing_bullish(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Bullish Engulfing candlestick pattern in the latest two klines for the given symbol and timeframe.
+        A Bullish Engulfing has a small bearish candle followed by a larger bullish candle that engulfs the previous body.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Bullish Engulfing pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=2):
+                return False
+
+            prev = klines.iloc[-2]
+            curr = klines.iloc[-1]
+
+            # Bullish Engulfing criteria:
+            # - First candle bearish
+            # - Second candle bullish, engulfing the first candle's body
+            is_bullish_engulfing = (
+                prev['close'] < prev['open'] and
+                curr['close'] > curr['open'] and
+                curr['open'] <= prev['close'] and
+                curr['close'] >= prev['open']
+            )
+
+            self.logger.debug(
+                f"Bullish Engulfing check for {symbol} ({timeframe}): "
+                f"prev_open={prev['open']:.6f}, prev_close={prev['close']:.6f}, "
+                f"curr_open={curr['open']:.6f}, curr_close={curr['close']:.6f}, "
+                f"is_bullish_engulfing={is_bullish_engulfing}"
+            )
+            return bool(is_bullish_engulfing)  # Convert to Python bool
+
+        except Exception as e:
+            self.logger.error(f"Error checking Bullish Engulfing for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def engulfing_bearish(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Bearish Engulfing candlestick pattern in the latest two klines for the given symbol and timeframe.
+        A Bearish Engulfing has a small bullish candle followed by a larger bearish candle that engulfs the previous body.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Bearish Engulfing pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=2):
+                return False
+
+            prev = klines.iloc[-2]
+            curr = klines.iloc[-1]
+
+            # Bearish Engulfing criteria:
+            # - First candle bullish
+            # - Second candle bearish, engulfing the first candle's body
+            is_bearish_engulfing = (
+                prev['close'] > prev['open'] and
+                curr['close'] < curr['open'] and
+                curr['open'] >= prev['close'] and
+                curr['close'] <= prev['open']
+            )
+
+            self.logger.debug(
+                f"Bearish Engulfing check for {symbol} ({timeframe}): "
+                f"prev_open={prev['open']:.6f}, prev_close={prev['close']:.6f}, "
+                f"curr_open={curr['open']:.6f}, curr_close={curr['close']:.6f}, "
+                f"is_bearish_engulfing={is_bearish_engulfing}"
+            )
+            return bool(is_bearish_engulfing)  # Convert to Python bool
+
+        except Exception as e:
+            self.logger.error(f"Error checking Bearish Engulfing for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def harami_bullish(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Bullish Harami candlestick pattern in the latest two klines for the given symbol and timeframe.
+        A Bullish Harami has a large bearish candle followed by a smaller bullish candle contained within the previous body.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Bullish Harami pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=2):
+                return False
+
+            prev = klines.iloc[-2]
+            curr = klines.iloc[-1]
+
+            # Bullish Harami criteria:
+            # - First candle bearish
+            # - Second candle bullish, contained within the first candle's body
+            is_bullish_harami = (
+                prev['close'] < prev['open'] and
+                curr['close'] > curr['open'] and
+                curr['open'] >= prev['close'] and
+                curr['close'] <= prev['open']
+            )
+
+            self.logger.debug(
+                f"Bullish Harami check for {symbol} ({timeframe}): "
+                f"prev_open={prev['open']:.6f}, prev_close={prev['close']:.6f}, "
+                f"curr_open={curr['open']:.6f}, curr_close={curr['close']:.6f}, "
+                f"is_bullish_harami={is_bullish_harami}"
+            )
+            return bool(is_bullish_harami)  # Convert to Python bool
+
+        except Exception as e:
+            self.logger.error(f"Error checking Bullish Harami for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def harami_bearish(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Bearish Harami candlestick pattern in the latest two klines for the given symbol and timeframe.
+        A Bearish Harami has a large bullish candle followed by a smaller bearish candle contained within the previous body.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Bearish Harami pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=2):
+                return False
+
+            prev = klines.iloc[-2]
+            curr = klines.iloc[-1]
+
+            # Bearish Harami criteria:
+            # - First candle bullish
+            # - Second candle bearish, contained within the first candle's body
+            is_bearish_harami = (
+                prev['close'] > prev['open'] and
+                curr['close'] < curr['open'] and
+                curr['open'] <= prev['close'] and
+                curr['close'] >= prev['open']
+            )
+
+            self.logger.debug(
+                f"Bearish Harami check for {symbol} ({timeframe}): "
+                f"prev_open={prev['open']:.6f}, prev_close={prev['close']:.6f}, "
+                f"curr_open={curr['open']:.6f}, curr_close={curr['close']:.6f}, "
+                f"is_bearish_harami={is_bearish_harami}"
+            )
+            return bool(is_bearish_harami)  # Convert to Python bool
+
+        except Exception as e:
+            self.logger.error(f"Error checking Bearish Harami for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def harami_cross_bullish(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Bullish Harami Cross candlestick pattern in the latest two klines for the given symbol and timeframe.
+        A Bullish Harami Cross has a large bearish candle followed by a Doji contained within the previous body.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Bullish Harami Cross pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=2):
+                return False
+
+            prev = klines.iloc[-2]
+            curr = klines.iloc[-1]
+
+            # Bullish Harami Cross criteria:
+            # - First candle bearish
+            # - Second candle is a Doji, contained within the first candle's body
+            body_curr = abs(curr['close'] - curr['open'])
+            range_curr = curr['high'] - curr['low']
+            body_ratio_curr = body_curr / range_curr if range_curr > 0 else 0
+            is_doji = range_curr > 0 and body_ratio_curr <= 0.05
+            is_bullish_harami_cross = (
+                prev['close'] < prev['open'] and
+                is_doji and
+                curr['open'] >= prev['close'] and
+                curr['close'] <= prev['open']
+            )
+
+            self.logger.debug(
+                f"Bullish Harami Cross check for {symbol} ({timeframe}): "
+                f"prev_open={prev['open']:.6f}, prev_close={prev['close']:.6f}, "
+                f"curr_open={curr['open']:.6f}, curr_close={curr['close']:.6f}, "
+                f"body_ratio_curr={body_ratio_curr:.3f}, is_bullish_harami_cross={is_bullish_harami_cross}"
+            )
+            return bool(is_bullish_harami_cross)  # Convert to Python bool
+
+        except Exception as e:
+            self.logger.error(f"Error checking Bullish Harami Cross for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def harami_cross_bearish(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Bearish Harami Cross candlestick pattern in the latest two klines for the given symbol and timeframe.
+        A Bearish Harami Cross has a large bullish candle followed by a Doji contained within the previous body.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Bearish Harami Cross pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=2):
+                return False
+
+            prev = klines.iloc[-2]
+            curr = klines.iloc[-1]
+
+            # Bearish Harami Cross criteria:
+            # - First candle bullish
+            # - Second candle is a Doji, contained within the first candle's body
+            body_curr = abs(curr['close'] - curr['open'])
+            range_curr = curr['high'] - curr['low']
+            body_ratio_curr = body_curr / range_curr if range_curr > 0 else 0
+            is_doji = range_curr > 0 and body_ratio_curr <= 0.05
+            is_bearish_harami_cross = (
+                prev['close'] > prev['open'] and
+                is_doji and
+                curr['open'] <= prev['close'] and
+                curr['close'] >= prev['open']
+            )
+
+            self.logger.debug(
+                f"Bearish Harami Cross check for {symbol} ({timeframe}): "
+                f"prev_open={prev['open']:.6f}, prev_close={prev['close']:.6f}, "
+                f"curr_open={curr['open']:.6f}, curr_close={curr['close']:.6f}, "
+                f"body_ratio_curr={body_ratio_curr:.3f}, is_bearish_harami_cross={is_bearish_harami_cross}"
+            )
+            return bool(is_bearish_harami_cross)  # Convert to Python bool
+
+        except Exception as e:
+            self.logger.error(f"Error checking Bearish Harami Cross for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def tweezer_tops(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Tweezer Tops candlestick pattern in the latest two klines for the given symbol and timeframe.
+        Tweezer Tops has a bullish candle followed by a bearish candle with similar highs.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Tweezer Tops pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=2):
+                return False
+
+            prev = klines.iloc[-2]
+            curr = klines.iloc[-1]
+
+            # Tweezer Tops criteria:
+            # - First candle bullish
+            # - Second candle bearish
+            # - Highs nearly equal
+            tolerance = 0.0001  # Tolerance for HBAR-USD price precision
+            is_tweezer_tops = (
+                prev['close'] > prev['open'] and
+                curr['close'] < curr['open'] and
+                abs(curr['high'] - prev['high']) <= tolerance
+            )
+
+            self.logger.debug(
+                f"Tweezer Tops check for {symbol} ({timeframe}): "
+                f"prev_high={prev['high']:.6f}, curr_high={curr['high']:.6f}, "
+                f"is_tweezer_tops={is_tweezer_tops}"
+            )
+            return bool(is_tweezer_tops)  # Convert to Python bool
+
+        except Exception as e:
+            self.logger.error(f"Error checking Tweezer Tops for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def tweezer_bottoms(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Tweezer Bottoms candlestick pattern in the latest two klines for the given symbol and timeframe.
+        Tweezer Bottoms has a bearish candle followed by a bullish candle with similar lows.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Tweezer Bottoms pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=2):
+                return False
+
+            prev = klines.iloc[-2]
+            curr = klines.iloc[-1]
+
+            # Tweezer Bottoms criteria:
+            # - First candle bearish
+            # - Second candle bullish
+            # - Lows nearly equal
+            tolerance = 0.0001  # Tolerance for HBAR-USD price precision
+            is_tweezer_bottoms = (
+                prev['close'] < prev['open'] and
+                curr['close'] > curr['open'] and
+                abs(curr['low'] - prev['low']) <= tolerance
+            )
+
+            self.logger.debug(
+                f"Tweezer Bottoms check for {symbol} ({timeframe}): "
+                f"prev_low={prev['low']:.6f}, curr_low={curr['low']:.6f}, "
+                f"is_tweezer_bottoms={is_tweezer_bottoms}"
+            )
+            return bool(is_tweezer_bottoms)  # Convert to Python bool
+
+        except Exception as e:
+            self.logger.error(f"Error checking Tweezer Bottoms for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def dark_cloud_cover(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Dark Cloud Cover candlestick pattern in the latest two klines for the given symbol and timeframe.
+        Dark Cloud Cover has a bullish candle followed by a bearish candle that opens above the previous high and closes below the previous midpoint.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Dark Cloud Cover pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=2):
+                return False
+
+            prev = klines.iloc[-2]
+            curr = klines.iloc[-1]
+
+            # Dark Cloud Cover criteria:
+            # - First candle bullish
+            # - Second candle bearish, opens above prev high, closes below prev midpoint
+            prev_midpoint = (prev['open'] + prev['close']) / 2
+            is_dark_cloud_cover = (
+                prev['close'] > prev['open'] and
+                curr['close'] < curr['open'] and
+                curr['open'] > prev['high'] and
+                curr['close'] < prev_midpoint
+            )
+
+            self.logger.debug(
+                f"Dark Cloud Cover check for {symbol} ({timeframe}): "
+                f"prev_high={prev['high']:.6f}, prev_midpoint={prev_midpoint:.6f}, "
+                f"curr_open={curr['open']:.6f}, curr_close={curr['close']:.6f}, "
+                f"is_dark_cloud_cover={is_dark_cloud_cover}"
+            )
+            return bool(is_dark_cloud_cover)  # Convert to Python bool
+
+        except Exception as e:
+            self.logger.error(f"Error checking Dark Cloud Cover for {symbol} ({timeframe}): {str(e)}")
+            return False
+        
+    def piercing_line(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Piercing Line candlestick pattern in the latest two klines for the given symbol and timeframe.
+        Piercing Line has a bearish candle followed by a bullish candle that opens below the previous low and closes above the previous midpoint.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Piercing Line pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=2):
+                return False
+
+            prev = klines.iloc[-2]
+            curr = klines.iloc[-1]
+
+            # Piercing Line criteria:
+            # - First candle bearish
+            # - Second candle bullish, opens below prev low, closes above prev midpoint
+            prev_midpoint = (prev['open'] + prev['close']) / 2
+            is_piercing_line = (
+                prev['close'] < prev['open'] and
+                curr['close'] > curr['open'] and
+                curr['open'] < prev['low'] and
+                curr['close'] > prev_midpoint
+            )
+
+            self.logger.debug(
+                f"Piercing Line check for {symbol} ({timeframe}): "
+                f"prev_low={prev['low']:.6f}, prev_midpoint={prev_midpoint:.6f}, "
+                f"curr_open={curr['open']:.6f}, curr_close={curr['close']:.6f}, "
+                f"is_piercing_line={is_piercing_line}"
+            )
+            return bool(is_piercing_line)  # Convert to Python bool
+
+        except Exception as e:
+            self.logger.error(f"Error checking Piercing Line for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def on_neck(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies an On Neck candlestick pattern in the latest two klines for the given symbol and timeframe.
+        On Neck has a bearish candle followed by a bullish candle that opens below the previous low and closes at or near the previous close.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if an On Neck pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=2):
+                return False
+
+            prev = klines.iloc[-2]
+            curr = klines.iloc[-1]
+
+            # On Neck criteria:
+            # - First candle bearish
+            # - Second candle bullish, opens below prev low, closes at or near prev close
+            tolerance = 0.0001  # Tolerance for HBAR-USD price precision
+            is_on_neck = (
+                prev['close'] < prev['open'] and
+                curr['close'] > curr['open'] and
+                curr['open'] < prev['low'] and
+                abs(curr['close'] - prev['close']) <= tolerance
+            )
+
+            self.logger.debug(
+                f"On Neck check for {symbol} ({timeframe}): "
+                f"prev_low={prev['low']:.6f}, prev_close={prev['close']:.6f}, "
+                f"curr_open={curr['open']:.6f}, curr_close={curr['close']:.6f}, "
+                f"is_on_neck={is_on_neck}"
+            )
+            return bool(is_on_neck)  # Convert to Python bool
+
+        except Exception as e:
+            self.logger.error(f"Error checking On Neck for {symbol} ({timeframe}): {str(e)}")
             return False
 
     
