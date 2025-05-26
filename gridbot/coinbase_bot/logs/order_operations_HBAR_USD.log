@@ -129,3 +129,707 @@
 2025-05-26 09:10:08,995 - DEBUG - Fetched total USD balance: 663.91
 2025-05-26 09:10:09,545 - DEBUG - Fetched 10 open orders for HBAR-USD
 2025-05-26 09:10:09,792 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:11:10,479 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:11:10,872 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:11:11,424 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:11:11,668 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:12:12,434 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:12:12,699 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:12:13,253 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:12:13,498 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:13:14,189 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:13:14,445 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:13:15,002 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:13:15,242 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:14:15,905 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:14:16,195 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:14:16,754 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:14:16,988 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:15:17,667 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:15:17,938 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:15:18,503 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:15:18,730 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:16:19,392 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:16:19,810 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:16:20,360 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:16:20,600 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:17:21,298 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:17:21,590 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:17:22,156 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:17:22,370 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:18:23,097 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:18:23,373 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:18:23,924 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:18:24,169 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:19:24,860 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:19:25,114 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:19:25,669 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:19:25,899 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:20:26,571 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:20:26,845 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:20:27,400 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:20:27,646 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:21:28,324 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:21:28,613 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:21:29,173 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:21:29,400 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:22:30,097 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:22:30,362 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:22:30,919 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:22:31,156 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:23:31,844 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:23:32,104 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:23:32,675 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:23:32,914 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:24:33,595 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:24:33,858 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:24:34,409 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:24:34,629 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:25:35,294 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:25:35,562 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:25:36,119 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:25:36,340 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:26:37,041 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:26:37,493 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:26:38,030 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:26:38,274 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:27:39,048 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:27:39,312 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:27:39,878 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:27:40,116 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:28:40,790 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:28:41,077 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:28:41,637 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:28:41,872 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:29:42,559 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:29:42,842 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:29:43,404 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:29:43,652 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:30:44,361 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:30:44,637 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:30:45,206 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:30:45,509 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:31:46,248 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:31:46,541 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:31:47,095 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:31:47,354 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:32:48,050 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:32:48,319 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:32:48,900 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:32:49,157 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:33:49,826 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:33:50,101 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:33:50,672 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:33:50,924 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:34:51,615 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:34:51,881 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:34:52,436 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:34:52,684 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:35:53,345 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:35:53,607 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:35:54,163 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:35:54,390 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:36:55,075 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:36:55,372 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:36:55,997 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:36:56,207 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:37:56,887 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:37:57,152 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:37:57,744 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:37:57,985 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:38:58,697 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:38:58,958 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:38:59,516 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:38:59,761 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:40:00,466 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:40:00,738 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:40:01,294 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:40:01,534 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:41:02,212 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:41:02,488 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:41:03,050 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:41:03,400 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:42:04,372 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:42:04,801 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:42:05,456 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:42:05,735 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:43:06,416 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:43:06,709 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:43:07,263 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:43:07,518 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:44:08,184 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:44:08,443 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:44:08,999 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:44:09,242 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:45:10,001 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:45:10,267 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:45:10,810 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:45:11,059 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:46:11,762 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:46:12,027 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:46:12,573 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:46:12,824 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:47:13,498 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:47:13,781 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:47:14,335 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:47:14,575 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:48:15,280 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:48:15,546 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:48:16,110 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:48:16,352 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:49:17,064 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:49:17,381 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:49:17,945 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:49:18,171 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:50:18,852 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:50:19,231 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:50:19,779 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:50:20,027 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:51:20,692 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:51:20,953 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:51:21,505 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:51:21,739 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:52:22,448 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:52:22,721 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:52:23,276 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:52:23,525 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:53:24,224 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:53:24,495 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:53:25,108 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:53:25,339 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:54:26,008 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:54:26,263 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:54:26,814 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:54:27,059 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:55:27,766 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:55:28,035 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:55:28,595 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:55:28,843 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:56:29,564 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:56:29,834 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:56:30,401 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:56:30,658 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:57:31,367 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:57:31,773 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:57:32,356 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:57:32,601 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:58:33,283 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:58:33,546 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:58:34,095 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:58:34,340 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 09:59:35,011 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 09:59:35,276 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 09:59:35,837 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 09:59:36,089 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:00:36,795 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:00:37,061 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:00:37,614 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:00:37,873 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:01:38,552 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:01:38,835 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:01:39,481 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:01:39,705 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:02:40,388 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:02:40,659 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:02:41,216 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:02:41,457 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:03:42,129 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:03:42,409 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:03:42,970 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:03:43,204 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:04:43,893 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:04:44,161 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:04:44,706 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:04:45,031 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:05:45,759 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:05:46,018 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:05:46,576 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:05:46,834 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:06:47,509 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:06:47,795 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:06:48,349 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:06:48,591 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:07:49,262 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:07:49,660 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:07:50,221 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:07:50,475 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:08:51,165 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:08:51,436 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:08:52,007 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:08:52,262 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:09:52,965 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:09:53,252 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:09:53,803 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:09:54,056 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:10:54,751 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:10:55,020 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:10:55,577 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:10:55,820 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:11:56,529 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:11:56,815 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:11:57,376 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:11:57,620 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:12:58,411 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:12:58,813 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:12:59,364 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:12:59,625 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:14:00,302 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:14:00,568 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:14:01,122 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:14:01,489 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:15:02,164 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:15:02,436 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:15:03,109 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:15:03,368 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:16:04,062 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:16:04,373 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:16:04,928 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:16:05,181 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:17:05,873 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:17:06,129 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:17:06,682 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:17:06,933 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:18:07,618 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:18:07,901 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:18:08,452 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:18:08,701 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:19:09,397 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:19:09,705 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:19:10,261 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:19:10,512 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:20:11,219 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:20:11,495 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:20:12,052 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:20:12,308 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:21:13,017 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:21:13,301 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:21:13,862 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:21:14,113 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:22:14,805 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:22:15,078 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:22:15,636 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:22:15,887 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:23:16,588 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:23:16,878 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:23:17,429 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:23:17,721 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:24:18,431 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:24:18,700 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:24:19,272 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:24:19,516 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:25:20,194 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:25:20,461 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:25:21,017 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:25:21,257 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:26:21,950 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:26:22,219 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:26:22,788 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:26:23,040 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:27:23,717 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:27:24,007 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:27:24,563 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:27:24,800 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:28:25,517 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:28:25,891 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:28:26,452 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:28:26,705 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:29:27,387 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:29:27,650 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:29:28,217 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:29:28,468 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:30:29,141 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:30:29,411 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:30:29,965 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:30:30,263 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:31:30,991 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:31:31,266 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:31:31,831 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:31:32,084 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:32:32,791 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:32:33,050 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:32:33,600 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:32:33,851 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:33:34,556 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:33:34,893 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:33:35,461 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:33:35,700 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:34:36,450 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:34:36,713 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:34:37,267 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:34:37,508 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:35:38,187 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:35:38,477 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:35:39,038 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:35:39,290 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:36:39,974 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:36:40,275 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:36:40,822 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:36:41,062 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:37:41,738 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:37:41,991 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:37:42,558 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:37:42,801 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:38:43,477 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:38:43,769 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:38:44,340 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:38:44,581 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:39:45,289 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:39:45,565 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:39:46,136 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:39:46,390 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:40:47,092 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:40:47,401 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:40:47,963 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:40:48,215 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:41:48,889 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:41:49,151 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:41:49,705 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:41:49,924 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:42:50,675 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:42:50,939 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:42:51,485 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:42:51,722 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:43:52,404 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:43:52,884 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:43:53,446 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:43:53,702 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:44:54,386 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:44:54,661 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:44:55,218 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:44:55,470 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:45:56,165 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:45:56,425 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:45:56,984 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:45:57,247 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:46:57,940 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:46:58,207 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:46:58,772 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:46:58,994 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:47:59,661 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:47:59,977 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:48:00,529 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:48:00,770 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:49:01,497 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:49:01,777 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:49:02,334 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:49:02,581 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:50:03,385 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:50:03,780 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:50:04,351 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:50:04,601 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:51:05,289 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:51:05,558 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:51:06,111 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:51:06,342 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:52:07,046 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:52:07,314 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:52:07,871 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:52:08,095 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:53:08,774 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:53:09,044 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:53:09,600 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:53:09,831 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:54:10,502 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:54:10,771 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:54:11,340 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:54:11,595 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:55:12,284 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:55:12,550 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:55:13,107 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:55:13,352 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:56:14,044 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:56:14,315 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:56:14,868 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:56:15,119 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:57:15,802 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:57:16,093 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:57:16,646 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:57:16,890 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:58:17,568 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:58:17,821 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:58:18,353 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:58:18,620 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 10:59:19,291 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 10:59:19,715 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 10:59:20,273 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 10:59:20,637 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:00:21,589 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:00:21,851 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:00:22,404 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:00:22,643 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:01:23,313 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:01:23,581 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:01:24,145 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:01:24,363 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:02:25,039 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:02:25,307 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:02:25,836 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:02:26,083 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:03:26,741 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:03:27,002 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:03:27,554 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:03:27,794 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:04:28,451 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:04:28,726 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:04:29,291 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:04:29,525 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:05:30,317 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:05:30,583 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:05:31,142 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:05:31,389 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:06:32,078 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:06:32,339 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:06:32,893 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:06:33,141 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:07:33,806 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:07:34,099 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:07:34,656 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:07:34,890 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:08:35,561 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:08:35,878 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:08:36,440 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:08:36,686 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:09:37,360 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:09:37,645 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:09:38,210 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:09:38,458 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:10:39,126 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:10:39,396 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:10:39,949 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:10:40,199 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:11:40,889 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:11:41,156 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:11:41,718 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:11:41,954 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:12:42,631 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:12:42,914 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:12:43,465 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:12:43,722 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:13:44,379 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:13:44,670 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:13:45,236 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:13:45,485 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:14:46,152 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:14:46,547 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:14:47,089 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:14:47,334 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:15:48,016 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:15:48,283 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:15:48,842 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:15:49,085 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:16:49,760 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:16:50,040 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:16:50,595 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:16:50,845 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:17:51,515 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:17:51,785 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:17:52,342 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:17:52,583 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:18:53,263 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:18:53,532 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:18:54,091 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:18:54,321 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:19:55,008 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:19:55,300 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:19:55,863 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:19:56,103 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:20:56,781 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:20:57,056 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:20:57,615 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:20:57,852 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:21:58,588 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:21:58,844 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:21:59,405 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:21:59,645 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:23:00,335 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:23:00,589 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:23:01,145 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:23:01,366 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:24:02,033 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:24:02,304 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:24:02,859 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:24:03,099 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:25:03,776 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:25:04,171 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:25:04,741 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:25:04,989 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:26:05,654 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:26:05,924 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:26:06,478 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:26:06,727 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:27:07,407 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:27:07,671 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:27:08,239 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:27:08,469 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:28:09,127 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:28:09,401 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:28:09,957 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:28:10,292 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:29:10,970 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:29:11,239 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:29:11,802 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:29:12,055 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:30:12,739 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:30:13,026 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:30:13,605 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:30:13,837 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:31:14,541 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:31:14,810 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:31:15,370 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:31:15,611 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:32:16,374 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:32:16,640 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:32:17,193 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:32:17,436 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:33:18,107 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:33:18,403 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:33:18,959 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:33:19,208 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:34:19,901 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:34:20,172 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:34:20,743 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:34:21,013 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:35:21,696 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:35:21,973 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:35:22,520 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:35:22,753 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:36:23,426 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:36:23,694 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:36:24,241 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:36:24,508 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:37:25,183 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:37:25,451 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:37:26,011 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:37:26,266 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:38:26,950 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:38:27,267 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:38:27,824 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:38:28,072 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:39:28,742 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:39:29,006 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:39:29,553 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:39:29,794 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:40:30,463 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:40:30,859 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:40:31,418 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:40:31,678 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:41:32,392 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:41:32,656 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:41:33,213 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:41:33,456 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:42:34,151 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:42:34,439 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:42:35,005 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:42:35,265 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:43:35,963 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:43:36,221 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:43:36,779 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:43:37,017 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:44:37,761 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:44:38,032 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:44:38,592 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:44:38,876 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:45:39,561 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:45:39,843 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:45:40,400 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:45:40,654 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:46:41,311 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:46:41,632 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:46:42,182 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:46:42,437 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:47:43,119 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:47:43,392 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:47:43,972 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:47:44,225 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:48:44,898 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:48:45,172 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:48:45,733 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:48:45,996 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:49:46,668 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:49:46,961 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:49:47,523 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:49:47,771 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:50:48,459 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:50:48,826 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:50:49,380 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:50:49,623 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:51:50,290 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:51:50,555 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:51:51,117 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:51:51,360 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:52:52,036 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:52:52,285 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:52:52,836 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:52:53,101 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:53:53,783 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:53:54,060 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:53:54,621 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:53:54,860 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:54:55,523 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:54:55,809 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:54:56,359 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:54:56,604 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:55:57,288 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:55:57,571 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:55:58,133 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:55:58,375 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:56:59,063 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:56:59,345 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:56:59,908 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:57:00,166 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:58:00,897 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:58:01,169 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:58:01,808 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:58:02,114 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 11:59:02,789 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 11:59:03,064 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 11:59:03,630 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 11:59:03,964 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 12:00:04,643 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 12:00:04,910 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 12:00:05,611 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 12:00:05,858 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 12:01:06,538 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 12:01:06,829 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 12:01:07,391 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 12:01:07,675 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 12:02:08,387 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 12:02:08,664 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 12:02:09,313 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 12:02:09,565 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 12:03:10,354 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 12:03:10,627 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 12:03:11,186 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 12:03:11,440 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 12:04:12,161 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 12:04:12,422 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 12:04:12,973 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 12:04:13,318 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 12:05:14,040 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 12:05:14,316 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 12:05:14,881 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 12:05:15,129 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 12:06:15,802 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 12:06:16,203 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 12:06:16,751 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 12:06:17,002 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 12:07:17,696 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 12:07:17,967 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 12:07:18,514 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 12:07:18,754 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 12:08:19,425 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 12:08:19,685 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 12:08:20,241 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 12:08:20,540 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 12:09:21,261 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 12:09:21,533 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 12:09:22,089 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 12:09:22,350 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 12:10:23,036 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 12:10:23,307 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 12:10:23,873 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 12:10:24,117 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 12:11:24,952 - DEBUG - Fetched 99 orders for HBAR-USD
+2025-05-26 12:11:25,246 - DEBUG - Fetched total USD balance: 663.91
+2025-05-26 12:11:25,805 - DEBUG - Fetched 10 open orders for HBAR-USD
+2025-05-26 12:11:26,045 - DEBUG - Fetched HBAR balance: 0.00625268

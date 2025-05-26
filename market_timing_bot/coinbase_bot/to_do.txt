@@ -1,4 +1,4 @@
-- do I need log rotation? Probably not, just turn off the debug
-- down the road add futures trading. This could be used to offset a market downtrend. Buy/sell a futures contract that allows me to sell at a higher price than market price when the bot has stopped trading in a downtrend market. 
-- bot doesn't add ex
+- get historical klines
+- subscribe to kline websockets
+- 
 
