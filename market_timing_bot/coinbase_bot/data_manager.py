@@ -31,12 +31,10 @@ class DataManager:
             log_dir.mkdir(exist_ok=True)
             log_file = log_dir / 'data_manager.log'
             file_handler = RotatingFileHandler(log_file, maxBytes=5*1024*1024, backupCount=5)
-            # file_handler.setLevel(logging.DEBUG)
             file_handler.setLevel(logging.INFO)
             formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
             file_handler.setFormatter(formatter)
             self.logger.addHandler(file_handler)
-            # self.logger.setLevel(logging.DEBUG)
             self.logger.setLevel(logging.INFO)
         else:
             self.logger.setLevel(logging.WARNING)
@@ -61,8 +59,8 @@ class DataManager:
         self.websocket_task = None
         self.last_ticker_price = {symbol: None for symbol in symbols}
         self.ticker_logged = {symbol: False for symbol in symbols}
-        self.buffer_log_counter = {symbol: 0 for symbol in symbols}  # Counter for logging buffer contents
-        self.historical_initialized = False  # Flag to track historical data loading
+        self.buffer_log_counter = {symbol: 0 for symbol in self.symbols}
+        self.historical_initialized = False
 
         # Schedule historical data fetching and WebSocket setup
         asyncio.create_task(self._initialize_and_start_tasks())
@@ -72,16 +70,11 @@ class DataManager:
         Fetches initial historical klines and starts WebSocket and REST update tasks.
         """
         try:
-            # Fetch historical klines first
             await self._fetch_initial_historical_data()
             self.historical_initialized = True
             self.logger.info("Completed initial historical kline fetch for all timeframes")
-
-            # Start WebSocket subscriptions for ticker and level2
             self.websocket_task = asyncio.create_task(self.start_coinbase_websocket(self.exchange_connection))
-            self.logger.info("Started WebSocket task for ticker and level2")
-
-            # Start REST kline updates
+            self.logger.info("Started WebSocket task for ticker and subscriptions")
             asyncio.create_task(self._update_klines_periodically())
             self.logger.info("Started REST kline update tasks")
         except Exception as e:
@@ -89,7 +82,7 @@ class DataManager:
 
     async def _fetch_initial_historical_data(self):
         """
-        Fetches initial historical klines for all Coinbase timeframes to populate buffers with the latest 40 klines.
+        Fetches initial historical klines for all Coinbase timeframes to populate buffers with 60 klines.
         """
         max_retries = 5
         for symbol in self.symbols:
@@ -97,20 +90,21 @@ class DataManager:
                 attempt = 0
                 while attempt < max_retries:
                     try:
-                        klines = await self.fetch_historical_data_with_retry(symbol, interval, 40)  # Fetch 40 klines
+                        klines = await self.fetch_historical_data_with_retry(symbol, interval, 60)
                         if klines and len(klines) > 0:
                             df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
                             df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
                             getattr(self, f'klines_buffer_{interval}')[symbol] = df
                             self.logger.info(f"Initialized {interval} klines for {symbol}, shape: {df.shape}, latest timestamp: {df['timestamp'].max()}")
-                            self.logger.debug(f"{interval} kline contents for {symbol}:\n{df.to_string()}")
+                            self.logger.debug(f"Fetched {len(klines)} {interval} klines for {symbol}")
+                            self.logger.debug(f"{interval} kline contents for {symbol}:\n{df.tail(5).to_string()}")
                             break
                         else:
                             self.logger.warning(f"Empty or no klines fetched for {interval} {symbol}")
                     except Exception as e:
-                        self.logger.error(f"Error fetching initial {interval} klines for {symbol}: {e}", exc_info=True)
+                        self.logger.error(f"Error fetching initial {interval} klines for {symbol} on attempt {attempt + 1}: {e}", exc_info=True)
                     attempt += 1
-                    await asyncio.sleep(5)
+                    await asyncio.sleep(10)
                 if attempt == max_retries:
                     self.logger.error(f"Failed to initialize {interval} klines for {symbol} after {max_retries} retries")
 
@@ -122,7 +116,7 @@ class DataManager:
             for symbol in self.symbols:
                 for timeframe in ['1m', '5m', '15m', '1h', '6h', '1d']:
                     try:
-                        klines = await self.fetch_historical_data_with_retry(symbol, timeframe, 10)  # Fetch 10 recent klines
+                        klines = await self.fetch_historical_data_with_retry(symbol, timeframe, 10)
                         if klines and len(klines) > 0:
                             new_df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
                             new_df['timestamp'] = pd.to_datetime(new_df['timestamp'], unit='ms', utc=True)
@@ -131,74 +125,67 @@ class DataManager:
                             if not buffer.empty:
                                 buffer = pd.concat([buffer, new_df], ignore_index=True)
                                 buffer = buffer.drop_duplicates(subset=['timestamp'], keep='last')
-                                buffer = buffer.tail(40)  # Limit to 40 rows
+                                buffer = buffer.tail(60)
                             else:
                                 buffer = new_df
                             getattr(self, buffer_key)[symbol] = buffer
-                            self.buffer_log_counter[symbol] += 1
                             self.logger.info(f"Updated {timeframe} klines for {symbol}, shape: {buffer.shape}, latest timestamp: {buffer['timestamp'].max()}")
-                            if self.buffer_log_counter[symbol] % 5 == 0:
-                                self.logger.debug(f"Klines contents for {symbol} ({timeframe}):\n{buffer.tail(5).to_string()}")
-                        await asyncio.sleep(1)  # Avoid rate limiting
+                            if self.buffer_log_counter[symbol] % 10 == 0:
+                                self.logger.debug(f"Klines buffer for {symbol} ({timeframe}):\n{buffer.tail(5).to_string()}")
+                        await asyncio.sleep(1)
                     except Exception as e:
                         self.logger.error(f"Error updating {timeframe} klines for {symbol}: {e}", exc_info=True)
-            await asyncio.sleep(60)  # Update all timeframes every 60 seconds
+            await asyncio.sleep(60)
 
     def get_buffer(self, symbol: str, buffer_type: str) -> pd.DataFrame:
         """
         Retrieves the specified buffer for a given symbol.
 
         Args:
-            symbol (str): The trading symbol (e.g., 'HBAR-USD').
-            buffer_type (str): The type of buffer ('ticker', '1m', '5m', '15m', '1h', '6h', '1d', 'klines_1m', 'klines_5m', 'klines_15m', 'klines_1h', 'klines_6h', 'klines_1d', 'order_book').
+            symbol: The trading symbol (e.g., 'HBAR-USD').
+            buffer_type: The type of buffer ('ticker', 'klines_1m', 'klines_5m', 'klines_15m', 'klines_1h', 'klines_6h', 'klines_1d', 'order_book').
 
         Returns:
             pd.DataFrame: The requested buffer DataFrame.
-
-        Raises:
-            ValueError: If the symbol or buffer_type is invalid.
         """
         if symbol not in self.symbols:
             self.logger.error(f"Invalid symbol: {symbol}")
             raise ValueError(f"Symbol {symbol} not found in DataManager symbols")
-        
+
         buffer_map = {
             'ticker': self.ticker_buffer,
-            '1m': self.klines_buffer_1m,
             'klines_1m': self.klines_buffer_1m,
-            '5m': self.klines_buffer_5m,
             'klines_5m': self.klines_buffer_5m,
-            '15m': self.klines_buffer_1m,
             'klines_15m': self.klines_buffer_15m,
-            '1h': self.klines_buffer_1h,
             'klines_1h': self.klines_buffer_1h,
-            '6h': self.klines_buffer_6h,
             'klines_6h': self.klines_buffer_6h,
-            '1d': self.klines_buffer_1d,
             'klines_1d': self.klines_buffer_1d,
             'order_book': self.order_book_buffer
         }
-        
+
         if buffer_type not in buffer_map:
             self.logger.error(f"Invalid buffer type: {buffer_type}")
             raise ValueError(f"Buffer type {buffer_type} not supported")
-        
-        return buffer_map[buffer_type][symbol]
 
-    async def fetch_historical_data_with_retry(self, symbol: str, timeframe: str, limit: int = 40, max_attempts: int = 5):
+        buffer = buffer_map[buffer_type][symbol]
+        if buffer.empty:
+            self.logger.debug(f"Empty buffer for {symbol} ({buffer_type})")
+        return buffer
+
+    async def fetch_historical_data_with_retry(self, symbol: str, timeframe: str, limit: int = 60, max_attempts: int = 5):
         """
         Fetch historical klines with retry logic, ensuring up to 'limit' klines are retrieved.
 
         Args:
-            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
-            timeframe (str): Timeframe ('1m', '5m', '15m', '1h', '6h', '1d').
-            limit (int): Number of klines to fetch (default 40).
-            max_attempts (int): Maximum retry attempts per request.
+            symbol: Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe: Timeframe ('1m', '5m', '15m', '1h', '6h', '1d').
+            limit: Number of klines to fetch (default 60).
+            max_attempts: Maximum retry attempts per request.
 
         Returns:
             list: List of klines, up to 'limit' entries.
         """
-        symbol_ccxt = symbol.replace('/', '-')  # Ensure Coinbase format
+        symbol_ccxt = symbol.replace('/', '-')
         timeframe_map = {'1m': '1m', '5m': '5m', '15m': '15m', '1h': '1h', '6h': '6h', '1d': '1d'}
         if timeframe not in timeframe_map:
             self.logger.error(f"Invalid timeframe: {timeframe}")
@@ -206,17 +193,18 @@ class DataManager:
 
         all_klines = []
         remaining = limit
-        since = None  # Start from latest data
+        since = None
 
         while remaining > 0:
             attempt = 0
             while attempt < max_attempts:
                 try:
-                    # Fetch up to remaining klines
+                    # Increase timeout to 30 seconds
+                    self.rest_exchange.aiohttp_timeout = 30000
                     klines = await self.rest_exchange.fetch_ohlcv(
-                        symbol_ccxt, 
-                        timeframe_map[timeframe], 
-                        limit=min(remaining, 100),  # Coinbase API may limit to 100 per request
+                        symbol_ccxt,
+                        timeframe_map[timeframe],
+                        limit=min(remaining, 100),
                         since=since
                     )
                     if not klines:
@@ -226,24 +214,25 @@ class DataManager:
                     all_klines.extend(klines)
                     remaining -= len(klines)
                     self.logger.debug(f"Fetched {len(klines)} {timeframe} klines for {symbol}, {remaining} remaining")
+                    if attempt > 0:
+                        self.logger.info(f"Successfully fetched {timeframe} klines for {symbol} after {attempt} retries")
 
                     if remaining > 0 and klines:
-                        # Set 'since' to the earliest timestamp minus a small buffer
-                        since = int(klines[0][0] - 1000 * 60 * 60)  # 1 hour earlier
+                        since = int(klines[0][0] - 1000 * 60 * 60)
                     break
                 except Exception as e:
                     self.logger.error(f"Attempt {attempt + 1} failed to fetch {timeframe} klines for {symbol}: {e}", exc_info=True)
                     if attempt < max_attempts - 1:
-                        await asyncio.sleep(5)
+                        await asyncio.sleep(10)
                 attempt += 1
             if attempt == max_attempts or not klines:
+                self.logger.error(f"Failed to fetch {timeframe} klines for {symbol} after {max_attempts} attempts")
                 break
 
         if not all_klines:
-            self.logger.error(f"Failed to fetch {timeframe} klines for {symbol} after {max_attempts} attempts")
+            self.logger.error(f"No klines fetched for {symbol} {timeframe}")
             return None
 
-        # Sort klines by timestamp and take the latest 'limit' entries
         all_klines.sort(key=lambda x: x[0])
         all_klines = all_klines[-limit:]
         self.logger.debug(f"Total fetched {len(all_klines)} {timeframe} klines for {symbol}")
@@ -278,14 +267,14 @@ class DataManager:
             else:
                 self.ticker_buffer[symbol] = pd.concat([self.ticker_buffer[symbol], new_data], ignore_index=True)
             self.ticker_buffer[symbol] = self.ticker_buffer[symbol].drop_duplicates(subset=['timestamp'], keep='last')
-            self.ticker_buffer[symbol] = self.ticker_buffer[symbol][-1000:]  # Limit buffer size
+            self.ticker_buffer[symbol] = self.ticker_buffer[symbol][-1000:]
 
             log_ticker = False
             if not self.ticker_logged[symbol]:
                 log_ticker = True
                 self.ticker_logged[symbol] = True
             elif self.last_ticker_price[symbol] is not None and price != 0:
-                if abs(price - self.last_ticker_price[symbol]) / self.last_ticker_price[symbol] > 0.01:  # 1% change
+                if abs(price - self.last_ticker_price[symbol]) / self.last_ticker_price[symbol] > 0.01:
                     log_ticker = True
 
             if log_ticker:
@@ -296,7 +285,6 @@ class DataManager:
 
         except Exception as e:
             self.logger.error(f"Error processing ticker message for {symbol}: {e} - {ticker}", exc_info=True)
-            traceback.print_exc()
 
     async def _process_order_book_message(self, message: dict, symbol: str):
         """Processes order book messages and updates the order_book_buffer."""
@@ -317,7 +305,7 @@ class DataManager:
                     continue
 
                 for update in updates:
-                    side = update.get('side')  # 'buy' or 'sell'
+                    side = update.get('side')
                     price_level = float(update.get('price_level', 0))
                     new_quantity = float(update.get('new_quantity', 0))
 
@@ -330,31 +318,25 @@ class DataManager:
                     })
                     self.order_book_buffer[symbol] = pd.concat([self.order_book_buffer[symbol], new_data], ignore_index=True)
                     self.order_book_buffer[symbol] = self.order_book_buffer[symbol].drop_duplicates(subset=['symbol', 'side', 'price_level'], keep='last')
-                    self.order_book_buffer[symbol] = self.order_book_buffer[symbol][-1000:]  # Limit buffer size
+                    self.order_book_buffer[symbol] = self.order_book_buffer[symbol][-1000:]
 
                 self.logger.debug(f"Order book buffer updated for {symbol}, shape: {self.order_book_buffer[symbol].shape}")
                 self.logger.debug(f"Order book contents for {symbol}:\n{self.order_book_buffer[symbol].tail(5).to_string()}")
 
         except Exception as e:
             self.logger.error(f"Error processing order book message for {symbol}: {e} - {message}", exc_info=True)
-            traceback.print_exc()
 
     async def process_message(self, message: str, websocket):
         """
         Processes incoming WebSocket messages, directing them to the appropriate handler.
-
-        Args:
-            message (str): The message received from the WebSocket.
-            websocket (websockets.WebSocketClientProtocol): The WebSocket connection object.
         """
         try:
             parsed_message = json.loads(message)
             channel = parsed_message.get('channel')
-            self.logger.debug(f"Received WebSocket message: channel={channel}, data={json.dumps(parsed_message, indent=2)}")
+            self.logger.debug(f"Received WebSocket message: channel={channel}")
 
             if channel == 'ticker':
-                events = parsed_message.get('events', [])
-                for event in events:
+                for event in parsed_message.get('events', []):
                     for ticker in event.get('tickers', []):
                         product_id = ticker.get('product_id')
                         if not product_id:
@@ -362,19 +344,15 @@ class DataManager:
                             continue
                         symbol = product_id
                         if symbol not in self.symbols:
-                            self.logger.debug(f"Ignoring ticker for unsupported symbol: {symbol}")
                             continue
                         await self._process_ticker_message(ticker, symbol)
             elif channel == 'l2_data':
-                events = parsed_message.get('events', [])
-                for event in events:
+                for event in parsed_message.get('events', []):
                     product_id = event.get('product_id')
                     if not product_id:
-                        self.logger.warning(f"Level2 message missing product_id: {event}")
                         continue
                     symbol = product_id
                     if symbol not in self.symbols:
-                        self.logger.debug(f"Ignoring level2 for unsupported symbol: {symbol}")
                         continue
                     await self._process_order_book_message(parsed_message, symbol)
             elif channel == 'subscriptions':
@@ -385,56 +363,45 @@ class DataManager:
             elif channel == 'error':
                 self.logger.error(f"WebSocket error: {parsed_message}")
             else:
-                self.logger.debug(f"Received unknown channel: {channel}, data={parsed_message}")
+                self.logger.debug(f"Received unknown channel: {channel}")
 
         except json.JSONDecodeError:
             self.logger.error(f"Error decoding JSON message: {message}")
         except Exception as e:
-            self.logger.error(f"Error processing message: {e} - {message}", exc_info=True)
-            traceback.print_exc()
+            self.logger.error(f"Error processing message: {e}", exc_info=True)
 
     async def start_coinbase_websocket(self, exchange_connection: ExchangeConnection):
         """
         Start WebSocket subscription for ticker and level2 data with JWT authentication.
-
-        Args:
-            exchange_connection (ExchangeConnection): The ExchangeConnection instance for JWT generation.
         """
-        # Wait for historical data to be initialized
         while not self.historical_initialized:
             await asyncio.sleep(1)
 
-        while True:
+        max_reconnect_attempts = 5
+        reconnect_attempt = 0
+
+        while reconnect_attempt < max_reconnect_attempts:
             try:
                 ws_url = "wss://advanced-trade-ws.coinbase.com"
                 jwt_token = exchange_connection.generate_jwt()
                 if not jwt_token:
                     self.logger.error("Failed to generate JWT for WebSocket authentication")
-                    await asyncio.sleep(5)
+                    await asyncio.sleep(10)
+                    reconnect_attempt += 1
                     continue
 
                 async with websockets.connect(ws_url) as websocket:
                     self.ws_connections['main'] = websocket
                     product_ids = [symbol.replace('/', '-') for symbol in self.symbols]
-                    # Subscribe to ticker and level2
                     subscriptions = [
-                        {
-                            "type": "subscribe",
-                            "product_ids": product_ids,
-                            "channel": "ticker",
-                            "jwt": jwt_token
-                        },
-                        {
-                            "type": "subscribe",
-                            "product_ids": product_ids,
-                            "channel": "level2",
-                            "jwt": jwt_token
-                        }
+                        {"type": "subscribe", "product_ids": product_ids, "channel": "ticker", "jwt": jwt_token},
+                        {"type": "subscribe", "product_ids": product_ids, "channel": "level2", "jwt": jwt_token}
                     ]
                     for subscription in subscriptions:
-                        self.logger.debug(f"Sending subscription: {json.dumps(subscription, indent=2)}")
+                        self.logger.debug(f"Sending subscription: {json.dumps(subscription)}")
                         await websocket.send(json.dumps(subscription))
                     self.logger.info(f"Subscribed to ticker and level2 WebSocket for {self.symbols}")
+                    reconnect_attempt = 0  # Reset on successful connection
 
                     last_jwt_refresh_time = asyncio.get_event_loop().time()
                     while True:
@@ -448,19 +415,24 @@ class DataManager:
                                 if jwt_token:
                                     for subscription in subscriptions:
                                         subscription['jwt'] = jwt_token
-                                        self.logger.debug(f"Re-sending subscription with new JWT: {json.dumps(subscription, indent=2)}")
                                         await websocket.send(json.dumps(subscription))
                                     self.logger.info(f"Re-subscribed with new JWT for {self.symbols}")
                                     last_jwt_refresh_time = asyncio.get_event_loop().time()
                         except websockets.ConnectionClosed as e:
-                            self.logger.warning(f"WebSocket connection closed with code {e.code}, reason: {e.reason}. Reconnecting...")
+                            self.logger.warning(f"WebSocket closed: {e.code}, {e.reason}. Reconnecting...")
                             break
                         except Exception as e:
-                            self.logger.error(f"Error in WebSocket: {e}", exc_info=True)
+                            self.logger.error(f"WebSocket error: {e}", exc_info=True)
 
             except Exception as e:
                 self.logger.error(f"Failed to start WebSocket: {e}", exc_info=True)
-                await asyncio.sleep(5)
+                reconnect_attempt += 1
+                if reconnect_attempt < max_reconnect_attempts:
+                    self.logger.info(f"Reconnecting WebSocket, attempt {reconnect_attempt + 1}/{max_reconnect_attempts}")
+                    await asyncio.sleep(10)
+                else:
+                    self.logger.error(f"Max WebSocket reconnect attempts ({max_reconnect_attempts}) reached. Giving up.")
+                    break
 
     async def close_websockets(self):
         """
@@ -471,5 +443,3 @@ class DataManager:
                 await ws.close()
             self.ws_connections = {}
             self.logger.info("All WebSocket connections closed.")
-        else:
-            self.logger.info("No WebSocket connections to close.")

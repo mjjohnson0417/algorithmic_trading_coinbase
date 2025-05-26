@@ -5,6 +5,8 @@ from pathlib import Path
 from key_loader import KeyLoader
 from exchange_connection import ExchangeConnection
 from data_manager import DataManager
+from indicator_calculator import IndicatorCalculator
+import json
 
 async def main():
     # Logger setup
@@ -36,6 +38,7 @@ async def main():
 
     exchange = None
     data_manager = None
+    indicator_calculator = None
 
     try:
         # Exchange setup
@@ -50,9 +53,26 @@ async def main():
         data_manager = DataManager(symbols, exchange, enable_logging=True)
         logger.info(f"DataManager initialized for symbols: {symbols}")
 
+        # IndicatorCalculator setup
+        indicator_calculator = IndicatorCalculator(symbols, data_manager, enable_logging=True)
+        logger.info(f"IndicatorCalculator initialized for symbols: {symbols}")
+
+        # Wait for DataManager to initialize historical data
+        while not data_manager.historical_initialized:
+            logger.debug("Waiting for DataManager to initialize historical data...")
+            await asyncio.sleep(1)
+
         # Keep the bot running
         while True:
-            await asyncio.sleep(3600)  # Run indefinitely, check hourly
+            try:
+                # Calculate and log all indicators
+                all_indicators = indicator_calculator.calculate_all_indicators()
+                for symbol in symbols:
+                    logger.info(f"Indicators for {symbol}:\n{json.dumps(all_indicators[symbol], indent=2, default=str)}")
+            except Exception as e:
+                logger.error(f"Error calculating indicators: {e}", exc_info=True)
+            
+            await asyncio.sleep(3600)  # Run every hour
 
     except Exception as e:
         logger.error(f"Critical error: {e}", exc_info=True)
