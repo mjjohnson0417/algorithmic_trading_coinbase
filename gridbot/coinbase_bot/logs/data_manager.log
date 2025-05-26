@@ -1506,3 +1506,1019 @@
 2025-05-26 13:56:22,299 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
 2025-05-26 13:56:22,299 - DEBUG - Total fetched 1 1h klines for HBAR-USD
 2025-05-26 13:56:22,301 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 13:57:22,302 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 13:57:22,543 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 13:57:22,543 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 13:57:22,545 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 13:58:22,546 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 13:58:22,808 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 13:58:22,808 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 13:58:22,810 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 13:59:22,811 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 13:59:23,043 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 13:59:23,043 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 13:59:23,045 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:00:15,932 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 14:00:16,143 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 14:00:16,143 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 14:00:16,145 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 14:00:23,046 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:00:23,217 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:00:23,218 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:00:23,220 - INFO - Updated 1h klines for HBAR-USD with 1 new rows, shape: (40, 6), latest timestamp: 2025-05-26 18:00:00+00:00
+2025-05-26 14:00:23,222 - DEBUG - New 1h kline data for HBAR-USD:
+                  timestamp     open     high      low    close   volume
+0 2025-05-26 18:00:00+00:00  0.18508  0.18509  0.18487  0.18495  25284.4
+2025-05-26 14:01:23,224 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:01:23,435 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:01:23,435 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:01:23,437 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:02:23,437 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:02:23,681 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:02:23,681 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:02:23,682 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:03:23,683 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:03:23,903 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:03:23,903 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:03:23,905 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:04:23,907 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:04:24,215 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:04:24,216 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:04:24,217 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:05:24,219 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:05:24,436 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:05:24,436 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:05:24,438 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:06:24,439 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:06:24,668 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:06:24,668 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:06:24,670 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:07:24,671 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:07:24,903 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:07:24,903 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:07:24,905 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:08:24,906 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:08:25,135 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:08:25,136 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:08:25,137 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:09:25,139 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:09:25,595 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:09:25,595 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:09:25,597 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:10:16,146 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 14:10:16,378 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 14:10:16,378 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 14:10:16,380 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 14:10:25,599 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:10:25,784 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:10:25,784 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:10:25,786 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:11:25,787 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:11:26,010 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:11:26,011 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:11:26,012 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:12:26,013 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:12:26,231 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:12:26,231 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:12:26,233 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:13:26,236 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:13:26,456 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:13:26,456 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:13:26,457 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:14:26,458 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:14:26,672 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:14:26,673 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:14:26,674 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:15:26,676 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:15:26,907 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:15:26,908 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:15:26,909 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:16:26,911 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:16:27,121 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:16:27,121 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:16:27,123 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:17:27,124 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:17:27,336 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:17:27,336 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:17:27,338 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:18:27,341 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:18:27,557 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:18:27,557 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:18:27,559 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:19:27,561 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:19:27,800 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:19:27,800 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:19:27,802 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:20:16,381 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 14:20:16,645 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 14:20:16,645 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 14:20:16,647 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 14:20:27,803 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:20:27,984 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:20:27,984 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:20:27,986 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:21:27,988 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:21:28,214 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:21:28,214 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:21:28,216 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:22:28,217 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:22:28,445 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:22:28,445 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:22:28,446 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:23:28,447 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:23:28,664 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:23:28,664 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:23:28,666 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:24:28,667 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:24:28,879 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:24:28,880 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:24:28,881 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:25:28,882 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:25:29,092 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:25:29,092 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:25:29,094 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:26:29,095 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:26:29,337 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:26:29,337 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:26:29,339 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:27:29,341 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:27:29,553 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:27:29,553 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:27:29,555 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:28:29,555 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:28:29,776 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:28:29,776 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:28:29,778 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:29:29,780 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:29:29,987 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:29:29,987 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:29:29,989 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:30:16,648 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 14:30:16,869 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 14:30:16,869 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 14:30:16,870 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 14:30:29,989 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:30:30,223 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:30:30,223 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:30:30,225 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:31:30,226 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:31:30,407 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:31:30,408 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:31:30,410 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:32:30,411 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:32:30,641 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:32:30,641 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:32:30,643 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:33:30,645 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:33:30,904 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:33:30,904 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:33:30,906 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:34:30,907 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:34:31,142 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:34:31,142 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:34:31,144 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:35:31,146 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:35:31,397 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:35:31,397 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:35:31,399 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:36:31,401 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:36:31,601 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:36:31,602 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:36:31,604 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:37:31,605 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:37:32,120 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:37:32,120 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:37:32,122 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:38:32,123 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:38:32,347 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:38:32,347 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:38:32,349 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:39:32,352 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:39:32,588 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:39:32,589 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:39:32,591 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:40:16,873 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 14:40:17,090 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 14:40:17,090 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 14:40:17,092 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 14:40:32,592 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:40:32,814 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:40:32,814 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:40:32,816 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:41:32,818 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:41:33,044 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:41:33,044 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:41:33,046 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:42:33,048 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:42:33,259 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:42:33,259 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:42:33,261 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:43:33,263 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:43:33,478 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:43:33,478 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:43:33,480 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:44:33,482 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:44:33,739 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:44:33,739 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:44:33,741 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:45:33,744 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:45:33,971 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:45:33,971 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:45:33,973 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:46:33,974 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:46:34,215 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:46:34,215 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:46:34,217 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:47:34,219 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:47:34,456 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:47:34,456 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:47:34,458 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:48:34,461 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:48:34,683 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:48:34,684 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:48:34,685 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:49:34,687 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:49:34,933 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:49:34,933 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:49:34,935 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:50:17,094 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 14:50:17,328 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 14:50:17,328 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 14:50:17,330 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 14:50:34,937 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:50:35,168 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:50:35,169 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:50:35,170 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:51:35,174 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:51:35,407 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:51:35,407 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:51:35,409 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:52:35,412 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:52:35,607 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:52:35,607 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:52:35,608 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:53:35,609 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:53:35,836 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:53:35,836 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:53:35,838 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:54:35,841 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:54:36,079 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:54:36,080 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:54:36,082 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:55:36,083 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:55:36,314 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:55:36,314 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:55:36,316 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:56:36,318 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:56:36,660 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:56:36,660 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:56:36,662 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:57:36,664 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:57:36,872 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:57:36,873 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:57:36,875 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:58:36,876 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:58:37,112 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:58:37,113 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:58:37,115 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 14:59:37,116 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 14:59:37,326 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 14:59:37,327 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 14:59:37,328 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:00:17,332 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 15:00:17,553 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 15:00:17,553 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 15:00:17,555 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 15:00:37,330 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:00:37,537 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:00:37,537 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:00:37,540 - INFO - Updated 1h klines for HBAR-USD with 1 new rows, shape: (40, 6), latest timestamp: 2025-05-26 19:00:00+00:00
+2025-05-26 15:00:37,542 - DEBUG - New 1h kline data for HBAR-USD:
+                  timestamp     open     high      low    close  volume
+0 2025-05-26 19:00:00+00:00  0.18511  0.18518  0.18511  0.18514  2259.3
+2025-05-26 15:01:37,544 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:01:37,782 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:01:37,782 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:01:37,784 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:02:37,786 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:02:38,015 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:02:38,015 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:02:38,017 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:03:38,018 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:03:38,249 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:03:38,249 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:03:38,251 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:04:38,253 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:04:38,464 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:04:38,464 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:04:38,466 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:05:38,467 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:05:38,681 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:05:38,682 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:05:38,684 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:06:38,684 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:06:38,895 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:06:38,895 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:06:38,897 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:07:38,898 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:07:39,101 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:07:39,101 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:07:39,103 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:08:39,105 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:08:39,332 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:08:39,332 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:08:39,334 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:09:39,336 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:09:39,574 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:09:39,574 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:09:39,576 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:10:17,556 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 15:10:17,772 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 15:10:17,772 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 15:10:17,774 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 15:10:39,577 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:10:39,799 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:10:39,799 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:10:39,801 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:11:39,801 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:11:40,024 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:11:40,025 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:11:40,026 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:12:40,028 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:12:40,272 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:12:40,272 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:12:40,274 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:13:40,276 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:13:40,514 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:13:40,514 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:13:40,516 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:14:40,519 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:14:40,753 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:14:40,753 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:14:40,755 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:15:40,756 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:15:40,985 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:15:40,985 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:15:40,987 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:16:40,988 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:16:41,218 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:16:41,218 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:16:41,220 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:17:41,221 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:17:41,455 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:17:41,455 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:17:41,457 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:18:41,459 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:18:41,703 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:18:41,703 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:18:41,705 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:19:41,707 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:19:41,921 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:19:41,921 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:19:41,923 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:20:17,776 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 15:20:18,009 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 15:20:18,010 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 15:20:18,011 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 15:20:41,924 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:20:42,131 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:20:42,131 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:20:42,133 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:21:42,134 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:21:42,343 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:21:42,344 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:21:42,345 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:22:42,347 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:22:42,594 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:22:42,594 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:22:42,596 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:23:42,599 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:23:42,816 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:23:42,816 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:23:42,818 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:24:42,819 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:24:43,037 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:24:43,037 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:24:43,039 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:25:43,041 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:25:43,254 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:25:43,254 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:25:43,256 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:26:43,259 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:26:43,467 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:26:43,467 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:26:43,469 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:27:43,470 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:27:43,717 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:27:43,718 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:27:43,720 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:28:43,720 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:28:43,949 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:28:43,950 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:28:43,952 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:29:43,953 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:29:44,168 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:29:44,168 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:29:44,170 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:30:18,013 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 15:30:18,225 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 15:30:18,225 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 15:30:18,227 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 15:30:44,172 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:30:44,412 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:30:44,412 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:30:44,414 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:31:44,415 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:31:44,681 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:31:44,682 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:31:44,684 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:32:44,686 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:32:44,911 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:32:44,911 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:32:44,913 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:33:44,914 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:33:45,142 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:33:45,142 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:33:45,144 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:34:45,146 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:34:45,376 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:34:45,376 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:34:45,378 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:35:45,378 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:35:45,605 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:35:45,605 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:35:45,607 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:36:45,608 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:36:45,851 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:36:45,851 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:36:45,853 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:37:45,854 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:37:46,111 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:37:46,111 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:37:46,113 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:38:46,114 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:38:46,325 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:38:46,325 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:38:46,327 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:39:46,329 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:39:46,541 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:39:46,541 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:39:46,543 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:40:18,228 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 15:40:18,429 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 15:40:18,429 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 15:40:18,431 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 15:40:46,545 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:40:46,778 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:40:46,778 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:40:46,780 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:41:46,782 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:41:47,006 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:41:47,007 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:41:47,009 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:42:47,010 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:42:47,219 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:42:47,219 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:42:47,221 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:43:47,222 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:43:47,423 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:43:47,423 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:43:47,425 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:44:47,427 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:44:47,635 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:44:47,635 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:44:47,637 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:45:47,639 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:45:47,889 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:45:47,889 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:45:47,891 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:46:47,893 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:46:48,159 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:46:48,159 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:46:48,161 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:47:48,164 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:47:48,387 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:47:48,387 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:47:48,389 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:48:48,390 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:48:48,627 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:48:48,627 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:48:48,629 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:49:48,630 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:49:48,840 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:49:48,840 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:49:48,842 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:50:18,432 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 15:50:18,734 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 15:50:18,734 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 15:50:18,736 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 15:50:48,845 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:50:49,080 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:50:49,080 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:50:49,082 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:51:49,083 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:51:49,318 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:51:49,318 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:51:49,320 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:52:49,322 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:52:49,547 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:52:49,548 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:52:49,549 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:53:49,551 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:53:49,795 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:53:49,795 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:53:49,797 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:54:49,799 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:54:50,013 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:54:50,013 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:54:50,015 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:55:50,016 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:55:50,276 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:55:50,276 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:55:50,278 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:56:50,281 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:56:50,504 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:56:50,504 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:56:50,506 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:57:50,508 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:57:50,740 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:57:50,740 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:57:50,741 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:58:50,743 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:58:50,961 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:58:50,962 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:58:50,963 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 15:59:50,965 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 15:59:51,172 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 15:59:51,172 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 15:59:51,174 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:00:18,737 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 16:00:18,960 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 16:00:18,960 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 16:00:18,962 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 16:00:51,174 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:00:51,401 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:00:51,401 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:00:51,403 - INFO - Updated 1h klines for HBAR-USD with 1 new rows, shape: (40, 6), latest timestamp: 2025-05-26 20:00:00+00:00
+2025-05-26 16:00:51,406 - DEBUG - New 1h kline data for HBAR-USD:
+                  timestamp     open     high      low    close  volume
+0 2025-05-26 20:00:00+00:00  0.18517  0.18517  0.18502  0.18502  2184.5
+2025-05-26 16:01:51,407 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:01:51,618 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:01:51,619 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:01:51,621 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:02:51,622 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:02:51,867 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:02:51,867 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:02:51,869 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:03:51,871 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:03:52,083 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:03:52,083 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:03:52,085 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:04:52,086 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:04:52,311 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:04:52,311 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:04:52,313 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:05:52,315 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:05:52,548 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:05:52,548 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:05:52,550 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:06:52,552 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:06:52,787 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:06:52,787 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:06:52,789 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:07:52,791 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:07:53,014 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:07:53,014 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:07:53,016 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:08:53,017 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:08:53,245 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:08:53,245 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:08:53,247 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:09:53,248 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:09:53,500 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:09:53,500 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:09:53,502 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:10:18,963 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 16:10:19,177 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 16:10:19,178 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 16:10:19,179 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 16:10:53,503 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:10:53,731 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:10:53,731 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:10:53,733 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:11:53,734 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:11:53,946 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:11:53,946 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:11:53,948 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:12:53,949 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:12:54,191 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:12:54,192 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:12:54,193 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:13:54,195 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:13:54,427 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:13:54,427 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:13:54,429 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:14:54,431 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:14:54,825 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:14:54,825 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:14:54,827 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:15:54,829 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:15:55,041 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:15:55,042 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:15:55,044 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:16:55,045 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:16:55,269 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:16:55,269 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:16:55,271 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:17:55,273 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:17:55,497 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:17:55,498 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:17:55,500 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:18:55,501 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:18:55,746 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:18:55,746 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:18:55,748 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:19:55,749 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:19:56,011 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:19:56,011 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:19:56,013 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:20:19,181 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 16:20:19,394 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 16:20:19,394 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 16:20:19,396 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 16:20:56,015 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:20:56,230 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:20:56,230 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:20:56,232 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:21:56,232 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:21:56,458 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:21:56,458 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:21:56,460 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:22:56,461 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:22:56,694 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:22:56,694 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:22:56,696 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:23:56,697 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:23:56,926 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:23:56,926 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:23:56,928 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:24:56,929 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:24:57,148 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:24:57,149 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:24:57,150 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:25:57,151 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:25:57,363 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:25:57,363 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:25:57,365 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:26:57,367 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:26:57,589 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:26:57,589 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:26:57,590 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:27:57,591 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:27:57,808 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:27:57,809 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:27:57,810 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:28:57,812 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:28:58,058 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:28:58,058 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:28:58,060 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:29:58,061 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:29:58,268 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:29:58,268 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:29:58,270 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:30:19,397 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 16:30:19,601 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 16:30:19,601 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 16:30:19,603 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 16:30:58,273 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:30:58,474 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:30:58,474 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:30:58,476 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:31:58,476 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:31:58,701 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:31:58,701 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:31:58,703 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:32:58,705 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:32:58,929 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:32:58,929 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:32:58,932 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:33:58,933 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:33:59,295 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:33:59,295 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:33:59,297 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:34:59,297 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:34:59,514 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:34:59,514 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:34:59,516 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:35:59,518 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:35:59,750 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:35:59,751 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:35:59,753 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:36:59,753 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:36:59,996 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:36:59,996 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:36:59,998 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:37:59,999 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:38:00,237 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:38:00,238 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:38:00,240 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:39:00,240 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:39:00,482 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:39:00,482 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:39:00,484 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:40:00,487 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:40:00,729 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:40:00,730 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:40:00,732 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:40:19,608 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 16:40:19,828 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 16:40:19,829 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 16:40:19,831 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 16:41:00,733 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:41:00,942 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:41:00,942 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:41:00,944 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:42:00,945 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:42:01,176 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:42:01,176 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:42:01,178 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:43:01,180 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:43:01,398 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:43:01,398 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:43:01,400 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:44:01,401 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:44:01,648 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:44:01,648 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:44:01,650 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:45:01,651 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:45:01,867 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:45:01,867 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:45:01,869 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:46:01,869 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:46:02,087 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:46:02,087 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:46:02,089 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:47:02,090 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:47:02,325 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:47:02,325 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:47:02,327 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:48:02,328 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:48:02,572 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:48:02,572 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:48:02,574 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:49:02,575 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:49:02,801 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:49:02,801 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:49:02,803 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:50:02,804 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:50:03,035 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:50:03,035 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:50:03,037 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:50:19,831 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 16:50:20,079 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 16:50:20,080 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 16:50:20,081 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 16:51:03,039 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:51:03,251 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:51:03,251 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:51:03,253 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:52:03,254 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:52:03,477 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:52:03,477 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:52:03,479 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:53:03,482 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:53:03,727 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:53:03,727 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:53:03,729 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:54:03,730 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:54:03,946 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:54:03,946 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:54:03,948 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:55:03,949 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:55:04,175 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:55:04,175 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:55:04,177 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:56:04,178 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:56:04,380 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:56:04,380 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:56:04,382 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:57:04,383 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:57:04,609 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:57:04,610 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:57:04,611 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:58:04,612 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:58:04,963 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:58:04,963 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:58:04,965 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 16:59:04,965 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 16:59:05,199 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 16:59:05,199 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 16:59:05,201 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:00:05,202 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:00:05,430 - DEBUG - No more klines available for HBAR-USD 1h
+2025-05-26 17:00:05,430 - ERROR - Failed to fetch 1h klines for HBAR-USD after 5 attempts
+2025-05-26 17:00:05,430 - WARNING - Failed to fetch 1h klines for HBAR-USD
+2025-05-26 17:00:20,082 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 17:00:20,264 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 17:00:20,264 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 17:00:20,266 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 17:01:05,431 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:01:05,680 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:01:05,680 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:01:05,683 - INFO - Updated 1h klines for HBAR-USD with 1 new rows, shape: (40, 6), latest timestamp: 2025-05-26 21:00:00+00:00
+2025-05-26 17:01:05,685 - DEBUG - New 1h kline data for HBAR-USD:
+                  timestamp     open     high      low    close    volume
+0 2025-05-26 21:00:00+00:00  0.18642  0.18648  0.18622  0.18644  265485.4
+2025-05-26 17:02:05,686 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:02:05,899 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:02:05,899 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:02:05,901 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:03:05,903 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:03:06,196 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:03:06,197 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:03:06,198 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:04:06,199 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:04:06,416 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:04:06,416 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:04:06,418 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:05:06,419 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:05:06,629 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:05:06,629 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:05:06,631 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:06:06,632 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:06:06,870 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:06:06,870 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:06:06,872 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:07:06,874 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:07:07,102 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:07:07,102 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:07:07,104 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:08:07,105 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:08:07,313 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:08:07,313 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:08:07,315 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:09:07,317 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:09:07,532 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:09:07,533 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:09:07,535 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:10:07,536 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:10:07,776 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:10:07,777 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:10:07,779 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:10:20,266 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 17:10:20,445 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 17:10:20,445 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 17:10:20,448 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 17:11:07,781 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:11:08,021 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:11:08,021 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:11:08,023 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:12:08,025 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:12:08,258 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:12:08,259 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:12:08,261 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:13:08,261 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:13:08,486 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:13:08,486 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:13:08,488 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:14:08,489 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:14:08,694 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:14:08,694 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:14:08,696 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:15:08,697 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:15:08,907 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:15:08,907 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:15:08,909 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:16:08,911 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:16:09,147 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:16:09,147 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:16:09,149 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:17:09,150 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:17:09,422 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:17:09,422 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:17:09,424 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:18:09,425 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:18:09,628 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:18:09,628 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:18:09,630 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:19:09,631 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:19:09,857 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:19:09,858 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:19:09,859 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:20:09,861 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:20:10,084 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:20:10,084 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:20:10,086 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:20:20,448 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 17:20:20,625 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 17:20:20,625 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 17:20:20,627 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 17:21:10,087 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:21:10,320 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:21:10,320 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:21:10,322 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:22:10,323 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:22:10,548 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:22:10,548 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:22:10,550 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:23:10,551 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:23:10,769 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:23:10,769 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:23:10,771 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:24:10,773 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:24:10,986 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:24:10,986 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:24:10,988 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:25:10,989 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:25:11,224 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:25:11,224 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:25:11,226 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:26:11,227 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:26:11,456 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:26:11,456 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:26:11,458 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:27:11,460 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:27:11,696 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:27:11,696 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:27:11,698 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:28:11,699 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:28:11,910 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:28:11,910 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:28:11,912 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:29:11,913 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:29:12,120 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:29:12,121 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:29:12,123 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:30:12,124 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:30:12,358 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:30:12,358 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:30:12,360 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:30:20,629 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 17:30:20,827 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 17:30:20,827 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 17:30:20,829 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 17:31:12,362 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:31:12,570 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:31:12,570 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:31:12,572 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:32:12,573 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:32:12,783 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:32:12,783 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:32:12,786 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:33:12,786 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:33:12,999 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:33:12,999 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:33:13,002 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:34:13,002 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:34:13,259 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:34:13,259 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:34:13,261 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:35:13,263 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:35:13,490 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:35:13,490 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:35:13,492 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:36:13,495 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:36:13,989 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:36:13,990 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:36:13,991 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:37:13,991 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:37:14,205 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:37:14,205 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:37:14,207 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:38:14,210 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:38:14,434 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:38:14,434 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:38:14,436 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:39:14,438 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:39:14,659 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:39:14,659 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:39:14,661 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:40:14,661 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:40:14,895 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:40:14,895 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:40:14,897 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:40:20,831 - DEBUG - Checking for new 1d kline for HBAR-USD
+2025-05-26 17:40:21,007 - DEBUG - Fetched 1 1d klines for HBAR-USD, 0 remaining
+2025-05-26 17:40:21,007 - DEBUG - Total fetched 1 1d klines for HBAR-USD
+2025-05-26 17:40:21,009 - DEBUG - No new 1d klines for HBAR-USD
+2025-05-26 17:41:14,899 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:41:15,226 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:41:15,227 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:41:15,229 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:42:15,230 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:42:15,453 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:42:15,453 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:42:15,455 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:43:15,457 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:43:15,673 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:43:15,673 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:43:15,675 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:44:15,677 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:44:15,912 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:44:15,912 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:44:15,914 - DEBUG - No new 1h klines for HBAR-USD
+2025-05-26 17:45:15,917 - DEBUG - Checking for new 1h kline for HBAR-USD
+2025-05-26 17:45:16,147 - DEBUG - Fetched 1 1h klines for HBAR-USD, 0 remaining
+2025-05-26 17:45:16,147 - DEBUG - Total fetched 1 1h klines for HBAR-USD
+2025-05-26 17:45:16,149 - DEBUG - No new 1h klines for HBAR-USD

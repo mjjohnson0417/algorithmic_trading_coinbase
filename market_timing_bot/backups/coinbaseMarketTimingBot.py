@@ -5,6 +5,9 @@ from pathlib import Path
 from key_loader import KeyLoader
 from exchange_connection import ExchangeConnection
 from data_manager import DataManager
+from indicator_calculator import IndicatorCalculator
+from candlestick_patterns import CandlestickPatterns
+import json
 
 async def main():
     # Logger setup
@@ -36,6 +39,8 @@ async def main():
 
     exchange = None
     data_manager = None
+    indicator_calculator = None
+    candlestick_patterns = None
 
     try:
         # Exchange setup
@@ -50,9 +55,35 @@ async def main():
         data_manager = DataManager(symbols, exchange, enable_logging=True)
         logger.info(f"DataManager initialized for symbols: {symbols}")
 
-        # Keep the bot running
+        # IndicatorCalculator setup
+        indicator_calculator = IndicatorCalculator(symbols, data_manager, enable_logging=True)
+        logger.info(f"IndicatorCalculator initialized for symbols: {symbols}")
+
+        # CandlestickPatterns setup
+        candlestick_patterns = CandlestickPatterns(symbols, data_manager, enable_logging=True)
+        logger.info(f"CandlestickPatterns initialized for symbols: {symbols}")
+
+        # Wait for DataManager to initialize historical data
+        while not data_manager.historical_initialized:
+            logger.debug("Waiting for DataManager to initialize historical data...")
+            await asyncio.sleep(1)
+
+        # Keep the bot running, checking every minute
         while True:
-            await asyncio.sleep(3600)  # Run indefinitely, check hourly
+            try:
+                # Calculate and log indicators
+                all_indicators = indicator_calculator.calculate_all_indicators()
+                for symbol in symbols:
+                    logger.info(f"Indicators for {symbol}:\n{json.dumps(all_indicators[symbol], indent=2, default=str)}")
+
+                # Calculate and log candlestick patterns
+                all_patterns = candlestick_patterns.calculate_all_patterns()
+                for symbol in symbols:
+                    logger.info(f"Candlestick patterns for {symbol}:\n{json.dumps(all_patterns[symbol], indent=2)}")
+            except Exception as e:
+                logger.error(f"Error calculating indicators or patterns: {e}", exc_info=True)
+            
+            await asyncio.sleep(60)  # Run every minute
 
     except Exception as e:
         logger.error(f"Critical error: {e}", exc_info=True)

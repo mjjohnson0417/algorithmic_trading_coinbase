@@ -1,4 +1,2 @@
-- get historical klines
-- subscribe to kline websockets
-- 
+ - start looking at kline pattern indicators, maybe a separate module for those?
 
