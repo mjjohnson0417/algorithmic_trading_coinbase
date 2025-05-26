@@ -699,19 +699,19 @@ class GridManager:
     
     async def verify_orders(self, symbol: str) -> None:
         """
-            Maintains the orders dictionary by resetting canceled/rejected/expired orders and completed pairs
-            (both buy and sell orders closed) to allow reuse of grid levels. Checks for an open sell order
-            above the current price; if none exists (e.g., price has risen past all grid levels in orders or
-            highest sell order was filled), adds a new order pair at the next grid level above the current price
-            to place a buy order in the current iteration, with the sell order placed in a subsequent iteration
-            after the buy order is filled. Calculates order value to set appropriate buy_quantity. Logs actions
-            for debugging.
+                Maintains the orders dictionary by resetting canceled/rejected/expired orders and completed pairs
+                (both buy and sell orders closed) to allow reuse of grid levels. Checks for an open sell order
+                above the current price; if none exists (e.g., price has risen past all grid levels in orders or
+                highest sell order was filled), adds a new order pair at the next grid level above the current price
+                to place a buy order in the current iteration, with the sell order placed in a subsequent iteration
+                after the buy order is filled. Calculates order value to set appropriate buy_quantity. Logs actions
+                for debugging.
 
-            Args:
-                symbol: Trading pair symbol (e.g., 'BTC-USDT').
+                Args:
+                    symbol: Trading pair symbol (e.g., 'BTC-USDT').
         """
         if self.enable_logging:
-            self.logger.debug(f"Verifying orders for {symbol}")
+                self.logger.debug(f"Verifying orders for {symbol}")
         try:
             order_value = await self.calculate_orders_value(symbol)
             ticker_df = await self.get_ticker_buffer(symbol)
@@ -719,13 +719,8 @@ class GridManager:
                 self.logger.warning(f"No valid ticker price for {symbol}, cannot verify orders")
                 return
             current_price = ticker_df['last_price'].iloc[-1]
-            
-            outstanding_orders = sum(
-                1 for order in self.orders[symbol].values()
-                if order['buy_state'] in ['open', 'pending'] or order['sell_state'] in ['open', 'pending', 'stray_sell']
-            )
-            self.logger.debug(f"Outstanding orders for {symbol}: {outstanding_orders}")
-            
+
+            # Reset canceled/rejected/expired orders
             for buy_level, order in list(self.orders[symbol].items()):
                 if order['buy_state'] in ['canceled', 'rejected', 'expired']:
                     self.logger.info(f"Resetting canceled buy order for {symbol}: buy_level={buy_level:.4f}, order_id={order['buy_order_id']}")
@@ -745,7 +740,13 @@ class GridManager:
                     order['sell_order_id'] = None
                     order['sell_state'] = None
                     order['sell_quantity'] = 0.0
-            
+
+            # Add new order pair if under limit and no sell order above current price
+            outstanding_orders = sum(
+                1 for order in self.orders[symbol].values()
+                if order['buy_state'] in ['open', 'pending'] or order['sell_state'] in ['open', 'pending', 'stray_sell']
+            )
+            self.logger.debug(f"Outstanding orders for {symbol} before adding new: {outstanding_orders}")
             if outstanding_orders < self.MAX_GRID_LEVELS_PER_SYMBOL:
                 has_sell_above = False
                 for key, order in self.orders[symbol].items():
@@ -758,28 +759,48 @@ class GridManager:
                     next_buy_level = next((level for level in grid_levels if level > current_price), None)
                     if next_buy_level is None:
                         self.logger.warning(f"No grid level found above current price {current_price:.4f} for {symbol}, cannot set up buy order")
-                        return
-                    if next_buy_level not in self.orders[symbol] or (
+                    elif next_buy_level not in self.orders[symbol] or (
                         self.orders[symbol][next_buy_level]['buy_state'] == 'closed' and 
                         self.orders[symbol][next_buy_level]['sell_state'] == 'closed'
                     ):
                         sell_level = next((level for level in grid_levels if level > next_buy_level), None)
                         if not sell_level:
                             self.logger.warning(f"No sell level above buy level {next_buy_level:.4f} for {symbol}, cannot set up order pair")
-                            return
-                        buy_quantity = round(order_value / current_price, 8) if order_value > 0 else 0.0
-                        self.orders[symbol][next_buy_level] = {
-                            'buy_level': next_buy_level,
-                            'buy_order_id': None,
-                            'buy_quantity': buy_quantity,
-                            'buy_state': None,
-                            'sell_level': sell_level,
-                            'sell_order_id': None,
-                            'sell_quantity': 0.0,
-                            'sell_state': None
-                        }
-                        self.logger.info(f"Added new order pair for {symbol}: buy_level={next_buy_level:.4f}, sell_level={sell_level:.4f}, buy_quantity={buy_quantity:.8f}")
-            
+                        else:
+                            buy_quantity = round(order_value / current_price, 8) if order_value > 0 else 0.0
+                            self.orders[symbol][next_buy_level] = {
+                                'buy_level': next_buy_level,
+                                'buy_order_id': None,
+                                'buy_quantity': buy_quantity,
+                                'buy_state': None,
+                                'sell_level': sell_level,
+                                'sell_order_id': None,
+                                'sell_quantity': 0.0,
+                                'sell_state': None
+                            }
+                            self.logger.info(f"Added new order pair for {symbol}: buy_level={next_buy_level:.4f}, sell_level={sell_level:.4f}, buy_quantity={buy_quantity:.8f}")
+
+            # Cancel excess buy orders as the final step, starting with lowest prices
+            outstanding_orders = sum(
+                1 for order in self.orders[symbol].values()
+                if order['buy_state'] in ['open', 'pending'] or order['sell_state'] in ['open', 'pending', 'stray_sell']
+            )
+            self.logger.debug(f"Outstanding orders for {symbol} after modifications: {outstanding_orders}")
+            if outstanding_orders > self.MAX_GRID_LEVELS_PER_SYMBOL:
+                buy_orders = [(buy_level, order) for buy_level, order in self.orders[symbol].items()
+                            if order['buy_state'] in ['open', 'pending']]
+                buy_orders.sort(key=lambda x: x[0], reverse=False)  # Cancel lowest buy orders first
+                excess_orders = outstanding_orders - self.MAX_GRID_LEVELS_PER_SYMBOL
+                for buy_level, order in buy_orders[:excess_orders]:
+                    if order['buy_order_id']:
+                        canceled = await self.order_operations_dict[symbol].cancel_order(order['buy_order_id'])
+                        if canceled:
+                            self.logger.info(f"Canceled buy order for {symbol} at level {buy_level:.4f} to enforce order limit: order_id={order['buy_order_id']}")
+                            order['buy_order_id'] = None
+                            order['buy_state'] = None
+                        else:
+                            self.logger.error(f"Failed to cancel buy order for {symbol} at level {buy_level:.4f}: order_id={order['buy_order_id']}")
+
             self.logger.info(f"Verified orders for {symbol}: {json.dumps(self.orders[symbol], default=str)}")
             for handler in self.logger.handlers:
                 if isinstance(handler, RotatingFileHandler):
@@ -789,60 +810,53 @@ class GridManager:
 
     async def place_orders(self, symbol: str) -> None:
         """
-        Places limit buy and sell orders for unfilled grid levels.
+                Places limit buy and sell orders for unfilled grid levels.
 
-        Args:
-            symbol: Trading pair symbol (e.g., 'BTC-USDT').
+                Args:
+                    symbol: Trading pair symbol (e.g., 'BTC-USDT').
         """
+        # Places new limit orders for open grid levels
         if self.enable_logging:
-            self.logger.debug(f"Placing orders for {symbol}")
+            self.logger.setLevel(logging.DEBUG)
+        self.logger.debug(f"Started placing orders for {symbol}")
         try:
             for buy_level, order in self.orders[symbol].items():
-                # Place buy order if no buy order exists and buy_state is None
+                # Skip stray sell order keys
+                if isinstance(buy_level, str) and "stray" in buy_level.lower():
+                    continue
                 if order['buy_order_id'] is None and order['buy_state'] is None:
                     buy_quantity = order['buy_quantity']
                     if buy_quantity > 0:
                         buy_order = await self.order_operations_dict[symbol].create_limit_buy(
                             price=buy_level,
-                            quantity=buy_quantity  # Base asset quantity (e.g., BTC)
+                            quantity=buy_quantity
                         )
                         if buy_order and 'id' in buy_order:
                             order['buy_order_id'] = buy_order['id']
                             order['buy_state'] = buy_order.get('status', 'open')
-                            if self.enable_logging:
-                                self.logger.info(f"Placed buy order for {symbol} at level {buy_level:.4f}, order_id={buy_order['id']}, quantity={buy_quantity:.8f}")
+                            self.logger.info(f"Placed buy order for {symbol} at level {buy_level:.4f}, order_id={buy_order['id']}, quantity={buy_quantity:.8f}")
                         else:
-                            if self.enable_logging:
-                                self.logger.warning(f"Failed to place buy order for {symbol} at level {buy_level:.4f}")
+                            self.logger.warning(f"Failed to place buy order for {symbol} at level {buy_level:.4f}")
                     else:
-                        if self.enable_logging:
-                            self.logger.warning(f"Cannot place buy order for {symbol} at level {buy_level:.4f}: buy_quantity={buy_quantity}")
-
-                # Place sell order if buy order is filled and no sell order exists
+                        self.logger.warning(f"Cannot place buy order for {symbol} at level {buy_level:.4f}: buy_quantity={buy_quantity}")
                 if order['buy_state'] == 'closed' and order['sell_order_id'] is None and order['sell_state'] is None:
                     sell_quantity = order['sell_quantity']
                     if sell_quantity > 0:
                         sell_order = await self.order_operations_dict[symbol].create_limit_sell(
                             price=order['sell_level'],
-                            quantity=sell_quantity  # Base asset quantity (e.g., BTC)
+                            quantity=sell_quantity
                         )
                         if sell_order and 'id' in sell_order:
                             order['sell_order_id'] = sell_order['id']
                             order['sell_state'] = sell_order.get('status', 'open')
-                            if self.enable_logging:
-                                self.logger.info(f"Placed sell order for {symbol} at level {order['sell_level']:.4f}, order_id={sell_order['id']}, quantity={sell_quantity:.8f}")
+                            self.logger.info(f"Placed sell order for {symbol} at level {order['sell_level']:.4f}, order_id={sell_order['id']}, quantity={sell_quantity:.8f}")
                         else:
-                            if self.enable_logging:
-                                self.logger.warning(f"Failed to place sell order for {symbol} at level {order['sell_level']:.4f}")
+                            self.logger.warning(f"Failed to place sell order for {symbol} at level {order['sell_level']:.4f}")
                     else:
-                        if self.enable_logging:
-                            self.logger.warning(f"Cannot place sell order for {symbol} at level {order['sell_level']:.4f}: sell_quantity={sell_quantity}")
-
-            if self.enable_logging:
-                self.logger.info(f"Completed placing orders for {symbol}")
+                        self.logger.warning(f"Cannot place sell order for {symbol} at level {order['sell_level']:.4f}: sell_quantity={sell_quantity}")
+            self.logger.info(f"Completed placing orders for {symbol}")
         except Exception as e:
-            if self.enable_logging:
-                self.logger.error(f"Error placing orders for {symbol}: {e}", exc_info=True)
+            self.logger.error(f"Error placing orders for {symbol}: {e}", exc_info=True)
 
     async def handle_longterm_downtrend(self, symbol: str):
         if self.enable_logging:

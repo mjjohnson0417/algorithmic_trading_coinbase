@@ -1,0 +1,42 @@
+## Grid Trading Bot - Relevant Indicators
+
+This document outlines the technical indicators deemed relevant for a crypto grid trading bot, based on their ability to define range boundaries, volatility, and mean-reversion signals in the volatile cryptocurrency market.
+
+**High Relevance:**
+
+* **Average True Range (ATR):** Measures volatility, critical for setting grid spacing. Wider grids in high ATR environments prevent over-trading, while tighter grids in low ATR suit consolidation. Helps adjust grid size dynamically to crypto’s erratic swings.
+    * **Use Case:** Set grid intervals at 1–2×ATR to capture typical price moves without excessive orders.
+* **Bollinger Bands:** Define a price range (upper/lower bands) around the mean (SMA), ideal for grid placement in range-bound crypto markets. Bands widen during volatility and contract during consolidation, guiding grid adjustments.
+    * **Use Case:** Place buy orders near the lower band and sell near the upper band, tightening grids during squeezes.
+* **Relative Strength Index (RSI):** Identifies overbought (>70) and oversold (<30) levels, perfect for mean-reversion in grid trading. Helps place grids to buy low (oversold) and sell high (overbought) in crypto’s choppy markets.
+    * **Use Case:** Trigger buy orders when RSI dips below 30 and sell when above 70, adjusting for crypto’s tendency to overshoot.
+* **Stochastic Oscillator:** Overbought (>80) and oversold (<20) signals align with grid trading’s mean-reversion goal, identifying buy/sell zones in crypto ranges. Crossovers refine grid triggers.
+    * **Use Case:** Place buy orders when %K crosses above %D below 20, sell above 80, adjusting for crypto volatility.
+* **Commodity Channel Index (CCI):** Overbought (>+100) and oversold (<-100) levels signal mean-reversion zones, perfect for grid trading in crypto ranges. It identifies buy/sell points within volatility.
+    * **Use Case:** Place buy orders when CCI dips below -100, sell above +100, adjusting grids for crypto swings.
+* **Volume Weighted Average Price (VWAP):** Acts as a fair-value anchor, ideal for centering grids in crypto’s intraday ranges. Prices reverting to VWAP guide buy/sell orders, leveraging volume-weighted levels.
+    * **Use Case:** Place buy grids below VWAP and sell above, tightening during low volatility.
+* **Pivot Points:** Define clear support/resistance levels (PP, S1, R1), ideal for grid placement in crypto’s intraday ranges. Prices oscillate around PP, guiding buy/sell orders.
+    * **Use Case:** Place buy grids at S1/S2, sell at R1/R2, adjusting daily for crypto’s 24/7 market.
+
+**Moderate Relevance:**
+
+* **Exponential Moving Average (EMA):** Smooths price data and can act as a dynamic mean for grid placement, useful for adjusting grids in mildly trending crypto markets.
+    * **Use Case:** Center grids around a 20-EMA, buying below and selling above, but less precise than Bollinger Bands or VWAP.
+* **Simple Moving Average (SMA):** Provides a stable mean for grid placement, useful in stable ranges but less adaptive to sudden pumps/dumps in crypto.
+    * **Use Case:** Place grids around a 20-SMA, but pair with volatility indicators like ATR for spacing.
+* **Average Directional Index (ADX):** Identifies trend strength, helping grid bots avoid strong trends (ADX > 25) where ranges fail. Low ADX (<20) confirms range suitability in crypto’s choppy markets.
+    * **Use Case:** Activate grids when ADX < 20, pause during high ADX to avoid trending losses.
+* **Fibonacci Retracement:** Levels provide potential support/resistance for grid placement, useful in defined ranges but their subjectivity limits precision in crypto’s erratic ranges.
+    * **Use Case:** Set grids at key Fibonacci levels (e.g., buy at 61.8%), but requires price range clarity.
+* **Average Volume:** Ensures liquidity for grid execution, avoiding low-volume traps in crypto. High volume supports range trading, but it doesn’t directly set grid levels.
+    * **Use Case:** Activate grids when volume exceeds average, pause during low volume to avoid slippage.
+
+**Low Relevance:**
+
+* **Moving Average Convergence Divergence (MACD):** Focuses on momentum and trend direction, less relevant for range-bound grid trading. Its signals don’t directly aid grid placement or mean-reversion in crypto’s sideways markets.
+    * **Use Case:** Limited use, perhaps as a trend filter to pause grids during strong trends, but rarely applied.
+* **On-Balance Volume (OBV):** Tracks volume trends, not directly useful for grid placement or range trading. May confirm grid trade validity but is secondary in crypto’s range-bound markets.
+    * **Use Case:** Rarely used, possibly to avoid grids during low-volume periods, but not a primary tool.
+* **Ichimoku Cloud:** Focuses on trends and momentum, less suited for range-bound grid trading. Cloud support/resistance could guide grids, but its complexity outweighs benefits in crypto ranges.
+    * **Use Case:** Rarely used, perhaps to pause grids when price exits the cloud, but not primary.

@@ -1,0 +1,43 @@
+## Market Timing Trading Bot - Relevant Indicators
+
+This document outlines the technical indicators deemed relevant for a crypto market timing trading bot, based on their ability to identify trend strength, momentum, reversals, and confirmation of breakouts in the volatile cryptocurrency market.
+
+**High Relevance:**
+
+* **Relative Strength Index (RSI):** Excels at spotting reversals and momentum shifts, key for timing entries/exits. Bullish/bearish divergences signal crypto reversals, and RSI crossing 50 confirms trends.
+    * **Use Case:** Enter longs when RSI crosses above 30 with divergence, exit when above 70, tuned for crypto’s volatility.
+* **Exponential Moving Average (EMA):** Ideal for timing trends, with crossovers signaling entries/exits. In crypto, EMAs track fast-moving trends and act as support/resistance.
+    * **Use Case:** Buy on bullish EMA crossovers, sell on bearish ones, using 50-EMA as trend confirmation.
+* **Simple Moving Average (SMA):** Confirms long-term trends and generates crossover signals, reliable for timing crypto trends. They also act as support/resistance.
+    * **Use Case:** Enter longs on golden crosses, exit on death crosses, with SMAs as trend filters.
+* **Moving Average Convergence Divergence (MACD):** Excels at timing entries/exits with crossovers and zero-line signals, capturing crypto momentum. Divergences warn of reversals.
+    * **Use Case:** Buy on MACD Line crossing above Signal Line, sell when below, with histogram for momentum.
+* **Stochastic Oscillator:** Spots reversals and momentum shifts, ideal for timing crypto entries/exits. Divergences and oversold/overbought signals catch tops/bottoms.
+    * **Use Case:** Enter longs on bullish crossovers below 20, exit on bearish crossovers above 80, with trend filters.
+* **Average Directional Index (ADX):** Confirms trend strength, critical for timing entries in crypto trends. +DI/-DI crossovers refine signals, filtering weak moves.
+    * **Use Case:** Enter longs when ADX rises above 25 and +DI > -DI, exit when ADX falls, avoiding choppy markets.
+* **Commodity Channel Index (CCI):** Spots reversals and breakouts, ideal for timing crypto entries/exits. Divergences and extreme readings catch tops/bottoms.
+    * **Use Case:** Buy when CCI crosses above -100 in uptrends, sell below +100 in downtrends, with trend confirmation.
+* **Fibonacci Retracement:** Excels at timing entries/exits by pinpointing reversal zones in crypto trends. Levels act as support/resistance, guiding trades during pullbacks.
+    * **Use Case:** Buy at 61.8% retracement in uptrends, sell at 38.2% resistance in downtrends, with confirmation.
+* **Pivot Points:** Signal breakouts and reversals, perfect for timing crypto trades. Breaks above R1 or below S1 confirm trend direction, while PP acts as a trend filter.
+    * **Use Case:** Buy on breaks above R1, sell below S1, with volume to avoid fakeouts.
+* **Ichimoku Cloud:** Holistic signals (trend, momentum, support/resistance) excel at timing crypto trends. Bullish/bearish crossovers and cloud breaks confirm entries/exits.
+    * **Use Case:** Buy when price breaks above green cloud with Tenkan/Kijun crossover, sell below red cloud.
+
+**Moderate Relevance:**
+
+* **Average True Range (ATR):** Aids in setting stop-losses or take-profits based on volatility but doesn’t directly signal entry/exit points. Useful for sizing positions during volatile crypto trends.
+    * **Use Case:** Use ATR for risk management (e.g., stop-loss at 2×ATR) rather than timing trades.
+* **Bollinger Bands:** Signal overbought/oversold conditions or breakouts, useful for timing entries in trending markets. However, false signals in strong crypto trends reduce reliability without confirmation.
+    * **Use Case:** Enter longs on breakouts above the upper band with volume confirmation, but pair with other indicators.
+* **On-Balance Volume (OBV):** Confirms price trends and breakouts with volume, useful for timing crypto moves. Divergences signal reversals, but it lags compared to momentum indicators.
+    * **Use Case:** Enter trades when OBV rises with price, avoid entries on flat OBV, paired with price signals.
+* **Volume Weighted Average Price (VWAP):** Confirms trend direction and supports entries near fair value, but it’s less precise for timing reversals or breakouts in crypto trends.
+    * **Use Case:** Enter longs when price holds above VWAP, but pair with momentum indicators for exits.
+* **Average Volume:** Above-average volume confirms breakouts and trends, aiding timing in crypto markets. Less useful for reversals or precise entries.
+    * **Use Case:** Enter trades when volume spikes above average, pair with price signals for reliability.
+
+**Low Relevance:**
+
+* **None** of the listed indicators are considered to have low relevance for a market timing trading bot in the context provided. All offer some degree of utility in identifying trends, momentum, reversals, or providing confirmation signals.

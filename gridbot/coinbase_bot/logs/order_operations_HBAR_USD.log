@@ -1,10 +1,15 @@
-2025-05-24 13:42:17,351 - DEBUG - Fetched 61 orders for HBAR-USD
-2025-05-24 13:42:17,352 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
-2025-05-24 13:42:17,572 - INFO - No open buy orders found for HBAR-USD to cancel.
-2025-05-24 13:42:17,947 - DEBUG - Fetched total USD balance: 1488.05
-2025-05-24 13:42:18,495 - DEBUG - Fetched 0 open orders for HBAR-USD
-2025-05-24 13:42:18,740 - DEBUG - Fetched HBAR balance: 6723.40625268
-2025-05-24 13:42:19,311 - DEBUG - Fetched 61 orders for HBAR-USD
-2025-05-24 13:42:19,552 - DEBUG - Fetched 61 orders for HBAR-USD
-2025-05-24 13:42:19,591 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
-2025-05-24 13:42:19,794 - INFO - No open buy orders found for HBAR-USD to cancel.
+2025-05-26 08:40:13,488 - DEBUG - Fetched 96 orders for HBAR-USD
+2025-05-26 08:40:13,489 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
+2025-05-26 08:40:13,727 - INFO - No open buy orders found for HBAR-USD to cancel.
+2025-05-26 08:40:14,125 - DEBUG - Fetched total USD balance: 1294.3
+2025-05-26 08:40:14,684 - DEBUG - Fetched 7 open orders for HBAR-USD
+2025-05-26 08:40:14,929 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 08:40:15,515 - DEBUG - Fetched 96 orders for HBAR-USD
+2025-05-26 08:40:15,761 - DEBUG - Fetched 96 orders for HBAR-USD
+2025-05-26 08:40:16,051 - DEBUG - Fetched 96 orders for HBAR-USD
+2025-05-26 08:40:16,376 - DEBUG - Fetched total USD balance: 1294.3
+2025-05-26 08:40:16,928 - DEBUG - Fetched 7 open orders for HBAR-USD
+2025-05-26 08:40:17,190 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-26 08:40:17,829 - DEBUG - Created limit buy order for HBAR-USD: {'info': {'order_id': '9289efe2-26fb-44db-aca5-9f33880356fd', 'product_id': 'HBAR-USD', 'side': 'BUY', 'client_order_id': 'ccxt-ce6453b7-d7b8-434a-b04e-491bd7370113', 'attached_order_id': ''}, 'id': '9289efe2-26fb-44db-aca5-9f33880356fd', 'clientOrderId': 'ccxt-ce6453b7-d7b8-434a-b04e-491bd7370113', 'timestamp': None, 'datetime': None, 'lastTradeTimestamp': None, 'symbol': 'HBAR/USD', 'type': None, 'timeInForce': None, 'postOnly': None, 'side': 'buy', 'price': None, 'triggerPrice': None, 'amount': None, 'filled': None, 'remaining': None, 'cost': None, 'average': None, 'status': None, 'fee': {'cost': None, 'currency': None}, 'trades': [], 'fees': [{'cost': None, 'currency': None}], 'lastUpdateTimestamp': None, 'reduceOnly': None, 'stopPrice': None, 'takeProfitPrice': None, 'stopLossPrice': None}
+2025-05-26 08:40:18,219 - DEBUG - Created limit buy order for HBAR-USD: {'info': {'order_id': 'c82e3a78-6870-4c78-9707-9b80055b0ae6', 'product_id': 'HBAR-USD', 'side': 'BUY', 'client_order_id': 'ccxt-43578550-70a8-49d2-ad0b-93d3882a2a2c', 'attached_order_id': ''}, 'id': 'c82e3a78-6870-4c78-9707-9b80055b0ae6', 'clientOrderId': 'ccxt-43578550-70a8-49d2-ad0b-93d3882a2a2c', 'timestamp': None, 'datetime': None, 'lastTradeTimestamp': None, 'symbol': 'HBAR/USD', 'type': None, 'timeInForce': None, 'postOnly': None, 'side': 'buy', 'price': None, 'triggerPrice': None, 'amount': None, 'filled': None, 'remaining': None, 'cost': None, 'average': None, 'status': None, 'fee': {'cost': None, 'currency': None}, 'trades': [], 'fees': [{'cost': None, 'currency': None}], 'lastUpdateTimestamp': None, 'reduceOnly': None, 'stopPrice': None, 'takeProfitPrice': None, 'stopLossPrice': None}
+2025-05-26 08:40:18,526 - DEBUG - Created limit buy order for HBAR-USD: {'info': {'order_id': '2b4f0b84-3094-4306-92d7-43c033d1d67d', 'product_id': 'HBAR-USD', 'side': 'BUY', 'client_order_id': 'ccxt-908f0636-8841-4c6e-8b9d-8815b529dfa6', 'attached_order_id': ''}, 'id': '2b4f0b84-3094-4306-92d7-43c033d1d67d', 'clientOrderId': 'ccxt-908f0636-8841-4c6e-8b9d-8815b529dfa6', 'timestamp': None, 'datetime': None, 'lastTradeTimestamp': None, 'symbol': 'HBAR/USD', 'type': None, 'timeInForce': None, 'postOnly': None, 'side': 'buy', 'price': None, 'triggerPrice': None, 'amount': None, 'filled': None, 'remaining': None, 'cost': None, 'average': None, 'status': None, 'fee': {'cost': None, 'currency': None}, 'trades': [], 'fees': [{'cost': None, 'currency': None}], 'lastUpdateTimestamp': None, 'reduceOnly': None, 'stopPrice': None, 'takeProfitPrice': None, 'stopLossPrice': None}

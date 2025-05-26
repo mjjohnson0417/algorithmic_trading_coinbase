@@ -1,0 +1,4 @@
+use the debian package: 
+1. wget https://github.com/TA-Lib/ta-lib/releases/download/v0.6.4/ta-lib_0.6.4_amd64.deb
+2. sudo dpkg -i ta-lib_0.6.4_amd64.deb
+3. pip install TA-Lib

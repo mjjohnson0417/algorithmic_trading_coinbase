@@ -1,0 +1,51 @@
+What is the Relative Strength Index (RSI)?
+
+Relative Strength Index (RSI) is a momentum oscillator that measures the speed and change of price movements to assess whether an asset is overbought or oversold. Developed by J. Welles Wilder Jr., it was introduced in his 1978 book, New Concepts in Technical Trading Systems. RSI is calculated using closing prices over a specified period, typically 14, and ranges from 0 to 100.
+
+Calculation:
+
+    Compute the average gain and average loss over the period (e.g., 14 days or hours).
+        Gain = (current close - previous close) if positive, else 0.
+        Loss = (previous close - current close) if positive, else 0.
+    Calculate Relative Strength (RS) = Average Gain / Average Loss.
+    RSI = 100 - (100 / (1 + RS)).
+
+An RSI above 70 typically indicates overbought conditions, below 30 suggests oversold, and 40–60 is neutral.
+What is RSI Used for in Crypto Trading?
+
+RSI is widely used in crypto trading due to the market’s rapid price swings and momentum-driven trends. Its primary applications include:
+
+    Identifying Overbought/Oversold Conditions:
+        RSI above 70 suggests a crypto asset (e.g., BTC) may be overbought, potentially signaling a pullback or correction.
+        RSI below 30 indicates oversold conditions, hinting at a possible bounce or reversal.
+        In crypto, overbought signals are common during pumps (e.g., memecoin surges), but strong trends can keep RSI elevated for longer than expected.
+    Spotting Divergences:
+        Bullish Divergence: When price makes lower lows but RSI makes higher lows, it may signal a reversal upward, often seen in crypto during market bottoms.
+        Bearish Divergence: When price makes higher highs but RSI makes lower highs, it warns of a potential downturn, useful during crypto market tops.
+        Divergences are powerful in volatile markets like crypto, where momentum often shifts rapidly.
+    Confirming Trends:
+        RSI staying above 50 during an uptrend confirms bullish momentum, common in crypto bull runs (e.g., Bitcoin in 2021).
+        RSI below 50 supports bearish trends, seen during crypto winters (e.g., 2022).
+        Traders use RSI to filter entries, avoiding buys in weak markets.
+    Mean Reversion Strategies:
+        In range-bound markets, traders buy near RSI 30 and sell near RSI 70, expecting prices to revert to the mean.
+        This works for crypto pairs like ETH/USD during consolidation but fails in strong trends where RSI can stay extreme.
+    Breakout Confirmation:
+        RSI breaking above 50 or a previous high can confirm a price breakout, signaling entry points for trend-following strategies.
+        In crypto, this is useful during altcoin season when tokens break resistance after prolonged consolidation.
+    Setting Stop-Loss/Take-Profit:
+        Traders use RSI extremes to place stops or take profits, anticipating reversals. For example, exiting a long when RSI hits 80 to lock in gains during a volatile crypto rally.
+
+Crypto-Specific Considerations
+
+    High Volatility: Crypto’s wild swings (e.g., 10% BTC moves in hours) can push RSI to extremes quickly, requiring shorter periods (e.g., 7 or 10) for faster signals or higher thresholds (e.g., 80/20 instead of 70/30).
+    24/7 Market: RSI can be applied to intraday timeframes (e.g., 1-hour, 5-minute) using exchange data (e.g., Binance.US), making it versatile for scalping or day trading.
+    False Signals: Crypto’s momentum-driven nature means RSI can stay overbought or oversold for long periods during trends (e.g., DOGE pumps). Traders pair RSI with other indicators like Bollinger Bands or volume to filter noise.
+    Leverage Trading: In crypto futures, RSI helps time entries and exits to manage risk, especially with high leverage where small moves matter.
+    Altcoin Variability: RSI is less reliable for low-volume altcoins with erratic price action compared to liquid pairs like BTC/USDT or ETH/USD, where patterns are clearer.
+
+Summary
+
+    Definition: RSI is a momentum oscillator (0–100) that measures price movement strength, with 70+ indicating overbought and 30- indicating oversold.
+    Uses in Crypto: Detects overbought/oversold levels, spots divergences, confirms trends, supports mean reversion, confirms breakouts, and aids stop-loss/take-profit decisions.
+    Crypto Relevance: Valuable for crypto’s fast-moving markets but needs adjustment for prolonged trends and volatility, often combined with other tools for reliability.
