@@ -1,2 +1,4 @@
- - start looking at kline pattern indicators, maybe a separate module for those?
+ - need to think about how to use all the candlestick patterns, charter patterns, and indicators together to create a strategy
+ - what time frames are meaningful to which candlestick patterns, chart patterns and market indicators?
+ - which combinations of candlestick patterns, chart patterns, and market indicators should be combined into a method that indicates a buy opportunity or a sell signal?
 

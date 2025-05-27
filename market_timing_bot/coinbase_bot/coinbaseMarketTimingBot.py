@@ -7,6 +7,7 @@ from exchange_connection import ExchangeConnection
 from data_manager import DataManager
 from indicator_calculator import IndicatorCalculator
 from candlestick_patterns import CandlestickPatterns
+from chart_patterns import ChartPatterns
 import json
 
 async def main():
@@ -41,6 +42,7 @@ async def main():
     data_manager = None
     indicator_calculator = None
     candlestick_patterns = None
+    chart_patterns = None
 
     try:
         # Exchange setup
@@ -63,6 +65,10 @@ async def main():
         candlestick_patterns = CandlestickPatterns(symbols, data_manager, enable_logging=True)
         logger.info(f"CandlestickPatterns initialized for symbols: {symbols}")
 
+        # ChartPatterns setup
+        chart_patterns = ChartPatterns(symbols, data_manager, enable_logging=True)
+        logger.info(f"ChartPatterns initialized for symbols: {symbols}")
+
         # Wait for DataManager to initialize historical data
         while not data_manager.historical_initialized:
             logger.debug("Waiting for DataManager to initialize historical data...")
@@ -80,6 +86,12 @@ async def main():
                 all_patterns = candlestick_patterns.calculate_all_patterns()
                 for symbol in symbols:
                     logger.info(f"Candlestick patterns for {symbol}:\n{json.dumps(all_patterns[symbol], indent=2)}")
+
+                # Calculate and log chart patterns
+                all_chart_patterns = chart_patterns.calculate_all_patterns()
+                for symbol in symbols:
+                    logger.info(f"Chart patterns for {symbol}:\n{json.dumps(all_chart_patterns[symbol], indent=2)}")
+
             except Exception as e:
                 logger.error(f"Error calculating indicators or patterns: {e}", exc_info=True)
             
