@@ -109,7 +109,17 @@ class CandlestickPatterns:
                         'tweezer_bottoms': self.tweezer_bottoms(symbol, timeframe),
                         'dark_cloud_cover': self.dark_cloud_cover(symbol, timeframe),
                         'piercing_line': self.piercing_line(symbol, timeframe),
-                        'on_neck': self.on_neck(symbol, timeframe)
+                        'on_neck': self.on_neck(symbol, timeframe),
+                        'morning_star': self.morning_star(symbol, timeframe),
+                        'evening_star': self.evening_star(symbol, timeframe),
+                        'three_white_soldiers': self.three_white_soldiers(symbol, timeframe),
+                        'three_black_crows': self.three_black_crows(symbol, timeframe),
+                        'three_inside_up': self.three_inside_up(symbol, timeframe),
+                        'three_inside_down': self.three_inside_down(symbol, timeframe),
+                        'stick_sandwich_bullish': self.stick_sandwich_bullish(symbol, timeframe),
+                        'stick_sandwich_bearish': self.stick_sandwich_bearish(symbol, timeframe),
+                        'rising_three_methods': self.rising_three_methods(symbol, timeframe),
+                        'falling_three_methods': self.falling_three_methods(symbol, timeframe)
                     }
                     symbol_patterns[timeframe] = patterns
                     self.logger.debug(f"Candlestick patterns for {symbol} ({timeframe}): %s", patterns)
@@ -137,7 +147,17 @@ class CandlestickPatterns:
                         'tweezer_bottoms': False,
                         'dark_cloud_cover': False,
                         'piercing_line': False,
-                        'on_neck': False
+                        'on_neck': False,
+                        'morning_star': False,
+                        'evening_star': False,
+                        'three_white_soldiers': False,
+                        'three_black_crows': False,
+                        'three_inside_up': False,
+                        'three_inside_down': False,
+                        'stick_sandwich_bullish': False,
+                        'stick_sandwich_bearish': False,
+                        'rising_three_methods': False,
+                        'falling_three_methods': False
                     }
 
             all_patterns[symbol] = symbol_patterns
@@ -1317,5 +1337,557 @@ class CandlestickPatterns:
             return False
 
     
+    def morning_star(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Morning Star candlestick pattern in the latest three klines for the given symbol and timeframe.
+        A Morning Star has a long bearish candle, a short-bodied candle, and a long bullish candle closing above the first candle's midpoint.
 
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Morning Star pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=3):
+                return False
+
+            first = klines.iloc[-3]
+            second = klines.iloc[-2]
+            third = klines.iloc[-1]
+
+            # Morning Star criteria:
+            # - First candle bearish
+            # - Second candle small body
+            # - Third candle bullish, closes above first candle's midpoint
+            first_midpoint = (first['open'] + first['close']) / 2
+            second_body = abs(second['close'] - second['open'])
+            second_range = second['high'] - second['low']
+            second_body_ratio = second_body / second_range if second_range > 0 else 0
+            is_morning_star = (
+                first['close'] < first['open'] and
+                (second_range == 0 or second_body_ratio <= 0.3) and
+                third['close'] > third['open'] and
+                third['close'] > first_midpoint
+            )
+
+            self.logger.debug(
+                f"Morning Star check for {symbol} ({timeframe}): "
+                f"first_open={first['open']:.6f}, first_close={first['close']:.6f}, "
+                f"second_body_ratio={second_body_ratio:.3f}, "
+                f"third_close={third['close']:.6f}, first_midpoint={first_midpoint:.6f}, "
+                f"is_morning_star={is_morning_star}"
+            )
+            return bool(is_morning_star)
+
+        except Exception as e:
+            self.logger.error(f"Error checking Morning Star for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def evening_star(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies an Evening Star candlestick pattern in the latest three klines for the given symbol and timeframe.
+        An Evening Star has a long bullish candle, a short-bodied candle, and a long bearish candle closing below the first candle's midpoint.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if an Evening Star pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=3):
+                return False
+
+            first = klines.iloc[-3]
+            second = klines.iloc[-2]
+            third = klines.iloc[-1]
+
+            # Evening Star criteria:
+            # - First candle bullish
+            # - Second candle small body
+            # - Third candle bearish, closes below first candle's midpoint
+            first_midpoint = (first['open'] + first['close']) / 2
+            second_body = abs(second['close'] - second['open'])
+            second_range = second['high'] - second['low']
+            second_body_ratio = second_body / second_range if second_range > 0 else 0
+            is_evening_star = (
+                first['close'] > first['open'] and
+                (second_range == 0 or second_body_ratio <= 0.3) and
+                third['close'] < third['open'] and
+                third['close'] < first_midpoint
+            )
+
+            self.logger.debug(
+                f"Evening Star check for {symbol} ({timeframe}): "
+                f"first_open={first['open']:.6f}, first_close={first['close']:.6f}, "
+                f"second_body_ratio={second_body_ratio:.3f}, "
+                f"third_close={third['close']:.6f}, first_midpoint={first_midpoint:.6f}, "
+                f"is_evening_star={is_evening_star}"
+            )
+            return bool(is_evening_star)
+
+        except Exception as e:
+            self.logger.error(f"Error checking Evening Star for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def three_white_soldiers(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Three White Soldiers candlestick pattern in the latest three klines for the given symbol and timeframe.
+        Three White Soldiers has three long bullish candles, each closing higher than the previous.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Three White Soldiers pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=3):
+                return False
+
+            first = klines.iloc[-3]
+            second = klines.iloc[-2]
+            third = klines.iloc[-1]
+
+            # Three White Soldiers criteria:
+            # - All three candles bullish
+            # - Each closes higher than the previous
+            # - Each has a significant body (>= 60% of range)
+            first_body = first['close'] - first['open']
+            first_range = first['high'] - first['low']
+            first_body_ratio = first_body / first_range if first_range > 0 else 0
+            second_body = second['close'] - second['open']
+            second_range = second['high'] - second['low']
+            second_body_ratio = second_body / second_range if second_range > 0 else 0
+            third_body = third['close'] - third['open']
+            third_range = third['high'] - third['low']
+            third_body_ratio = third_body / third_range if third_range > 0 else 0
+            is_three_white_soldiers = (
+                first['close'] > first['open'] and
+                second['close'] > second['open'] and
+                third['close'] > third['open'] and
+                second['close'] > first['close'] and
+                third['close'] > second['close'] and
+                first_body_ratio >= 0.6 and
+                second_body_ratio >= 0.6 and
+                third_body_ratio >= 0.6
+            )
+
+            self.logger.debug(
+                f"Three White Soldiers check for {symbol} ({timeframe}): "
+                f"first_body_ratio={first_body_ratio:.3f}, second_body_ratio={second_body_ratio:.3f}, "
+                f"third_body_ratio={third_body_ratio:.3f}, is_three_white_soldiers={is_three_white_soldiers}"
+            )
+            return bool(is_three_white_soldiers)
+
+        except Exception as e:
+            self.logger.error(f"Error checking Three White Soldiers for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def three_black_crows(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Three Black Crows candlestick pattern in the latest three klines for the given symbol and timeframe.
+        Three Black Crows has three long bearish candles, each closing lower than the previous.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Three Black Crows pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=3):
+                return False
+
+            first = klines.iloc[-3]
+            second = klines.iloc[-2]
+            third = klines.iloc[-1]
+
+            # Three Black Crows criteria:
+            # - All three candles bearish
+            # - Each closes lower than the previous
+            # - Each has a significant body (>= 60% of range)
+            first_body = first['open'] - first['close']
+            first_range = first['high'] - first['low']
+            first_body_ratio = first_body / first_range if first_range > 0 else 0
+            second_body = second['open'] - second['close']
+            second_range = second['high'] - second['low']
+            second_body_ratio = second_body / second_range if second_range > 0 else 0
+            third_body = third['open'] - third['close']
+            third_range = third['high'] - third['low']
+            third_body_ratio = third_body / third_range if third_range > 0 else 0
+            is_three_black_crows = (
+                first['close'] < first['open'] and
+                second['close'] < second['open'] and
+                third['close'] < third['open'] and
+                second['close'] < first['close'] and
+                third['close'] < second['close'] and
+                first_body_ratio >= 0.6 and
+                second_body_ratio >= 0.6 and
+                third_body_ratio >= 0.6
+            )
+
+            self.logger.debug(
+                f"Three Black Crows check for {symbol} ({timeframe}): "
+                f"first_body_ratio={first_body_ratio:.3f}, second_body_ratio={second_body_ratio:.3f}, "
+                f"third_body_ratio={third_body_ratio:.3f}, is_three_black_crows={is_three_black_crows}"
+            )
+            return bool(is_three_black_crows)
+
+        except Exception as e:
+            self.logger.error(f"Error checking Three Black Crows for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def three_inside_up(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Three Inside Up candlestick pattern in the latest three klines for the given symbol and timeframe.
+        Three Inside Up has a bearish candle, a Bullish Harami, and a third bullish candle closing above the second's high.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Three Inside Up pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=3):
+                return False
+
+            first = klines.iloc[-3]
+            second = klines.iloc[-2]
+            third = klines.iloc[-1]
+
+            # Three Inside Up criteria:
+            # - First candle bearish
+            # - Second candle bullish, within first body (Bullish Harami)
+            # - Third candle bullish, closes above second close
+            is_three_inside_up = (
+                first['close'] < first['open'] and
+                second['close'] > second['open'] and
+                second['open'] >= first['close'] and
+                second['close'] <= first['open'] and
+                third['close'] > third['open'] and
+                third['close'] > second['close']
+            )
+
+            self.logger.debug(
+                f"Three Inside Up check for {symbol} ({timeframe}): "
+                f"first_open={first['open']:.6f}, first_close={first['close']:.6f}, "
+                f"second_open={second['open']:.6f}, second_close={second['close']:.6f}, "
+                f"third_close={third['close']:.6f}, is_three_inside_up={is_three_inside_up}"
+            )
+            return bool(is_three_inside_up)
+
+        except Exception as e:
+            self.logger.error(f"Error checking Three Inside Up for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def three_inside_down(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Three Inside Down candlestick pattern in the latest three klines for the given symbol and timeframe.
+        Three Inside Down has a bullish candle, a Bearish Harami, and a third bearish candle closing below the second's low.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Three Inside Down pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=3):
+                return False
+
+            first = klines.iloc[-3]
+            second = klines.iloc[-2]
+            third = klines.iloc[-1]
+
+            # Three Inside Down criteria:
+            # - First candle bullish
+            # - Second candle bearish, within first body (Bearish Harami)
+            # - Third candle bearish, closes below second close
+            is_three_inside_down = (
+                first['close'] > first['open'] and
+                second['close'] < second['open'] and
+                second['open'] <= first['close'] and
+                second['close'] >= first['open'] and
+                third['close'] < third['open'] and
+                third['close'] < second['close']
+            )
+
+            self.logger.debug(
+                f"Three Inside Down check for {symbol} ({timeframe}): "
+                f"first_open={first['open']:.6f}, first_close={first['close']:.6f}, "
+                f"second_open={second['open']:.6f}, second_close={second['close']:.6f}, "
+                f"third_close={third['close']:.6f}, is_three_inside_down={is_three_inside_down}"
+            )
+            return bool(is_three_inside_down)
+
+        except Exception as e:
+            self.logger.error(f"Error checking Three Inside Down for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def stick_sandwich_bullish(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Bullish Stick Sandwich candlestick pattern in the latest three klines for the given symbol and timeframe.
+        A Bullish Stick Sandwich has a bearish candle, a bullish candle, and another bearish candle with a close near the first's close.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Bullish Stick Sandwich pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=3):
+                return False
+
+            first = klines.iloc[-3]
+            second = klines.iloc[-2]
+            third = klines.iloc[-1]
+
+            # Bullish Stick Sandwich criteria:
+            # - First candle bearish
+            # - Second candle bullish, closes above first close
+            # - Third candle bearish, closes near first close
+            tolerance = 0.0001  # Tolerance for HBAR-USD price precision
+            is_stick_sandwich_bullish = (
+                first['close'] < first['open'] and
+                second['close'] > second['open'] and
+                second['close'] > first['close'] and
+                third['close'] < third['open'] and
+                abs(third['close'] - first['close']) <= tolerance
+            )
+
+            self.logger.debug(
+                f"Bullish Stick Sandwich check for {symbol} ({timeframe}): "
+                f"first_close={first['close']:.6f}, second_close={second['close']:.6f}, "
+                f"third_close={third['close']:.6f}, is_stick_sandwich_bullish={is_stick_sandwich_bullish}"
+            )
+            return bool(is_stick_sandwich_bullish)
+
+        except Exception as e:
+            self.logger.error(f"Error checking Bullish Stick Sandwich for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def stick_sandwich_bearish(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Bearish Stick Sandwich candlestick pattern in the latest three klines for the given symbol and timeframe.
+        A Bearish Stick Sandwich has a bullish candle, a bearish candle, and another bullish candle with a close near the first's close.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Bearish Stick Sandwich pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=3):
+                return False
+
+            first = klines.iloc[-3]
+            second = klines.iloc[-2]
+            third = klines.iloc[-1]
+
+            # Bearish Stick Sandwich criteria:
+            # - First candle bullish
+            # - Second candle bearish, closes below first close
+            # - Third candle bullish, closes near first close
+            tolerance = 0.0001  # Tolerance for HBAR-USD price precision
+            is_stick_sandwich_bearish = (
+                first['close'] > first['open'] and
+                second['close'] < second['open'] and
+                second['close'] < first['close'] and
+                third['close'] > third['open'] and
+                abs(third['close'] - first['close']) <= tolerance
+            )
+
+            self.logger.debug(
+                f"Bearish Stick Sandwich check for {symbol} ({timeframe}): "
+                f"first_close={first['close']:.6f}, second_close={second['close']:.6f}, "
+                f"third_close={third['close']:.6f}, is_stick_sandwich_bearish={is_stick_sandwich_bearish}"
+            )
+            return bool(is_stick_sandwich_bearish)
+
+        except Exception as e:
+            self.logger.error(f"Error checking Bearish Stick Sandwich for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def rising_three_methods(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Rising Three Methods candlestick pattern in the latest three klines for the given symbol and timeframe.
+        Rising Three Methods has a long bullish candle, a small bearish candle within the first body, and a bullish candle closing above the first close.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Rising Three Methods pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=3):
+                return False
+
+            first = klines.iloc[-3]
+            second = klines.iloc[-2]
+            third = klines.iloc[-1]
+
+            # Rising Three Methods criteria (simplified to three candles):
+            # - First candle bullish
+            # - Second candle bearish, within first body
+            # - Third candle bullish, closes above first close
+            is_rising_three_methods = (
+                first['close'] > first['open'] and
+                second['close'] < second['open'] and
+                second['open'] <= first['close'] and
+                second['close'] >= first['open'] and
+                third['close'] > third['open'] and
+                third['close'] > first['close']
+            )
+
+            self.logger.debug(
+                f"Rising Three Methods check for {symbol} ({timeframe}): "
+                f"first_open={first['open']:.6f}, first_close={first['close']:.6f}, "
+                f"second_open={second['open']:.6f}, second_close={second['close']:.6f}, "
+                f"third_close={third['close']:.6f}, is_rising_three_methods={is_rising_three_methods}"
+            )
+            return bool(is_rising_three_methods)
+
+        except Exception as e:
+            self.logger.error(f"Error checking Rising Three Methods for {symbol} ({timeframe}): {str(e)}")
+            return False
+
+    def falling_three_methods(self, symbol: str, timeframe: str) -> bool:
+        """
+        Identifies a Falling Three Methods candlestick pattern in the latest three klines for the given symbol and timeframe.
+        Falling Three Methods has a long bearish candle, a small bullish candle within the first body, and a bearish candle closing below the first close.
+
+        Args:
+            symbol (str): Trading pair symbol (e.g., 'HBAR-USD').
+            timeframe (str): Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+
+        Returns:
+            bool: True if a Falling Three Methods pattern is present, False otherwise.
+        """
+        try:
+            if symbol not in self.symbols:
+                self.logger.error(f"Invalid symbol: {symbol}")
+                return False
+            if timeframe not in self.timeframes:
+                self.logger.error(f"Invalid timeframe: {timeframe}")
+                return False
+
+            klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+            if not self._validate_klines(klines, symbol, timeframe, min_rows=3):
+                return False
+
+            first = klines.iloc[-3]
+            second = klines.iloc[-2]
+            third = klines.iloc[-1]
+
+            # Falling Three Methods criteria (simplified to three candles):
+            # - First candle bearish
+            # - Second candle bullish, within first body
+            # - Third candle bearish, closes below first close
+            is_falling_three_methods = (
+                first['close'] < first['open'] and
+                second['close'] > second['open'] and
+                second['open'] >= first['close'] and
+                second['close'] <= first['open'] and
+                third['close'] < third['open'] and
+                third['close'] < first['close']
+            )
+
+            self.logger.debug(
+                f"Falling Three Methods check for {symbol} ({timeframe}): "
+                f"first_open={first['open']:.6f}, first_close={first['close']:.6f}, "
+                f"second_open={second['open']:.6f}, second_close={second['close']:.6f}, "
+                f"third_close={third['close']:.6f}, is_falling_three_methods={is_falling_three_methods}"
+            )
+            return bool(is_falling_three_methods)
+
+        except Exception as e:
+            self.logger.error(f"Error checking Falling Three Methods for {symbol} ({timeframe}): {str(e)}")
+            return False
     
