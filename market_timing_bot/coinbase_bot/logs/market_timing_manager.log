@@ -1,0 +1,15 @@
+2025-05-28 13:17:14,633 - DEBUG - MarketTimingManager initialized with symbols: ['HBAR-USD']
+2025-05-28 13:17:32,483 - DEBUG - Calculating market states for symbol: HBAR-USD
+2025-05-28 13:17:32,699 - DEBUG - 1h indicators for HBAR-USD: ema10=0.185102, ema20=0.185935, rsi14=47.056461, adx14=23.429023, macd_hist=-0.000233
+2025-05-28 13:17:32,700 - DEBUG - Sideways pattern detected for HBAR-USD in 1h: triangle_symmetrical
+2025-05-28 13:17:32,700 - INFO - Market state for HBAR-USD (1h): sideways (adx14=23.429023, sideways_pattern=True)
+2025-05-28 13:17:32,700 - DEBUG - 1d indicators for HBAR-USD: ema10=0.190553, ema20=0.191942, rsi14=37.259339, adx14=28.711149, macd_hist=-0.002478
+2025-05-28 13:17:32,700 - INFO - Market state for HBAR-USD (1d): downtrend
+2025-05-28 13:17:32,700 - DEBUG - Market states for HBAR-USD: {'1h': 'sideways', '1d': 'downtrend'}
+2025-05-28 13:18:33,056 - DEBUG - Calculating market states for symbol: HBAR-USD
+2025-05-28 13:18:33,269 - DEBUG - 1h indicators for HBAR-USD: ema10=0.185108, ema20=0.185937, rsi14=47.235958, adx14=23.429023, macd_hist=-0.000231
+2025-05-28 13:18:33,269 - DEBUG - Sideways pattern detected for HBAR-USD in 1h: triangle_symmetrical
+2025-05-28 13:18:33,269 - INFO - Market state for HBAR-USD (1h): sideways (adx14=23.429023, sideways_pattern=True)
+2025-05-28 13:18:33,270 - DEBUG - 1d indicators for HBAR-USD: ema10=0.190559, ema20=0.191944, rsi14=37.296524, adx14=28.711149, macd_hist=-0.002476
+2025-05-28 13:18:33,270 - INFO - Market state for HBAR-USD (1d): downtrend
+2025-05-28 13:18:33,270 - DEBUG - Market states for HBAR-USD: {'1h': 'sideways', '1d': 'downtrend'}

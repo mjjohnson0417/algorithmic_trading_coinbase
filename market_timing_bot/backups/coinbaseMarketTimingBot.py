@@ -8,6 +8,7 @@ from data_manager import DataManager
 from indicator_calculator import IndicatorCalculator
 from candlestick_patterns import CandlestickPatterns
 from chart_patterns import ChartPatterns
+from market_timing_manager import MarketTimingManager
 import json
 
 async def main():
@@ -43,6 +44,7 @@ async def main():
     indicator_calculator = None
     candlestick_patterns = None
     chart_patterns = None
+    market_timing_manager = None
 
     try:
         # Exchange setup
@@ -69,6 +71,10 @@ async def main():
         chart_patterns = ChartPatterns(symbols, data_manager, enable_logging=True)
         logger.info(f"ChartPatterns initialized for symbols: {symbols}")
 
+        # MarketTimingManager setup
+        market_timing_manager = MarketTimingManager(symbols, candlestick_patterns, chart_patterns, indicator_calculator, enable_logging=True)
+        logger.info(f"MarketTimingManager initialized for symbols: {symbols}")
+
         # Wait for DataManager to initialize historical data
         while not data_manager.historical_initialized:
             logger.debug("Waiting for DataManager to initialize historical data...")
@@ -92,8 +98,17 @@ async def main():
                 for symbol in symbols:
                     logger.info(f"Chart patterns for {symbol}:\n{json.dumps(all_chart_patterns[symbol], indent=2)}")
 
+                # Calculate and log market states
+                for symbol in symbols:
+                    try:
+                        market_timing_manager.calculate_market_states(symbol)
+                    except ValueError as e:
+                        logger.error(f"Failed to calculate market states for {symbol}: {e}")
+                        continue
+                logger.info(f"Market states:\n{json.dumps(market_timing_manager.market_states, indent=2)}")
+
             except Exception as e:
-                logger.error(f"Error calculating indicators or patterns: {e}", exc_info=True)
+                logger.error(f"Error calculating indicators, patterns, or market states: {e}", exc_info=True)
             
             await asyncio.sleep(60)  # Run every minute
 

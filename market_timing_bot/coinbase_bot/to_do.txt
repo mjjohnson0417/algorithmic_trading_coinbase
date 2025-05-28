@@ -1,4 +1,7 @@
  - need to think about how to use all the candlestick patterns, charter patterns, and indicators together to create a strategy
  - what time frames are meaningful to which candlestick patterns, chart patterns and market indicators?
  - which combinations of candlestick patterns, chart patterns, and market indicators should be combined into a method that indicates a buy opportunity or a sell signal?
-
+ - need to also think about resistance levels
+ - can order book be used to calculate resistance levels?
+ - ticker will have to be used to watch price movement
+ - does coinbase have a stop loss on orders?
