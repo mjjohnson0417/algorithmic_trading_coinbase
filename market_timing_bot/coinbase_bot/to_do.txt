@@ -1,7 +1,3 @@
- - need to think about how to use all the candlestick patterns, charter patterns, and indicators together to create a strategy
- - what time frames are meaningful to which candlestick patterns, chart patterns and market indicators?
- - which combinations of candlestick patterns, chart patterns, and market indicators should be combined into a method that indicates a buy opportunity or a sell signal?
- - need to also think about resistance levels
- - can order book be used to calculate resistance levels?
- - ticker will have to be used to watch price movement
- - does coinbase have a stop loss on orders?
+- think through indicators and their confirmations. Just get something into the dictionary now and refine it later. 
+- also need to check for support levels and resistance. 
+- once the dictionary is complete, run the bot for a few days and log when it sees conditions. Log what price it should have bought at and what price it should have sold at. Log where the stop loss is. Log the ticker maybe to track the actual price? Ifugre out profitablity using the logs. This would be a better test of the bot's effectivess than a backtest. 

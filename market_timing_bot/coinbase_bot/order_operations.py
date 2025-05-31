@@ -1,26 +1,22 @@
-# order_operations.py
 import logging
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 import ccxt.async_support as ccxt
 from typing import Dict, Optional, List
 from datetime import datetime, timezone
+import jwt
+import time
 
 class OrderOperations:
-    def __init__(self, exchange, symbol: str, dry_run: bool = False, enable_logging: bool = True):
-        """
-        Initializes the OrderOperations class for managing orders on the exchange.
+    _portfolio_cache = {}  # Class-level cache for portfolio IDs
 
-        Args:
-            exchange: CCXT exchange instance (e.g., ccxt.async_support.coinbase).
-            symbol (str): Trading pair (e.g., 'HBAR-USDT').
-            dry_run (bool): If True, simulates orders without executing them.
-            enable_logging (bool): If True, enables logging to 'logs/order_operations_<symbol>.log'.
-        """
+    def __init__(self, exchange, symbol: str, portfolio_name: str = "market timing", dry_run: bool = False, enable_logging: bool = True):
         self.exchange = exchange
         self.symbol = symbol
+        self.portfolio_name = portfolio_name
         self.dry_run = dry_run
-        self._dry_run_balance = 1000.0  # Simulated USDT balance for dry-run mode
+        self._dry_run_balance = 1000.0
+        self.portfolio_id = None
 
         # Set up logger
         self.logger = logging.getLogger(f"OrderOperations.{symbol.replace('-', '_')}")
@@ -29,58 +25,168 @@ class OrderOperations:
             log_dir.mkdir(exist_ok=True)
             log_file = log_dir / f"order_operations_{symbol.replace('-', '_')}.log"
             file_handler = RotatingFileHandler(log_file, maxBytes=5*1024*1024, backupCount=5)
-            file_handler.setLevel(logging.DEBUG)
+            file_handler.setLevel(logging.INFO)
             file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
             self.logger.addHandler(file_handler)
-            self.logger.setLevel(logging.DEBUG)
+            self.logger.setLevel(logging.INFO)
         else:
             self.logger.propagate = False
             self.logger.handlers = []
 
-    async def get_usdt_balance(self) -> float:
+    async def get_portfolios(self) -> Optional[str]:
+        if self.portfolio_name in self._portfolio_cache:
+            self.logger.debug(f"Using cached portfolio ID for '{self.portfolio_name}': {self._portfolio_cache[self.portfolio_name]}")
+            return self._portfolio_cache[self.portfolio_name]
+        try:
+            self.logger.debug("Generating JWT for /api/v3/brokerage/portfolios request...")
+            timestamp = int(time.time())
+            payload = {
+                "sub": self.exchange.apiKey,
+                "iss": "coinbase-cloud",
+                "nbf": timestamp,
+                "exp": timestamp + 120,
+                "iat": timestamp,
+                "aud": ["retail_rest_api_proxy"],
+                "uri": "GET api.coinbase.com/api/v3/brokerage/portfolios"
+            }
+            encoded_jwt = jwt.encode(
+                payload,
+                self.exchange.secret,
+                algorithm="ES256",
+                headers={"kid": self.exchange.apiKey}
+            )
+            self.logger.debug(f"JWT Payload: {payload}")
+            self.logger.debug(f"Encoded JWT: {encoded_jwt}")
+
+            self.logger.debug("Fetching portfolios using CCXT fetch to /api/v3/brokerage/portfolios...")
+            response = await self.exchange.fetch(
+                'https://api.coinbase.com/api/v3/brokerage/portfolios',
+                method='GET',
+                headers={'Authorization': f'Bearer {encoded_jwt}'}
+            )
+            self.logger.debug(f"Raw portfolios API response: {response}")
+            portfolios = response.get('portfolios', [])
+            for portfolio in portfolios:
+                portfolio_name = portfolio.get('name', '')
+                portfolio_id = portfolio.get('uuid')
+                self.logger.info(f"Found portfolio: Name: {portfolio_name}, ID: {portfolio_id}")
+                if portfolio_name.lower() == self.portfolio_name.lower():
+                    self._portfolio_cache[self.portfolio_name] = portfolio_id
+                    self.logger.info(f"Selected portfolio '{self.portfolio_name}' with ID: {portfolio_id}")
+                    return portfolio_id
+
+            self.logger.warning(f"No '{self.portfolio_name}' portfolio found. Using default portfolio.")
+            self._portfolio_cache[self.portfolio_name] = None
+            return None
+        except ccxt.AuthenticationError as e:
+            self.logger.error(f"Authentication error fetching portfolios: {e}", exc_info=True)
+            return None
+        except ccxt.NetworkError as e:
+            self.logger.error(f"Network error fetching portfolios: {e}", exc_info=True)
+            return None
+        except Exception as e:
+            self.logger.error(f"Error fetching portfolios: {e}", exc_info=True)
+            return None
+
+    async def initialize(self):
+        self.portfolio_id = await self.get_portfolios()
+        if not self.portfolio_id:
+            self.logger.warning(f"Using default portfolio for {self.symbol} as '{self.portfolio_name}' not found.")
+
+    async def fetch_all_account_balances(self) -> List[Dict]:
         """
-        Fetches the available USDT balance.
+        Fetches all account balances across all portfolios.
 
         Returns:
-            float: Available USDT balance.
+            List[Dict]: A list of account balance entries, each containing portfolio ID, currency, and balance details.
         """
         if self.dry_run:
-            self.logger.debug("[DRY RUN] Returning simulated USDT balance: %s", self._dry_run_balance)
-            return self._dry_run_balance
+            self.logger.debug("[DRY RUN] Returning simulated account balances: [{'portfolio': %s, 'currency': 'USD', 'balance': %s}]", 
+                             self.portfolio_id, self._dry_run_balance)
+            return [{'portfolio': self.portfolio_id, 'currency': 'USD', 'available_balance': {'value': self._dry_run_balance}}]
         try:
-            balance = await self.exchange.fetch_balance()
-            usdt_balance = balance.get('USDT', {}).get('free', 0.0)
-            self.logger.debug("Fetched USDT balance: %s", usdt_balance)
-            return usdt_balance
+            self.logger.debug("Generating JWT for /api/v3/brokerage/accounts request...")
+            timestamp = int(time.time())
+            payload = {
+                "sub": self.exchange.apiKey,
+                "iss": "coinbase-cloud",
+                "nbf": timestamp,
+                "exp": timestamp + 120,
+                "iat": timestamp,
+                "aud": ["retail_rest_api_proxy"],
+                "uri": "GET api.coinbase.com/api/v3/brokerage/accounts"
+            }
+            encoded_jwt = jwt.encode(
+                payload,
+                self.exchange.secret,
+                algorithm="ES256",
+                headers={"kid": self.exchange.apiKey}
+            )
+            self.logger.debug(f"JWT Payload: {payload}")
+            self.logger.debug(f"Encoded JWT: {encoded_jwt}")
+
+            self.logger.debug("Fetching all account balances using CCXT fetch to /api/v3/brokerage/accounts...")
+            response = await self.exchange.fetch(
+                'https://api.coinbase.com/api/v3/brokerage/accounts',
+                method='GET',
+                headers={'Authorization': f'Bearer {encoded_jwt}'}
+            )
+            self.logger.debug("Raw accounts API response: %s", response)
+            accounts = response.get('accounts', [])
+            return accounts
+        except ccxt.AuthenticationError as e:
+            self.logger.error(f"Authentication error fetching account balances: {e}", exc_info=True)
+            return []
+        except ccxt.NetworkError as e:
+            self.logger.error(f"Network error fetching account balances: {e}", exc_info=True)
+            return []
         except Exception as e:
-            self.logger.error("Error fetching USDT balance: %s", e, exc_info=True)
-            return 0.0
-        
+            self.logger.error(f"Error fetching account balances: {e}", exc_info=True)
+            return []
+
     async def get_usd_balance(self) -> float:
         """
-        Fetches the total USD balance, including funds locked in open orders.
+        Fetches the USD balance for the specified portfolio by filtering all account balances.
 
         Returns:
-            float: Total USD balance.
+            float: USD balance for the specified portfolio.
         """
         if self.dry_run:
             self.logger.debug("[DRY RUN] Returning simulated USD balance: %s", self._dry_run_balance)
             return self._dry_run_balance
         try:
-            balance = await self.exchange.fetch_balance()
-            usd_balance = balance.get('USD', {}).get('free', 0.0)  # Use 'total' instead of 'free'
-            self.logger.debug("Fetched total USD balance: %s", usd_balance)
+            # Fetch all account balances
+            accounts = await self.fetch_all_account_balances()
+            usd_balance = 0.0
+            for account in accounts:
+                # Check retail_portfolio_id for the portfolio match
+                portfolio_id = account.get('retail_portfolio_id')
+                currency = account.get('currency')
+                self.logger.debug("Checking account: portfolio_id=%s, currency=%s", portfolio_id, currency)
+                if portfolio_id == self.portfolio_id and currency == 'USD':
+                    balance_value = account.get('available_balance', {}).get('value', '0.0')
+                    try:
+                        usd_balance = float(balance_value)
+                        self.logger.debug("Found USD balance for portfolio %s: %s", self.portfolio_id, usd_balance)
+                        break
+                    except (ValueError, TypeError) as e:
+                        self.logger.warning("Error parsing USD balance for portfolio %s: %s, value: %s", 
+                                           self.portfolio_id, e, balance_value)
+                        continue
+            self.logger.debug("Fetched USD balance for portfolio %s: %s", self.portfolio_id, usd_balance)
+            if usd_balance == 0.0:
+                self.logger.warning("No USD balance found for portfolio %s, returning 0.0", self.portfolio_id)
             return usd_balance
         except Exception as e:
-            self.logger.error("Error fetching USD balance: %s", e, exc_info=True)
+            self.logger.error("Error fetching USD balance for portfolio %s: %s", self.portfolio_id, e, exc_info=True)
             return 0.0
 
     async def get_base_asset_balance(self, base_asset: str) -> float:
         """
-        Fetches the available balance of the base asset (e.g., HBAR for HBAR-USDT).
+        Fetches the available balance of the base asset (e.g., BTC for BTC-USD) for the specified portfolio.
 
         Args:
-            base_asset (str): The base asset symbol (e.g., 'HBAR').
+            base_asset (str): The base asset symbol (e.g., 'BTC').
 
         Returns:
             float: Available balance of the base asset.
@@ -89,13 +195,51 @@ class OrderOperations:
             self.logger.debug("[DRY RUN] Returning simulated %s balance: 0.0", base_asset)
             return 0.0
         try:
-            balance = await self.exchange.fetch_balance()
-            asset_balance = balance.get(base_asset, {}).get('free', 0.0)
-            self.logger.debug("Fetched %s balance: %s", base_asset, asset_balance)
+            # Fetch all account balances
+            accounts = await self.fetch_all_account_balances()
+            asset_balance = 0.0
+            for account in accounts:
+                # Check retail_portfolio_id for the portfolio match
+                portfolio_id = account.get('retail_portfolio_id')
+                currency = account.get('currency')
+                self.logger.debug("Checking account: portfolio_id=%s, currency=%s", portfolio_id, currency)
+                if portfolio_id == self.portfolio_id and currency == base_asset:
+                    balance_value = account.get('available_balance', {}).get('value', '0.0')
+                    try:
+                        asset_balance = float(balance_value)
+                        self.logger.debug("Found %s balance for portfolio %s: %s", base_asset, self.portfolio_id, asset_balance)
+                        break
+                    except (ValueError, TypeError) as e:
+                        self.logger.warning("Error parsing %s balance for portfolio %s: %s, value: %s", 
+                                           base_asset, self.portfolio_id, e, balance_value)
+                        continue
+            self.logger.debug("Fetched %s balance for portfolio %s: %s", base_asset, self.portfolio_id, asset_balance)
+            if asset_balance == 0.0:
+                self.logger.warning("No %s balance found for portfolio %s, returning 0.0", base_asset, self.portfolio_id)
             return asset_balance
         except Exception as e:
-            self.logger.error("Error fetching %s balance: %s", base_asset, e, exc_info=True)
+            self.logger.error("Error fetching %s balance for portfolio %s: %s", base_asset, self.portfolio_id, e, exc_info=True)
             return 0.0
+
+    async def get_open_orders(self) -> List[Dict]:
+        """
+        Fetches open orders for the symbol.
+
+        Returns:
+            List[Dict]: List of open orders.
+        """
+        if self.dry_run:
+            self.logger.debug("[DRY RUN] Returning empty open orders for %s", self.symbol)
+            return []
+        try:
+            orders = await self.exchange.fetch_open_orders(self.symbol, params={'portfolio': self.portfolio_id})
+            self.logger.debug("Fetched %d open orders for %s", len(orders), self.symbol)
+            return orders
+        except Exception as e:
+            self.logger.error("Error fetching open orders for %s: %s", self.symbol, e, exc_info=True)
+            return []
+
+    # ... rest of the methods (create_limit_buy, create_limit_sell, etc.) remain unchanged ...
 
     async def create_limit_buy(self, price: float, quantity: float) -> Optional[Dict]:
         """

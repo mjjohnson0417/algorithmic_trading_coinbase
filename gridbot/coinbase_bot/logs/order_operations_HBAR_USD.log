@@ -5759,3 +5759,58 @@ ccxt.base.errors.AuthenticationError: coinbase GET https://api.coinbase.com/v2/a
 2025-05-27 23:01:22,247 - INFO - Cancelled buy order 8bff76fe-dd46-4003-9f76-115a67c1c63d for HBAR-USD.
 2025-05-27 23:01:22,476 - INFO - Cancelled buy order a4a20976-dbb8-48a5-ad07-706df354b2c4 for HBAR-USD.
 2025-05-27 23:01:22,709 - INFO - Cancelled buy order f0acbea8-5714-4a10-8e70-cfda522e5831 for HBAR-USD.
+2025-05-28 20:01:35,088 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
+2025-05-28 20:01:35,404 - INFO - No open buy orders found for HBAR-USD to cancel.
+2025-05-28 20:01:35,404 - DEBUG - Attempting to cancel all sell orders for HBAR-USD
+2025-05-28 20:01:35,861 - INFO - Cancelled sell order e73f4bc1-5958-41d3-9a56-0ac39e274174 for HBAR-USD.
+2025-05-28 20:01:36,102 - INFO - Cancelled sell order 26185b93-b3fa-4d9e-a5bd-b0cba46cd4b5 for HBAR-USD.
+2025-05-28 20:01:36,338 - INFO - Cancelled sell order 33a22965-c368-46cd-a65a-b65795311b68 for HBAR-USD.
+2025-05-28 20:01:36,580 - INFO - Cancelled sell order 2267af78-846d-43ee-9d8f-722dd6757c9c for HBAR-USD.
+2025-05-28 20:01:36,838 - INFO - Cancelled sell order ed924008-ec15-4ab6-a129-95f0df4cf1a8 for HBAR-USD.
+2025-05-28 20:01:37,079 - INFO - Cancelled sell order d3172467-1a60-4cfc-922d-f97b98dea6b1 for HBAR-USD.
+2025-05-28 20:01:37,320 - INFO - Cancelled sell order cfa47381-f2e8-4a85-b862-4629da930585 for HBAR-USD.
+2025-05-28 20:01:37,740 - DEBUG - Fetched HBAR balance: 7802.20625268
+2025-05-28 20:01:38,457 - DEBUG - Created market sell order for HBAR-USD: {'info': {'order_id': '2db09d92-b07a-4b72-986d-e0674ccae9f6', 'product_id': 'HBAR-USD', 'side': 'SELL', 'client_order_id': 'ccxt-e792ac0d-5a06-4bc8-85c3-11be2e7b74be', 'attached_order_id': ''}, 'id': '2db09d92-b07a-4b72-986d-e0674ccae9f6', 'clientOrderId': 'ccxt-e792ac0d-5a06-4bc8-85c3-11be2e7b74be', 'timestamp': None, 'datetime': None, 'lastTradeTimestamp': None, 'symbol': 'HBAR/USD', 'type': None, 'timeInForce': None, 'postOnly': None, 'side': 'sell', 'price': None, 'triggerPrice': None, 'amount': None, 'filled': None, 'remaining': None, 'cost': None, 'average': None, 'status': None, 'fee': {'cost': None, 'currency': None}, 'trades': [], 'fees': [{'cost': None, 'currency': None}], 'lastUpdateTimestamp': None, 'reduceOnly': None, 'stopPrice': None, 'takeProfitPrice': None, 'stopLossPrice': None}
+2025-05-28 20:01:38,457 - INFO - Placed market sell order for 7802.20625268 HBAR: {'info': {'order_id': '2db09d92-b07a-4b72-986d-e0674ccae9f6', 'product_id': 'HBAR-USD', 'side': 'SELL', 'client_order_id': 'ccxt-e792ac0d-5a06-4bc8-85c3-11be2e7b74be', 'attached_order_id': ''}, 'id': '2db09d92-b07a-4b72-986d-e0674ccae9f6', 'clientOrderId': 'ccxt-e792ac0d-5a06-4bc8-85c3-11be2e7b74be', 'timestamp': None, 'datetime': None, 'lastTradeTimestamp': None, 'symbol': 'HBAR/USD', 'type': None, 'timeInForce': None, 'postOnly': None, 'side': 'sell', 'price': None, 'triggerPrice': None, 'amount': None, 'filled': None, 'remaining': None, 'cost': None, 'average': None, 'status': None, 'fee': {'cost': None, 'currency': None}, 'trades': [], 'fees': [{'cost': None, 'currency': None}], 'lastUpdateTimestamp': None, 'reduceOnly': None, 'stopPrice': None, 'takeProfitPrice': None, 'stopLossPrice': None}
+2025-05-29 10:01:29,984 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
+2025-05-29 10:01:30,377 - INFO - No open buy orders found for HBAR-USD to cancel.
+2025-05-29 22:01:08,306 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
+2025-05-29 22:01:08,587 - INFO - No open buy orders found for HBAR-USD to cancel.
+2025-05-30 14:01:00,413 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
+2025-05-30 14:01:00,666 - INFO - No open buy orders found for HBAR-USD to cancel.
+2025-05-30 16:54:18,677 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
+2025-05-30 16:54:18,677 - DEBUG - Attempting to cancel all sell orders for HBAR-USD
+2025-05-30 16:54:19,015 - INFO - No open buy orders found for HBAR-USD to cancel.
+2025-05-30 16:54:19,060 - INFO - No open sell orders found for HBAR-USD to cancel.
+2025-05-30 16:56:42,025 - DEBUG - Fetched 100 orders for HBAR-USD
+2025-05-30 16:56:42,026 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
+2025-05-30 16:56:42,240 - INFO - No open buy orders found for HBAR-USD to cancel.
+2025-05-30 16:56:42,738 - DEBUG - Fetched total USD balance: 2735.56
+2025-05-30 16:56:43,299 - DEBUG - Fetched 0 open orders for HBAR-USD
+2025-05-30 16:56:43,530 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-30 16:56:44,182 - DEBUG - Fetched 100 orders for HBAR-USD
+2025-05-30 16:56:44,604 - DEBUG - Fetched 100 orders for HBAR-USD
+2025-05-30 16:56:44,652 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
+2025-05-30 16:56:44,869 - INFO - No open buy orders found for HBAR-USD to cancel.
+2025-05-30 16:56:44,869 - DEBUG - Attempting to cancel all sell orders for HBAR-USD
+2025-05-30 16:56:45,089 - INFO - No open sell orders found for HBAR-USD to cancel.
+2025-05-30 16:56:45,333 - DEBUG - Fetched HBAR balance: 0.00625268
+2025-05-30 16:56:45,333 - ERROR - Error creating market sell order for HBAR-USD: coinbase amount of HBAR/USD must be greater than minimum amount precision of 0.1
+Traceback (most recent call last):
+  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/order_operations.py", line 187, in create_market_sell
+    order = await self.exchange.create_market_sell_order(self.symbol, quantity)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/coinbase_bot/lib/python3.12/site-packages/ccxt/async_support/base/exchange.py", line 1642, in create_market_sell_order
+    return await self.create_order(symbol, 'market', 'sell', amount, None, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/coinbase_bot/lib/python3.12/site-packages/ccxt/async_support/coinbase.py", line 2957, in create_order
+    'base_size': self.amount_to_precision(symbol, amount),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jason/algorithmic_trading_coinbase/gridbot/coinbase_bot/coinbase_bot/lib/python3.12/site-packages/ccxt/base/exchange.py", line 5610, in amount_to_precision
+    raise InvalidOrder(self.id + ' amount of ' + market['symbol'] + ' must be greater than minimum amount precision of ' + self.number_to_string(market['precision']['amount']))
+ccxt.base.errors.InvalidOrder: coinbase amount of HBAR/USD must be greater than minimum amount precision of 0.1
+2025-05-30 16:56:45,338 - ERROR - Failed to place market sell order for 0.00625268 HBAR.
+2025-05-30 16:56:45,338 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
+2025-05-30 16:56:45,888 - INFO - No open buy orders found for HBAR-USD to cancel.
+2025-05-31 00:01:07,000 - DEBUG - Attempting to cancel all buy orders for HBAR-USD
+2025-05-31 00:01:07,275 - INFO - No open buy orders found for HBAR-USD to cancel.

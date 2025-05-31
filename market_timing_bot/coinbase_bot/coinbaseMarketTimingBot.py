@@ -9,6 +9,7 @@ from indicator_calculator import IndicatorCalculator
 from candlestick_patterns import CandlestickPatterns
 from chart_patterns import ChartPatterns
 from market_timing_manager import MarketTimingManager
+from order_operations import OrderOperations
 import json
 
 async def main():
@@ -20,12 +21,12 @@ async def main():
     log_file = log_dir / 'market_timing_bot.log'
     if not any(isinstance(h, RotatingFileHandler) for h in logger.handlers):
         file_handler = RotatingFileHandler(log_file, maxBytes=5*1024*1024, backupCount=5)
-        file_handler.setLevel(logging.DEBUG)
+        file_handler.setLevel(logging.INFO)
         file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
         logger.addHandler(file_handler)
     if not any(isinstance(h, logging.StreamHandler) for h in logger.handlers):
         console_handler = logging.StreamHandler()
-        console_handler.setLevel(logging.DEBUG)
+        console_handler.setLevel(logging.INFO)
         console_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
         logger.addHandler(console_handler)
 
@@ -55,7 +56,7 @@ async def main():
         logger.info("REST connection established successfully.")
 
         # DataManager setup
-        symbols = ['HBAR-USD']  # Spot trading symbol
+        symbols = ['BTC-USD', 'XRP-USD']
         data_manager = DataManager(symbols, exchange, enable_logging=True)
         logger.info(f"DataManager initialized for symbols: {symbols}")
 
@@ -71,8 +72,30 @@ async def main():
         chart_patterns = ChartPatterns(symbols, data_manager, enable_logging=True)
         logger.info(f"ChartPatterns initialized for symbols: {symbols}")
 
+        # OrderOperations setup - create instances for each symbol
+        order_operations = {}
+        for symbol in symbols:
+            order_ops = OrderOperations(
+                exchange=exchange.rest_exchange,  # Pass the REST ccxt exchange instance
+                symbol=symbol,
+                portfolio_name="market timing",  # Specify the portfolio name
+                dry_run=False,  # Set to True for testing
+                enable_logging=True
+            )
+            await order_ops.initialize()  # Initialize portfolio ID
+            order_operations[symbol] = order_ops
+        logger.info(f"OrderOperations initialized for symbols: {symbols}")
+
         # MarketTimingManager setup
-        market_timing_manager = MarketTimingManager(symbols, candlestick_patterns, chart_patterns, indicator_calculator, enable_logging=True)
+        market_timing_manager = MarketTimingManager(
+            symbols, 
+            candlestick_patterns, 
+            chart_patterns, 
+            indicator_calculator, 
+            data_manager, 
+            order_operations,  # Pass the order_operations dict
+            enable_logging=True
+        )
         logger.info(f"MarketTimingManager initialized for symbols: {symbols}")
 
         # Wait for DataManager to initialize historical data
@@ -80,46 +103,41 @@ async def main():
             logger.debug("Waiting for DataManager to initialize historical data...")
             await asyncio.sleep(1)
 
-        # Keep the bot running, checking every minute
-        while True:
-            try:
-                # Calculate and log indicators
-                all_indicators = indicator_calculator.calculate_all_indicators()
-                for symbol in symbols:
-                    logger.info(f"Indicators for {symbol}:\n{json.dumps(all_indicators[symbol], indent=2, default=str)}")
+        # Log initial data
+        try:
+            all_indicators = indicator_calculator.calculate_all_indicators()
+            for symbol in symbols:
+                logger.info(f"Indicators for {symbol}:\n{json.dumps(all_indicators[symbol], indent=2, default=str)}")
 
-                # Calculate and log candlestick patterns
-                all_patterns = candlestick_patterns.calculate_all_patterns()
-                for symbol in symbols:
-                    logger.info(f"Candlestick patterns for {symbol}:\n{json.dumps(all_patterns[symbol], indent=2)}")
+            all_patterns = candlestick_patterns.calculate_all_patterns()
+            for symbol in symbols:
+                logger.info(f"Candlestick patterns for {symbol}:\n{json.dumps(all_patterns[symbol], indent=2)}")
 
-                # Calculate and log chart patterns
-                all_chart_patterns = chart_patterns.calculate_all_patterns()
-                for symbol in symbols:
-                    logger.info(f"Chart patterns for {symbol}:\n{json.dumps(all_chart_patterns[symbol], indent=2)}")
+            all_chart_patterns = chart_patterns.calculate_all_patterns()
+            for symbol in symbols:
+                logger.info(f"Chart patterns for {symbol}:\n{json.dumps(all_chart_patterns[symbol], indent=2)}")
 
-                # Calculate and log market states
-                for symbol in symbols:
-                    try:
-                        market_timing_manager.calculate_market_states(symbol)
-                    except ValueError as e:
-                        logger.error(f"Failed to calculate market states for {symbol}: {e}")
-                        continue
-                logger.info(f"Market states:\n{json.dumps(market_timing_manager.market_states, indent=2)}")
+            # Log market states for all timeframes
+            for symbol in symbols:
+                for timeframe in ['1m', '5m', '15m', '1h', '6h', '1d']:
+                    state = market_timing_manager.get_market_state(symbol, timeframe)
+                    logger.info(f"Market state for {symbol} ({timeframe}): {state}")
 
-            except Exception as e:
-                logger.error(f"Error calculating indicators, patterns, or market states: {e}", exc_info=True)
-            
-            await asyncio.sleep(60)  # Run every minute
+        except Exception as e:
+            logger.error(f"Error in initial data logging: {e}", exc_info=True)
+
+        # Run market timing manager
+        await market_timing_manager.run()
 
     except Exception as e:
         logger.error(f"Critical error: {e}", exc_info=True)
     finally:
-        # Ensure all resources are closed
         try:
             if data_manager:
                 logger.info("Closing WebSocket connections...")
                 await data_manager.close_websockets()
+                if hasattr(data_manager, 'session') and data_manager.session is not None:
+                    await data_manager.session.close()
             if exchange:
                 logger.info("Closing exchange connection...")
                 await exchange.close()

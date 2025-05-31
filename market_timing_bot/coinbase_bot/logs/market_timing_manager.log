@@ -1,15 +1,366 @@
-2025-05-28 13:17:14,633 - DEBUG - MarketTimingManager initialized with symbols: ['HBAR-USD']
-2025-05-28 13:17:32,483 - DEBUG - Calculating market states for symbol: HBAR-USD
-2025-05-28 13:17:32,699 - DEBUG - 1h indicators for HBAR-USD: ema10=0.185102, ema20=0.185935, rsi14=47.056461, adx14=23.429023, macd_hist=-0.000233
-2025-05-28 13:17:32,700 - DEBUG - Sideways pattern detected for HBAR-USD in 1h: triangle_symmetrical
-2025-05-28 13:17:32,700 - INFO - Market state for HBAR-USD (1h): sideways (adx14=23.429023, sideways_pattern=True)
-2025-05-28 13:17:32,700 - DEBUG - 1d indicators for HBAR-USD: ema10=0.190553, ema20=0.191942, rsi14=37.259339, adx14=28.711149, macd_hist=-0.002478
-2025-05-28 13:17:32,700 - INFO - Market state for HBAR-USD (1d): downtrend
-2025-05-28 13:17:32,700 - DEBUG - Market states for HBAR-USD: {'1h': 'sideways', '1d': 'downtrend'}
-2025-05-28 13:18:33,056 - DEBUG - Calculating market states for symbol: HBAR-USD
-2025-05-28 13:18:33,269 - DEBUG - 1h indicators for HBAR-USD: ema10=0.185108, ema20=0.185937, rsi14=47.235958, adx14=23.429023, macd_hist=-0.000231
-2025-05-28 13:18:33,269 - DEBUG - Sideways pattern detected for HBAR-USD in 1h: triangle_symmetrical
-2025-05-28 13:18:33,269 - INFO - Market state for HBAR-USD (1h): sideways (adx14=23.429023, sideways_pattern=True)
-2025-05-28 13:18:33,270 - DEBUG - 1d indicators for HBAR-USD: ema10=0.190559, ema20=0.191944, rsi14=37.296524, adx14=28.711149, macd_hist=-0.002476
-2025-05-28 13:18:33,270 - INFO - Market state for HBAR-USD (1d): downtrend
-2025-05-28 13:18:33,270 - DEBUG - Market states for HBAR-USD: {'1h': 'sideways', '1d': 'downtrend'}
+2025-05-31 19:45:39,771 - INFO - MarketTimingManager initialized with symbols: ['BTC-USD', 'XRP-USD']
+2025-05-31 19:45:45,850 - INFO - Market state for BTC-USD (1m): sideways
+2025-05-31 19:45:46,270 - INFO - Market state for BTC-USD (5m): downtrend
+2025-05-31 19:45:46,692 - INFO - Market state for BTC-USD (15m): sideways
+2025-05-31 19:45:47,121 - INFO - Market state for BTC-USD (1h): uptrend
+2025-05-31 19:45:47,580 - INFO - Market state for BTC-USD (6h): sideways
+2025-05-31 19:45:47,990 - INFO - Market state for BTC-USD (1d): sideways
+2025-05-31 19:45:48,427 - INFO - Market state for XRP-USD (1m): sideways
+2025-05-31 19:45:48,849 - INFO - Market state for XRP-USD (5m): sideways
+2025-05-31 19:45:49,290 - INFO - Market state for XRP-USD (15m): downtrend
+2025-05-31 19:45:49,707 - INFO - Market state for XRP-USD (1h): sideways
+2025-05-31 19:45:50,115 - INFO - Market state for XRP-USD (6h): sideways
+2025-05-31 19:45:50,527 - INFO - Market state for XRP-USD (1d): downtrend
+2025-05-31 19:45:50,527 - INFO - Starting market monitoring with interval 60 seconds
+2025-05-31 19:45:50,527 - DEBUG - Fetching portfolio status for all symbols
+2025-05-31 19:45:50,629 - DEBUG - USD balance: 1300.0
+2025-05-31 19:45:51,041 - DEBUG - Portfolio status for BTC-USD - Base balance: 0.0, Open orders: 0
+2025-05-31 19:45:51,368 - DEBUG - Portfolio status for XRP-USD - Base balance: 0.0, Open orders: 0
+2025-05-31 19:45:51,369 - INFO - Portfolio status fetched successfully: USD=1300.00, Symbols=2
+2025-05-31 19:45:51,369 - INFO - Portfolio Status: {'USD': {'balance': 1300.0}, 'BTC-USD': {'base_balance': 0.0, 'open_orders': []}, 'XRP-USD': {'base_balance': 0.0, 'open_orders': []}}
+2025-05-31 19:45:51,825 - INFO - Market state for BTC-USD (1d): sideways
+2025-05-31 19:45:51,825 - INFO - 1-day market state for BTC-USD: sideways
+2025-05-31 19:45:52,245 - DEBUG - Close price for BTC-USD (6h): 104706.04
+2025-05-31 19:45:52,245 - DEBUG - Checking pattern triangle_symmetrical for BTC-USD (6h)
+2025-05-31 19:45:52,245 - DEBUG - Condition rsi14 >= 45 and rsi14 <= 55 not met for rsi14 in pattern triangle_symmetrical for BTC-USD (6h): value=39.42407035063336
+2025-05-31 19:45:52,245 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_symmetrical for BTC-USD (6h): value=43.95727381323607
+2025-05-31 19:45:52,245 - DEBUG - Condition current_price >= 0.99 * bollinger_upper and current_price <= 1.01 * bollinger_upper not met for bollinger_upper in pattern triangle_symmetrical for BTC-USD (6h): value=111270.5444713585
+2025-05-31 19:45:52,246 - DEBUG - Condition current_price >= 0.99 * bollinger_lower and current_price <= 1.01 * bollinger_lower not met for bollinger_lower in pattern triangle_symmetrical for BTC-USD (6h): value=102351.5095286415
+2025-05-31 19:45:52,246 - INFO - Detected chart patterns for BTC-USD (6h): []
+2025-05-31 19:45:52,693 - DEBUG - Close price for BTC-USD (1h): 104706.04
+2025-05-31 19:45:52,693 - DEBUG - Checking pattern rectangle_bullish for BTC-USD (1h)
+2025-05-31 19:45:52,693 - DEBUG - Condition current_price > pivot_points_r1 not met for pivot_points.r1 in pattern rectangle_bullish for BTC-USD (1h): value=104879.56999999999
+2025-05-31 19:45:52,693 - DEBUG - Checking pattern triangle_ascending for BTC-USD (1h)
+2025-05-31 19:45:52,693 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_ascending for BTC-USD (1h): value=35.338218961895336
+2025-05-31 19:45:52,693 - INFO - Detected chart patterns for BTC-USD (1h): [{'pattern': 'rectangle_bullish', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'macd_hist']}, {'pattern': 'triangle_ascending', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'bollinger_upper']}]
+2025-05-31 19:45:52,693 - INFO - Chart patterns for BTC-USD (1h): [{'pattern': 'rectangle_bullish', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'macd_hist']}, {'pattern': 'triangle_ascending', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'bollinger_upper']}]
+2025-05-31 19:45:53,160 - DEBUG - Close price for BTC-USD (15m): 104706.04
+2025-05-31 19:45:53,160 - DEBUG - Candlestick pattern marubozu_bullish not detected for BTC-USD (15m)
+2025-05-31 19:45:53,160 - DEBUG - Skipping candlestick doji_standard for pattern rectangle_bullish: neutral action (doji_standard)
+2025-05-31 19:45:53,160 - DEBUG - Candlestick pattern engulfing_bullish not detected for BTC-USD (15m)
+2025-05-31 19:45:53,160 - DEBUG - Candlestick pattern three_inside_up not detected for BTC-USD (15m)
+2025-05-31 19:45:53,160 - DEBUG - Candlestick pattern harami_bullish not detected for BTC-USD (15m)
+2025-05-31 19:45:53,160 - DEBUG - Candlestick pattern tweezer_bottoms not detected for BTC-USD (15m)
+2025-05-31 19:45:53,160 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for BTC-USD (15m)
+2025-05-31 19:45:53,160 - DEBUG - Candlestick pattern marubozu_bullish not detected for BTC-USD (15m)
+2025-05-31 19:45:53,161 - DEBUG - Candlestick pattern piercing_line not detected for BTC-USD (15m)
+2025-05-31 19:45:53,161 - DEBUG - Candlestick pattern engulfing_bullish not detected for BTC-USD (15m)
+2025-05-31 19:45:53,161 - DEBUG - Candlestick pattern morning_star not detected for BTC-USD (15m)
+2025-05-31 19:45:53,161 - DEBUG - Candlestick pattern inverted_hammer not detected for BTC-USD (15m)
+2025-05-31 19:45:53,161 - DEBUG - Candlestick pattern doji_dragonfly not detected for BTC-USD (15m)
+2025-05-31 19:45:53,161 - DEBUG - Candlestick pattern harami_bullish not detected for BTC-USD (15m)
+2025-05-31 19:45:53,161 - DEBUG - Candlestick pattern tweezer_bottoms not detected for BTC-USD (15m)
+2025-05-31 19:45:53,161 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for BTC-USD (15m)
+2025-05-31 19:45:53,161 - DEBUG - Candlestick pattern rising_three_methods not detected for BTC-USD (15m)
+2025-05-31 19:45:53,161 - INFO - Entry signals for BTC-USD (15m): []
+2025-05-31 19:45:53,584 - INFO - Market state for XRP-USD (1d): downtrend
+2025-05-31 19:45:53,584 - INFO - 1-day market state for XRP-USD: downtrend
+2025-05-31 19:45:54,014 - DEBUG - Close price for XRP-USD (6h): 2.1756
+2025-05-31 19:45:54,014 - DEBUG - Checking pattern falling_wedge for XRP-USD (6h)
+2025-05-31 19:45:54,014 - DEBUG - Condition rsi14 > 50 not met for rsi14 in pattern falling_wedge for XRP-USD (6h): value=39.151949431301816
+2025-05-31 19:45:54,015 - DEBUG - Condition macd_hist > 0 not met for macd_hist in pattern falling_wedge for XRP-USD (6h): value=-0.007045269707917641
+2025-05-31 19:45:54,015 - DEBUG - Condition current_price >= 0.99 * pivot_points_r1 and current_price <= 1.01 * pivot_points_r1 not met for pivot_points.r1 in pattern falling_wedge for XRP-USD (6h): value=2.2138
+2025-05-31 19:45:54,015 - DEBUG - Checking pattern triangle_symmetrical for XRP-USD (6h)
+2025-05-31 19:45:54,015 - DEBUG - Condition rsi14 >= 45 and rsi14 <= 55 not met for rsi14 in pattern triangle_symmetrical for XRP-USD (6h): value=39.151949431301816
+2025-05-31 19:45:54,015 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_symmetrical for XRP-USD (6h): value=59.85798615097696
+2025-05-31 19:45:54,015 - DEBUG - Condition current_price >= 0.99 * bollinger_upper and current_price <= 1.01 * bollinger_upper not met for bollinger_upper in pattern triangle_symmetrical for XRP-USD (6h): value=2.3821811020100534
+2025-05-31 19:45:54,015 - DEBUG - Condition current_price >= 0.99 * bollinger_lower and current_price <= 1.01 * bollinger_lower not met for bollinger_lower in pattern triangle_symmetrical for XRP-USD (6h): value=2.1080588979899466
+2025-05-31 19:45:54,015 - INFO - Detected chart patterns for XRP-USD (6h): []
+2025-05-31 19:45:54,432 - DEBUG - Close price for XRP-USD (1h): 2.1756
+2025-05-31 19:45:54,432 - DEBUG - Checking pattern falling_wedge for XRP-USD (1h)
+2025-05-31 19:45:54,432 - DEBUG - Condition rsi14 > 50 not met for rsi14 in pattern falling_wedge for XRP-USD (1h): value=49.408421524168396
+2025-05-31 19:45:54,432 - DEBUG - Checking pattern triangle_symmetrical for XRP-USD (1h)
+2025-05-31 19:45:54,432 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_symmetrical for XRP-USD (1h): value=47.500428633278844
+2025-05-31 19:45:54,432 - DEBUG - Condition current_price >= 0.99 * bollinger_upper and current_price <= 1.01 * bollinger_upper not met for bollinger_upper in pattern triangle_symmetrical for XRP-USD (1h): value=2.2126521822692493
+2025-05-31 19:45:54,432 - DEBUG - Condition current_price >= 0.99 * bollinger_lower and current_price <= 1.01 * bollinger_lower not met for bollinger_lower in pattern triangle_symmetrical for XRP-USD (1h): value=2.1139478177307516
+2025-05-31 19:45:54,432 - INFO - Detected chart patterns for XRP-USD (1h): [{'pattern': 'falling_wedge', 'implication': 'Bullish reversal', 'indicators_met': ['macd_hist', 'pivot_points.r1']}, {'pattern': 'triangle_symmetrical', 'implication': 'Neutral, awaiting breakout', 'indicators_met': ['rsi14']}]
+2025-05-31 19:45:54,432 - INFO - Chart patterns for XRP-USD (1h): [{'pattern': 'falling_wedge', 'implication': 'Bullish reversal', 'indicators_met': ['macd_hist', 'pivot_points.r1']}, {'pattern': 'triangle_symmetrical', 'implication': 'Neutral, awaiting breakout', 'indicators_met': ['rsi14']}]
+2025-05-31 19:45:54,882 - DEBUG - Close price for XRP-USD (15m): 2.1756
+2025-05-31 19:45:54,882 - DEBUG - Candlestick pattern marubozu_bullish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Close price for XRP-USD (15m): 2.1756
+2025-05-31 19:45:54,883 - INFO - Trade prices calculated for XRP-USD (15m) in downtrend market (buy low, sell high): Buy=2.1756, Sell=2.2191, Stop-Loss=2.1321
+2025-05-31 19:45:54,883 - DEBUG - Calculated prices for XRP-USD (15m): {'buy': 2.1756, 'sell': 2.2191120000000004, 'stop_loss': 2.132088}
+2025-05-31 19:45:54,883 - INFO - Hit detected for XRP-USD (15m): Market State=downtrend, Chart Pattern=falling_wedge, Implication=bullish reversal, Candlestick=hammer, Indicators Met=['rsi14', 'pivot_points.s1'], Trade Prices={'buy': 2.1756, 'sell': 2.2191120000000004, 'stop_loss': 2.132088} (Downtrend market)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern engulfing_bullish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern three_inside_up not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern inverted_hammer not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern doji_dragonfly not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern harami_bullish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern tweezer_bottoms not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern marubozu_bullish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern marubozu_bearish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Skipping candlestick doji_standard for pattern triangle_symmetrical: neutral action (doji_standard)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern engulfing_bullish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern engulfing_bearish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern harami_cross_bullish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern harami_cross_bearish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern harami_bullish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,883 - DEBUG - Candlestick pattern harami_bearish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,884 - DEBUG - Candlestick pattern tweezer_bottoms not detected for XRP-USD (15m)
+2025-05-31 19:45:54,884 - DEBUG - Candlestick pattern tweezer_tops not detected for XRP-USD (15m)
+2025-05-31 19:45:54,884 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,884 - DEBUG - Candlestick pattern stick_sandwich_bearish not detected for XRP-USD (15m)
+2025-05-31 19:45:54,884 - INFO - Entry signals for XRP-USD (15m): [{'chart_pattern': 'falling_wedge', 'candlestick': 'hammer', 'candlestick_type': 'single', 'indicators_met': ['rsi14', 'pivot_points.s1'], 'trade_prices': {'buy': 2.1756, 'sell': 2.2191120000000004, 'stop_loss': 2.132088}}]
+2025-05-31 19:45:54,884 - INFO - Entry signals for XRP-USD (15m): [{'chart_pattern': 'falling_wedge', 'candlestick': 'hammer', 'candlestick_type': 'single', 'indicators_met': ['rsi14', 'pivot_points.s1'], 'trade_prices': {'buy': 2.1756, 'sell': 2.2191120000000004, 'stop_loss': 2.132088}}]
+2025-05-31 19:46:54,885 - DEBUG - Fetching portfolio status for all symbols
+2025-05-31 19:46:55,099 - DEBUG - USD balance: 1300.0
+2025-05-31 19:46:55,505 - DEBUG - Portfolio status for BTC-USD - Base balance: 0.0, Open orders: 0
+2025-05-31 19:46:55,857 - DEBUG - Portfolio status for XRP-USD - Base balance: 0.0, Open orders: 0
+2025-05-31 19:46:55,857 - INFO - Portfolio status fetched successfully: USD=1300.00, Symbols=2
+2025-05-31 19:46:55,857 - INFO - Portfolio Status: {'USD': {'balance': 1300.0}, 'BTC-USD': {'base_balance': 0.0, 'open_orders': []}, 'XRP-USD': {'base_balance': 0.0, 'open_orders': []}}
+2025-05-31 19:46:56,290 - INFO - Market state for BTC-USD (1d): sideways
+2025-05-31 19:46:56,290 - INFO - 1-day market state for BTC-USD: sideways
+2025-05-31 19:46:56,736 - DEBUG - Close price for BTC-USD (6h): 104702.92
+2025-05-31 19:46:56,736 - DEBUG - Checking pattern triangle_symmetrical for BTC-USD (6h)
+2025-05-31 19:46:56,736 - DEBUG - Condition rsi14 >= 45 and rsi14 <= 55 not met for rsi14 in pattern triangle_symmetrical for BTC-USD (6h): value=39.3828698308743
+2025-05-31 19:46:56,736 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_symmetrical for BTC-USD (6h): value=43.95727381323607
+2025-05-31 19:46:56,736 - DEBUG - Condition current_price >= 0.99 * bollinger_upper and current_price <= 1.01 * bollinger_upper not met for bollinger_upper in pattern triangle_symmetrical for BTC-USD (6h): value=111270.69872227997
+2025-05-31 19:46:56,736 - DEBUG - Condition current_price >= 0.99 * bollinger_lower and current_price <= 1.01 * bollinger_lower not met for bollinger_lower in pattern triangle_symmetrical for BTC-USD (6h): value=102351.04327772003
+2025-05-31 19:46:56,737 - INFO - Detected chart patterns for BTC-USD (6h): []
+2025-05-31 19:46:57,182 - DEBUG - Close price for BTC-USD (1h): 104702.92
+2025-05-31 19:46:57,182 - DEBUG - Checking pattern rectangle_bullish for BTC-USD (1h)
+2025-05-31 19:46:57,182 - DEBUG - Condition current_price > pivot_points_r1 not met for pivot_points.r1 in pattern rectangle_bullish for BTC-USD (1h): value=104879.56999999999
+2025-05-31 19:46:57,182 - DEBUG - Checking pattern triangle_ascending for BTC-USD (1h)
+2025-05-31 19:46:57,183 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_ascending for BTC-USD (1h): value=35.338218961895336
+2025-05-31 19:46:57,183 - INFO - Detected chart patterns for BTC-USD (1h): [{'pattern': 'rectangle_bullish', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'macd_hist']}, {'pattern': 'triangle_ascending', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'bollinger_upper']}]
+2025-05-31 19:46:57,183 - INFO - Chart patterns for BTC-USD (1h): [{'pattern': 'rectangle_bullish', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'macd_hist']}, {'pattern': 'triangle_ascending', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'bollinger_upper']}]
+2025-05-31 19:46:57,661 - DEBUG - Close price for BTC-USD (15m): 104702.92
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern marubozu_bullish not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Skipping candlestick doji_standard for pattern rectangle_bullish: neutral action (doji_standard)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern engulfing_bullish not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern three_inside_up not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern harami_bullish not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern tweezer_bottoms not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern marubozu_bullish not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern piercing_line not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern engulfing_bullish not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern morning_star not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern inverted_hammer not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern doji_dragonfly not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern harami_bullish not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern tweezer_bottoms not detected for BTC-USD (15m)
+2025-05-31 19:46:57,661 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for BTC-USD (15m)
+2025-05-31 19:46:57,662 - DEBUG - Candlestick pattern rising_three_methods not detected for BTC-USD (15m)
+2025-05-31 19:46:57,662 - INFO - Entry signals for BTC-USD (15m): []
+2025-05-31 19:46:58,105 - INFO - Market state for XRP-USD (1d): downtrend
+2025-05-31 19:46:58,105 - INFO - 1-day market state for XRP-USD: downtrend
+2025-05-31 19:46:58,543 - DEBUG - Close price for XRP-USD (6h): 2.1761
+2025-05-31 19:46:58,544 - DEBUG - Checking pattern falling_wedge for XRP-USD (6h)
+2025-05-31 19:46:58,544 - DEBUG - Condition rsi14 > 50 not met for rsi14 in pattern falling_wedge for XRP-USD (6h): value=39.26591551034537
+2025-05-31 19:46:58,544 - DEBUG - Condition macd_hist > 0 not met for macd_hist in pattern falling_wedge for XRP-USD (6h): value=-0.007013360876008817
+2025-05-31 19:46:58,544 - DEBUG - Condition current_price >= 0.99 * pivot_points_r1 and current_price <= 1.01 * pivot_points_r1 not met for pivot_points.r1 in pattern falling_wedge for XRP-USD (6h): value=2.2138
+2025-05-31 19:46:58,544 - DEBUG - Checking pattern triangle_symmetrical for XRP-USD (6h)
+2025-05-31 19:46:58,544 - DEBUG - Condition rsi14 >= 45 and rsi14 <= 55 not met for rsi14 in pattern triangle_symmetrical for XRP-USD (6h): value=39.26591551034537
+2025-05-31 19:46:58,544 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_symmetrical for XRP-USD (6h): value=59.85798615097696
+2025-05-31 19:46:58,544 - DEBUG - Condition current_price >= 0.99 * bollinger_upper and current_price <= 1.01 * bollinger_upper not met for bollinger_upper in pattern triangle_symmetrical for XRP-USD (6h): value=2.3821528826007343
+2025-05-31 19:46:58,544 - DEBUG - Condition current_price >= 0.99 * bollinger_lower and current_price <= 1.01 * bollinger_lower not met for bollinger_lower in pattern triangle_symmetrical for XRP-USD (6h): value=2.1081371173992656
+2025-05-31 19:46:58,544 - INFO - Detected chart patterns for XRP-USD (6h): []
+2025-05-31 19:46:58,984 - DEBUG - Close price for XRP-USD (1h): 2.1761
+2025-05-31 19:46:58,984 - DEBUG - Checking pattern falling_wedge for XRP-USD (1h)
+2025-05-31 19:46:58,984 - DEBUG - Condition rsi14 > 50 not met for rsi14 in pattern falling_wedge for XRP-USD (1h): value=49.85750079433174
+2025-05-31 19:46:58,984 - DEBUG - Checking pattern triangle_symmetrical for XRP-USD (1h)
+2025-05-31 19:46:58,985 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_symmetrical for XRP-USD (1h): value=47.500428633278844
+2025-05-31 19:46:58,985 - DEBUG - Condition current_price >= 0.99 * bollinger_upper and current_price <= 1.01 * bollinger_upper not met for bollinger_upper in pattern triangle_symmetrical for XRP-USD (1h): value=2.2127039162337665
+2025-05-31 19:46:58,985 - DEBUG - Condition current_price >= 0.99 * bollinger_lower and current_price <= 1.01 * bollinger_lower not met for bollinger_lower in pattern triangle_symmetrical for XRP-USD (1h): value=2.1139460837662334
+2025-05-31 19:46:58,985 - INFO - Detected chart patterns for XRP-USD (1h): [{'pattern': 'falling_wedge', 'implication': 'Bullish reversal', 'indicators_met': ['macd_hist', 'pivot_points.r1']}, {'pattern': 'triangle_symmetrical', 'implication': 'Neutral, awaiting breakout', 'indicators_met': ['rsi14']}]
+2025-05-31 19:46:58,985 - INFO - Chart patterns for XRP-USD (1h): [{'pattern': 'falling_wedge', 'implication': 'Bullish reversal', 'indicators_met': ['macd_hist', 'pivot_points.r1']}, {'pattern': 'triangle_symmetrical', 'implication': 'Neutral, awaiting breakout', 'indicators_met': ['rsi14']}]
+2025-05-31 19:46:59,462 - DEBUG - Close price for XRP-USD (15m): 2.1761
+2025-05-31 19:46:59,462 - DEBUG - Candlestick pattern marubozu_bullish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,462 - DEBUG - Candlestick pattern hammer not detected for XRP-USD (15m)
+2025-05-31 19:46:59,462 - DEBUG - Candlestick pattern engulfing_bullish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,462 - DEBUG - Candlestick pattern three_inside_up not detected for XRP-USD (15m)
+2025-05-31 19:46:59,462 - DEBUG - Candlestick pattern inverted_hammer not detected for XRP-USD (15m)
+2025-05-31 19:46:59,462 - DEBUG - Candlestick pattern doji_dragonfly not detected for XRP-USD (15m)
+2025-05-31 19:46:59,462 - DEBUG - Candlestick pattern harami_bullish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,462 - DEBUG - Candlestick pattern tweezer_bottoms not detected for XRP-USD (15m)
+2025-05-31 19:46:59,462 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,462 - DEBUG - Candlestick pattern marubozu_bullish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,462 - DEBUG - Candlestick pattern marubozu_bearish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,462 - DEBUG - Skipping candlestick doji_standard for pattern triangle_symmetrical: neutral action (doji_standard)
+2025-05-31 19:46:59,462 - DEBUG - Candlestick pattern engulfing_bullish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,462 - DEBUG - Candlestick pattern engulfing_bearish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,463 - DEBUG - Candlestick pattern harami_cross_bullish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,463 - DEBUG - Candlestick pattern harami_cross_bearish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,463 - DEBUG - Candlestick pattern harami_bullish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,463 - DEBUG - Candlestick pattern harami_bearish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,463 - DEBUG - Candlestick pattern tweezer_bottoms not detected for XRP-USD (15m)
+2025-05-31 19:46:59,463 - DEBUG - Candlestick pattern tweezer_tops not detected for XRP-USD (15m)
+2025-05-31 19:46:59,463 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,463 - DEBUG - Candlestick pattern stick_sandwich_bearish not detected for XRP-USD (15m)
+2025-05-31 19:46:59,463 - INFO - Entry signals for XRP-USD (15m): []
+2025-05-31 19:47:59,464 - DEBUG - Fetching portfolio status for all symbols
+2025-05-31 19:47:59,614 - DEBUG - USD balance: 1300.0
+2025-05-31 19:48:00,015 - DEBUG - Portfolio status for BTC-USD - Base balance: 0.0, Open orders: 0
+2025-05-31 19:48:00,349 - DEBUG - Portfolio status for XRP-USD - Base balance: 0.0, Open orders: 0
+2025-05-31 19:48:00,350 - INFO - Portfolio status fetched successfully: USD=1300.00, Symbols=2
+2025-05-31 19:48:00,350 - INFO - Portfolio Status: {'USD': {'balance': 1300.0}, 'BTC-USD': {'base_balance': 0.0, 'open_orders': []}, 'XRP-USD': {'base_balance': 0.0, 'open_orders': []}}
+2025-05-31 19:48:00,769 - INFO - Market state for BTC-USD (1d): sideways
+2025-05-31 19:48:00,769 - INFO - 1-day market state for BTC-USD: sideways
+2025-05-31 19:48:01,192 - DEBUG - Close price for BTC-USD (6h): 104670.6
+2025-05-31 19:48:01,192 - DEBUG - Checking pattern triangle_symmetrical for BTC-USD (6h)
+2025-05-31 19:48:01,192 - DEBUG - Condition rsi14 >= 45 and rsi14 <= 55 not met for rsi14 in pattern triangle_symmetrical for BTC-USD (6h): value=38.952753985969785
+2025-05-31 19:48:01,192 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_symmetrical for BTC-USD (6h): value=43.95727381323607
+2025-05-31 19:48:01,192 - DEBUG - Condition current_price >= 0.99 * bollinger_upper and current_price <= 1.01 * bollinger_upper not met for bollinger_upper in pattern triangle_symmetrical for BTC-USD (6h): value=111272.32099925021
+2025-05-31 19:48:01,192 - DEBUG - Condition current_price >= 0.99 * bollinger_lower and current_price <= 1.01 * bollinger_lower not met for bollinger_lower in pattern triangle_symmetrical for BTC-USD (6h): value=102346.1890007498
+2025-05-31 19:48:01,192 - INFO - Detected chart patterns for BTC-USD (6h): []
+2025-05-31 19:48:01,616 - DEBUG - Close price for BTC-USD (1h): 104670.6
+2025-05-31 19:48:01,616 - DEBUG - Checking pattern rectangle_bullish for BTC-USD (1h)
+2025-05-31 19:48:01,617 - DEBUG - Condition current_price > pivot_points_r1 not met for pivot_points.r1 in pattern rectangle_bullish for BTC-USD (1h): value=104879.56999999999
+2025-05-31 19:48:01,617 - DEBUG - Checking pattern triangle_ascending for BTC-USD (1h)
+2025-05-31 19:48:01,617 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_ascending for BTC-USD (1h): value=35.338218961895336
+2025-05-31 19:48:01,617 - INFO - Detected chart patterns for BTC-USD (1h): [{'pattern': 'rectangle_bullish', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'macd_hist']}, {'pattern': 'triangle_ascending', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'bollinger_upper']}]
+2025-05-31 19:48:01,617 - INFO - Chart patterns for BTC-USD (1h): [{'pattern': 'rectangle_bullish', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'macd_hist']}, {'pattern': 'triangle_ascending', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'bollinger_upper']}]
+2025-05-31 19:48:02,068 - DEBUG - Close price for BTC-USD (15m): 104670.6
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern marubozu_bullish not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Skipping candlestick doji_standard for pattern rectangle_bullish: neutral action (doji_standard)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern engulfing_bullish not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern three_inside_up not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern harami_bullish not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern tweezer_bottoms not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern marubozu_bullish not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern piercing_line not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern engulfing_bullish not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern morning_star not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern inverted_hammer not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern doji_dragonfly not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern harami_bullish not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern tweezer_bottoms not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - DEBUG - Candlestick pattern rising_three_methods not detected for BTC-USD (15m)
+2025-05-31 19:48:02,068 - INFO - Entry signals for BTC-USD (15m): []
+2025-05-31 19:48:02,487 - INFO - Market state for XRP-USD (1d): downtrend
+2025-05-31 19:48:02,487 - INFO - 1-day market state for XRP-USD: downtrend
+2025-05-31 19:48:02,906 - DEBUG - Close price for XRP-USD (6h): 2.1732
+2025-05-31 19:48:02,906 - DEBUG - Checking pattern falling_wedge for XRP-USD (6h)
+2025-05-31 19:48:02,906 - DEBUG - Condition rsi14 > 50 not met for rsi14 in pattern falling_wedge for XRP-USD (6h): value=38.61399455636007
+2025-05-31 19:48:02,906 - DEBUG - Condition macd_hist > 0 not met for macd_hist in pattern falling_wedge for XRP-USD (6h): value=-0.00719843210107992
+2025-05-31 19:48:02,907 - DEBUG - Condition current_price >= 0.99 * pivot_points_r1 and current_price <= 1.01 * pivot_points_r1 not met for pivot_points.r1 in pattern falling_wedge for XRP-USD (6h): value=2.2138
+2025-05-31 19:48:02,907 - DEBUG - Checking pattern triangle_symmetrical for XRP-USD (6h)
+2025-05-31 19:48:02,907 - DEBUG - Condition rsi14 >= 45 and rsi14 <= 55 not met for rsi14 in pattern triangle_symmetrical for XRP-USD (6h): value=38.61399455636007
+2025-05-31 19:48:02,907 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_symmetrical for XRP-USD (6h): value=59.85798615097696
+2025-05-31 19:48:02,907 - DEBUG - Condition current_price >= 0.99 * bollinger_upper and current_price <= 1.01 * bollinger_upper not met for bollinger_upper in pattern triangle_symmetrical for XRP-USD (6h): value=2.3823213365565743
+2025-05-31 19:48:02,907 - DEBUG - Condition current_price >= 0.99 * bollinger_lower and current_price <= 1.01 * bollinger_lower not met for bollinger_lower in pattern triangle_symmetrical for XRP-USD (6h): value=2.107678663443426
+2025-05-31 19:48:02,907 - INFO - Detected chart patterns for XRP-USD (6h): []
+2025-05-31 19:48:03,326 - DEBUG - Close price for XRP-USD (1h): 2.1732
+2025-05-31 19:48:03,326 - DEBUG - Checking pattern falling_wedge for XRP-USD (1h)
+2025-05-31 19:48:03,326 - DEBUG - Condition rsi14 > 50 not met for rsi14 in pattern falling_wedge for XRP-USD (1h): value=47.3607860607289
+2025-05-31 19:48:03,326 - DEBUG - Checking pattern triangle_symmetrical for XRP-USD (1h)
+2025-05-31 19:48:03,327 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_symmetrical for XRP-USD (1h): value=47.500428633278844
+2025-05-31 19:48:03,327 - DEBUG - Condition current_price >= 0.99 * bollinger_upper and current_price <= 1.01 * bollinger_upper not met for bollinger_upper in pattern triangle_symmetrical for XRP-USD (1h): value=2.212417794640428
+2025-05-31 19:48:03,327 - DEBUG - Condition current_price >= 0.99 * bollinger_lower and current_price <= 1.01 * bollinger_lower not met for bollinger_lower in pattern triangle_symmetrical for XRP-USD (1h): value=2.1139422053595722
+2025-05-31 19:48:03,327 - INFO - Detected chart patterns for XRP-USD (1h): [{'pattern': 'falling_wedge', 'implication': 'Bullish reversal', 'indicators_met': ['macd_hist', 'pivot_points.r1']}, {'pattern': 'triangle_symmetrical', 'implication': 'Neutral, awaiting breakout', 'indicators_met': ['rsi14']}]
+2025-05-31 19:48:03,327 - INFO - Chart patterns for XRP-USD (1h): [{'pattern': 'falling_wedge', 'implication': 'Bullish reversal', 'indicators_met': ['macd_hist', 'pivot_points.r1']}, {'pattern': 'triangle_symmetrical', 'implication': 'Neutral, awaiting breakout', 'indicators_met': ['rsi14']}]
+2025-05-31 19:48:03,780 - DEBUG - Close price for XRP-USD (15m): 2.1742
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern marubozu_bullish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern hammer not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern engulfing_bullish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern three_inside_up not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern inverted_hammer not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern doji_dragonfly not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern harami_bullish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern tweezer_bottoms not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern marubozu_bullish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern marubozu_bearish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Skipping candlestick doji_standard for pattern triangle_symmetrical: neutral action (doji_standard)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern engulfing_bullish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern engulfing_bearish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern harami_cross_bullish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern harami_cross_bearish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern harami_bullish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern harami_bearish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern tweezer_bottoms not detected for XRP-USD (15m)
+2025-05-31 19:48:03,780 - DEBUG - Candlestick pattern tweezer_tops not detected for XRP-USD (15m)
+2025-05-31 19:48:03,781 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,781 - DEBUG - Candlestick pattern stick_sandwich_bearish not detected for XRP-USD (15m)
+2025-05-31 19:48:03,781 - INFO - Entry signals for XRP-USD (15m): []
+2025-05-31 19:49:03,782 - DEBUG - Fetching portfolio status for all symbols
+2025-05-31 19:49:04,011 - DEBUG - USD balance: 1300.0
+2025-05-31 19:49:04,512 - DEBUG - Portfolio status for BTC-USD - Base balance: 0.0, Open orders: 0
+2025-05-31 19:49:04,879 - DEBUG - Portfolio status for XRP-USD - Base balance: 0.0, Open orders: 0
+2025-05-31 19:49:04,879 - INFO - Portfolio status fetched successfully: USD=1300.00, Symbols=2
+2025-05-31 19:49:04,879 - INFO - Portfolio Status: {'USD': {'balance': 1300.0}, 'BTC-USD': {'base_balance': 0.0, 'open_orders': []}, 'XRP-USD': {'base_balance': 0.0, 'open_orders': []}}
+2025-05-31 19:49:05,334 - INFO - Market state for BTC-USD (1d): sideways
+2025-05-31 19:49:05,334 - INFO - 1-day market state for BTC-USD: sideways
+2025-05-31 19:49:05,771 - DEBUG - Close price for BTC-USD (6h): 104669.42
+2025-05-31 19:49:05,771 - DEBUG - Checking pattern triangle_symmetrical for BTC-USD (6h)
+2025-05-31 19:49:05,772 - DEBUG - Condition rsi14 >= 45 and rsi14 <= 55 not met for rsi14 in pattern triangle_symmetrical for BTC-USD (6h): value=38.93693497507731
+2025-05-31 19:49:05,772 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_symmetrical for BTC-USD (6h): value=43.95727381323607
+2025-05-31 19:49:05,772 - DEBUG - Condition current_price >= 0.99 * bollinger_upper and current_price <= 1.01 * bollinger_upper not met for bollinger_upper in pattern triangle_symmetrical for BTC-USD (6h): value=111272.3810696555
+2025-05-31 19:49:05,772 - DEBUG - Condition current_price >= 0.99 * bollinger_lower and current_price <= 1.01 * bollinger_lower not met for bollinger_lower in pattern triangle_symmetrical for BTC-USD (6h): value=102346.01093034449
+2025-05-31 19:49:05,772 - INFO - Detected chart patterns for BTC-USD (6h): []
+2025-05-31 19:49:06,205 - DEBUG - Close price for BTC-USD (1h): 104669.42
+2025-05-31 19:49:06,205 - DEBUG - Checking pattern rectangle_bullish for BTC-USD (1h)
+2025-05-31 19:49:06,205 - DEBUG - Condition current_price > pivot_points_r1 not met for pivot_points.r1 in pattern rectangle_bullish for BTC-USD (1h): value=104879.56999999999
+2025-05-31 19:49:06,205 - DEBUG - Checking pattern triangle_ascending for BTC-USD (1h)
+2025-05-31 19:49:06,205 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_ascending for BTC-USD (1h): value=35.338218961895336
+2025-05-31 19:49:06,205 - INFO - Detected chart patterns for BTC-USD (1h): [{'pattern': 'rectangle_bullish', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'macd_hist']}, {'pattern': 'triangle_ascending', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'bollinger_upper']}]
+2025-05-31 19:49:06,205 - INFO - Chart patterns for BTC-USD (1h): [{'pattern': 'rectangle_bullish', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'macd_hist']}, {'pattern': 'triangle_ascending', 'implication': 'Neutral, leans bullish', 'indicators_met': ['rsi14', 'bollinger_upper']}]
+2025-05-31 19:49:06,668 - DEBUG - Close price for BTC-USD (15m): 104669.42
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern marubozu_bullish not detected for BTC-USD (15m)
+2025-05-31 19:49:06,668 - DEBUG - Skipping candlestick doji_standard for pattern rectangle_bullish: neutral action (doji_standard)
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern engulfing_bullish not detected for BTC-USD (15m)
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern three_inside_up not detected for BTC-USD (15m)
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern harami_bullish not detected for BTC-USD (15m)
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern tweezer_bottoms not detected for BTC-USD (15m)
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for BTC-USD (15m)
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern marubozu_bullish not detected for BTC-USD (15m)
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern piercing_line not detected for BTC-USD (15m)
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern engulfing_bullish not detected for BTC-USD (15m)
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern morning_star not detected for BTC-USD (15m)
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern inverted_hammer not detected for BTC-USD (15m)
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern doji_dragonfly not detected for BTC-USD (15m)
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern harami_bullish not detected for BTC-USD (15m)
+2025-05-31 19:49:06,668 - DEBUG - Candlestick pattern tweezer_bottoms not detected for BTC-USD (15m)
+2025-05-31 19:49:06,669 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for BTC-USD (15m)
+2025-05-31 19:49:06,669 - DEBUG - Candlestick pattern rising_three_methods not detected for BTC-USD (15m)
+2025-05-31 19:49:06,669 - INFO - Entry signals for BTC-USD (15m): []
+2025-05-31 19:49:07,117 - INFO - Market state for XRP-USD (1d): downtrend
+2025-05-31 19:49:07,117 - INFO - 1-day market state for XRP-USD: downtrend
+2025-05-31 19:49:07,571 - DEBUG - Close price for XRP-USD (6h): 2.1747
+2025-05-31 19:49:07,571 - DEBUG - Checking pattern falling_wedge for XRP-USD (6h)
+2025-05-31 19:49:07,571 - DEBUG - Condition rsi14 > 50 not met for rsi14 in pattern falling_wedge for XRP-USD (6h): value=38.948468941462856
+2025-05-31 19:49:07,571 - DEBUG - Condition macd_hist > 0 not met for macd_hist in pattern falling_wedge for XRP-USD (6h): value=-0.00710270560535381
+2025-05-31 19:49:07,571 - DEBUG - Condition current_price >= 0.99 * pivot_points_r1 and current_price <= 1.01 * pivot_points_r1 not met for pivot_points.r1 in pattern falling_wedge for XRP-USD (6h): value=2.2138
+2025-05-31 19:49:07,571 - DEBUG - Checking pattern triangle_symmetrical for XRP-USD (6h)
+2025-05-31 19:49:07,571 - DEBUG - Condition rsi14 >= 45 and rsi14 <= 55 not met for rsi14 in pattern triangle_symmetrical for XRP-USD (6h): value=38.948468941462856
+2025-05-31 19:49:07,571 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_symmetrical for XRP-USD (6h): value=59.85798615097696
+2025-05-31 19:49:07,572 - DEBUG - Condition current_price >= 0.99 * bollinger_upper and current_price <= 1.01 * bollinger_upper not met for bollinger_upper in pattern triangle_symmetrical for XRP-USD (6h): value=2.382232763561757
+2025-05-31 19:49:07,572 - DEBUG - Condition current_price >= 0.99 * bollinger_lower and current_price <= 1.01 * bollinger_lower not met for bollinger_lower in pattern triangle_symmetrical for XRP-USD (6h): value=2.107917236438243
+2025-05-31 19:49:07,572 - INFO - Detected chart patterns for XRP-USD (6h): []
+2025-05-31 19:49:08,009 - DEBUG - Close price for XRP-USD (1h): 2.1747
+2025-05-31 19:49:08,009 - DEBUG - Checking pattern falling_wedge for XRP-USD (1h)
+2025-05-31 19:49:08,009 - DEBUG - Condition rsi14 > 50 not met for rsi14 in pattern falling_wedge for XRP-USD (1h): value=48.62014023964396
+2025-05-31 19:49:08,010 - DEBUG - Checking pattern triangle_symmetrical for XRP-USD (1h)
+2025-05-31 19:49:08,010 - DEBUG - Condition adx14 < 20 not met for adx14 in pattern triangle_symmetrical for XRP-USD (1h): value=47.500428633278844
+2025-05-31 19:49:08,010 - DEBUG - Condition current_price >= 0.99 * bollinger_upper and current_price <= 1.01 * bollinger_upper not met for bollinger_upper in pattern triangle_symmetrical for XRP-USD (1h): value=2.2125615801096123
+2025-05-31 19:49:08,010 - DEBUG - Condition current_price >= 0.99 * bollinger_lower and current_price <= 1.01 * bollinger_lower not met for bollinger_lower in pattern triangle_symmetrical for XRP-USD (1h): value=2.1139484198903884
+2025-05-31 19:49:08,010 - INFO - Detected chart patterns for XRP-USD (1h): [{'pattern': 'falling_wedge', 'implication': 'Bullish reversal', 'indicators_met': ['macd_hist', 'pivot_points.r1']}, {'pattern': 'triangle_symmetrical', 'implication': 'Neutral, awaiting breakout', 'indicators_met': ['rsi14']}]
+2025-05-31 19:49:08,010 - INFO - Chart patterns for XRP-USD (1h): [{'pattern': 'falling_wedge', 'implication': 'Bullish reversal', 'indicators_met': ['macd_hist', 'pivot_points.r1']}, {'pattern': 'triangle_symmetrical', 'implication': 'Neutral, awaiting breakout', 'indicators_met': ['rsi14']}]
+2025-05-31 19:49:08,482 - DEBUG - Close price for XRP-USD (15m): 2.1747
+2025-05-31 19:49:08,482 - DEBUG - Candlestick pattern marubozu_bullish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,482 - DEBUG - Candlestick pattern hammer not detected for XRP-USD (15m)
+2025-05-31 19:49:08,482 - DEBUG - Candlestick pattern engulfing_bullish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,482 - DEBUG - Candlestick pattern three_inside_up not detected for XRP-USD (15m)
+2025-05-31 19:49:08,482 - DEBUG - Candlestick pattern inverted_hammer not detected for XRP-USD (15m)
+2025-05-31 19:49:08,482 - DEBUG - Candlestick pattern doji_dragonfly not detected for XRP-USD (15m)
+2025-05-31 19:49:08,482 - DEBUG - Candlestick pattern harami_bullish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,482 - DEBUG - Candlestick pattern tweezer_bottoms not detected for XRP-USD (15m)
+2025-05-31 19:49:08,482 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,482 - DEBUG - Candlestick pattern marubozu_bullish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,482 - DEBUG - Candlestick pattern marubozu_bearish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,482 - DEBUG - Skipping candlestick doji_standard for pattern triangle_symmetrical: neutral action (doji_standard)
+2025-05-31 19:49:08,483 - DEBUG - Candlestick pattern engulfing_bullish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,483 - DEBUG - Candlestick pattern engulfing_bearish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,483 - DEBUG - Candlestick pattern harami_cross_bullish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,483 - DEBUG - Candlestick pattern harami_cross_bearish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,483 - DEBUG - Candlestick pattern harami_bullish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,483 - DEBUG - Candlestick pattern harami_bearish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,483 - DEBUG - Candlestick pattern tweezer_bottoms not detected for XRP-USD (15m)
+2025-05-31 19:49:08,483 - DEBUG - Candlestick pattern tweezer_tops not detected for XRP-USD (15m)
+2025-05-31 19:49:08,483 - DEBUG - Candlestick pattern stick_sandwich_bullish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,483 - DEBUG - Candlestick pattern stick_sandwich_bearish not detected for XRP-USD (15m)
+2025-05-31 19:49:08,483 - INFO - Entry signals for XRP-USD (15m): []
