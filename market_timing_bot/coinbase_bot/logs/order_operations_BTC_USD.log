@@ -1,7 +1,0 @@
-2025-05-31 19:45:39,770 - INFO - Found portfolio: Name: Default, ID: fff5755f-e4ee-541e-b008-5d32d88f42c6
-2025-05-31 19:45:39,770 - INFO - Found portfolio: Name: market timing, ID: 6766a2fb-e842-40c0-8820-23082f3346f2
-2025-05-31 19:45:39,770 - INFO - Selected portfolio 'market timing' with ID: 6766a2fb-e842-40c0-8820-23082f3346f2
-2025-05-31 19:45:50,743 - WARNING - No BTC balance found for portfolio 6766a2fb-e842-40c0-8820-23082f3346f2, returning 0.0
-2025-05-31 19:46:55,205 - WARNING - No BTC balance found for portfolio 6766a2fb-e842-40c0-8820-23082f3346f2, returning 0.0
-2025-05-31 19:47:59,723 - WARNING - No BTC balance found for portfolio 6766a2fb-e842-40c0-8820-23082f3346f2, returning 0.0
-2025-05-31 19:49:04,216 - WARNING - No BTC balance found for portfolio 6766a2fb-e842-40c0-8820-23082f3346f2, returning 0.0

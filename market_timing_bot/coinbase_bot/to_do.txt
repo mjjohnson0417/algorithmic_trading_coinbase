@@ -1,3 +1,8 @@
-- think through indicators and their confirmations. Just get something into the dictionary now and refine it later. 
-- also need to check for support levels and resistance. 
-- once the dictionary is complete, run the bot for a few days and log when it sees conditions. Log what price it should have bought at and what price it should have sold at. Log where the stop loss is. Log the ticker maybe to track the actual price? Ifugre out profitablity using the logs. This would be a better test of the bot's effectivess than a backtest. 
+
+
+- need to set maximum order amount to 1o open orders and use calculate_order_size to set amount of tokens bought/should-
+- how do you actually set a stop loss on coinbase?
+- need to track and pair buy/sell/stop loss orders
+- determine how much of a token should be on hand for shorting? What to do if there is not token? buy and short?
+- method for placing orders
+- if this all works, think about how you would simulate a trailing take profit for buy low, sell high and pseudo shorting with tokens

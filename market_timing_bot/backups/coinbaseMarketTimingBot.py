@@ -10,7 +10,6 @@ from candlestick_patterns import CandlestickPatterns
 from chart_patterns import ChartPatterns
 from market_timing_manager import MarketTimingManager
 from order_operations import OrderOperations
-import json
 
 async def main():
     # Logger setup
@@ -56,9 +55,26 @@ async def main():
         logger.info("REST connection established successfully.")
 
         # DataManager setup
-        symbols = ['BTC-USD', 'XRP-USD']
+        symbols = ['HBAR-USD', 'SUI-USD']
         data_manager = DataManager(symbols, exchange, enable_logging=True)
         logger.info(f"DataManager initialized for symbols: {symbols}")
+
+        # Wait for DataManager to initialize historical data
+        while not data_manager.historical_initialized:
+            logger.debug("Waiting for DataManager to initialize historical data...")
+            await asyncio.sleep(1)
+
+        # Log klines at startup for HBAR-USD across all timeframes
+        timeframes = ['1m', '5m', '15m', '1h', '6h', '1d']
+        for timeframe in timeframes:
+            try:
+                kline = data_manager.get_buffer('HBAR-USD', f'klines_{timeframe}')
+                logger.debug(
+                    f"Klines for HBAR-USD ({timeframe}): columns={list(kline.columns)}, "
+                    f"shape={kline.shape}, head=\n{kline.head(5).to_string()}"
+                )
+            except Exception as e:
+                logger.error(f"Error logging klines for HBAR-USD ({timeframe}): {str(e)}")
 
         # IndicatorCalculator setup
         indicator_calculator = IndicatorCalculator(symbols, data_manager, enable_logging=True)
@@ -72,17 +88,17 @@ async def main():
         chart_patterns = ChartPatterns(symbols, data_manager, enable_logging=True)
         logger.info(f"ChartPatterns initialized for symbols: {symbols}")
 
-        # OrderOperations setup - create instances for each symbol
+        # OrderOperations setup
         order_operations = {}
         for symbol in symbols:
             order_ops = OrderOperations(
-                exchange=exchange.rest_exchange,  # Pass the REST ccxt exchange instance
+                exchange=exchange.rest_exchange,
                 symbol=symbol,
-                portfolio_name="market timing",  # Specify the portfolio name
-                dry_run=False,  # Set to True for testing
+                portfolio_name="market timing",
+                dry_run=False,
                 enable_logging=True
             )
-            await order_ops.initialize()  # Initialize portfolio ID
+            await order_ops.initialize()
             order_operations[symbol] = order_ops
         logger.info(f"OrderOperations initialized for symbols: {symbols}")
 
@@ -93,38 +109,10 @@ async def main():
             chart_patterns, 
             indicator_calculator, 
             data_manager, 
-            order_operations,  # Pass the order_operations dict
+            order_operations,
             enable_logging=True
         )
         logger.info(f"MarketTimingManager initialized for symbols: {symbols}")
-
-        # Wait for DataManager to initialize historical data
-        while not data_manager.historical_initialized:
-            logger.debug("Waiting for DataManager to initialize historical data...")
-            await asyncio.sleep(1)
-
-        # Log initial data
-        try:
-            all_indicators = indicator_calculator.calculate_all_indicators()
-            for symbol in symbols:
-                logger.info(f"Indicators for {symbol}:\n{json.dumps(all_indicators[symbol], indent=2, default=str)}")
-
-            all_patterns = candlestick_patterns.calculate_all_patterns()
-            for symbol in symbols:
-                logger.info(f"Candlestick patterns for {symbol}:\n{json.dumps(all_patterns[symbol], indent=2)}")
-
-            all_chart_patterns = chart_patterns.calculate_all_patterns()
-            for symbol in symbols:
-                logger.info(f"Chart patterns for {symbol}:\n{json.dumps(all_chart_patterns[symbol], indent=2)}")
-
-            # Log market states for all timeframes
-            for symbol in symbols:
-                for timeframe in ['1m', '5m', '15m', '1h', '6h', '1d']:
-                    state = market_timing_manager.get_market_state(symbol, timeframe)
-                    logger.info(f"Market state for {symbol} ({timeframe}): {state}")
-
-        except Exception as e:
-            logger.error(f"Error in initial data logging: {e}", exc_info=True)
 
         # Run market timing manager
         await market_timing_manager.run()

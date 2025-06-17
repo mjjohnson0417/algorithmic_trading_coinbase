@@ -4,7 +4,7 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 import pandas as pd
 import numpy as np
-from typing import Dict, Tuple
+from typing import Dict, Tuple, List, Any
 
 class IndicatorCalculator:
     def __init__(self, symbols: list, data_manager, enable_logging: bool = True):
@@ -12,19 +12,15 @@ class IndicatorCalculator:
         Initializes the IndicatorCalculator class for computing indicators for multiple symbols.
 
         Args:
-            symbols (list): List of trading pair symbols (e.g., ['HBAR-USDT', 'BTC-USDT']).
+            symbols: List of trading pair symbols (e.g., ['HBAR-USD']).
             data_manager: An instance of DataManager to fetch data.
-            enable_logging (bool): If True, enables logging to 'logs/indicator_calculator.log'.
+            enable_logging: If True, enables logging to 'logs/indicator_calculator.log'.
         """
         self.symbols = symbols
         self.data_manager = data_manager
         self.enable_logging = enable_logging
-
-        # Define all timeframes for which indicators are calculated
-        # Matches Coinbase API intervals supported by DataManager
         self.timeframes = ['1m', '5m', '15m', '1h', '6h', '1d']
 
-        # Set up logger
         self.logger = logging.getLogger('IndicatorCalculator')
         if enable_logging:
             log_dir = Path(__file__).parent / 'logs'
@@ -44,10 +40,6 @@ class IndicatorCalculator:
     def calculate_all_indicators(self) -> Dict[str, Dict]:
         """
         Calculates all indicators for all symbols across all defined timeframes.
-
-        Returns:
-            Dict: Dictionary mapping each symbol to its indicators, with timeframes as keys.
-                  Each timeframe contains all indicators listed in calculate_timeframe_indicators.
         """
         if not self.data_manager:
             self.logger.error("DataManager not provided during IndicatorCalculator initialization.")
@@ -58,7 +50,6 @@ class IndicatorCalculator:
             self.logger.debug(f"Calculating indicators for {symbol}")
             symbol_indicators = {}
 
-            # Calculate all indicators for each timeframe
             for timeframe in self.timeframes:
                 try:
                     klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
@@ -72,7 +63,6 @@ class IndicatorCalculator:
                     self.logger.error(f"Failed to calculate indicators for {symbol} ({timeframe}): {str(e)}")
                     symbol_indicators[timeframe] = {}
 
-            # Calculate timing indicators separately
             symbol_indicators['timing'] = self.calculate_timing_indicators(ticker, order_book, symbol)
             all_indicators[symbol] = symbol_indicators
             self.logger.debug(f"All indicators for {symbol}: %s", symbol_indicators)
@@ -81,44 +71,26 @@ class IndicatorCalculator:
 
     def calculate_timeframe_indicators(self, klines: pd.DataFrame, ticker: pd.DataFrame, order_book: pd.DataFrame, symbol: str, timeframe: str) -> Dict:
         """
-        Calculates all indicators for a specific timeframe from klines, ticker, and order book data.
+        Calculates all indicators for a specific timeframe.
 
         Args:
-            klines (pd.DataFrame): Klines data with columns ['timestamp', 'open', 'high', 'low', 'close', 'volume'].
+            klines: Klines data with columns ['timestamp', 'open', 'high', 'low', 'close', 'volume'].
             ticker: Ticker data buffer.
             order_book: Order book buffer.
             symbol: Trading pair symbol.
-            timeframe: Timeframe (e.g., '1m', '5m', '15m', '1h', '6h', '1d').
+            timeframe: Timeframe (e.g., '1h', '1d').
 
         Returns:
-            Dict: Dictionary containing all indicators for the timeframe.
+            Dict: Dictionary containing all indicators, including horizontal S/R.
         """
         try:
-            # Validate input data
             required_columns = ['open', 'high', 'low', 'close', 'volume']
-            if klines.empty:
-                self.logger.warning(f"Empty {timeframe} klines buffer for {symbol}")
-                return {}
-            if len(klines) < 52:  # Max period for Ichimoku Cloud
-                self.logger.warning(f"Insufficient {timeframe} klines data for {symbol}: {len(klines)} rows, need at least 52")
+            if klines.empty or len(klines) < 52:
+                self.logger.warning(f"Empty or insufficient {timeframe} klines for {symbol}: {len(klines)} rows")
                 return {}
             if not all(col in klines.columns for col in required_columns):
-                missing_cols = [col for col in required_columns if col not in klines.columns]
-                self.logger.warning(f"Missing columns in {timeframe} klines for {symbol}: {missing_cols}")
+                self.logger.warning(f"Missing columns in {timeframe} klines for {symbol}")
                 return {}
-
-            # Check for NaN values
-            if klines[required_columns].isna().any().any():
-                self.logger.warning(f"NaN values detected in {timeframe} klines for {symbol}: {klines[required_columns].isna().sum().to_dict()}")
-                klines = klines.dropna(subset=required_columns)
-                if len(klines) < 52:
-                    self.logger.warning(f"After dropping NaN, insufficient rows for {symbol} ({timeframe}): {len(klines)}")
-                    return {}
-
-            # Log buffer details
-            self.logger.debug(f"{timeframe} klines for {symbol}: rows={len(klines)}, columns={list(klines.columns)}")
-            self.logger.debug(f"Sample klines data (last row): {klines.tail(1).to_dict()}")
-            self.logger.debug(f"Klines time range: {klines['timestamp'].min()} to {klines['timestamp'].max()}")
 
             indicators = {}
 
@@ -148,97 +120,184 @@ class IndicatorCalculator:
             # Support/Resistance Indicators
             indicators['fibonacci_levels'] = self._calculate_fibonacci_retracement(klines)
             indicators['pivot_points'] = self._calculate_pivot_points(klines)
-            if not order_book.empty:
-                indicators['order_book_imbalance'] = self._calculate_order_book_imbalance(order_book, depth=10)
-            else:
-                indicators['order_book_imbalance'] = 0.5
+            indicators['order_book_imbalance'] = self._calculate_order_book_imbalance(order_book, depth=10) if not order_book.empty else 0.5
+            indicators['volume_profile'] = self._calculate_volume_profile(klines)
+            indicators['trendlines'] = self._calculate_trendlines(klines)
+
+            # Horizontal S/R (for 1h only)
+            if timeframe == '1h':
+                indicators['horizontal_sr'] = self._calculate_horizontal_sr(symbol)
 
             # Other Indicators
             indicators['ichimoku'] = self._calculate_ichimoku_cloud(klines)
             indicators['parabolic_sar'] = self._calculate_parabolic_sar(klines, step=0.02, max_step=0.2)
 
-            self.logger.debug(f"{timeframe} indicators for {symbol}: {indicators}")
+            self.logger.debug(f"{timeframe} indicators for {symbol}: %s", indicators)
             return indicators
 
         except Exception as e:
             self.logger.error(f"Error calculating {timeframe} indicators for {symbol}: {str(e)}")
             return {}
 
-    def calculate_timing_indicators(self, ticker: pd.DataFrame, order_book: pd.DataFrame, symbol: str) -> Dict:
+    def _calculate_horizontal_sr(self, symbol: str) -> List[Dict[str, Any]]:
         """
-        Calculates timing indicators from ticker and order book data (not timeframe-specific).
+        Calculates major horizontal support/resistance levels with 3+ touches using 1h klines.
 
         Args:
-            ticker (pd.DataFrame): Ticker data buffer.
-            order_book (pd.DataFrame): Order book data buffer.
+            symbol: Trading pair symbol (e.g., 'HBAR-USD').
+
+        Returns:
+            List[Dict[str, Any]]: List of S/R levels, each with {'level': float, 'type': str, 'touches': float}.
+                          Empty list if insufficient data.
+        """
+        try:
+            klines = self.data_manager.get_buffer(symbol, 'klines_1h').tail(200)  # 200 klines (~8 days)
+            if klines.empty or len(klines) < 100:
+                self.logger.warning(f"Insufficient 1h klines for S/R calculation for {symbol}: {len(klines)} rows")
+                return []
+
+            current_price = float(klines['close'].iloc[-1])
+            if current_price <= 0:
+                self.logger.warning(f"Invalid close price for {symbol}: {current_price}")
+                return []
+
+            highs = klines['high'].values
+            lows = klines['low'].values
+            volumes = klines['volume'].values
+            tolerance = current_price * 0.005  # 0.5% tolerance
+
+            # Separate S/R: resistance (highs), support (lows)
+            high_bins = np.arange(highs.min(), highs.max() + tolerance, tolerance)
+            low_bins = np.arange(lows.min(), lows.max() + tolerance, tolerance)
+            high_counts = np.zeros(len(high_bins) - 1)
+            low_counts = np.zeros(len(low_bins) - 1)
+
+            # Volume-weighted touch counting
+            mean_volume = np.mean(volumes[volumes > 0]) or 1
+            for i, (high, low, volume) in enumerate(zip(highs, lows, volumes)):
+                high_bin_idx = np.digitize(high, high_bins) - 1
+                low_bin_idx = np.digitize(low, low_bins) - 1
+                if 0 <= high_bin_idx < len(high_counts):
+                    high_counts[high_bin_idx] += volume / mean_volume
+                if 0 <= low_bin_idx < len(low_counts):
+                    low_counts[low_bin_idx] += volume / mean_volume
+
+            # Filter levels with 3+ touches
+            resistance_levels = [
+                {'level': float(level + tolerance/2), 'type': 'resistance', 'touches': count}
+                for level, count in zip(high_bins[:-1], high_counts) if count >= 3
+            ]
+            support_levels = [
+                {'level': float(level + tolerance/2), 'type': 'support', 'touches': count}
+                for level, count in zip(low_bins[:-1], low_counts) if count >= 3
+            ]
+
+            sr_levels = resistance_levels + support_levels
+            self.logger.debug(f"Horizontal S/R for {symbol}: {len(resistance_levels)} resistance, {len(support_levels)} support levels")
+            return sr_levels
+
+        except Exception as e:
+            self.logger.error(f"Error calculating horizontal S/R for {symbol}: {str(e)}")
+            return []
+
+    def calculate_timing_indicators(self, ticker: pd.DataFrame, order_book: pd.DataFrame, symbol: str) -> Dict[str, Dict]:
+        """
+        Calculates timing indicators for all timeframes using kline and order book data.
+
+        Args:
+            ticker (pd.DataFrame): Ticker data buffer (not used, kept for compatibility).
+            order_book (pd.DataFrame): Order book data buffer with columns ['timestamp', 'symbol', 'side', 'price_level', 'quantity'].
             symbol (str): Trading pair symbol.
 
         Returns:
-            Dict: Dictionary of timing indicators.
+            Dict: Dictionary mapping timeframes ('1m', '5m', '15m', '1h', '6h', '1d') to timing indicators:
+                {'bid_ask_spread', 'order_book_imbalance', 'ema5', 'atr14', 'volume_surge_ratio'}.
+
+        Raises:
+            ValueError: If order book or kline data is invalid or insufficient.
         """
         try:
-            # Validate inputs
-            if ticker.empty or len(ticker) < 14:
-                self.logger.warning(f"Insufficient ticker data for {symbol}: {len(ticker)} rows")
-                return {
-                    'bid_ask_spread': 0.0,
-                    'order_book_imbalance': 0.5,
-                    'ema5': 0.0,
-                    'atr14': 0.0001,
-                    'volume_surge_ratio': 1.0
-                }
+            # Validate order book
             if order_book.empty:
-                self.logger.warning(f"Empty order book data for {symbol}")
-                return {
-                    'bid_ask_spread': 0.0,
-                    'order_book_imbalance': 0.5,
-                    'ema5': 0.0,
-                    'atr14': 0.0001,
-                    'volume_surge_ratio': 1.0
-                }
+                self.logger.error(f"Empty order book data for {symbol}")
+                raise ValueError("Empty order book data")
+            if not all(col in order_book.columns for col in ['side', 'price_level', 'quantity']):
+                self.logger.error(f"Invalid order book columns: {order_book.columns}")
+                raise ValueError("Missing required order book columns")
 
-            indicators = {}
+            timing_indicators = {}
 
-            # Bid-Ask Spread
-            best_bid = ticker['best_bid'].iloc[-1] if not ticker.empty else 0.0
-            best_ask = ticker['best_ask'].iloc[-1] if not ticker.empty else 0.0
-            indicators['bid_ask_spread'] = (best_ask - best_bid) / best_ask if best_ask else 0.0
-            self.logger.debug(f"Bid-Ask Spread for {symbol}: {indicators['bid_ask_spread']}")
+            # Calculate indicators for each timeframe
+            for timeframe in self.timeframes:
+                try:
+                    # Fetch klines for the timeframe
+                    klines = self.data_manager.get_buffer(symbol, f'klines_{timeframe}')
+                    if klines.empty:
+                        self.logger.error(f"Empty {timeframe} klines data for {symbol}")
+                        raise ValueError(f"Empty {timeframe} klines data")
+                    if len(klines) < 14:
+                        self.logger.error(f"Insufficient {timeframe} klines data for {symbol}: {len(klines)} rows, need at least 14")
+                        raise ValueError(f"Insufficient {timeframe} klines rows")
+                    required_kline_cols = ['open', 'high', 'low', 'close', 'volume']
+                    if not all(col in klines.columns for col in required_kline_cols):
+                        missing_cols = [col for col in required_kline_cols if col not in klines.columns]
+                        self.logger.error(f"Missing kline columns for {symbol} ({timeframe}): {missing_cols}")
+                        raise ValueError(f"Missing required kline columns for {timeframe}")
 
-            # Order Book Imbalance
-            indicators['order_book_imbalance'] = self._calculate_order_book_imbalance(order_book, depth=10) if not order_book.empty else 0.5
-            self.logger.debug(f"Order Book Imbalance for {symbol}: {indicators['order_book_imbalance']}")
+                    indicators = {}
 
-            # EMA5 of last price
-            indicators['ema5'] = ticker['last_price'].ewm(span=5, adjust=False).mean().iloc[-1]
-            self.logger.debug(f"EMA5 for {symbol}: {indicators['ema5']}")
+                    # Bid-Ask Spread (from order book)
+                    bids = order_book[order_book['side'] == 'bid']
+                    asks = order_book[order_book['side'] == 'ask']
+                    if bids.empty or asks.empty:
+                        self.logger.error(f"No bid or ask data in order book for {symbol} ({timeframe})")
+                        raise ValueError(f"No valid bid or ask data for {timeframe}")
+                    best_bid = bids['price_level'].max()
+                    best_ask = asks['price_level'].min()
+                    if best_ask == 0 or best_bid is None or best_ask is None:
+                        self.logger.error(f"Invalid bid/ask prices for {symbol} ({timeframe}): bid={best_bid}, ask={best_ask}")
+                        raise ValueError(f"Invalid bid/ask prices for {timeframe}")
+                    indicators['bid_ask_spread'] = (best_ask - best_bid) / best_ask
+                    self.logger.debug(f"Bid-Ask Spread (from order book) for {symbol} ({timeframe}): {indicators['bid_ask_spread']}")
 
-            # ATR14 from ticker's last price
-            price_diffs = abs(ticker['last_price'].diff()).dropna()
-            indicators['atr14'] = price_diffs.rolling(window=14, min_periods=1).mean().iloc[-1] if not price_diffs.empty else 0.0001
-            self.logger.debug(f"ATR14 (from ticker) for {symbol}: {indicators['atr14']}")
+                    # Order Book Imbalance
+                    indicators['order_book_imbalance'] = self._calculate_order_book_imbalance(order_book, depth=10)
+                    self.logger.debug(f"Order Book Imbalance for {symbol} ({timeframe}): {indicators['order_book_imbalance']}")
 
-            # Volume Surge Ratio
-            if 'volume_24h' in ticker.columns and len(ticker) >= 14:
-                recent_volume = ticker['volume_24h'].iloc[-1]
-                avg_volume = ticker['volume_24h'].rolling(window=14, min_periods=1).mean().iloc[-1]
-                indicators['volume_surge_ratio'] = recent_volume / avg_volume if avg_volume else 1.0
-            else:
-                indicators['volume_surge_ratio'] = 1.0
-            self.logger.debug(f"Volume Surge Ratio for {symbol}: {indicators['volume_surge_ratio']}")
+                    # EMA5 of close price (from klines)
+                    indicators['ema5'] = klines['close'].ewm(span=5, adjust=False).mean().iloc[-1]
+                    self.logger.debug(f"EMA5 (from {timeframe} klines) for {symbol}: {indicators['ema5']}")
 
-            self.logger.debug(f"Timing indicators for {symbol}: {indicators}")
-            return indicators
+                    # ATR14 from klines
+                    indicators['atr14'] = self._calculate_atr(klines, period=14)
+                    if indicators['atr14'] == 0.0001:
+                        self.logger.error(f"Invalid ATR14 calculation for {symbol} ({timeframe}), defaulted to 0.0001")
+                        raise ValueError(f"Invalid ATR14 calculation for {timeframe}")
+                    self.logger.debug(f"ATR14 (from {timeframe} klines) for {symbol}: {indicators['atr14']}")
 
+                    # Volume Surge Ratio (from kline volume)
+                    recent_volume = klines['volume'].iloc[-1]
+                    avg_volume = klines['volume'].rolling(window=14, min_periods=1).mean().iloc[-1]
+                    if avg_volume == 0:
+                        self.logger.error(f"Zero average volume for {symbol} ({timeframe})")
+                        raise ValueError(f"Zero average volume for {timeframe}")
+                    indicators['volume_surge_ratio'] = recent_volume / avg_volume
+                    if indicators['volume_surge_ratio'] == 1.0:
+                        self.logger.debug(f"Volume Surge Ratio == 1.0 for {symbol} ({timeframe}): recent_volume={recent_volume}, avg_volume={avg_volume}, volumes={klines['volume'].tail(14).values}")
+                    self.logger.debug(f"Volume Surge Ratio for {symbol} ({timeframe}): {indicators['volume_surge_ratio']}")
+
+                    timing_indicators[timeframe] = indicators
+                    self.logger.debug(f"Timing indicators for {symbol} ({timeframe}): {indicators}")
+
+                except Exception as e:
+                    self.logger.error(f"Error calculating timing indicators for {symbol} ({timeframe}): {str(e)}")
+                    timing_indicators[timeframe] = {}
+
+            return timing_indicators
         except Exception as e:
-            self.logger.error(f"Error calculating timing indicators for {symbol}: {str(e)}")
-            return {
-                'bid_ask_spread': 0.0,
-                'order_book_imbalance': 0.5,
-                'ema5': 0.0,
-                'atr14': 0.0001,
-                'volume_surge_ratio': 1.0
-            }
+            self.logger.error(f"Error initializing timing indicators for {symbol}: {str(e)}")
+            return {tf: {} for tf in self.timeframes}
+
 
     def _calculate_rsi(self, prices: pd.Series, period: int = 14) -> float:
         try:
@@ -483,20 +542,42 @@ class IndicatorCalculator:
             return {'pivot': 0.0, 's1': 0.0, 'r1': 0.0}
 
     def _calculate_order_book_imbalance(self, order_book: pd.DataFrame, depth: int = 10) -> float:
+        """
+        Calculates order book imbalance based on the top 'depth' levels of bids and asks.
+
+        Args:
+            order_book: DataFrame with order book data, expected columns: ['timestamp', 'symbol', 'side', 'price_level', 'quantity'].
+            depth: Number of levels to consider (default: 10).
+
+        Returns:
+            float: Imbalance ratio (bid_volume - ask_volume) / (bid_volume + ask_volume).
+
+        Raises:
+            ValueError: If order book is empty, missing columns, or has no valid bid/ask data.
+        """
         try:
             if order_book.empty:
-                self.logger.debug("Empty order book data for Order Book Imbalance")
-                return 0.5
-            bids = order_book[order_book['side'] == 'buy'].sort_values(by='price_level', ascending=False).head(depth)
-            asks = order_book[order_book['side'] == 'sell'].sort_values(by='price_level').head(depth)
-            bid_volume = bids['quantity'].sum() if not bids.empty else 0.0
-            ask_volume = asks['quantity'].sum() if not asks.empty else 0.0
+                self.logger.error("Empty order book data for Order Book Imbalance")
+                raise ValueError("Empty order book data")
+            if not all(col in order_book.columns for col in ['side', 'price_level', 'quantity']):
+                self.logger.error(f"Invalid order book columns: {order_book.columns}")
+                raise ValueError("Missing required columns in order book")
+            bids = order_book[order_book['side'] == 'bid'].sort_values(by='price_level', ascending=False).head(depth)
+            asks = order_book[order_book['side'] == 'ask'].sort_values(by='price_level').head(depth)
+            if bids.empty or asks.empty:
+                self.logger.error(f"No valid bid/ask data: bids={len(bids)}, asks={len(asks)}")
+                raise ValueError("No valid bid or ask data")
+            bid_volume = bids['quantity'].sum()
+            ask_volume = asks['quantity'].sum()
             total_volume = bid_volume + ask_volume
-            imbalance = (bid_volume - ask_volume) / total_volume if total_volume else 0.5
+            if total_volume == 0:
+                self.logger.error(f"Zero total volume: bid_volume={bid_volume}, ask_volume={ask_volume}")
+                raise ValueError("Zero total volume")
+            imbalance = (bid_volume - ask_volume) / total_volume
+            self.logger.debug(f"Order Book Imbalance calculated: {imbalance:.4f}, bid_volume={bid_volume:.2f}, ask_volume={ask_volume:.2f}")
             return imbalance
         except Exception as e:
             self.logger.error(f"Error calculating Order Book Imbalance: {str(e)}")
-            return 0.5
 
     def _calculate_ichimoku_cloud(self, klines: pd.DataFrame) -> Dict:
         try:
@@ -574,3 +655,132 @@ class IndicatorCalculator:
         except Exception as e:
             self.logger.error(f"Error calculating Parabolic SAR: {str(e)}")
             return 0.0
+
+    def _calculate_volume_profile(self, klines: pd.DataFrame, bins: int = 20) -> Dict:
+        """
+        Calculates volume profile to identify high-volume nodes (HVNs).
+
+        Args:
+            klines (pd.DataFrame): Klines data with ['close', 'volume'].
+            bins (int): Number of price bins for volume distribution (default: 20).
+
+        Returns:
+            Dict: Dictionary with price levels and their normalized volume, sorted by volume.
+                  {'hvn_levels': [(price, volume), ...]} where price is the bin center.
+        """
+        try:
+            if klines.empty or len(klines) < 10:
+                self.logger.debug(f"Insufficient klines data for Volume Profile: {len(klines)} rows, need at least 10")
+                return {'hvn_levels': []}
+            if 'close' not in klines.columns or 'volume' not in klines.columns:
+                self.logger.warning(f"Missing 'close' or 'volume' columns for Volume Profile")
+                return {'hvn_levels': []}
+
+            # Bin prices and aggregate volume
+            prices = klines['close']
+            volumes = klines['volume']
+            price_min, price_max = prices.min(), prices.max()
+            if price_max == price_min:
+                self.logger.debug(f"Price range too narrow for Volume Profile")
+                return {'hvn_levels': []}
+
+            # Create bins
+            bins_edges = np.linspace(price_min, price_max, bins + 1)
+            bin_centers = (bins_edges[:-1] + bins_edges[1:]) / 2
+            bin_indices = np.digitize(prices, bins_edges, right=True)
+            bin_indices = np.clip(bin_indices, 1, bins) - 1  # Adjust for edge cases
+
+            # Aggregate volume per bin
+            bin_volumes = np.zeros(bins)
+            for i in range(len(prices)):
+                bin_volumes[bin_indices[i]] += volumes.iloc[i]
+
+            # Normalize volumes
+            total_volume = bin_volumes.sum()
+            if total_volume == 0:
+                self.logger.debug(f"Zero total volume for Volume Profile")
+                return {'hvn_levels': []}
+            normalized_volumes = bin_volumes / total_volume
+
+            # Sort by volume, return top 3 HVNs
+            volume_price_pairs = list(zip(bin_centers, normalized_volumes))
+            volume_price_pairs.sort(key=lambda x: x[1], reverse=True)
+            top_hvns = volume_price_pairs[:3]  # Top 3 high-volume nodes
+
+            return {'hvn_levels': [(float(price), float(volume)) for price, volume in top_hvns]}
+        except Exception as e:
+            self.logger.error(f"Error calculating Volume Profile: {str(e)}")
+            return {'hvn_levels': []}
+
+    def _calculate_trendlines(self, klines: pd.DataFrame, lookback: int = 20) -> Dict:
+        """
+        Calculates trendlines as support/resistance based on recent swing highs and lows.
+
+        Args:
+            klines (pd.DataFrame): Klines data with ['high', 'low', 'close'].
+            lookback (int): Number of periods to analyze for swings (default: 20).
+
+        Returns:
+            Dict: Dictionary with support and resistance trendline prices at the latest candle.
+                  {'support': price, 'resistance': price}
+        """
+        try:
+            if klines.empty or len(klines) < lookback:
+                self.logger.debug(f"Insufficient klines data for Trendlines: {len(klines)} rows, need {lookback}")
+                return {'support': 0.0, 'resistance': 0.0}
+            if not all(col in klines.columns for col in ['high', 'low', 'close']):
+                self.logger.warning(f"Missing 'high', 'low', or 'close' columns for Trendlines: columns={list(klines.columns)}")
+                return {'support': 0.0, 'resistance': 0.0}
+
+            # Extract recent data
+            recent_klines = klines.tail(lookback)
+            highs = recent_klines['high']
+            lows = recent_klines['low']
+            indices = np.arange(len(recent_klines))
+
+            # Identify swing highs and lows
+            swing_highs = []
+            swing_lows = []
+            for i in range(1, len(recent_klines) - 1):
+                if highs.iloc[i] > highs.iloc[i-1] and highs.iloc[i] > highs.iloc[i+1]:
+                    swing_highs.append((indices[i], highs.iloc[i]))
+                if lows.iloc[i] < lows.iloc[i-1] and lows.iloc[i] < lows.iloc[i+1]:
+                    swing_lows.append((indices[i], lows.iloc[i]))
+
+            # Log swing points for debugging
+            self.logger.debug(
+                f"Trendlines for {recent_klines.index[-1]}: swing_highs={len(swing_highs)}, swing_lows={len(swing_lows)}, "
+                f"klines_shape={recent_klines.shape}, columns={list(recent_klines.columns)}"
+            )
+
+            # Initialize default prices
+            support_price = 0.0
+            resistance_price = 0.0
+
+            # Fit trendlines if sufficient swing points
+            if len(swing_highs) >= 2:
+                x = np.array([point[0] for point in swing_highs])
+                y = np.array([point[1] for point in swing_highs])
+                coeffs = np.polyfit(x, y, 1)
+                resistance_price = coeffs[0] * indices[-1] + coeffs[1]
+            else:
+                self.logger.debug(f"Insufficient swing highs ({len(swing_highs)} < 2) for resistance trendline")
+
+            if len(swing_lows) >= 2:
+                x = np.array([point[0] for point in swing_lows])
+                y = np.array([point[1] for point in swing_lows])
+                coeffs = np.polyfit(x, y, 1)
+                support_price = coeffs[0] * indices[-1] + coeffs[1]
+            else:
+                self.logger.debug(f"Insufficient swing lows ({len(swing_lows)} < 2) for support trendline")
+
+            return {
+                'support': float(support_price) if support_price > 0 else 0.0,
+                'resistance': float(resistance_price) if resistance_price > 0 else 0.0
+            }
+        except Exception as e:
+            self.logger.error(
+                f"Error calculating Trendlines: {str(e)}, klines_shape={klines.shape if not klines.empty else 'empty'}, "
+                f"columns={list(klines.columns) if not klines.empty else 'none'}"
+            )
+            return {'support': 0.0, 'resistance': 0.0}

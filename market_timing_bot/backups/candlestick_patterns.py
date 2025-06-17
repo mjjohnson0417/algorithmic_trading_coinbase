@@ -29,11 +29,11 @@ class CandlestickPatterns:
             log_dir.mkdir(exist_ok=True)
             log_file = log_dir / 'candlestick_patterns.log'
             file_handler = RotatingFileHandler(log_file, maxBytes=5*1024*1024, backupCount=5)
-            file_handler.setLevel(logging.INFO)
+            file_handler.setLevel(logging.DEBUG)
             formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
             file_handler.setFormatter(formatter)
             self.logger.addHandler(file_handler)
-            self.logger.setLevel(logging.INFO)
+            self.logger.setLevel(logging.DEBUG)
         else:
             self.logger.setLevel(logging.WARNING)
 

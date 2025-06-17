@@ -1,0 +1,46 @@
+assess_market_context - possible three points, also returns market state of uptrend, downtrend, sideways
+two is good, three is great, 
+2025-06-14 11:06:56,371 - DEBUG - Market states for HBAR-USD: {'15m': 'downtrend', '1h': 'uptrend', '6h': 'downtrend'}
+2025-06-14 11:06:56,371 - INFO - Market context for HBAR-USD: TrendAlignmentScore=2.00
+
+identify_key_levels - 1 point for primary levels, half a point for secondary. realistically this should return a high of ~ three points. 
+if there were vwap, fibonacci, and pivot point all clustered together that would be 3 points. this would be a really high score. two points would be a good, one is good enough. Should have a minimum of .5 to be useful as that means at least one secondary level was hit. 
+also returns is_support=True for support levels and is_support=False for resistance levels
+2025-06-14 11:06:56,373 - DEBUG - Levels for HBAR-USD: [(0.15880000000000005, 'pivot_s1_6h', True), (0.16022000000000006, 'pivot_r1_6h', False), (0.16708499999999998, 'fib_50%_6h', None), (0.1771379561273332, 'vwap_6h', None), (0.14157773195876283, 'trendline_support_6h', True), (0.15843248579545458, 'trendline_resistance_6h', False), (0.1710793, 'fib_38.2%_6h', None), (0.1630907, 'fib_61.8%_6h', None), (0.16485247037685166, 'ema20_6h', None), (0.170108, 'volume_hvn_6h', None), (0.16584, 'volume_hvn_6h', None), (0.18717999999999999, 'volume_hvn_6h', None)]
+2025-06-14 11:06:56,373 - DEBUG - Levels collected for HBAR-USD: 12
+2025-06-14 11:06:56,373 - DEBUG - Current price for HBAR-USD: 0.158, max_threshold=0.000395
+2025-06-14 11:06:56,373 - DEBUG - Performing proximity check for HBAR-USD
+2025-06-14 11:06:56,373 - DEBUG - Final proximity_score for HBAR-USD: 0.0
+2025-06-14 11:06:56,373 - INFO - Key levels for HBAR-USD: nearby_levels_count=0, proximity_score=0.0
+2025-06-14 11:06:56,373 - DEBUG - Full result for HBAR-USD: {"nearby_levels": [], "proximity_score": 0.0}
+
+identify_chart_patterns - assigns one point for each chart detected and two points for a breakout below support or above resistance. three points would be a good score. 
+two would be good enough with two timeframes having a chart present. also returns is_bullish=True or is_bullish=False
+Detected pattern for SUI-USD (15m): {'name': 'rectangle_bearish', 'timeframe': '15m', 'is_bullish': False, 'score': 3.0, 'breakout_price': 2.8661444444444446, 'has_breakout': True}
+
+identify_candlestick_patterns  - assigns one point for each pattern detected on 15m and 1 hour timeframes, one point is enough, better is you see a one hour candlestick after a six hour pattern, 15 min after one hour pattern. Can be is_bullish:True or False. 
+Added pattern: {'name': 'harami_bullish', 'timeframe': '1h', 'is_bullish': True, 'score': 1.0}
+
+evaluate_confirmation_indicators - returns is_bullish=True or False. .5 points each  for macd or ema being in a bullish or bearish direction. 1 point for adx14 being >= 25 for both and 1 point for volume surge being 1 or greater. 2 is a good score, 3 is great. 1 might be acceptable, especially if it was adx14 or volume surge. 
+2025-06-15 08:50:58,185 - DEBUG - Starting evaluate_confirmation_indicators for HBAR-USD
+2025-06-15 08:50:58,185 - DEBUG - EMA Bullish Score for HBAR-USD (15m): 0.0 (ema10: 0.15287585948551927, ema20: 0.15309935914263423)
+2025-06-15 08:50:58,185 - DEBUG - MACD Bullish Score for HBAR-USD (15m): 0.5 (macd_hist: 1.4062375180530972e-06)
+2025-06-15 08:50:58,185 - DEBUG - EMA Bearish Score for HBAR-USD (15m): 0.5 (ema10: 0.15287585948551927, ema20: 0.15309935914263423)
+2025-06-15 08:50:58,185 - DEBUG - MACD Bearish Score for HBAR-USD (15m): 0.0 (macd_hist: 1.4062375180530972e-06)
+2025-06-15 08:50:58,185 - DEBUG - ADX Score for HBAR-USD (15m): 0.0 (adx14: 17.166848861332387)
+2025-06-15 08:50:58,185 - DEBUG - Volume Surge Score for HBAR-USD (15m): 0.0 (volume_surge_ratio: 0.21081524829554169)
+2025-06-15 08:50:58,185 - DEBUG - Confirmation indicators for HBAR-USD (15m): {'timeframe': '15m', 'is_bullish': None, 'score': 1.0, 'status': 'not_supported'}
+2025-06-15 08:50:58,185 - DEBUG - EMA Bullish Score for HBAR-USD (1h): 0.0 (ema10: 0.15353921004921287, ema20: 0.15421697200343137)
+2025-06-15 08:50:58,185 - DEBUG - MACD Bullish Score for HBAR-USD (1h): 0.5 (macd_hist: 2.054224748929633e-05)
+2025-06-15 08:50:58,185 - DEBUG - EMA Bearish Score for HBAR-USD (1h): 0.5 (ema10: 0.15353921004921287, ema20: 0.15421697200343137)
+2025-06-15 08:50:58,185 - DEBUG - MACD Bearish Score for HBAR-USD (1h): 0.0 (macd_hist: 2.054224748929633e-05)
+2025-06-15 08:50:58,185 - DEBUG - ADX Score for HBAR-USD (1h): 1 (adx14: 25.53855510677938)
+2025-06-15 08:50:58,185 - DEBUG - Volume Surge Score for HBAR-USD (1h): 0.0 (volume_surge_ratio: 0.6245784545522625)
+2025-06-15 08:50:58,185 - DEBUG - Confirmation indicators for HBAR-USD (1h): {'timeframe': '1h', 'is_bullish': None, 'score': 2.0, 'status': 'not_supported'}
+
+determine_trade_levels - basically returns a buy/sell/stop loss for bullish and the reverse for bearish short sales. doesn't contribute any scores
+
+calculate_risk_reward_score - returns a risk reward score, needs s/r levels to have a hit to return something other than zero. 
+calculates a risk reward ration and multiples it by 2. Anything over two is a positive score, a three would be high, four would be excellent
+
+calculate_confluence_score - combines all of the invidiual scores and comes up with a total score. 
